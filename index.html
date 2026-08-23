@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE ASCEND · Build Yourself Into a More Capable Person</title>
+    
+    <!-- ===== SEO META TAGS ===== -->
+    <meta name="description" content="Build yourself into a more capable person. Join a private community for money, mind, body, relationships and purpose. Start your personal development journey today." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://theascend.com" />
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="THE ASCEND · Build a More Capable You" />
+    <meta property="og:description" content="A private community for serious personal development. Money. Mind. Body. Relationships. Purpose." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://theascend.com" />
+    <meta property="og:image" content="https://theascend.com/assets/og-image.jpg" />
+    
+    <!-- ===== TWITTER ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="THE ASCEND · Build a More Capable You" />
+    <meta name="twitter:description" content="A private community for serious personal development." />
+    
+    <!-- ============================================================
+         FONTS — CHOOSE ONE (uncomment the one you want)
+         ============================================================ -->
+    
+    <!-- OPTION 1: INTER (Modern, clean, professional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Font family: 'Inter', sans-serif -->
+    
+    <!-- OPTION 2: MANROPE (Premium, slightly warmer, very popular in SaaS) -->
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    Font family: 'Manrope', sans-serif
+    -->
+    
+    <!-- OPTION 3: DM SANS (Clean, geometric, great readability) -->
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    Font family: 'DM Sans', sans-serif
+    -->
+    
+    <!-- OPTION 4: SATOSHI (Ultra-premium, used by high-end brands) -->
+    <!--
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+    Font family: 'Satoshi', sans-serif
+    -->
+    
+    <!-- OPTION 5: CLASH DISPLAY (Bold, distinctive, modern) -->
+    <!--
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+    Font family: 'Clash Display', sans-serif
+    -->
+    
+    <!-- OPTION 6: GENERAL SANS (Clean, versatile, premium) -->
+    <!--
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+    Font family: 'General Sans', sans-serif
+    -->
+    
+    <!-- ===== FONT AWESOME ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        /* ============================================================
+           FONT FAMILY — CHANGE THIS TO MATCH YOUR CHOSEN FONT
+           ============================================================ */
+        :root {
+            /* --- Change this to match the font you uncommented above --- */
+            
+            /* OPTION 1: Inter */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* OPTION 2: Manrope */
+            /* --font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif; */
+            
+            /* OPTION 3: DM Sans */
+            /* --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; */
+            
+            /* OPTION 4: Satoshi */
+            /* --font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif; */
+            
+            /* OPTION 5: Clash Display */
+            /* --font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, sans-serif; */
+            
+            /* OPTION 6: General Sans */
+            /* --font-family: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif; */
+            
+            /* --- Colors --- */
+            --color-accent: #C9A227;
+            --color-accent-hover: #D4B85A;
+            --color-accent-glow: rgba(201, 162, 39, 0.15);
+            --color-bg: #050505;
+            --color-bg-secondary: #0A0A0A;
+            --color-bg-card: #0D0D0D;
+            --color-bg-card-hover: #111111;
+            --color-text: #FFFFFF;
+            --color-text-secondary: #A0A0A0;
+            --color-text-muted: #666666;
+            --color-border: rgba(255, 255, 255, 0.05);
+            --color-border-hover: rgba(201, 162, 39, 0.2);
+            --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 60px rgba(201, 162, 39, 0.03);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* ============================================================
+           TYPOGRAPHY ENHANCEMENTS
+           ============================================================ */
+        h1, h2, h3, h4, h5, .logo, .section-title, .hero h1 {
+            letter-spacing: -0.02em;
+        }
+        
+        .section-label, .badge, .tier-label, .hero-badge {
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+        
+        /* ============================================================
+           SKIP LINK
+           ============================================================ */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: var(--color-bg);
+            padding: 12px 24px;
+            z-index: 9999;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: top 0.3s ease;
+            font-family: var(--font-family);
+        }
+        .skip-link:focus {
+            top: 20px;
+        }
+        
+        /* ============================================================
+           CONTAINER
+           ============================================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .btn-primary {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 36px;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            min-height: 52px;
+            min-width: 44px;
+            text-align: center;
+            font-family: var(--font-family);
+        }
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.3);
+        }
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 36px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            min-height: 52px;
+            min-width: 44px;
+            text-align: center;
+            font-family: var(--font-family);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .btn-outline:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        
+        .btn-premium {
+            display: inline-block;
+            background: transparent;
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 36px;
+            border: 1px solid var(--color-accent);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all var(--transition);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            min-height: 52px;
+            min-width: 44px;
+            text-align: center;
+            font-family: var(--font-family);
+        }
+        .btn-premium:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-2px);
+        }
+        .btn-premium:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        
+        .btn-full {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all var(--transition);
+            background: transparent;
+        }
+        .header.scrolled {
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            font-family: var(--font-family);
+        }
+        .header .logo span {
+            color: var(--color-accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            transition: color var(--transition);
+            letter-spacing: 0.03em;
+            position: relative;
+            font-family: var(--font-family);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links .btn-primary {
+            padding: 10px 24px;
+            font-size: 0.8rem;
+            min-height: 40px;
+        }
+        .nav-links .btn-primary::after {
+            display: none;
+        }
+        
+        /* Mobile nav */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            min-height: 44px;
+            min-width: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--color-text);
+            transition: all var(--transition);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 360px;
+            height: 100vh;
+            background: var(--color-bg-secondary);
+            padding: 80px 32px 32px;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            border-left: 1px solid var(--color-border);
+            overflow-y: auto;
+        }
+        .mobile-menu.open {
+            right: 0;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 14px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid var(--color-border);
+            transition: color var(--transition);
+            font-family: var(--font-family);
+        }
+        .mobile-menu a:hover {
+            color: var(--color-text);
+        }
+        .mobile-menu .btn-primary {
+            margin-top: 24px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 998;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .overlay.open {
+            display: block;
+        }
+        
+        /* ============================================================
+           STICKY MOBILE CTA
+           ============================================================ */
+        .sticky-cta-mobile {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 20px;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--color-border);
+            z-index: 100;
+            gap: 12px;
+            align-items: center;
+        }
+        .sticky-cta-mobile .btn-primary {
+            flex: 1;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* ============================================================
+           BACK TO TOP
+           ============================================================ */
+        #backToTop {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all var(--transition);
+            z-index: 99;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 20px rgba(201, 162, 39, 0.3);
+            font-family: var(--font-family);
+        }
+        #backToTop.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        #backToTop:hover {
+            transform: scale(1.1);
+            background: var(--color-accent-hover);
+        }
+        #backToTop:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+        
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            padding: 160px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 120%;
+            background: radial-gradient(ellipse, rgba(201, 162, 39, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            padding: 6px 16px;
+            border-radius: 2px;
+            margin-bottom: 24px;
+            font-family: var(--font-family);
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            font-family: var(--font-family);
+        }
+        .hero h1 .highlight {
+            color: var(--color-accent);
+        }
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 540px;
+            margin-bottom: 32px;
+            font-weight: 400;
+            font-family: var(--font-family);
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        /* ============================================================
+           HERO DASHBOARD PREVIEW
+           ============================================================ */
+        .hero-dashboard {
+            margin-top: 60px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            max-width: 900px;
+            box-shadow: var(--shadow-card);
+        }
+        .dashboard-preview {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            min-height: 320px;
+        }
+        .dashboard-sidebar {
+            background: var(--color-bg-card);
+            padding: 20px 16px;
+            border-right: 1px solid var(--color-border);
+        }
+        .dashboard-sidebar .brand-small {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+            font-family: var(--font-family);
+        }
+        .dashboard-sidebar .nav-item {
+            padding: 10px 12px;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            border-radius: var(--radius);
+            transition: all var(--transition);
+            cursor: default;
+            font-family: var(--font-family);
+        }
+        .dashboard-sidebar .nav-item.active {
+            color: var(--color-text);
+            background: rgba(201, 162, 39, 0.1);
+        }
+        .dashboard-sidebar .nav-item i {
+            width: 20px;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        .dashboard-main {
+            padding: 24px 28px;
+        }
+        .dashboard-main .greeting {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: 4px;
+            font-family: var(--font-family);
+        }
+        .dashboard-main h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+        .dash-card {
+            background: var(--color-bg-card);
+            padding: 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition);
+        }
+        .dash-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-2px);
+        }
+        .dash-card .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            font-weight: 600;
+            font-family: var(--font-family);
+        }
+        .dash-card .value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 4px 0 8px;
+            font-family: var(--font-family);
+        }
+        .dash-card .bar {
+            height: 3px;
+            background: #1A1A1A;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .dash-card .bar .fill {
+            height: 100%;
+            background: var(--color-accent);
+            border-radius: 2px;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+        
+        /* ============================================================
+           SOCIAL PROOF BAR
+           ============================================================ */
+        .social-proof {
+            padding: 40px 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .social-proof-inner {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .social-proof-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+        .social-proof-item:nth-child(1) { animation-delay: 0.1s; }
+        .social-proof-item:nth-child(2) { animation-delay: 0.2s; }
+        .social-proof-item:nth-child(3) { animation-delay: 0.3s; }
+        .social-proof-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .social-proof-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            font-family: var(--font-family);
+        }
+        .social-proof-item .label {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           SECTION COMMON
+           ============================================================ */
+        section {
+            padding: 80px 0;
+        }
+        .section-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 12px;
+            font-family: var(--font-family);
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .section-title .highlight {
+            color: var(--color-accent);
+        }
+        .section-sub {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            font-family: var(--font-family);
+        }
+        .section-center {
+            text-align: center;
+        }
+        .section-center .section-sub {
+            margin: 0 auto 40px;
+        }
+        
+        /* ============================================================
+           PHILOSOPHY
+           ============================================================ */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .philosophy-card {
+            background: var(--color-bg-secondary);
+            padding: 28px 24px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            transition: all var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .philosophy-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .philosophy-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+        .philosophy-card .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: rgba(201, 162, 39, 0.15);
+            line-height: 1;
+            font-family: var(--font-family);
+        }
+        .philosophy-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 8px 0 4px;
+            letter-spacing: 0.03em;
+            font-family: var(--font-family);
+        }
+        .philosophy-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           HOW IT WORKS
+           ============================================================ */
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .how-step {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .how-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .how-step .step-num {
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(201, 162, 39, 0.1);
+            line-height: 1;
+            font-family: var(--font-family);
+        }
+        .how-step h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 8px 0 4px;
+            font-family: var(--font-family);
+        }
+        .how-step p {
+            color: var(--color-text-secondary);
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           FEATURES
+           ============================================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: var(--color-bg-secondary);
+            padding: 28px 24px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            text-align: center;
+            transition: all var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+        .feature-card .icon {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin-bottom: 12px;
+        }
+        .feature-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: var(--font-family);
+        }
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           MEMBERSHIP
+           ============================================================ */
+        .membership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .membership-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: all var(--transition);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .membership-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .membership-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+        .membership-card.premium {
+            border-color: rgba(201, 162, 39, 0.3);
+            background: var(--color-bg-card);
+            position: relative;
+            overflow: hidden;
+        }
+        .membership-card.premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        }
+        .membership-card.premium:hover {
+            box-shadow: 0 0 80px rgba(201, 162, 39, 0.08);
+        }
+        .membership-card .tier-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            font-weight: 600;
+            font-family: var(--font-family);
+        }
+        .membership-card .tier-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 4px 0;
+            font-family: var(--font-family);
+        }
+        .membership-card .tier-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--color-accent);
+            margin: 4px 0;
+            font-family: var(--font-family);
+        }
+        .membership-card .tier-price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+        .membership-card .tier-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .membership-card .features-list {
+            list-style: none;
+            margin: 16px 0 24px;
+            flex: 1;
+        }
+        .membership-card .features-list li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-family);
+        }
+        .membership-card .features-list li i {
+            color: var(--color-accent);
+            font-size: 0.7rem;
+        }
+        .membership-card .btn-primary,
+        .membership-card .btn-outline,
+        .membership-card .btn-premium {
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .badge-limited {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            padding: 2px 12px;
+            border-radius: 2px;
+            margin-bottom: 8px;
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           PRICING TOGGLE
+           ============================================================ */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            font-family: var(--font-family);
+        }
+        .pricing-toggle .save {
+            color: var(--color-accent);
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: rgba(201, 162, 39, 0.1);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 4px;
+        }
+        .switch {
+            position: relative;
+            width: 52px;
+            height: 28px;
+            background: #1A1A1A;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background var(--transition);
+            border: 1px solid var(--color-border);
+        }
+        .switch.active {
+            background: var(--color-accent);
+        }
+        .switch .slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background: var(--color-text);
+            border-radius: 50%;
+            transition: all var(--transition);
+        }
+        .switch.active .slider {
+            left: 26px;
+        }
+        .pricing-toggle input {
+            display: none;
+        }
+        
+        /* ============================================================
+           MASTERCLASS
+           ============================================================ */
+        .masterclass {
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 60px 48px;
+            border: 1px solid var(--color-border);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            box-shadow: var(--shadow-card);
+        }
+        .masterclass-info .event-meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 16px 0 24px;
+        }
+        .masterclass-info .event-meta span {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-family: var(--font-family);
+        }
+        .masterclass-info .event-meta i {
+            color: var(--color-accent);
+            margin-right: 6px;
+        }
+        .countdown {
+            display: flex;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .countdown .unit {
+            text-align: center;
+            background: var(--color-bg-card);
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            min-width: 60px;
+            border: 1px solid var(--color-border);
+            transition: all var(--transition);
+        }
+        .countdown .unit:hover {
+            border-color: var(--color-border-hover);
+        }
+        .countdown .unit .num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1;
+            font-family: var(--font-family);
+        }
+        .countdown .unit .label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            letter-spacing: 0.05em;
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           CREATOR
+           ============================================================ */
+        .creator-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .creator-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 0.85rem;
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .creator-image:hover {
+            border-color: var(--color-border-hover);
+        }
+        .creator-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .creator-image .placeholder {
+            text-align: center;
+            font-family: var(--font-family);
+        }
+        .creator-image .placeholder i {
+            font-size: 3rem;
+            color: #1A1A1A;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .creator-info .creator-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: var(--font-family);
+        }
+        .creator-info .creator-title {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .creator-info p {
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .creator-social {
+            display: flex;
+            gap: 16px;
+        }
+        .creator-social a {
+            color: var(--color-text-muted);
+            transition: color var(--transition);
+            font-size: 1.2rem;
+        }
+        .creator-social a:hover {
+            color: var(--color-accent);
+        }
+        
+        /* ============================================================
+           CASE STUDY
+           ============================================================ */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .case-card {
+            background: var(--color-bg-secondary);
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: all var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .case-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .case-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-4px);
+        }
+        .case-card .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            font-family: var(--font-family);
+        }
+        .case-card .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 4px 0;
+            font-family: var(--font-family);
+        }
+        .case-card .bar {
+            height: 3px;
+            background: #1A1A1A;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .case-card .bar .fill {
+            height: 100%;
+            background: var(--color-accent);
+            border-radius: 2px;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+        
+        /* ============================================================
+           COMMUNITY PREVIEW
+           ============================================================ */
+        .community-preview {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-top: 32px;
+            box-shadow: var(--shadow-card);
+            transition: all var(--transition);
+        }
+        .community-preview:hover {
+            border-color: var(--color-border-hover);
+        }
+        .community-preview .preview-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .community-preview .preview-header .channel {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            font-family: var(--font-family);
+        }
+        .community-preview .preview-header .channel i {
+            color: var(--color-accent);
+            margin-right: 6px;
+        }
+        .community-preview .preview-feed {
+            padding: 16px 24px;
+            display: grid;
+            gap: 12px;
+        }
+        .preview-post {
+            background: var(--color-bg-card);
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            border-left: 2px solid rgba(201, 162, 39, 0.2);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            transition: all var(--transition);
+            font-family: var(--font-family);
+        }
+        .preview-post:hover {
+            border-left-color: var(--color-accent);
+            background: var(--color-bg-card-hover);
+        }
+        .preview-post .author {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 0.8rem;
+        }
+        .preview-post .time {
+            font-size: 0.7rem;
+            color: #444;
+        }
+        
+        /* ============================================================
+           WHY JOIN
+           ============================================================ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 32px;
+        }
+        .why-col {
+            background: var(--color-bg-secondary);
+            padding: 32px 28px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .why-col.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .why-col:hover {
+            border-color: var(--color-border-hover);
+        }
+        .why-col h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .why-col ul {
+            list-style: none;
+        }
+        .why-col ul li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-family);
+        }
+        .why-col ul li i {
+            color: var(--color-accent);
+            font-size: 0.8rem;
+        }
+        .why-col.danger ul li i {
+            color: #444;
+        }
+        
+        /* ============================================================
+           FAQ
+           ============================================================ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 0;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .faq-item:hover {
+            border-color: var(--color-border-hover);
+        }
+        .faq-item .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 4px 0;
+            min-height: 44px;
+            font-family: var(--font-family);
+        }
+        .faq-item .question i {
+            color: var(--color-accent);
+            transition: transform var(--transition);
+        }
+        .faq-item .answer {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            margin-top: 8px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+            font-family: var(--font-family);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .faq-item.open .answer {
+            display: block;
+        }
+        .faq-item.open .question i {
+            transform: rotate(180deg);
+        }
+        
+        /* ============================================================
+           FINAL CTA
+           ============================================================ */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .final-cta h2 {
+            font-size: clamp(2.4rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            font-family: var(--font-family);
+        }
+        .final-cta p {
+            color: var(--color-text-secondary);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid var(--color-border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-brand .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            font-family: var(--font-family);
+        }
+        .footer-brand .logo span {
+            color: var(--color-accent);
+        }
+        .footer-brand p {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            max-width: 280px;
+            font-family: var(--font-family);
+        }
+        .footer-col h5 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: 12px;
+            font-family: var(--font-family);
+        }
+        .footer-col a {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            padding: 4px 0;
+            transition: color var(--transition);
+            font-family: var(--font-family);
+        }
+        .footer-col a:hover {
+            color: var(--color-text);
+        }
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .footer-social a {
+            color: var(--color-text-muted);
+            font-size: 1.2rem;
+            transition: color var(--transition);
+        }
+        .footer-social a:hover {
+            color: var(--color-accent);
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--color-border);
+            padding-top: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #444;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-family: var(--font-family);
+        }
+        
+        /* ============================================================
+           TOAST NOTIFICATIONS
+           ============================================================ */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 360px;
+            width: 100%;
+        }
+        .toast {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-card);
+            animation: slideIn 0.4s ease;
+            border-left: 3px solid var(--color-accent);
+            font-family: var(--font-family);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .toast.hide {
+            animation: slideOut 0.3s ease forwards;
+        }
+        @keyframes slideOut {
+            to { opacity: 0; transform: translateX(100%); }
+        }
+        
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .membership-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .membership-grid .membership-card:last-child {
+                grid-column: span 2;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            .masterclass {
+                grid-template-columns: 1fr;
+                padding: 40px 28px;
+            }
+            .creator-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .sticky-cta-mobile {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.8rem, 8vw, 2.8rem);
+            }
+            .hero {
+                padding: 120px 0 60px;
+            }
+            .hero-dashboard {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: clamp(1.6rem, 5vw, 2.2rem);
+            }
+            
+            .how-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .membership-grid {
+                grid-template-columns: 1fr;
+            }
+            .membership-grid .membership-card:last-child {
+                grid-column: span 1;
+                max-width: 100%;
+            }
+            
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            .countdown .unit {
+                padding: 8px 12px;
+                min-width: 50px;
+            }
+            .countdown .unit .num {
+                font-size: 1.4rem;
+            }
+            
+            .final-cta h2 {
+                font-size: clamp(1.8rem, 6vw, 2.4rem);
+            }
+            
+            .dashboard-preview {
+                grid-template-columns: 1fr;
+            }
+            .dashboard-sidebar {
+                display: none;
+            }
+            
+            .social-proof-inner {
+                gap: 30px;
+            }
+            
+            .masterclass {
+                padding: 28px 20px;
+            }
+            
+            .community-preview .preview-feed {
+                padding: 12px 16px;
+            }
+            
+            #backToTop {
+                bottom: 90px;
+                right: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .toast-container {
+                top: 80px;
+                right: 16px;
+                left: 16px;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: clamp(1.6rem, 7vw, 2.2rem);
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+            .section-title {
+                font-size: clamp(1.4rem, 4vw, 1.8rem);
+            }
+            .philosophy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .case-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .pricing-toggle {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .sticky-cta-mobile {
+                padding: 12px 16px;
+                gap: 8px;
+            }
+            .sticky-cta-mobile .btn-primary {
+                padding: 12px 16px;
+                font-size: 0.8rem;
+                min-height: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ===== SKIP LINK ===== -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- ===== TOAST CONTAINER ===== -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">THE <span>ASCEND</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="#philosophy">PHILOSOPHY</a></li>
+                <li><a href="#membership">MEMBERSHIP</a></li>
+                <li><a href="#masterclass">MASTERCLASS</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#footer">ABOUT</a></li>
+                <li><a href="#" class="btn-primary" id="joinNavBtn">JOIN FREE</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#membership">Membership</a>
+        <a href="#masterclass">Masterclass</a>
+        <a href="#faq">FAQ</a>
+        <a href="#footer">About</a>
+        <a href="#" class="btn-primary" id="joinMobileBtn">JOIN FREE</a>
+    </nav>
+    
+    <!-- ===== STICKY MOBILE CTA ===== -->
+    <div class="sticky-cta-mobile" id="stickyCta">
+        <a href="#" class="btn-primary" id="joinStickyBtn">JOIN FREE</a>
+    </div>
+    
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main id="main">
+        
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="hero">
+            <div class="container hero-content">
+                <span class="hero-badge">Community · 2025</span>
+                <h1>
+                    BUILD YOURSELF<br />
+                    INTO A <span class="highlight">MORE CAPABLE</span> PERSON.
+                </h1>
+                <p class="hero-sub">
+                    A private community for people who are serious about becoming stronger, 
+                    more disciplined, more financially capable and more purposeful.
+                </p>
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary" id="joinHeroBtn">JOIN THE FREE COMMUNITY</a>
+                    <a href="#how-it-works" class="btn-outline">SEE HOW IT WORKS</a>
+                </div>
+                
+                <!-- Dashboard Preview -->
+                <div class="hero-dashboard">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-sidebar">
+                            <div class="brand-small">THE ASCEND</div>
+                            <div class="nav-item active"><i class="fas fa-home"></i> Home</div>
+                            <div class="nav-item"><i class="fas fa-graduation-cap"></i> Learn</div>
+                            <div class="nav-item"><i class="fas fa-users"></i> Community</div>
+                            <div class="nav-item"><i class="fas fa-trophy"></i> Challenges</div>
+                            <div class="nav-item"><i class="fas fa-calendar"></i> Events</div>
+                            <div class="nav-item"><i class="fas fa-book"></i> Resources</div>
+                            <div class="nav-item"><i class="fas fa-chart-simple"></i> Progress</div>
+                        </div>
+                        <div class="dashboard-main">
+                            <div class="greeting">Your Development</div>
+                            <h3>Money · Mind · Body · Relationships · Purpose</h3>
+                            <div class="dashboard-cards">
+                                <div class="dash-card">
+                                    <div class="label">Money</div>
+                                    <div class="value">64%</div>
+                                    <div class="bar"><div class="fill" style="width:64%"></div></div>
+                                </div>
+                                <div class="dash-card">
+                                    <div class="label">Mind</div>
+                                    <div class="value">72%</div>
+                                    <div class="bar"><div class="fill" style="width:72%"></div></div>
+                                </div>
+                                <div class="dash-card">
+                                    <div class="label">Body</div>
+                                    <div class="value">58%</div>
+                                    <div class="bar"><div class="fill" style="width:58%"></div></div>
+                                </div>
+                                <div class="dash-card">
+                                    <div class="label">Relationships</div>
+                                    <div class="value">43%</div>
+                                    <div class="bar"><div class="fill" style="width:43%"></div></div>
+                                </div>
+                                <div class="dash-card">
+                                    <div class="label">Purpose</div>
+                                    <div class="value">51%</div>
+                                    <div class="bar"><div class="fill" style="width:51%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== SOCIAL PROOF ===== -->
+        <div class="social-proof">
+            <div class="container social-proof-inner">
+                <div class="social-proof-item">
+                    <div class="number">[MEMBER COUNT]</div>
+                    <div class="label">Community Members</div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="number">[COMMUNITY SIZE]</div>
+                    <div class="label">Active Builders</div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="number">5</div>
+                    <div class="label">Pillars of Development</div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="number">30+</div>
+                    <div class="label">Free Resources</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== PHILOSOPHY ===== -->
+        <section id="philosophy">
+            <div class="container section-center">
+                <span class="section-label">The Philosophy</span>
+                <h2 class="section-title">
+                    YOU DON'T NEED MORE <span class="highlight">MOTIVATION</span>.<br />
+                    YOU NEED A BETTER <span class="highlight">SYSTEM</span>.
+                </h2>
+                <p class="section-sub">
+                    The goal isn't to consume endless self-improvement content. 
+                    The goal is to build a life you respect.
+                </p>
+                
+                <div class="philosophy-grid">
+                    <div class="philosophy-card reveal">
+                        <div class="number">01</div>
+                        <h4>MONEY</h4>
+                        <p>Become financially literate and disciplined.</p>
+                    </div>
+                    <div class="philosophy-card reveal">
+                        <div class="number">02</div>
+                        <h4>MIND</h4>
+                        <p>Develop emotional strength and self-control.</p>
+                    </div>
+                    <div class="philosophy-card reveal">
+                        <div class="number">03</div>
+                        <h4>BODY</h4>
+                        <p>Build physical strength, health and discipline.</p>
+                    </div>
+                    <div class="philosophy-card reveal">
+                        <div class="number">04</div>
+                        <h4>RELATIONSHIPS</h4>
+                        <p>Develop better communication, standards and emotional maturity.</p>
+                    </div>
+                    <div class="philosophy-card reveal">
+                        <div class="number">05</div>
+                        <h4>PURPOSE</h4>
+                        <p>Build direction, skills, career and meaningful work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== HOW IT WORKS ===== -->
+        <section id="how-it-works" style="background:var(--color-bg-secondary);">
+            <div class="container section-center">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">
+                    LEARN · <span class="highlight">IMPLEMENT</span> · IMPROVE
+                </h2>
+                <p class="section-sub">
+                    You don't join to consume information. You join to actually do something with it.
+                </p>
+                
+                <div class="how-grid">
+                    <div class="how-step reveal">
+                        <div class="step-num">01</div>
+                        <h4>LEARN</h4>
+                        <p>Understand the principles.</p>
+                    </div>
+                    <div class="how-step reveal">
+                        <div class="step-num">02</div>
+                        <h4>IMPLEMENT</h4>
+                        <p>Turn knowledge into action.</p>
+                    </div>
+                    <div class="how-step reveal">
+                        <div class="step-num">03</div>
+                        <h4>IMPROVE</h4>
+                        <p>Measure your progress and keep going.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHAT MEMBERS GET ===== -->
+        <section>
+            <div class="container section-center">
+                <span class="section-label">What You Get</span>
+                <h2 class="section-title">
+                    MORE THAN <span class="highlight">CONTENT</span>.
+                </h2>
+                <p class="section-sub">
+                    An environment designed to help you actually improve.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <h4>COMMUNITY</h4>
+                        <p>Connect with people working on themselves.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h4>EDUCATION</h4>
+                        <p>Learn practical frameworks.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon"><i class="fas fa-trophy"></i></div>
+                        <h4>CHALLENGES</h4>
+                        <p>Turn knowledge into action.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon"><i class="fas fa-handshake"></i></div>
+                        <h4>ACCOUNTABILITY</h4>
+                        <p>Stay consistent.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon"><i class="fas fa-video"></i></div>
+                        <h4>LIVE SESSIONS</h4>
+                        <p>Learn directly through masterclasses.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="icon"><i class="fas fa-book-open"></i></div>
+                        <h4>RESOURCES</h4>
+                        <p>Access structured guides and tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== MEMBERSHIP TIERS ===== -->
+        <section id="membership" style="background:var(--color-bg-secondary);">
+            <div class="container section-center">
+                <span class="section-label">Membership</span>
+                <h2 class="section-title">
+                    CHOOSE YOUR <span class="highlight">PATH</span>
+                </h2>
+                <p class="section-sub">
+                    Start free. Upgrade when you're ready to go deeper.
+                </p>
+                
+                <!-- Pricing Toggle -->
+                <div class="pricing-toggle">
+                    <span>Monthly</span>
+                    <div class="switch" id="pricingSwitch" role="button" tabindex="0" aria-label="Toggle between monthly and yearly pricing">
+                        <div class="slider"></div>
+                    </div>
+                    <span>Yearly <span class="save">Save 20%</span></span>
+                </div>
+                
+                <div class="membership-grid">
+                    <!-- Tier 1: Free -->
+                    <div class="membership-card reveal">
+                        <span class="tier-label">Start Here</span>
+                        <div class="tier-name">FREE COMMUNITY</div>
+                        <div class="tier-price">$0 <small>/month</small></div>
+                        <p class="tier-desc">The foundation. Zero cost. Full community access.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Discord community access</li>
+                            <li><i class="fas fa-check"></i> Foundational education</li>
+                            <li><i class="fas fa-check"></i> Investing basics</li>
+                            <li><i class="fas fa-check"></i> Dating & relationships</li>
+                            <li><i class="fas fa-check"></i> Masculinity & mindset</li>
+                            <li><i class="fas fa-check"></i> Fitness fundamentals</li>
+                            <li><i class="fas fa-check"></i> Lifestyle resources</li>
+                            <li><i class="fas fa-check"></i> Business & purpose</li>
+                            <li><i class="fas fa-check"></i> Selected resources</li>
+                            <li><i class="fas fa-check"></i> Free masterclasses</li>
+                        </ul>
+                        <a href="#" class="btn-outline join-btn" data-tier="free">JOIN FREE</a>
+                    </div>
+                    
+                    <!-- Tier 2: Paid -->
+                    <div class="membership-card premium reveal">
+                        <span class="tier-label">For Serious Implementation</span>
+                        <div class="tier-name">INNER COMMUNITY</div>
+                        <div class="tier-price" id="paidPrice">$19 <small>/month</small></div>
+                        <p class="tier-desc">Deeper education, accountability and advanced resources.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Everything in Free</li>
+                            <li><i class="fas fa-check"></i> Deeper education</li>
+                            <li><i class="fas fa-check"></i> Detailed frameworks</li>
+                            <li><i class="fas fa-check"></i> Monthly challenges</li>
+                            <li><i class="fas fa-check"></i> Implementation guides</li>
+                            <li><i class="fas fa-check"></i> Accountability</li>
+                            <li><i class="fas fa-check"></i> Live sessions</li>
+                            <li><i class="fas fa-check"></i> Advanced resources</li>
+                            <li><i class="fas fa-check"></i> Deeper investing education</li>
+                            <li><i class="fas fa-check"></i> Member-only discussions</li>
+                        </ul>
+                        <a href="#" class="btn-primary join-btn" data-tier="paid">JOIN INNER COMMUNITY</a>
+                    </div>
+                    
+                    <!-- Tier 3: VIP -->
+                    <div class="membership-card reveal">
+                        <span class="badge-limited">Limited Seats</span>
+                        <span class="tier-label">Inner Circle</span>
+                        <div class="tier-name">VIP / INNER CIRCLE</div>
+                        <div class="tier-price" id="vipPrice">$199 <small>/month</small></div>
+                        <p class="tier-desc">Personal roadmap, direct access and private sessions.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Everything in Inner Community</li>
+                            <li><i class="fas fa-check"></i> Personal assessment</li>
+                            <li><i class="fas fa-check"></i> Personal development roadmap</li>
+                            <li><i class="fas fa-check"></i> Group accountability</li>
+                            <li><i class="fas fa-check"></i> Direct access to creator</li>
+                            <li><i class="fas fa-check"></i> Priority questions</li>
+                            <li><i class="fas fa-check"></i> Private sessions</li>
+                            <li><i class="fas fa-check"></i> Deeper feedback</li>
+                            <li><i class="fas fa-check"></i> Limited membership</li>
+                        </ul>
+                        <a href="#" class="btn-premium join-btn" data-tier="vip">APPLY FOR VIP</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== MASTERCLASS ===== -->
+        <section id="masterclass">
+            <div class="container">
+                <div class="masterclass">
+                    <div class="masterclass-info reveal">
+                        <span class="section-label">Free Masterclass</span>
+                        <h2 style="font-size:clamp(1.6rem, 3vw, 2.2rem); font-weight:900; line-height:1.1; letter-spacing:-0.02em;">
+                            HOW TO START INVESTING<br />
+                            WHEN YOU DON'T KNOW<br />
+                            WHERE TO START
+                        </h2>
+                        <p style="color:var(--color-text-secondary); margin:12px 0 8px;">
+                            A practical 30–45 minute introduction to investing, financial foundations, 
+                            risk and how to approach your first investment.
+                        </p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-calendar"></i> [AUGUST XX]</span>
+                            <span><i class="fas fa-clock"></i> [18:00]</span>
+                            <span><i class="fas fa-hourglass-half"></i> 30–45 MIN</span>
+                            <span><i class="fas fa-users"></i> <span id="rsvpCount">47</span> registered</span>
+                        </div>
+                        <div class="countdown" id="countdown">
+                            <div class="unit"><div class="num" id="days">00</div><div class="label">Days</div></div>
+                            <div class="unit"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
+                            <div class="unit"><div class="num" id="minutes">00</div><div class="label">Minutes</div></div>
+                            <div class="unit"><div class="num" id="seconds">00</div><div class="label">Seconds</div></div>
+                        </div>
+                        <a href="#" class="btn-primary" id="masterclassBtn">RESERVE YOUR SEAT</a>
+                    </div>
+                    <div class="masterclass-visual reveal" style="background:var(--color-bg-card); border-radius:var(--radius); padding:40px; text-align:center; border:1px solid var(--color-border);">
+                        <i class="fas fa-play-circle" style="font-size:4rem; color:var(--color-accent); opacity:0.3;"></i>
+                        <p style="color:var(--color-text-muted); margin-top:16px;">Masterclass Preview</p>
+                        <div style="width:100%; height:4px; background:#1A1A1A; border-radius:2px; margin-top:20px;">
+                            <div style="width:40%; height:100%; background:var(--color-accent); border-radius:2px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== CREATOR ===== -->
+        <section id="creator" style="background:var(--color-bg-secondary);">
+            <div class="container">
+                <div class="creator-grid">
+                    <div class="creator-image reveal">
+                        <div class="placeholder">
+                            <i class="fas fa-user"></i>
+                            <span>assets/creator.jpg</span>
+                        </div>
+                    </div>
+                    <div class="creator-info reveal">
+                        <span class="section-label">Founder</span>
+                        <h2 style="font-size:clamp(2rem, 4vw, 2.8rem); font-weight:900; line-height:1.1; letter-spacing:-0.02em;">
+                            I'M NOT TEACHING<br />
+                            FROM THE <span class="highlight">FINISH LINE</span>.
+                        </h2>
+                        <p style="font-size:1.2rem; font-weight:600; color:var(--color-accent); margin:4px 0 12px;">
+                            I'M BUILDING THIS TOO.
+                        </p>
+                        <p>
+                            I'm documenting the process of becoming more financially capable, 
+                            physically disciplined, emotionally grounded and purposeful — and 
+                            building a community for people who want to do the same.
+                        </p>
+                        <div class="creator-name">[YOUR NAME]</div>
+                        <div class="creator-title">Creator / Founder</div>
+                        <div class="creator-social">
+                            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                        </div>
+                        <a href="#" class="btn-outline" style="margin-top:16px; display:inline-block;">FOLLOW THE JOURNEY</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== CASE STUDY ===== -->
+        <section>
+            <div class="container section-center">
+                <span class="section-label">Live Case Study</span>
+                <h2 class="section-title">
+                    THE FIRST CASE STUDY:<br />
+                    <span class="highlight">ME.</span>
+                </h2>
+                <p class="section-sub">
+                    The principles inside this community are being applied in real life. 
+                    Here's the current progress.
+                </p>
+                
+                <div class="case-grid">
+                    <div class="case-card reveal">
+                        <div class="label">Money</div>
+                        <div class="value">[PROGRESS]</div>
+                        <div class="bar"><div class="fill" style="width:60%"></div></div>
+                    </div>
+                    <div class="case-card reveal">
+                        <div class="label">Body</div>
+                        <div class="value">[PROGRESS]</div>
+                        <div class="bar"><div class="fill" style="width:70%"></div></div>
+                    </div>
+                    <div class="case-card reveal">
+                        <div class="label">Mind</div>
+                        <div class="value">[PROGRESS]</div>
+                        <div class="bar"><div class="fill" style="width:65%"></div></div>
+                    </div>
+                    <div class="case-card reveal">
+                        <div class="label">Relationships</div>
+                        <div class="value">[PROGRESS]</div>
+                        <div class="bar"><div class="fill" style="width:45%"></div></div>
+                    </div>
+                    <div class="case-card reveal">
+                        <div class="label">Purpose</div>
+                        <div class="value">[PROGRESS]</div>
+                        <div class="bar"><div class="fill" style="width:55%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== COMMUNITY PREVIEW ===== -->
+        <section style="background:var(--color-bg-secondary);">
+            <div class="container section-center">
+                <span class="section-label">Community</span>
+                <h2 class="section-title">
+                    WHAT IT <span class="highlight">FEELS</span> LIKE
+                </h2>
+                <p class="section-sub">
+                    A real community where people are actually building.
+                </p>
+                
+                <div class="community-preview reveal">
+                    <div class="preview-header">
+                        <span class="channel"><i class="fas fa-hashtag"></i> wins</span>
+                        <span style="font-size:0.7rem; color:#444;">Live · 24 members</span>
+                    </div>
+                    <div class="preview-feed">
+                        <div class="preview-post">
+                            <span class="author">Marcus</span>
+                            <span class="time">· 2h ago</span>
+                            <div>Started investing my first R1,000 this month.</div>
+                        </div>
+                        <div class="preview-post">
+                            <span class="author">Jordan</span>
+                            <span class="time">· 4h ago</span>
+                            <div>Completed my first 30-day challenge.</div>
+                        </div>
+                        <div class="preview-post">
+                            <span class="author">Alex</span>
+                            <span class="time">· 6h ago</span>
+                            <div>Finally launched the business I've been planning.</div>
+                        </div>
+                        <div class="preview-post">
+                            <span class="author">Sam</span>
+                            <span class="time">· 8h ago</span>
+                            <div>Finished my first book in months.</div>
+                        </div>
+                        <div class="preview-post">
+                            <span class="author">Chris</span>
+                            <span class="time">· 12h ago</span>
+                            <div>Had the conversation I'd been avoiding.</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="color:#444; font-size:0.75rem; margin-top:12px;">
+                    Example UI content — not real testimonials.
+                </p>
+            </div>
+        </section>
+        
+        <!-- ===== WHY JOIN ===== -->
+        <section>
+            <div class="container section-center">
+                <span class="section-label">The Decision</span>
+                <h2 class="section-title">
+                    WHAT HAPPENS IF YOU <span class="highlight">ACTUALLY COMMIT</span>?
+                </h2>
+                
+                <div class="why-grid">
+                    <div class="why-col reveal">
+                        <h4 style="color:var(--color-accent);">IF YOU JOIN</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Learn what actually works</li>
+                            <li><i class="fas fa-check"></i> Build real capability</li>
+                            <li><i class="fas fa-check"></i> Train your mind and body</li>
+                            <li><i class="fas fa-check"></i> Invest in your future</li>
+                            <li><i class="fas fa-check"></i> Reflect and improve</li>
+                            <li><i class="fas fa-check"></i> Connect with serious people</li>
+                            <li><i class="fas fa-check"></i> Become more capable</li>
+                        </ul>
+                    </div>
+                    <div class="why-col danger reveal">
+                        <h4 style="color:var(--color-text-muted);">IF YOU DON'T</h4>
+                        <ul>
+                            <li><i class="fas fa-minus"></i> Continue consuming without a system</li>
+                            <li><i class="fas fa-minus"></i> Stay where you are</li>
+                            <li><i class="fas fa-minus"></i> Wonder "what if"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== FAQ ===== -->
+        <section id="faq" style="background:var(--color-bg-secondary);">
+            <div class="container section-center">
+                <span class="section-label">Questions</span>
+                <h2 class="section-title">
+                    FREQUENTLY ASKED <span class="highlight">QUESTIONS</span>
+                </h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item open">
+                        <div class="question">
+                            WHAT IS THIS?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">A personal-development ecosystem for people who want to build themselves into more capable individuals across money, mind, body, relationships and purpose.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            WHO IS IT FOR?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">Primarily men aged 18-40 who are serious about personal development. Women are welcome and the platform is inclusive while maintaining its masculine identity.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            DO I NEED EXPERIENCE?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">Not at all. The community is designed for beginners to advanced practitioners. Everyone starts somewhere.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            IS IT ONLY FOR MEN?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">No. While the primary audience is men, women are welcome and have found value in the community.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            WHAT DO I GET FOR FREE?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">Community access, foundational education, investing basics, dating & relationships content, masculinity & mindset resources, fitness fundamentals, and community discussions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            WHAT DO I GET WITH THE PAID COMMUNITY?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">Everything in Free plus deeper courses, detailed frameworks, monthly challenges, implementation guides, live sessions, accountability, advanced resources, and member-only discussions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            WHAT IS VIP?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">A limited-access tier with personal assessment, personal development roadmap, group accountability, direct access to the creator, priority questions, private sessions, and deeper feedback.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            WHERE DOES THE COMMUNITY ACTUALLY LIVE?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">The community itself is hosted on Discord. This website is the front door and information hub.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">
+                            IS THIS FINANCIAL ADVICE?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="answer">No. Investing content is educational and is not individualized financial advice or a guarantee of returns.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== FINAL CTA ===== -->
+        <section class="final-cta">
+            <div class="container">
+                <h2>
+                    STOP <span class="highlight">WATCHING</span>.<br />
+                    START <span class="highlight">BUILDING</span>.
+                </h2>
+                <p>You don't need to have everything figured out. You need to start.</p>
+                <a href="#" class="btn-primary" style="font-size:1.1rem; padding:18px 48px;" id="finalCtaBtn">JOIN THE FREE COMMUNITY</a>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">THE <span>ASCEND</span></div>
+                    <p>Build yourself into a more capable person.</p>
+                    <div class="footer-social">
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="#membership">Membership</a>
+                    <a href="#masterclass">Masterclass</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h5>About</h5>
+                    <a href="#creator">Creator</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="#">TikTok</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">X</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 THE ASCEND. All rights reserved.</span>
+                <span>Disclaimer: Educational content only. Not financial advice.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // CONFIGURATION — EDIT THESE VALUES
+        // ============================================================
+        const CONFIG = {
+            // Countdown date (YYYY-MM-DDTHH:MM:SS)
+            masterclassDate: '2025-08-30T18:00:00',
+            
+            // Discord invite links
+            discordFree: '#',      // Replace with your free Discord invite
+            discordPaid: '#',      // Replace with your paid membership link
+            vipApplication: '#',   // Replace with your VIP application link
+            masterclassRegister: '#', // Replace with masterclass registration link
+            
+            // Social links
+            social: {
+                tiktok: '#',
+                instagram: '#',
+                youtube: '#',
+                x: '#'
+            },
+            
+            // Pricing
+            pricing: {
+                paidMonthly: 19,
+                paidYearly: 182, // 19 * 12 * 0.8 (20% off)
+                vipMonthly: 199,
+                vipYearly: 1910 // 199 * 12 * 0.8
+            }
+        };
+        
+        // ============================================================
+        // TOAST SYSTEM
+        // ============================================================
+        const toastContainer = document.getElementById('toastContainer');
+        
+        function showToast(message, duration = 4000) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('hide');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+        
+        // ============================================================
+        // HEADER SCROLL
+        // ============================================================
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // ============================================================
+        // BACK TO TOP
+        // ============================================================
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // ============================================================
+        // MOBILE MENU
+        // ============================================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            overlay.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('open')) toggleMenu();
+            });
+        });
+        
+        // ============================================================
+        // FAQ ACCORDION
+        // ============================================================
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+        
+        // ============================================================
+        // COUNTDOWN TIMER
+        // ============================================================
+        function updateCountdown() {
+            const target = new Date(CONFIG.masterclassDate).getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // ============================================================
+        // SCROLL REVEAL (Intersection Observer)
+        // ============================================================
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // ============================================================
+        // ANIMATE PROGRESS BARS
+        // ============================================================
+        const progressBars = document.querySelectorAll('.dash-card .bar .fill, .case-card .bar .fill');
+        
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const width = bar.style.width;
+                    bar.style.transition = 'none';
+                    bar.style.width = '0%';
+                    requestAnimationFrame(() => {
+                        bar.style.transition = 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+                        bar.style.width = width;
+                    });
+                    barObserver.unobserve(bar);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        progressBars.forEach(bar => {
+            const width = bar.getAttribute('style')?.match(/width:([^;]+)/)?.[1] || '0%';
+            bar.dataset.originalWidth = width;
+            bar.style.width = '0%';
+            barObserver.observe(bar);
+        });
+        
+        // ============================================================
+        // PRICING TOGGLE
+        // ============================================================
+        const pricingSwitch = document.getElementById('pricingSwitch');
+        const paidPrice = document.getElementById('paidPrice');
+        const vipPrice = document.getElementById('vipPrice');
+        let isYearly = false;
+        
+        pricingSwitch.addEventListener('click', () => {
+            isYearly = !isYearly;
+            pricingSwitch.classList.toggle('active', isYearly);
+            
+            if (isYearly) {
+                paidPrice.innerHTML = `$${CONFIG.pricing.paidYearly} <small>/year</small>`;
+                vipPrice.innerHTML = `$${CONFIG.pricing.vipYearly} <small>/year</small>`;
+            } else {
+                paidPrice.innerHTML = `$${CONFIG.pricing.paidMonthly} <small>/month</small>`;
+                vipPrice.innerHTML = `$${CONFIG.pricing.vipMonthly} <small>/month</small>`;
+            }
+        });
+        
+        pricingSwitch.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                pricingSwitch.click();
+            }
+        });
+        
+        // ============================================================
+        // JOIN BUTTONS
+        // ============================================================
+        document.querySelectorAll('.join-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tier = btn.dataset.tier;
+                const messages = {
+                    free: '✨ Redirecting you to the free Discord community...',
+                    paid: '🔒 Redirecting to the Inner Community payment page...',
+                    vip: '👑 Redirecting to the VIP application...'
+                };
+                showToast(messages[tier] || 'Redirecting...');
+            });
+        });
+        
+        // ============================================================
+        // MASTERCLASS RSVP
+        // ============================================================
+        document.getElementById('masterclassBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            const rsvpCount = document.getElementById('rsvpCount');
+            const current = parseInt(rsvpCount.textContent);
+            rsvpCount.textContent = current + 1;
+            showToast('🎯 Seat reserved! Check your email for confirmation.');
+        });
+        
+        // ============================================================
+        // ALL JOIN CTAs
+        // ============================================================
+        const joinButtons = [
+            'joinNavBtn', 'joinMobileBtn', 'joinStickyBtn', 'joinHeroBtn', 'finalCtaBtn'
+        ];
+        
+        joinButtons.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showToast('✨ Redirecting to the free Discord community...');
+                });
+            }
+        });
+        
+        // ============================================================
+        // SMOOTH SCROLL
+        // ============================================================
+        document.querySelectorAll('a[href^="#"]:not(.join-btn)').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // ============================================================
+        // EXIT-INTENT
+        // ============================================================
+        let exitIntentShown = false;
+        
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !exitIntentShown) {
+                exitIntentShown = true;
+                showToast('👋 Wait! Join the free community before you go.', 6000);
+            }
+        });
+        
+        // ============================================================
+        // LOG
+        // ============================================================
+        console.log('=== THE ASCEND — EDIT THESE ===');
+        console.log('1. Font: Uncomment your preferred font in the <head>');
+        console.log('2. Brand name: Change "THE ASCEND"');
+        console.log('3. Prices: Edit CONFIG.pricing');
+        console.log('4. Discord links: Edit CONFIG');
+        console.log('5. Masterclass date: Edit CONFIG.masterclassDate');
+        console.log('6. Social links: Edit CONFIG.social');
+        console.log('7. Creator image: Replace assets/creator.jpg');
+        console.log('================================');
+    </script>
+</body>
+</html>
