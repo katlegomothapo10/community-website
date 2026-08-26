@@ -1035,25 +1035,25 @@
         }
         
         /* ============================================================
-           COMMUNITY — CENTRALIZED TICK POINTS
+           COMMUNITY — FULLY CENTRALIZED FOR ALL DEVICES
            ============================================================ */
         #community {
             background: var(--color-bg);
             border-top: 1px solid var(--color-border);
             border-bottom: 1px solid var(--color-border);
         }
-        .community-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin-top: 40px;
-            text-align: center;
+        .community-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
         }
         .community-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
+            margin-top: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .community-features .item {
             display: flex;
@@ -1082,7 +1082,11 @@
             transition: transform var(--transition);
         }
         .community-features .item:hover i { transform: scale(1.1); }
-        .community-visual .img-placeholder { aspect-ratio: 4/3; min-height: 220px; }
+        .community-visual {
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+        .community-visual .img-placeholder { aspect-ratio: 4/3; min-height: 200px; }
         
         /* ============================================================
            FREE MASTERCLASS — COMING SOON
@@ -1769,11 +1773,10 @@
             .comparison-table { overflow-x: auto; }
             .culture-grid { grid-template-columns: 1fr 1fr 1fr; }
             .problem-grid { grid-template-columns: 1fr; gap: 40px; }
-            .community-grid { grid-template-columns: 1fr; gap: 40px; }
-            .community-features { grid-template-columns: 1fr 1fr; }
             .plans-grid { grid-template-columns: 1fr 1fr; }
             .whofor-grid { grid-template-columns: 1fr; }
             .masterclass-wrapper { padding: 40px 24px; }
+            .community-features { max-width: 600px; }
         }
         
         @media (max-width: 768px) {
@@ -1792,8 +1795,6 @@
             .grid-3 { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
             .philosophy-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
             .plans-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
-            .community-grid { grid-template-columns: 1fr; gap: 30px; }
-            .community-features { grid-template-columns: 1fr; }
             
             .membership-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
             .membership-grid .membership-card:last-child { grid-column: span 1; max-width: 100%; }
@@ -1812,6 +1813,18 @@
             .masterclass-wrapper { padding: 32px 20px; }
             .masterclass-wrapper h3 { font-size: 1.4rem; }
             .masterclass-meta { gap: 16px; }
+            
+            /* COMMUNITY — Fully Centered on Mobile */
+            .community-features {
+                grid-template-columns: 1fr 1fr;
+                max-width: 100%;
+                gap: 10px;
+            }
+            .community-features .item {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+            .community-visual { max-width: 100%; }
             
             #backToTop { bottom: 20px; right: 16px; width: 40px; height: 40px; font-size: 0.9rem; }
             .toast-container { top: 80px; right: 16px; left: 16px; max-width: 100%; }
@@ -1854,6 +1867,17 @@
             .hero-video .play-btn i { font-size: 1.2rem; }
             .masterclass-wrapper { padding: 24px 16px; }
             .masterclass-wrapper h3 { font-size: 1.2rem; }
+            
+            /* COMMUNITY — Single Column on Small Mobile */
+            .community-features {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                gap: 8px;
+            }
+            .community-features .item {
+                font-size: 0.85rem;
+                padding: 10px 14px;
+            }
         }
     </style>
 </head>
@@ -2155,33 +2179,32 @@
             </div>
         </section>
         
-        <!-- ===== COMMUNITY — CENTERED TICK POINTS ===== -->
+        <!-- ===== COMMUNITY — FULLY CENTRALIZED ===== -->
         <section id="community">
             <div class="container">
-                <span class="section-label">The Community</span>
-                <h2 class="section-title">
-                    THE BUILD HAPPENS <span class="highlight">TOGETHER</span>.
-                </h2>
-                <span class="display-tag">"Iron sharpens iron."</span>
-                <p class="section-sub">
-                    Inside The Iron, members learn, discuss, ask questions, share lessons, 
-                    track progress and hold each other accountable.
-                </p>
-                
-                <div class="community-grid">
-                    <div>
-                        <div class="community-features">
-                            <div class="item"><i class="fas fa-check"></i> Learn from structured content</div>
-                            <div class="item"><i class="fas fa-check"></i> Discuss in member forums</div>
-                            <div class="item"><i class="fas fa-check"></i> Ask questions and get feedback</div>
-                            <div class="item"><i class="fas fa-check"></i> Share lessons and wins</div>
-                            <div class="item"><i class="fas fa-check"></i> Track your progress</div>
-                            <div class="item"><i class="fas fa-check"></i> Take part in challenges</div>
-                            <div class="item"><i class="fas fa-check"></i> Attend live sessions</div>
-                            <div class="item"><i class="fas fa-check"></i> Join masterclasses</div>
-                            <div class="item"><i class="fas fa-check"></i> Build real relationships</div>
-                        </div>
+                <div class="community-wrapper">
+                    <span class="section-label">The Community</span>
+                    <h2 class="section-title">
+                        THE BUILD HAPPENS <span class="highlight">TOGETHER</span>.
+                    </h2>
+                    <span class="display-tag">"Iron sharpens iron."</span>
+                    <p class="section-sub">
+                        Inside The Iron, members learn, discuss, ask questions, share lessons, 
+                        track progress and hold each other accountable.
+                    </p>
+                    
+                    <div class="community-features">
+                        <div class="item"><i class="fas fa-check"></i> Learn from structured content</div>
+                        <div class="item"><i class="fas fa-check"></i> Discuss in member forums</div>
+                        <div class="item"><i class="fas fa-check"></i> Ask questions and get feedback</div>
+                        <div class="item"><i class="fas fa-check"></i> Share lessons and wins</div>
+                        <div class="item"><i class="fas fa-check"></i> Track your progress</div>
+                        <div class="item"><i class="fas fa-check"></i> Take part in challenges</div>
+                        <div class="item"><i class="fas fa-check"></i> Attend live sessions</div>
+                        <div class="item"><i class="fas fa-check"></i> Join masterclasses</div>
+                        <div class="item"><i class="fas fa-check"></i> Build real relationships</div>
                     </div>
+                    
                     <div class="community-visual">
                         <div class="img-placeholder animate-glow">
                             <div class="icon"><i class="fas fa-users"></i></div>
@@ -2895,3 +2918,4 @@
     </script>
 </body>
 </html>
+        
