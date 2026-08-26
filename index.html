@@ -6,19 +6,14 @@
     <title>THE IRON · Iron sharpens iron.</title>
     
     <!-- ===== SEO ===== -->
-    <meta name="description" content="The Iron is a private community for people who want to become more capable, disciplined, grounded and self-respecting. Iron sharpens iron." />
+    <meta name="description" content="The Iron is a private community for men who want to become more capable, disciplined, grounded and self-respecting. Iron sharpens iron." />
     <meta name="theme-color" content="#0A0A0F" />
     
     <!-- ===== PREMIUM FONTS ===== -->
-    <!-- Primary: Plus Jakarta Sans — clean, modern, versatile -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    
-    <!-- Display: Cormorant Garamond — elegant, timeless, literary -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
-    
-    <!-- Bold: Bebas Neue — strong, impactful, modern -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
     
     <!-- ===== FONT AWESOME ===== -->
@@ -26,7 +21,7 @@
     
     <style>
         /* ============================================================
-           CSS VARIABLES — THE IRON PALETTE
+           CSS VARIABLES
            ============================================================ */
         :root {
             --color-bg: #0A0A0F;
@@ -39,11 +34,9 @@
             --color-gold-light: #E8C87A;
             --color-gold-dark: #B8923E;
             --color-gold-glow: rgba(212, 168, 83, 0.08);
-            --color-gold-glow-strong: rgba(212, 168, 83, 0.15);
             
             --color-iron: #6A6A7A;
             --color-iron-light: #8A8A9A;
-            --color-iron-dark: #4A4A5A;
             
             --color-text: #F0EDE8;
             --color-text-secondary: #A8A4A0;
@@ -59,53 +52,31 @@
             --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.4);
             --shadow-hover: 0 12px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 168, 83, 0.03);
             
-            /* ===== NEW FONT SYSTEM ===== */
-            --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-primary: 'Plus Jakarta Sans', -apple-system, sans-serif;
             --font-display: 'Cormorant Garamond', serif;
             --font-bold: 'Bebas Neue', sans-serif;
             
             --radius: 6px;
             --radius-lg: 12px;
             --radius-xl: 20px;
-            
             --transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
         /* ============================================================
-           TYPOGRAPHY — New Font System
+           TYPOGRAPHY
            ============================================================ */
-        /* Bebas Neue — for bold headlines */
-        h1, .h1 { 
-            font-family: var(--font-bold); 
-            font-weight: 400; 
-            letter-spacing: 0.02em; 
-            text-transform: uppercase; 
-            line-height: 1.05;
-        }
-        h2, .h2 { 
-            font-family: var(--font-bold); 
-            font-weight: 400; 
-            letter-spacing: 0.02em; 
-            text-transform: uppercase; 
-            line-height: 1.08;
-        }
-        
-        /* Plus Jakarta Sans — for body, navigation, buttons */
+        h1, .h1 { font-family: var(--font-bold); font-weight: 400; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.05; }
+        h2, .h2 { font-family: var(--font-bold); font-weight: 400; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.08; }
         h3, .h3 { font-family: var(--font-primary); font-weight: 700; letter-spacing: -0.01em; }
         h4, .h4 { font-family: var(--font-primary); font-weight: 700; }
         .body { font-family: var(--font-primary); font-weight: 400; line-height: 1.7; }
         .body-medium { font-family: var(--font-primary); font-weight: 500; }
         .label { font-family: var(--font-primary); font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.7rem; }
         
-        /* Cormorant Garamond — for elegance, verses, display text */
         .display { font-family: var(--font-display); font-weight: 700; }
         .display-italic { font-family: var(--font-display); font-weight: 700; font-style: italic; }
-        .display-600 { font-family: var(--font-display); font-weight: 600; }
-        .display-600-italic { font-family: var(--font-display); font-weight: 600; font-style: italic; }
-        
         .text-gold { color: var(--color-gold); }
         .text-gold-light { color: var(--color-gold-light); }
-        .text-iron { color: var(--color-iron); }
         
         /* ============================================================
            ANIMATIONS
@@ -134,22 +105,12 @@
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
-        @keyframes borderPulse {
-            0%, 100% { border-color: rgba(212, 168, 83, 0.05); }
-            50% { border-color: rgba(212, 168, 83, 0.12); }
-        }
-        @keyframes forgeGlow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 168, 83, 0.05)); }
-            50% { filter: drop-shadow(0 0 30px rgba(212, 168, 83, 0.12)); }
-        }
         
         .animate-fade-up { animation: fadeInUp 0.8s ease forwards; }
         .animate-fade-down { animation: fadeInDown 0.6s ease forwards; }
         .animate-scale { animation: fadeInScale 0.7s ease forwards; }
         .animate-float { animation: float 4s ease-in-out infinite; }
         .animate-glow { animation: glowPulse 3s ease-in-out infinite; }
-        .animate-border { animation: borderPulse 3s ease-in-out infinite; }
-        .animate-forge { animation: forgeGlow 4s ease-in-out infinite; }
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
@@ -176,31 +137,24 @@
         ::selection { background: var(--color-gold); color: var(--color-text-inverse); }
         
         /* ============================================================
-           PREMIUM BACKGROUND
+           BACKGROUND
            ============================================================ */
         #premium-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
         }
         #premium-bg canvas {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             height: 100%;
         }
         .bg-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: 
                 radial-gradient(ellipse at 20% 30%, rgba(212, 168, 83, 0.02) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 70%, rgba(106, 106, 122, 0.02) 0%, transparent 50%),
@@ -225,10 +179,7 @@
         
         .corner-accents {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             pointer-events: none;
             z-index: 0;
         }
@@ -246,7 +197,7 @@
         .corner-accents .corner.br { bottom: 24px; right: 24px; border-bottom-width: 1px; border-right-width: 1px; }
         
         /* ============================================================
-           CONTAINER
+           CONTAINER — CENTRALIZED
            ============================================================ */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
         
@@ -267,6 +218,7 @@
             justify-content: center;
             flex-direction: column;
             color: var(--color-text-muted);
+            text-align: center;
         }
         .img-placeholder:hover {
             border-color: var(--color-border-hover);
@@ -290,10 +242,7 @@
         }
         .img-placeholder .shimmer {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.01), transparent);
             background-size: 200% 100%;
             animation: shimmer 4s ease-in-out infinite;
@@ -318,7 +267,7 @@
         }
         
         /* ============================================================
-           BUTTONS
+           BUTTONS — CENTRALIZED
            ============================================================ */
         .btn-primary, .btn-accent, .btn-outline, .btn-premium {
             display: inline-block;
@@ -346,10 +295,8 @@
         .btn-primary::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
             transform: rotate(45deg) translateX(-100%);
             transition: transform 0.8s;
@@ -369,10 +316,8 @@
         .btn-accent::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
             transform: rotate(45deg) translateX(-100%);
             transition: transform 0.8s;
@@ -413,9 +358,7 @@
            ============================================================ */
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 16px 0;
             transition: all var(--transition);
@@ -584,8 +527,7 @@
            ============================================================ */
         #scroll-progress {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             height: 3px;
             background: var(--gradient-gold);
             z-index: 1001;
@@ -594,12 +536,14 @@
         }
         
         /* ============================================================
-           HERO
+           HERO — CENTRALIZED
            ============================================================ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             position: relative;
             overflow: hidden;
             padding: 120px 0 60px;
@@ -608,10 +552,7 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: 
                 linear-gradient(rgba(212, 168, 83, 0.015) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(212, 168, 83, 0.015) 1px, transparent 1px);
@@ -621,10 +562,8 @@
         .hero::after {
             content: '';
             position: absolute;
-            top: -30%;
-            right: -20%;
-            width: 60%;
-            height: 120%;
+            top: -30%; right: -20%;
+            width: 60%; height: 120%;
             background: radial-gradient(ellipse, rgba(212, 168, 83, 0.03) 0%, transparent 70%);
             pointer-events: none;
         }
@@ -633,6 +572,7 @@
             z-index: 1;
             max-width: 820px;
             color: var(--color-text);
+            margin: 0 auto;
         }
         .hero-badge {
             display: inline-block;
@@ -688,8 +628,8 @@
         .hero-sub {
             font-size: 1.15rem;
             color: var(--color-text-secondary);
-            max-width: 540px;
-            margin-bottom: 32px;
+            max-width: 600px;
+            margin: 0 auto 32px;
             font-weight: 400;
             animation: fadeInUp 0.8s ease 0.3s both;
             line-height: 1.7;
@@ -698,30 +638,18 @@
         .hero-actions {
             display: flex;
             gap: 16px;
+            justify-content: center;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease 0.4s both;
         }
-        .hero-actions .btn-accent {
-            background: var(--color-gold);
-            color: var(--color-text-inverse);
-        }
-        .hero-actions .btn-accent:hover {
-            background: var(--color-gold-light);
-            box-shadow: 0 8px 40px rgba(212, 168, 83, 0.15);
-        }
-        .hero-actions .btn-outline {
-            border-color: rgba(255,255,255,0.06);
-            color: var(--color-text);
-        }
-        .hero-actions .btn-outline:hover {
-            border-color: var(--color-gold);
-            color: var(--color-gold);
-        }
         
+        /* Hero Video */
         .hero-video {
             margin-top: 50px;
             width: 100%;
             max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: var(--radius-xl);
             overflow: hidden;
             background: var(--color-bg-card);
@@ -740,8 +668,7 @@
         }
         .hero-video .play-btn {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             width: 80px;
             height: 80px;
@@ -767,8 +694,7 @@
             margin-left: 4px;
         }
         .hero-video .placeholder-content {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -776,17 +702,13 @@
             color: var(--color-text-muted);
         }
         .hero-video .placeholder-content img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
             opacity: 0.3;
         }
         .hero-video .shimmer {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.01), transparent);
             background-size: 200% 100%;
             animation: shimmer 4s ease-in-out infinite;
@@ -810,15 +732,16 @@
             z-index: 2;
         }
         
+        /* Hero Stats */
         .hero-stats {
             display: flex;
             gap: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.02);
             animation: fadeInUp 0.8s ease 0.7s both;
-            justify-content: center;
-            flex-wrap: wrap;
         }
         .hero-stats .stat {
             text-align: center;
@@ -846,7 +769,7 @@
         }
         
         /* ============================================================
-           SECTION COMMON
+           SECTION COMMON — CENTRALIZED
            ============================================================ */
         section { padding: 80px 0; position: relative; text-align: center; }
         .section-label {
@@ -878,18 +801,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .section-title .accent { color: var(--color-gold); }
-        .section-title .display-highlight {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-style: italic;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: none;
-            letter-spacing: 0.02em;
-        }
         .section-sub {
             font-size: 1.05rem;
             color: var(--color-text-secondary);
@@ -899,7 +810,6 @@
             line-height: 1.7;
             font-weight: 400;
         }
-        
         .display-tag {
             font-family: var(--font-display);
             font-style: italic;
@@ -911,24 +821,15 @@
             opacity: 0.7;
             letter-spacing: 0.02em;
         }
-        .verse-tag {
-            font-family: var(--font-display);
-            font-style: italic;
-            font-size: 0.9rem;
-            color: var(--color-text-muted);
-            display: block;
-            margin-bottom: 12px;
-            opacity: 0.4;
-        }
         
         /* ============================================================
-           GRIDS
+           GRIDS — CENTRALIZED
            ============================================================ */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
         
         /* ============================================================
-           PROBLEM — Women Inclusive
+           PROBLEM — CENTRALIZED
            ============================================================ */
         #problem {
             background: var(--color-bg-secondary);
@@ -969,9 +870,10 @@
             transition: transform var(--transition);
         }
         .problem-list .item:hover i { transform: scale(1.1); }
+        .problem-visual .img-placeholder { aspect-ratio: 4/3; min-height: 200px; }
         
         /* ============================================================
-           PHILOSOPHY — Women Inclusive
+           PHILOSOPHY — CENTRALIZED
            ============================================================ */
         #philosophy {
             background: var(--color-bg);
@@ -1005,13 +907,6 @@
             opacity: 0.06;
             margin-bottom: 8px;
         }
-        .philosophy-card h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            font-family: var(--font-primary);
-            color: var(--color-text);
-        }
         .philosophy-card .display-tag {
             font-family: var(--font-display);
             font-size: 0.9rem;
@@ -1020,6 +915,13 @@
             color: var(--color-gold);
             display: block;
             margin-bottom: 4px;
+        }
+        .philosophy-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: var(--font-primary);
+            color: var(--color-text);
         }
         .philosophy-card p {
             font-size: 0.9rem;
@@ -1030,7 +932,7 @@
         }
         
         /* ============================================================
-           PLANS — Women Inclusive
+           PLANS — CENTRALIZED
            ============================================================ */
         #plans {
             background: var(--color-bg-secondary);
@@ -1088,18 +990,13 @@
         }
         .plan-card .plan-img .shimmer {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.01), transparent);
             background-size: 200% 100%;
             animation: shimmer 4s ease-in-out infinite;
             pointer-events: none;
         }
-        .plan-card .plan-content {
-            padding: 20px 20px 24px;
-        }
+        .plan-card .plan-content { padding: 20px 20px 24px; }
         .plan-card .plan-number {
             font-size: 0.5rem;
             font-weight: 600;
@@ -1138,7 +1035,7 @@
         }
         
         /* ============================================================
-           COMMUNITY — Women Inclusive
+           COMMUNITY — CENTRALIZED
            ============================================================ */
         #community {
             background: var(--color-bg);
@@ -1183,9 +1080,10 @@
             transition: transform var(--transition);
         }
         .community-features .item:hover i { transform: scale(1.1); }
+        .community-visual .img-placeholder { aspect-ratio: 4/3; min-height: 220px; }
         
         /* ============================================================
-           MEMBERSHIP — Women Inclusive
+           MEMBERSHIP — CENTRALIZED
            ============================================================ */
         #membership {
             background: var(--color-bg-secondary);
@@ -1342,6 +1240,7 @@
             font-family: var(--font-primary);
         }
         
+        /* Comparison Table */
         .comparison-table {
             margin-top: 50px;
             border: 1px solid var(--color-border);
@@ -1383,7 +1282,7 @@
         .comparison-table tr:hover td { background: rgba(212, 168, 83, 0.01); }
         
         /* ============================================================
-           MASTERCLASSES — Women Inclusive
+           MASTERCLASSES — CENTRALIZED
            ============================================================ */
         #masterclasses {
             background: var(--color-bg);
@@ -1431,13 +1330,6 @@
             margin-bottom: 6px;
             font-family: var(--font-primary);
         }
-        .masterclass-card h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            font-family: var(--font-primary);
-            color: var(--color-text);
-        }
         .masterclass-card .display-tag {
             font-family: var(--font-display);
             font-size: 0.8rem;
@@ -1447,6 +1339,13 @@
             display: block;
             margin-bottom: 4px;
             opacity: 0.6;
+        }
+        .masterclass-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: var(--font-primary);
+            color: var(--color-text);
         }
         .masterclass-card p {
             font-size: 0.85rem;
@@ -1464,7 +1363,7 @@
         .masterclass-card .meta i { margin-right: 4px; }
         
         /* ============================================================
-           CULTURE — Women Inclusive
+           CULTURE — CENTRALIZED
            ============================================================ */
         #culture {
             background: var(--color-bg-secondary);
@@ -1506,7 +1405,7 @@
         .culture-item:hover i { transform: scale(1.1); }
         
         /* ============================================================
-           WHO IT'S FOR — Women Inclusive
+           WHO IT'S FOR — CENTRALIZED (Men-Focused, Women Welcome)
            ============================================================ */
         #whofor {
             background: var(--color-bg);
@@ -1569,7 +1468,7 @@
         .whofor-col.not ul li:hover i { color: var(--color-text-muted); }
         
         /* ============================================================
-           FAQ — Women Inclusive
+           FAQ — CENTRALIZED
            ============================================================ */
         #faq {
             background: var(--color-bg-secondary);
@@ -1614,7 +1513,7 @@
         .faq-item.open .question i { transform: rotate(180deg); }
         
         /* ============================================================
-           FINAL CTA — Women Inclusive
+           FINAL CTA — CENTRALIZED
            ============================================================ */
         .final-cta {
             text-align: center;
@@ -1626,10 +1525,7 @@
         .final-cta::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: 
                 linear-gradient(rgba(212, 168, 83, 0.015) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(212, 168, 83, 0.015) 1px, transparent 1px);
@@ -1639,10 +1535,8 @@
         .final-cta::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: radial-gradient(circle at center, rgba(212, 168, 83, 0.02) 0%, transparent 60%);
             pointer-events: none;
         }
@@ -1730,7 +1624,7 @@
         }
         
         /* ============================================================
-           FOOTER — Women Inclusive
+           FOOTER
            ============================================================ */
         .footer {
             padding: 50px 0 32px;
@@ -1892,16 +1786,15 @@
             .hero-video .play-btn i { font-size: 1.4rem; }
             
             .grid-2 { grid-template-columns: 1fr; }
-            .grid-3 { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
-            .philosophy-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
-            .plans-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
+            .grid-3 { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+            .philosophy-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+            .plans-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
             .community-grid { grid-template-columns: 1fr; gap: 30px; }
             .community-features { grid-template-columns: 1fr; }
             
-            .membership-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
+            .membership-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
             .membership-grid .membership-card:last-child { grid-column: span 1; max-width: 100%; }
             .membership-card.paid { transform: scale(1); }
-            .membership-card.paid:hover { transform: translateY(-4px); }
             
             .culture-grid { grid-template-columns: 1fr 1fr; }
             .whofor-grid { grid-template-columns: 1fr; }
@@ -1909,7 +1802,7 @@
             .footer-brand p { max-width: 100%; }
             .footer-social { justify-content: center; }
             .problem-list { grid-template-columns: 1fr; }
-            .masterclass-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
+            .masterclass-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
             
             .final-cta h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
             .final-cta .verse-line { font-size: 1.2rem; }
@@ -1963,7 +1856,7 @@
     <div id="premium-bg">
         <canvas id="bgCanvas"></canvas>
         <div class="bg-overlay"></div>
-        <div class="bg-verse">"Iron sharpens iron,<br />so one person sharpens another."<br />— Proverbs 27:17</div>
+        <div class="bg-verse">"Iron sharpens iron,<br />so one man sharpens another."<br />— Proverbs 27:17</div>
     </div>
     
     <!-- ===== CORNER ACCENTS ===== -->
@@ -2023,7 +1916,7 @@
     </button>
     
     <!-- ============================================================
-    MAIN CONTENT
+    MAIN CONTENT — Fully Centralized
     ============================================================ -->
     <main>
         
@@ -2037,10 +1930,10 @@
                 </h1>
                 <div class="hero-verse">
                     "Iron sharpens iron,
-                    <small>so one person sharpens another."<br />— Proverbs 27:17</small>
+                    <small>so one man sharpens another."<br />— Proverbs 27:17</small>
                 </div>
                 <p class="hero-sub">
-                    The Iron is a private community for people who want to become more capable, 
+                    The Iron is a private community for men who want to become more capable, 
                     disciplined, grounded and self-respecting. Iron sharpens iron.
                 </p>
                 <div class="hero-actions">
@@ -2090,7 +1983,7 @@
                     A LIFE DOESN'T <span class="highlight">BUILD ITSELF</span>.
                 </h2>
                 <p class="section-sub">
-                    Many people know they want more from life — but lack the structure, direction, 
+                    Many men know they want more from life — but lack the structure, direction, 
                     discipline and environment to actually build it.
                 </p>
                 
@@ -2107,7 +2000,7 @@
                             <div class="item"><i class="fas fa-check"></i> Feeling isolated</div>
                         </div>
                     </div>
-                    <div>
+                    <div class="problem-visual">
                         <div class="img-placeholder animate-glow">
                             <div class="icon"><i class="fas fa-anvil"></i></div>
                             <div class="label">problem-visual.jpg</div>
@@ -2162,7 +2055,7 @@
                 <h2 class="section-title">
                     SIX PILLARS OF <span class="highlight">DEVELOPMENT</span>
                 </h2>
-                <span class="display-tag">"Build the whole person."</span>
+                <span class="display-tag">"Build the whole man."</span>
                 <p class="section-sub">
                     A complete framework for building a life you respect — across every dimension.
                 </p>
@@ -2192,7 +2085,7 @@
                             <span class="plan-number">PLAN 02</span>
                             <h4>CHARACTER</h4>
                             <div class="sub">Become someone you respect.</div>
-                            <p>Integrity, responsibility, courage, leadership, standards and self-respect.</p>
+                            <p>Integrity, responsibility, courage, masculinity, leadership, standards and self-respect.</p>
                         </div>
                     </div>
                     
@@ -2220,7 +2113,7 @@
                             <span class="plan-number">PLAN 04</span>
                             <h4>RELATIONSHIPS</h4>
                             <div class="sub">Learn to relate well.</div>
-                            <p>Dating, communication, boundaries, emotional maturity, friendship, partnership and healthy relationships.</p>
+                            <p>Dating, communication, boundaries, emotional maturity, friendship, marriage and healthy relationships.</p>
                         </div>
                     </div>
                     
@@ -2282,7 +2175,7 @@
                             <div class="item"><i class="fas fa-check"></i> Build real relationships</div>
                         </div>
                     </div>
-                    <div>
+                    <div class="community-visual">
                         <div class="img-placeholder animate-glow">
                             <div class="icon"><i class="fas fa-users"></i></div>
                             <div class="label">community-dashboard.jpg</div>
@@ -2467,17 +2360,17 @@
                     <div class="masterclass-card reveal delay-4">
                         <div class="icon"><i class="fas fa-shield-halved"></i></div>
                         <span class="tag">Workshop</span>
-                        <span class="display-tag">✦ Healthy Identity ✦</span>
-                        <h4>Healthy Identity</h4>
-                        <p>Understand what it means to be a grounded, capable person.</p>
+                        <span class="display-tag">✦ Healthy Masculinity ✦</span>
+                        <h4>Healthy Masculinity</h4>
+                        <p>Understand what it means to be a grounded, capable man.</p>
                         <div class="meta"><i class="fas fa-clock"></i> 40 min · Free for members</div>
                     </div>
                     
                     <div class="masterclass-card reveal delay-5">
                         <div class="icon"><i class="fas fa-heart"></i></div>
                         <span class="tag">Workshop</span>
-                        <span class="display-tag">✦ Relationships with Respect ✦</span>
-                        <h4>Relationships With Self-Respect</h4>
+                        <span class="display-tag">✦ Dating with Respect ✦</span>
+                        <h4>Dating With Self-Respect</h4>
                         <p>Build healthy, respectful relationships with clear standards.</p>
                         <div class="meta"><i class="fas fa-clock"></i> 35 min · Free for members</div>
                     </div>
@@ -2512,6 +2405,7 @@
                     <div class="culture-item"><i class="fas fa-check"></i> Challenge ideas, not people</div>
                     <div class="culture-item"><i class="fas fa-check"></i> Keep your word</div>
                     <div class="culture-item"><i class="fas fa-check"></i> Don't pretend to be an expert</div>
+                    <div class="culture-item"><i class="fas fa-check"></i> No misogyny</div>
                     <div class="culture-item"><i class="fas fa-check"></i> No harassment</div>
                     <div class="culture-item"><i class="fas fa-check"></i> No scams</div>
                     <div class="culture-item"><i class="fas fa-check"></i> No unnecessary flexing</div>
@@ -2525,7 +2419,7 @@
             <div class="container">
                 <span class="section-label">Who It's For</span>
                 <h2 class="section-title">
-                    THIS IS FOR PEOPLE WHO <span class="highlight">WANT TO BUILD</span>.
+                    THIS IS FOR MEN WHO <span class="highlight">WANT TO BUILD</span>.
                 </h2>
                 <span class="display-tag">"If this is you, welcome."</span>
                 
@@ -2533,26 +2427,26 @@
                     <div class="whofor-col reveal delay-1">
                         <h4><i class="fas fa-check" style="color:var(--color-gold);"></i> FOR</h4>
                         <ul>
-                            <li><i class="fas fa-check"></i> People who want to become more disciplined</li>
-                            <li><i class="fas fa-check"></i> People who want to build stronger character</li>
-                            <li><i class="fas fa-check"></i> People who want to improve their relationships</li>
-                            <li><i class="fas fa-check"></i> People who want to become financially capable</li>
-                            <li><i class="fas fa-check"></i> People who want to develop emotional maturity</li>
-                            <li><i class="fas fa-check"></i> People who want to build physical discipline</li>
-                            <li><i class="fas fa-check"></i> People who want to find greater direction</li>
-                            <li><i class="fas fa-check"></i> People who want to surround themselves with people who take growth seriously</li>
+                            <li><i class="fas fa-check"></i> Men who want to become more disciplined</li>
+                            <li><i class="fas fa-check"></i> Men who want to build stronger character</li>
+                            <li><i class="fas fa-check"></i> Men who want to improve their relationships</li>
+                            <li><i class="fas fa-check"></i> Men who want to become financially capable</li>
+                            <li><i class="fas fa-check"></i> Men who want to develop emotional maturity</li>
+                            <li><i class="fas fa-check"></i> Men who want to build physical discipline</li>
+                            <li><i class="fas fa-check"></i> Men who want to find greater direction</li>
+                            <li><i class="fas fa-check"></i> Men who want to surround themselves with men who take growth seriously</li>
                         </ul>
                     </div>
                     <div class="whofor-col not reveal delay-2">
                         <h4><i class="fas fa-times" style="color:var(--color-text-muted);"></i> NOT FOR</h4>
                         <ul>
-                            <li><i class="fas fa-times"></i> People looking for quick fixes</li>
-                            <li><i class="fas fa-times"></i> People looking for get-rich-quick schemes</li>
-                            <li><i class="fas fa-times"></i> People looking for performative theatrics</li>
-                            <li><i class="fas fa-times"></i> People looking to blame others</li>
-                            <li><i class="fas fa-times"></i> People looking to blame society</li>
-                            <li><i class="fas fa-times"></i> People looking for constant motivation without action</li>
-                            <li><i class="fas fa-times"></i> People looking for a place to perform for attention</li>
+                            <li><i class="fas fa-times"></i> Men looking for quick fixes</li>
+                            <li><i class="fas fa-times"></i> Men looking for get-rich-quick schemes</li>
+                            <li><i class="fas fa-times"></i> Men looking for "alpha male" theatrics</li>
+                            <li><i class="fas fa-times"></i> Men looking to blame women</li>
+                            <li><i class="fas fa-times"></i> Men looking to blame society</li>
+                            <li><i class="fas fa-times"></i> Men looking for constant motivation without action</li>
+                            <li><i class="fas fa-times"></i> Men looking for a place to perform masculinity for attention</li>
                         </ul>
                     </div>
                 </div>
@@ -2574,35 +2468,35 @@
                             WHAT IS THE IRON?
                             <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="answer">The Iron is a private community for people who want to become more capable, disciplined, grounded and self-respecting. It's a framework, an environment and a community for building a life you respect. "Iron sharpens iron."</div>
+                        <div class="answer">The Iron is a private community for men who want to become more capable, disciplined, grounded and self-respecting. It's a framework, an environment and a community for building a life you respect. "Iron sharpens iron."</div>
                     </div>
                     <div class="faq-item">
                         <div class="question">
                             WHO IS THE IRON FOR?
                             <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="answer">People approximately 18-40 who want greater discipline, direction, character, relationships, financial capability and purpose. Students, professionals, entrepreneurs, creators — anyone who wants to build.</div>
+                        <div class="answer">Men approximately 18-40 who want greater discipline, direction, character, relationships, financial capability and purpose. Students, professionals, entrepreneurs, creators — any man who wants to build.</div>
                     </div>
                     <div class="faq-item">
                         <div class="question">
                             DO I NEED TO HAVE LIFE FIGURED OUT?
                             <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="answer">Not at all. The Iron is for people who are works in progress. You don't need to have everything figured out — you need to be willing to build.</div>
+                        <div class="answer">Not at all. The Iron is for men who are works in progress. You don't need to have everything figured out — you need to be willing to build.</div>
                     </div>
                     <div class="faq-item">
                         <div class="question">
                             IS THIS ONLY FOR MEN?
                             <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="answer">No. While The Iron's content and community are structured around masculine development, women are welcome and have found value in the community. The focus is on becoming a more capable person.</div>
+                        <div class="answer">The Iron is primarily designed for men, with content and community structured around masculine development. Women are welcome and have found value in the community, but the focus is on men's growth.</div>
                     </div>
                     <div class="faq-item">
                         <div class="question">
                             WHAT DOES "IRON SHARPENS IRON" MEAN?
                             <i class="fas fa-chevron-down"></i>
                         </div>
-                        <div class="answer">It's from Proverbs 27:17 — "Iron sharpens iron, so one person sharpens another." It means people grow best in community with others who challenge, encourage and hold them accountable.</div>
+                        <div class="answer">It's from Proverbs 27:17 — "Iron sharpens iron, so one man sharpens another." It means men grow best in community with other men who challenge, encourage and hold them accountable.</div>
                     </div>
                     <div class="faq-item">
                         <div class="question">
@@ -2644,11 +2538,11 @@
                 </h2>
                 <div class="verse-line">
                     "Iron sharpens iron."
-                    <small>so one person sharpens another. — Proverbs 27:17</small>
+                    <small>so one man sharpens another. — Proverbs 27:17</small>
                 </div>
                 <p>
                     You don't need to have everything figured out. You need a foundation. 
-                    You need a direction. You need standards. You need people to sharpen you.
+                    You need a direction. You need standards. You need men to sharpen you.
                 </p>
                 
                 <div class="img-placeholder animate-glow">
@@ -2673,7 +2567,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">THE <span>IRON</span></div>
-                    <p>Build a life you respect. A private community for people building better lives.</p>
+                    <p>Build a life you respect. A private community for men building better lives.</p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                     <div class="footer-social">
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
