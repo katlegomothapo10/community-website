@@ -8,7 +8,6 @@
     <meta name="description" content="Learn to relate well. The Relationships Plan covers dating, communication, boundaries, emotional maturity, friendship, marriage and healthy relationships." />
     <meta name="theme-color" content="#0A0A0F" />
     
-    <!-- ===== FONTS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,237 +15,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
     
-    <!-- ===== BACKGROUND ===== -->
-    <div id="premium-bg">
-        <canvas id="bgCanvas"></canvas>
-        <div class="bg-overlay"></div>
-        <div class="bg-verse">"Iron sharpens iron." — Proverbs 27:17</div>
-    </div>
-    
-    <div class="corner-accents">
-        <div class="corner tl"></div>
-        <div class="corner tr"></div>
-        <div class="corner bl"></div>
-        <div class="corner br"></div>
-    </div>
-    
-    <div id="cursor-glow"></div>
-    <div id="scroll-progress"></div>
-    <div class="toast-container" id="toastContainer"></div>
-    
-    <!-- ===== HEADER ===== -->
-    <header class="header" id="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo animate-fade-down">
-                THE <span>IRON</span>
-                <small>IRON SHARPENS IRON</small>
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="index.html#plans">PLANS</a></li>
-                <li><a href="index.html#membership">MEMBERSHIP</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
-                <li><a href="#" class="btn-primary" id="joinNavBtn">ENTER</a></li>
-            </ul>
-            
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-    
-    <div class="overlay" id="overlay"></div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <a href="about.html">ABOUT</a>
-        <a href="index.html#plans">PLANS</a>
-        <a href="index.html#membership">MEMBERSHIP</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
-    </nav>
-    
-    <button id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
-    <main>
+    <style>
+        /* ===== Same styles as plan-mind.html ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; background: #0A0A0F; color: #F0EDE8; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        ::selection { background: #D4A853; color: #0A0A0F; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
-        <!-- ===== PLAN HERO ===== -->
-        <section class="page-hero plan-hero">
-            <div class="container page-hero-content">
-                <span class="hero-badge">PLAN 04</span>
-                <h1>
-                    LEARN TO <span class="highlight">RELATE WELL</span>
-                </h1>
-                <div class="hero-verse" style="font-size:1.2rem; color:var(--color-gold-light);">
-                    "The quality of your relationships determines the quality of your life."
-                </div>
-                <p class="hero-sub" style="max-width:600px;">
-                    Dating, communication, boundaries, emotional maturity, friendship, marriage and healthy relationships. Build connections that last.
-                </p>
-                <div class="hero-actions">
-                    <a href="index.html#membership" class="btn-accent">START BUILDING</a>
-                    <a href="index.html#plans" class="btn-outline">VIEW ALL PLANS</a>
-                </div>
-            </div>
-        </section>
+        .btn-primary { display: inline-block; background: #D4A853; color: #0A0A0F; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 14px 32px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; min-height: 48px; text-align: center; }
+        .btn-primary:hover { background: #E8C87A; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212, 168, 83, 0.15); }
+        .btn-outline { display: inline-block; background: transparent; color: #F0EDE8; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.75rem; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; min-height: 48px; text-align: center; }
+        .btn-outline:hover { border-color: #D4A853; color: #D4A853; transform: translateY(-2px); }
+        .btn-accent { display: inline-block; background: #D4A853; color: #0A0A0F; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 14px 32px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; min-height: 48px; text-align: center; }
+        .btn-accent:hover { background: #E8C87A; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212, 168, 83, 0.15); }
         
-        <!-- ===== WHAT YOU'LL LEARN ===== -->
-        <section class="learn-section">
-            <div class="container">
-                <span class="section-label">What You'll Learn</span>
-                <h2 class="section-title">
-                    BUILD RELATIONSHIPS <span class="highlight">THAT LAST</span>
-                </h2>
-                
-                <div class="learn-grid">
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-heart"></i></div>
-                        <h4>Dating</h4>
-                        <p>Learn how to date with self-respect. Build attraction, confidence and authentic connection.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-comments"></i></div>
-                        <h4>Communication</h4>
-                        <p>Master the art of clear, honest communication. Say what you mean and mean what you say.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-border-all"></i></div>
-                        <h4>Boundaries</h4>
-                        <p>Set and maintain healthy boundaries. Protect your time, energy and self-respect.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-brain"></i></div>
-                        <h4>Emotional Maturity</h4>
-                        <p>Develop the emotional intelligence to navigate relationships with wisdom and grace.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-handshake"></i></div>
-                        <h4>Friendship</h4>
-                        <p>Build deep, meaningful friendships with other men. Find your tribe.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-ring"></i></div>
-                        <h4>Marriage</h4>
-                        <p>Build a marriage that lasts. Learn what it takes to be a husband she respects and admires.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: all 0.3s ease; background: transparent; }
+        .header.scrolled { background: rgba(10, 10, 15, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .logo { font-size: 1.4rem; font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #F0EDE8; line-height: 1; }
+        .logo span { background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo small { font-size: 0.45rem; font-weight: 400; color: #6A6662; letter-spacing: 0.12em; display: block; margin-top: 2px; text-transform: uppercase; font-family: 'Plus Jakarta Sans', sans-serif; }
         
-        <!-- ===== WHY IT MATTERS ===== -->
-        <section class="why-matters" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
-            <div class="container">
-                <span class="section-label">Why It Matters</span>
-                <h2 class="section-title">
-                    YOU CAN'T BUILD A LIFE <span class="highlight">ALONE</span>
-                </h2>
-                
-                <div class="why-grid-single">
-                    <div class="why-text">
-                        <p>
-                            No man is an island. The quality of your relationships determines the quality of your life. Your partner, your friends, your family — these are the people who will be there when it matters.
-                        </p>
-                        <p>
-                            The Relationships Plan teaches you how to communicate, set boundaries, and build connections that actually last. It's about becoming a man people want to be around — someone who adds value to every relationship.
-                        </p>
-                        <p>
-                            Stop settling for shallow connections. Start building relationships that matter.
-                        </p>
-                    </div>
-                    <div class="why-image">
-                        <div class="img-placeholder animate-glow">
-                            <div class="icon"><i class="fas fa-heart"></i></div>
-                            <div class="label">relationships-matters.jpg</div>
-                            <div class="shimmer"></div>
-                            <div class="tag">❤️ Relationships</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .nav-links { display: none; align-items: center; gap: 28px; list-style: none; }
+        .nav-links > li > a { font-size: 0.7rem; font-weight: 600; color: #A8A4A0; transition: color 0.3s ease; letter-spacing: 0.06em; position: relative; font-family: 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; cursor: pointer; }
+        .nav-links > li > a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #D4A853; transition: width 0.3s ease; }
+        .nav-links > li > a:hover { color: #F0EDE8; }
+        .nav-links > li > a:hover::after { width: 100%; }
+        .nav-links .btn-primary { padding: 8px 20px; font-size: 0.6rem; min-height: 36px; }
         
-        <!-- ===== TESTIMONIAL ===== -->
-        <section class="testimonial-section">
-            <div class="container">
-                <div class="testimonial-card">
-                    <span class="display-tag" style="font-size:1.8rem;">"</span>
-                    <p>
-                        I had no idea how much I was sabotaging my relationships. The Relationships Plan opened my eyes. I communicate better, I actually listen, and my marriage has never been stronger.
-                    </p>
-                    <div class="author">— Michael, 34</div>
-                </div>
-            </div>
-        </section>
+        .dropdown { position: relative; }
+        .dropdown > a { display: flex; align-items: center; gap: 4px; }
+        .dropdown > a i { font-size: 0.5rem; transition: transform 0.3s ease; }
+        .dropdown:hover > a i { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: #181820; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(20px); box-shadow: 0 20px 60px rgba(0,0,0,0.6); margin-top: 8px; }
+        .dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: #181820; border-top: 1px solid rgba(255,255,255,0.06); border-left: 1px solid rgba(255,255,255,0.06); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: 0.7rem; font-weight: 500; color: #A8A4A0; transition: all 0.3s ease; font-family: 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; text-align: left; border-left: 2px solid transparent; }
+        .dropdown-menu a:hover { color: #F0EDE8; background: rgba(212, 168, 83, 0.04); border-left-color: #D4A853; }
         
-        <!-- ===== CTA ===== -->
-        <section class="final-cta" style="padding:60px 0;">
-            <div class="container">
-                <h2 style="font-size:clamp(2rem, 4vw, 2.8rem);">
-                    START BUILDING YOUR <span class="highlight">RELATIONSHIPS</span> TODAY
-                </h2>
-                <p style="max-width:480px; margin:0 auto 24px;">
-                    Join The Iron and get access to all six plans, including the Relationships Plan.
-                </p>
-                <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
-                <div class="closing" style="margin-top:16px;">
-                    <strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.
-                </div>
-            </div>
-        </section>
+        .hamburger { display: flex !important; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; z-index: 1001; }
+        .hamburger span { display: block; width: 26px; height: 2px; background: #F0EDE8; transition: all 0.3s ease; border-radius: 2px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         
-    </main>
-    
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">THE <span>IRON</span></div>
-                    <p>Build a life you respect. A private community for men building better lives.</p>
-                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
-                    <div class="footer-social">
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h5>Community</h5>
-                    <a href="index.html#membership">Membership</a>
-                    <a href="index.html#faq">FAQ</a>
-                </div>
-                <div class="footer-col">
-                    <h5>About</h5>
-                    <a href="about.html">About</a>
-                    <a href="index.html#plans">The Plans</a>
-                    <a href="index.html#whofor">Who It's For</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Connect</h5>
-                    <a href="#">Contact</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Disclaimer</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2025 THE IRON. All rights reserved.</span>
-                <span>Plan your life. Build accordingly.</span>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="js/main.js"></script>
-</body>
-</html>
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 380px; height: 100vh; background: #0A0A0F; backdrop-filter: blur(20px); padding: 100px 32px 32px; transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1); z-index: 999; border-left: 1px solid rgba(255,255,255,0.04); overflow-y: auto; }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { display: block; padding: 16px 0; font-size: 1.1rem; font-weight: 500; color: #A8A4A0; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.3s ease; font-family: 'Plus Jakarta Sans', sans-serif; text-align: center; }
+        .mobile-menu a:hover { color: #F0EDE8; }
+        .mobile-menu .btn-primary { margin-top: 24px; text-align: center; width: 100%; }
+        
+        .mobile-dropdown-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: none; border: none; color: #A8A4A0; font-size: 1.1rem; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 16px 0; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.3s ease; }
+        .mobile-dropdown-btn:hover { color: #F0EDE8; }
+        .mobile-dropdown-btn i { font-size: 0.6rem; transition: transform 0.3s ease; }
+        .mobile-dropdown-btn.open i { transform: rotate(180deg); }
+        .mobile-sub-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .mobile-sub-menu.open { max-height: 500px; }
+        .mobile-sub-menu a { padding: 10px 0 10px 24px; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.02); text-align: left; padding-left: 32px; }
+        .mobile-sub-menu a:last-child { border-bottom: none; }
+        
+        .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 998; backdrop-filter: blur(4px); opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+        .overlay.open { opacity: 1; visibility: visible; }
+        
+        .section-breaker { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.06), transparent); margin: 0 auto; max-width: 1200px; }
+        
+        section { padding: 80px 0; text-align: center; }
+        .section-label { display: inline-block; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D4A853; margin-bottom: 12px; font-family: 'Plus Jakarta Sans', sans-serif; border: 1px solid rgba(212, 168, 83, 0.04); padding: 2px 14px; border-radius: 2px; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.08; margin-bottom: 12px; color: #F0EDE8; }
+        .section-title .highlight { background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-sub { font-size: 1rem; color: #A8A4A0; max-width: 600px; margin: 0 auto 40px; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.7; font-weight: 400; }
+        
+        .page-hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 0 60px; background: linear-gradient(160deg, #0A0A0F 0%, #14141E 40%, #1A1A2E 100%); position: relative; }
+        .page-hero::before { content: ''; position: absolute; top: -30%; right: -20%; width: 60%; height: 120%; background: radial-gradient(ellipse, rgba(212, 168, 83, 0.03) 0%, transparent 70%); pointer-events: none; }
+        .page-hero-content { position: relative; z-index: 1; max-width: 820px; }
+        .hero-badge { display: inline-block; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D4A853; border: 1px solid rgba(212, 168, 83, 0.06); padding: 4px 16px; border-radius: 2px; margin-bottom: 24px; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .page-hero h1 { font-size: clamp(2.8rem, 8vw, 4rem); font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; text-transform: uppercase; line
