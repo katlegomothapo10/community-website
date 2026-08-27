@@ -156,7 +156,7 @@ if (cursorGlow) {
     });
     
     document.addEventListener('mouseover', (e) => {
-        if (e.target.closest('a, button, .btn-primary, .btn-accent, .btn-outline, .btn-premium, .philosophy-card, .plan-card, .membership-card, .img-placeholder, .hero-video')) {
+        if (e.target.closest('a, button, .btn-primary, .btn-accent, .btn-outline, .btn-premium, .philosophy-card, .pillar-card, .membership-card, .img-placeholder, .hero-video')) {
             cursorGlow.classList.add('active');
         } else {
             cursorGlow.classList.remove('active');
