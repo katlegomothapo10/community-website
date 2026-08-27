@@ -8,7 +8,6 @@
     <meta name="description" content="Become someone you respect. The Character Plan covers integrity, responsibility, courage, masculinity, leadership, standards and self-respect." />
     <meta name="theme-color" content="#0A0A0F" />
     
-    <!-- ===== FONTS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,83 +15,202 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    
+    <style>
+        /* ===== Same styles as plan-mind.html ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; background: #0A0A0F; color: #F0EDE8; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        ::selection { background: #D4A853; color: #0A0A0F; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        .btn-primary { display: inline-block; background: #D4A853; color: #0A0A0F; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 14px 32px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; min-height: 48px; text-align: center; }
+        .btn-primary:hover { background: #E8C87A; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212, 168, 83, 0.15); }
+        .btn-outline { display: inline-block; background: transparent; color: #F0EDE8; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.75rem; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; min-height: 48px; text-align: center; }
+        .btn-outline:hover { border-color: #D4A853; color: #D4A853; transform: translateY(-2px); }
+        .btn-accent { display: inline-block; background: #D4A853; color: #0A0A0F; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.75rem; padding: 14px 32px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; min-height: 48px; text-align: center; }
+        .btn-accent:hover { background: #E8C87A; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212, 168, 83, 0.15); }
+        
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: all 0.3s ease; background: transparent; }
+        .header.scrolled { background: rgba(10, 10, 15, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .logo { font-size: 1.4rem; font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; color: #F0EDE8; line-height: 1; }
+        .logo span { background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo small { font-size: 0.45rem; font-weight: 400; color: #6A6662; letter-spacing: 0.12em; display: block; margin-top: 2px; text-transform: uppercase; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .nav-links { display: none; align-items: center; gap: 28px; list-style: none; }
+        .nav-links > li > a { font-size: 0.7rem; font-weight: 600; color: #A8A4A0; transition: color 0.3s ease; letter-spacing: 0.06em; position: relative; font-family: 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; cursor: pointer; }
+        .nav-links > li > a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #D4A853; transition: width 0.3s ease; }
+        .nav-links > li > a:hover { color: #F0EDE8; }
+        .nav-links > li > a:hover::after { width: 100%; }
+        .nav-links .btn-primary { padding: 8px 20px; font-size: 0.6rem; min-height: 36px; }
+        
+        .dropdown { position: relative; }
+        .dropdown > a { display: flex; align-items: center; gap: 4px; }
+        .dropdown > a i { font-size: 0.5rem; transition: transform 0.3s ease; }
+        .dropdown:hover > a i { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: #181820; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 0; min-width: 200px; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(20px); box-shadow: 0 20px 60px rgba(0,0,0,0.6); margin-top: 8px; }
+        .dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: #181820; border-top: 1px solid rgba(255,255,255,0.06); border-left: 1px solid rgba(255,255,255,0.06); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: 0.7rem; font-weight: 500; color: #A8A4A0; transition: all 0.3s ease; font-family: 'Plus Jakarta Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; text-align: left; border-left: 2px solid transparent; }
+        .dropdown-menu a:hover { color: #F0EDE8; background: rgba(212, 168, 83, 0.04); border-left-color: #D4A853; }
+        
+        .hamburger { display: flex !important; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; z-index: 1001; }
+        .hamburger span { display: block; width: 26px; height: 2px; background: #F0EDE8; transition: all 0.3s ease; border-radius: 2px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 380px; height: 100vh; background: #0A0A0F; backdrop-filter: blur(20px); padding: 100px 32px 32px; transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1); z-index: 999; border-left: 1px solid rgba(255,255,255,0.04); overflow-y: auto; }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { display: block; padding: 16px 0; font-size: 1.1rem; font-weight: 500; color: #A8A4A0; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.3s ease; font-family: 'Plus Jakarta Sans', sans-serif; text-align: center; }
+        .mobile-menu a:hover { color: #F0EDE8; }
+        .mobile-menu .btn-primary { margin-top: 24px; text-align: center; width: 100%; }
+        
+        .mobile-dropdown-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: none; border: none; color: #A8A4A0; font-size: 1.1rem; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; padding: 16px 0; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.3s ease; }
+        .mobile-dropdown-btn:hover { color: #F0EDE8; }
+        .mobile-dropdown-btn i { font-size: 0.6rem; transition: transform 0.3s ease; }
+        .mobile-dropdown-btn.open i { transform: rotate(180deg); }
+        .mobile-sub-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .mobile-sub-menu.open { max-height: 500px; }
+        .mobile-sub-menu a { padding: 10px 0 10px 24px; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.02); text-align: left; padding-left: 32px; }
+        .mobile-sub-menu a:last-child { border-bottom: none; }
+        
+        .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 998; backdrop-filter: blur(4px); opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+        .overlay.open { opacity: 1; visibility: visible; }
+        
+        .section-breaker { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.06), transparent); margin: 0 auto; max-width: 1200px; }
+        
+        section { padding: 80px 0; text-align: center; }
+        .section-label { display: inline-block; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D4A853; margin-bottom: 12px; font-family: 'Plus Jakarta Sans', sans-serif; border: 1px solid rgba(212, 168, 83, 0.04); padding: 2px 14px; border-radius: 2px; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.08; margin-bottom: 12px; color: #F0EDE8; }
+        .section-title .highlight { background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-sub { font-size: 1rem; color: #A8A4A0; max-width: 600px; margin: 0 auto 40px; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.7; font-weight: 400; }
+        
+        .page-hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 0 60px; background: linear-gradient(160deg, #0A0A0F 0%, #14141E 40%, #1A1A2E 100%); position: relative; }
+        .page-hero::before { content: ''; position: absolute; top: -30%; right: -20%; width: 60%; height: 120%; background: radial-gradient(ellipse, rgba(212, 168, 83, 0.03) 0%, transparent 70%); pointer-events: none; }
+        .page-hero-content { position: relative; z-index: 1; max-width: 820px; }
+        .hero-badge { display: inline-block; font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D4A853; border: 1px solid rgba(212, 168, 83, 0.06); padding: 4px 16px; border-radius: 2px; margin-bottom: 24px; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .page-hero h1 { font-size: clamp(2.8rem, 8vw, 4rem); font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.02; margin-bottom: 8px; }
+        .page-hero h1 .highlight { background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-verse { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; font-weight: 700; color: #E8C87A; margin-bottom: 12px; opacity: 0.8; letter-spacing: 0.02em; }
+        .hero-sub { font-size: 1.05rem; color: #A8A4A0; max-width: 600px; margin: 0 auto 28px; font-weight: 400; line-height: 1.7; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        
+        .learn-section { background: #12121A; }
+        .learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+        .learn-card { background: #181820; padding: 24px 20px; border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; text-align: center; transition: all 0.3s ease; }
+        .learn-card:hover { border-color: rgba(212, 168, 83, 0.08); transform: translateY(-4px); }
+        .learn-card .icon { font-size: 2rem; color: #D4A853; margin-bottom: 8px; }
+        .learn-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; font-family: 'Plus Jakarta Sans', sans-serif; color: #F0EDE8; }
+        .learn-card p { font-size: 0.85rem; font-weight: 400; color: #A8A4A0; line-height: 1.6; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .why-matters { background: #0A0A0F; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .why-grid-single { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 40px; text-align: left; }
+        .why-text p { font-size: 1rem; color: #A8A4A0; line-height: 1.8; margin-bottom: 16px; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .why-image .img-placeholder { aspect-ratio: 4/3; min-height: 200px; background: #181820; border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #6A6662; font-size: 0.7rem; font-family: 'Plus Jakarta Sans', sans-serif; flex-direction: column; gap: 6px; position: relative; overflow: hidden; }
+        .why-image .img-placeholder .icon { font-size: 2.5rem; color: #D4A853; opacity: 0.06; }
+        .why-image .img-placeholder .label { font-size: 0.65rem; color: #6A6662; opacity: 0.4; }
+        .why-image .img-placeholder .tag { position: absolute; top: 12px; left: 12px; font-size: 0.55rem; font-weight: 600; color: #D4A853; background: rgba(0,0,0,0.6); padding: 4px 12px; border-radius: 4px; border: 1px solid rgba(212, 168, 83, 0.08); font-family: 'Plus Jakarta Sans', sans-serif; }
+        .why-image .img-placeholder .shimmer { position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent); animation: shimmer 4s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
+        
+        .testimonial-section { background: #12121A; padding: 60px 0; }
+        .testimonial-card { max-width: 700px; margin: 0 auto; padding: 40px; background: #181820; border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; text-align: center; }
+        .testimonial-card .display-tag { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #D4A853; opacity: 0.3; display: block; line-height: 1; }
+        .testimonial-card p { font-size: 1.1rem; font-style: italic; color: #F0EDE8; line-height: 1.8; font-family: 'Plus Jakarta Sans', sans-serif; margin: 8px 0 16px; }
+        .testimonial-card .author { font-size: 0.85rem; color: #A8A4A0; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .final-cta { text-align: center; padding: 80px 0; background: linear-gradient(160deg, #0A0A0F 0%, #14141E 40%, #1A1A2E 100%); }
+        .final-cta h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 400; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.05; margin-bottom: 8px; color: #F0EDE8; }
+        .final-cta h2 .highlight { font-family: 'Cormorant Garamond', serif; font-weight: 900; font-style: italic; background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: none; }
+        .final-cta p { color: #A8A4A0; max-width: 480px; margin: 0 auto 28px; font-size: 1rem; font-weight: 400; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .final-cta .closing { margin-top: 24px; font-size: 0.7rem; color: #6A6662; opacity: 0.3; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .final-cta .closing strong { color: #A8A4A0; opacity: 0.5; font-weight: 700; }
+        
+        .footer { padding: 40px 0 28px; background: #0A0A0F; border-top: 1px solid rgba(255,255,255,0.04); text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; text-align: left; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .footer-brand .logo { font-size: 1.3rem; }
+        .footer-brand p { color: #6A6662; font-size: 0.8rem; font-weight: 400; margin-top: 4px; max-width: 280px; line-height: 1.6; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .footer-verse { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.8rem; color: #D4A853; opacity: 0.15; margin-top: 6px; letter-spacing: 0.02em; }
+        .footer-social { display: flex; gap: 12px; margin-top: 12px; }
+        .footer-social a { color: #6A6662; font-size: 1rem; transition: color 0.3s ease; }
+        .footer-social a:hover { color: #F0EDE8; }
+        .footer-col h5 { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em; color: #6A6662; margin-bottom: 10px; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .footer-col a { display: block; font-size: 0.8rem; font-weight: 400; color: #6A6662; padding: 3px 0; transition: color 0.3s ease; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .footer-col a:hover { color: #F0EDE8; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.04); padding-top: 16px; margin-top: 28px; display: flex; justify-content: space-between; font-size: 0.6rem; font-weight: 400; color: #6A6662; opacity: 0.3; flex-wrap: wrap; gap: 10px; font-family: 'Plus Jakarta Sans', sans-serif; text-align: center; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+        
+        #backToTop { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; border-radius: 50%; background: #181820; color: #D4A853; border: 1px solid rgba(255,255,255,0.04); cursor: pointer; opacity: 0; transform: scale(0.8); transition: all 0.3s ease; z-index: 99; font-size: 1rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+        #backToTop.visible { opacity: 1; transform: scale(1); }
+        #backToTop:hover { background: #D4A853; color: #0A0A0F; transform: scale(1.05); border-color: #D4A853; }
+        
+        .toast-container { position: fixed; top: 100px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; max-width: 360px; width: 100%; }
+        .toast { background: #181820; border: 1px solid rgba(255,255,255,0.04); border-radius: 4px; padding: 12px 18px; color: #F0EDE8; font-size: 0.85rem; font-weight: 400; font-family: 'Plus Jakarta Sans', sans-serif; animation: slideIn 0.4s ease; border-left: 3px solid #D4A853; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: translateX(0); } }
+        .toast.hide { animation: slideOut 0.3s ease forwards; }
+        @keyframes slideOut { to { opacity: 0; transform: translateX(60px); } }
+        
+        .hamburger { display: flex !important; }
+        .nav-links { display: none !important; }
+        
+        @media (max-width: 1024px) { .learn-grid { grid-template-columns: 1fr 1fr; } .why-grid-single { grid-template-columns: 1fr; gap: 30px; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .page-hero { padding: 120px 0 40px; } .page-hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); } .hero-verse { font-size: 1.2rem; } .learn-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; } .footer-grid { grid-template-columns: 1fr; gap: 20px; text-align: center; } .footer-brand p { max-width: 100%; } .footer-social { justify-content: center; } .testimonial-card { padding: 24px; } .testimonial-card p { font-size: 1rem; } }
+        @media (max-width: 480px) { .page-hero h1 { font-size: clamp(1.6rem, 7vw, 2rem); } .section-title { font-size: clamp(1.6rem, 4vw, 2rem); } .hero-actions { flex-direction: column; align-items: center; } .hero-actions .btn-accent, .hero-actions .btn-outline { width: 100%; max-width: 320px; } .btn-primary, .btn-accent, .btn-outline { width: 100%; max-width: 320px; } }
+    </style>
 </head>
 <body>
     
-    <!-- ===== BACKGROUND ===== -->
-    <div id="premium-bg">
-        <canvas id="bgCanvas"></canvas>
-        <div class="bg-overlay"></div>
-        <div class="bg-verse">"Iron sharpens iron." — Proverbs 27:17</div>
-    </div>
-    
-    <div class="corner-accents">
-        <div class="corner tl"></div>
-        <div class="corner tr"></div>
-        <div class="corner bl"></div>
-        <div class="corner br"></div>
-    </div>
-    
-    <div id="cursor-glow"></div>
-    <div id="scroll-progress"></div>
     <div class="toast-container" id="toastContainer"></div>
+    <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     
-    <!-- ===== HEADER ===== -->
     <header class="header" id="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo animate-fade-down">
-                THE <span>IRON</span>
-                <small>IRON SHARPENS IRON</small>
-            </a>
-            
+        <div class="header-inner">
+            <a href="index.html" class="logo">THE <span>IRON</span><small>IRON SHARPENS IRON</small></a>
             <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">PLANS <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="plan-mind.html">Mind</a>
+                        <a href="plan-character.html">Character</a>
+                        <a href="plan-body.html">Body</a>
+                        <a href="plan-relationships.html">Relationships</a>
+                        <a href="plan-money.html">Money</a>
+                        <a href="plan-purpose.html">Purpose</a>
+                    </div>
+                </li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="index.html#plans">PLANS</a></li>
-                <li><a href="index.html#membership">MEMBERSHIP</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
                 <li><a href="#" class="btn-primary" id="joinNavBtn">ENTER</a></li>
             </ul>
-            
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
     
     <div class="overlay" id="overlay"></div>
     <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-dropdown-btn" id="mobileDropdownBtn">PLANS <i class="fas fa-chevron-down"></i></button>
+        <div class="mobile-sub-menu" id="mobileSubMenu">
+            <a href="plan-mind.html">Mind</a>
+            <a href="plan-character.html">Character</a>
+            <a href="plan-body.html">Body</a>
+            <a href="plan-relationships.html">Relationships</a>
+            <a href="plan-money.html">Money</a>
+            <a href="plan-purpose.html">Purpose</a>
+        </div>
         <a href="about.html">ABOUT</a>
-        <a href="index.html#plans">PLANS</a>
-        <a href="index.html#membership">MEMBERSHIP</a>
-        <a href="index.html#faq">FAQ</a>
         <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
     </nav>
     
-    <button id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
     <main>
-        
-        <!-- ===== PLAN HERO ===== -->
-        <section class="page-hero plan-hero">
+        <section class="page-hero">
             <div class="container page-hero-content">
                 <span class="hero-badge">PLAN 02</span>
-                <h1>
-                    BECOME SOMEONE <span class="highlight">YOU RESPECT</span>
-                </h1>
-                <div class="hero-verse" style="font-size:1.2rem; color:var(--color-gold-light);">
-                    "Character is what you do when no one is watching."
-                </div>
-                <p class="hero-sub" style="max-width:600px;">
-                    Integrity, responsibility, courage, masculinity, leadership, standards and self-respect. Become a man you can be proud of.
-                </p>
+                <h1>BECOME SOMEONE <span class="highlight">YOU RESPECT</span></h1>
+                <div class="hero-verse">"The integrity of the upright guides them."<br /><small style="font-size:0.8rem; opacity:0.5;">— Proverbs 11:3</small></div>
+                <p class="hero-sub">Integrity, responsibility, courage, masculinity, leadership, standards and self-respect. Become a man you can be proud of.</p>
                 <div class="hero-actions">
                     <a href="index.html#membership" class="btn-accent">START BUILDING</a>
                     <a href="index.html#plans" class="btn-outline">VIEW ALL PLANS</a>
@@ -100,153 +218,170 @@
             </div>
         </section>
         
-        <!-- ===== WHAT YOU'LL LEARN ===== -->
+        <div class="section-breaker"></div>
+        
         <section class="learn-section">
             <div class="container">
                 <span class="section-label">What You'll Learn</span>
-                <h2 class="section-title">
-                    BUILD A CHARACTER <span class="highlight">THAT LASTS</span>
-                </h2>
-                
+                <h2 class="section-title">BUILD A CHARACTER <span class="highlight">THAT STANDS FIRM</span></h2>
                 <div class="learn-grid">
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Integrity</h4>
-                        <p>Do what you say you'll do. Be the same person in private as you are in public.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-hand-fist"></i></div>
-                        <h4>Responsibility</h4>
-                        <p>Own your life. Your decisions, your mistakes, your results. No excuses.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-shield-halved"></i></div>
-                        <h4>Courage</h4>
-                        <p>Do the hard thing. Face the fear. Act despite the uncertainty.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-flag"></i></div>
-                        <h4>Masculinity</h4>
-                        <p>Understand what it means to be a grounded, capable man in a confusing world.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-people-group"></i></div>
-                        <h4>Leadership</h4>
-                        <p>Lead yourself first. Then others. Build the capacity to influence and serve.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-ruler"></i></div>
-                        <h4>Standards</h4>
-                        <p>Define what you will and won't accept. From yourself and from others.</p>
-                    </div>
+                    <div class="learn-card"><div class="icon"><i class="fas fa-shield-halved"></i></div><h4>Integrity</h4><p>Be the same person in private as you are in public. Build trust through consistency.</p></div>
+                    <div class="learn-card"><div class="icon"><i class="fas fa-hand-fist"></i></div><h4>Responsibility</h4><p>Take full ownership of your life. No more excuses. No more blame.</p></div>
+                    <div class="learn-card"><div class="icon"><i class="fas fa-lion"></i></div><h4>Courage</h4><p>Face your fears. Stand up for what's right. Have the courage to be who you truly are.</p></div>
+                    <div class="learn-card"><div class="icon"><i class="fas fa-flag"></i></div><h4>Masculinity</h4><p>Define what it means to be a man on your terms. Strength with purpose.</p></div>
+                    <div class="learn-card"><div class="icon"><i class="fas fa-users-cog"></i></div><h4>Leadership</h4><p>Lead yourself first. Then learn to lead others with integrity and vision.</p></div>
+                    <div class="learn-card"><div class="icon"><i class="fas fa-gem"></i></div><h4>Self-Respect</h4><p>Set standards for yourself. Honor them. Become someone you can respect.</p></div>
                 </div>
             </div>
         </section>
         
-        <!-- ===== WHY IT MATTERS ===== -->
-        <section class="why-matters" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+        <div class="section-breaker"></div>
+        
+        <section class="why-matters">
             <div class="container">
                 <span class="section-label">Why It Matters</span>
-                <h2 class="section-title">
-                    YOUR CHARACTER IS <span class="highlight">YOUR CURRENCY</span>
-                </h2>
-                
+                <h2 class="section-title">CHARACTER IS <span class="highlight">WHO YOU ARE</span></h2>
                 <div class="why-grid-single">
                     <div class="why-text">
-                        <p>
-                            Nothing matters more than who you are when no one is watching. Your character determines your relationships, your reputation, and your ability to lead yourself and others.
-                        </p>
-                        <p>
-                            The Character Plan teaches you to build integrity, take responsibility, and develop the courage to live by your standards. It's not about being perfect. It's about being honest, accountable, and growing every day.
-                        </p>
-                        <p>
-                            A man with strong character can weather any storm. A man with weak character will break under pressure. Build the character that can withstand anything.
-                        </p>
+                        <p>Character is who you are when no one is watching. It's the foundation of trust, respect, and self-respect. Without character, nothing else matters.</p>
+                        <p>The Character Plan teaches you to build integrity, take responsibility, and stand firm in your values. It's not about being perfect — it's about being real. It's about becoming a man you can be proud of.</p>
+                        <p>No more pretending. No more hiding. Build the character that earns real respect.</p>
                     </div>
                     <div class="why-image">
-                        <div class="img-placeholder animate-glow">
-                            <div class="icon"><i class="fas fa-shield-halved"></i></div>
-                            <div class="label">character-matters.jpg</div>
-                            <div class="shimmer"></div>
-                            <div class="tag">🛡️ Character</div>
-                        </div>
+                        <div class="img-placeholder"><div class="shimmer"></div><div class="tag">⚔️ Character</div><div class="icon"><i class="fas fa-shield-halved"></i></div><div class="label">character-matters.jpg</div></div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- ===== TESTIMONIAL ===== -->
+        <div class="section-breaker"></div>
+        
         <section class="testimonial-section">
             <div class="container">
                 <div class="testimonial-card">
-                    <span class="display-tag" style="font-size:1.8rem;">"</span>
-                    <p>
-                        I used to say one thing and do another. I was a people-pleaser with no real backbone. The Character Plan helped me get clear on my values and start living them. I actually respect myself now.
-                    </p>
-                    <div class="author">— James, 31</div>
+                    <span class="display-tag">"</span>
+                    <p>I was a people-pleaser with no boundaries. The Character Plan taught me to stand firm and be a man I can be proud of. I finally respect myself.</p>
+                    <div class="author">— James, 32</div>
                 </div>
             </div>
         </section>
         
-        <!-- ===== CTA ===== -->
-        <section class="final-cta" style="padding:60px 0;">
+        <div class="section-breaker"></div>
+        
+        <section class="final-cta">
             <div class="container">
-                <h2 style="font-size:clamp(2rem, 4vw, 2.8rem);">
-                    START BUILDING YOUR <span class="highlight">CHARACTER</span> TODAY
-                </h2>
-                <p style="max-width:480px; margin:0 auto 24px;">
-                    Join The Iron and get access to all six plans, including the Character Plan.
-                </p>
+                <h2>START BUILDING YOUR <span class="highlight">CHARACTER</span> TODAY</h2>
+                <p>Join The Iron and get access to all six plans, including the Character Plan.</p>
                 <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
-                <div class="closing" style="margin-top:16px;">
-                    <strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.
-                </div>
+                <div class="closing"><strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.</div>
             </div>
         </section>
-        
     </main>
     
-    <!-- ===== FOOTER ===== -->
     <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">THE <span>IRON</span></div>
-                    <p>Build a life you respect. A private community for men building better lives.</p>
-                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
-                    <div class="footer-social">
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h5>Community</h5>
-                    <a href="index.html#membership">Membership</a>
-                    <a href="index.html#faq">FAQ</a>
-                </div>
-                <div class="footer-col">
-                    <h5>About</h5>
-                    <a href="about.html">About</a>
-                    <a href="index.html#plans">The Plans</a>
-                    <a href="index.html#whofor">Who It's For</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Connect</h5>
-                    <a href="#">Contact</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Disclaimer</a>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">THE <span>IRON</span></div>
+                <p>Build a life you respect. A private community for men building better lives.</p>
+                <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                <div class="footer-social">
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span>&copy; 2025 THE IRON. All rights reserved.</span>
-                <span>Plan your life. Build accordingly.</span>
-            </div>
+            <div class="footer-col"><h5>Community</h5><a href="index.html#membership">Membership</a><a href="index.html#faq">FAQ</a></div>
+            <div class="footer-col"><h5>About</h5><a href="about.html">About</a><a href="index.html#plans">The Plans</a><a href="index.html#whofor">Who It's For</a></div>
+            <div class="footer-col"><h5>Connect</h5><a href="#">Contact</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
         </div>
+        <div class="footer-bottom"><span>&copy; 2025 THE IRON. All rights reserved.</span><span>Plan your life. Build accordingly.</span></div>
     </footer>
     
-    <script src="js/main.js"></script>
+    <script>
+        const toastContainer = document.getElementById('toastContainer');
+        function showToast(message, duration = 4000) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('hide');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+        window.showToast = showToast;
+        
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+        
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.pageYOffset > 500);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        const mobileDropdownBtn = document.getElementById('mobileDropdownBtn');
+        const mobileSubMenu = document.getElementById('mobileSubMenu');
+        
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            overlay.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+            if (!mobileMenu.classList.contains('open')) {
+                mobileDropdownBtn.classList.remove('open');
+                mobileSubMenu.classList.remove('open');
+            }
+        }
+        
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        mobileDropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('open');
+            mobileSubMenu.classList.toggle('open');
+        });
+        
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        ['joinNavBtn', 'joinMobileBtn'].forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showToast('⚔️ Entering The Iron...');
+                });
+            }
+        });
+        
+        document.querySelectorAll('a[href^="#"]:not(.join-btn)').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        console.log('=== ⚔️ THE IRON — CHARACTER PLAN ===');
+        console.log('Build a life you respect.');
+        console.log('================================');
+    </script>
 </body>
 </html>
