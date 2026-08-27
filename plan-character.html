@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan 02: CHARACTER · THE IRON</title>
+    
+    <meta name="description" content="Become someone you respect. The Character Plan covers integrity, responsibility, courage, masculinity, leadership, standards and self-respect." />
+    <meta name="theme-color" content="#0A0A0F" />
+    
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    
+    <!-- ===== BACKGROUND ===== -->
+    <div id="premium-bg">
+        <canvas id="bgCanvas"></canvas>
+        <div class="bg-overlay"></div>
+        <div class="bg-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+    </div>
+    
+    <div class="corner-accents">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+    </div>
+    
+    <div id="cursor-glow"></div>
+    <div id="scroll-progress"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo animate-fade-down">
+                THE <span>IRON</span>
+                <small>IRON SHARPENS IRON</small>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="index.html#plans">PLANS</a></li>
+                <li><a href="index.html#membership">MEMBERSHIP</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="#" class="btn-primary" id="joinNavBtn">ENTER</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#plans">PLANS</a>
+        <a href="index.html#membership">MEMBERSHIP</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
+    </nav>
+    
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main>
+        
+        <!-- ===== PLAN HERO ===== -->
+        <section class="page-hero plan-hero">
+            <div class="container page-hero-content">
+                <span class="hero-badge">PLAN 02</span>
+                <h1>
+                    BECOME SOMEONE <span class="highlight">YOU RESPECT</span>
+                </h1>
+                <div class="hero-verse" style="font-size:1.2rem; color:var(--color-gold-light);">
+                    "Character is what you do when no one is watching."
+                </div>
+                <p class="hero-sub" style="max-width:600px;">
+                    Integrity, responsibility, courage, masculinity, leadership, standards and self-respect. Become a man you can be proud of.
+                </p>
+                <div class="hero-actions">
+                    <a href="index.html#membership" class="btn-accent">START BUILDING</a>
+                    <a href="index.html#plans" class="btn-outline">VIEW ALL PLANS</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHAT YOU'LL LEARN ===== -->
+        <section class="learn-section">
+            <div class="container">
+                <span class="section-label">What You'll Learn</span>
+                <h2 class="section-title">
+                    BUILD A CHARACTER <span class="highlight">THAT LASTS</span>
+                </h2>
+                
+                <div class="learn-grid">
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-check-circle"></i></div>
+                        <h4>Integrity</h4>
+                        <p>Do what you say you'll do. Be the same person in private as you are in public.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-hand-fist"></i></div>
+                        <h4>Responsibility</h4>
+                        <p>Own your life. Your decisions, your mistakes, your results. No excuses.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                        <h4>Courage</h4>
+                        <p>Do the hard thing. Face the fear. Act despite the uncertainty.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-flag"></i></div>
+                        <h4>Masculinity</h4>
+                        <p>Understand what it means to be a grounded, capable man in a confusing world.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-people-group"></i></div>
+                        <h4>Leadership</h4>
+                        <p>Lead yourself first. Then others. Build the capacity to influence and serve.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-ruler"></i></div>
+                        <h4>Standards</h4>
+                        <p>Define what you will and won't accept. From yourself and from others.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHY IT MATTERS ===== -->
+        <section class="why-matters" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+            <div class="container">
+                <span class="section-label">Why It Matters</span>
+                <h2 class="section-title">
+                    YOUR CHARACTER IS <span class="highlight">YOUR CURRENCY</span>
+                </h2>
+                
+                <div class="why-grid-single">
+                    <div class="why-text">
+                        <p>
+                            Nothing matters more than who you are when no one is watching. Your character determines your relationships, your reputation, and your ability to lead yourself and others.
+                        </p>
+                        <p>
+                            The Character Plan teaches you to build integrity, take responsibility, and develop the courage to live by your standards. It's not about being perfect. It's about being honest, accountable, and growing every day.
+                        </p>
+                        <p>
+                            A man with strong character can weather any storm. A man with weak character will break under pressure. Build the character that can withstand anything.
+                        </p>
+                    </div>
+                    <div class="why-image">
+                        <div class="img-placeholder animate-glow">
+                            <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                            <div class="label">character-matters.jpg</div>
+                            <div class="shimmer"></div>
+                            <div class="tag">🛡️ Character</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== TESTIMONIAL ===== -->
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="testimonial-card">
+                    <span class="display-tag" style="font-size:1.8rem;">"</span>
+                    <p>
+                        I used to say one thing and do another. I was a people-pleaser with no real backbone. The Character Plan helped me get clear on my values and start living them. I actually respect myself now.
+                    </p>
+                    <div class="author">— James, 31</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== CTA ===== -->
+        <section class="final-cta" style="padding:60px 0;">
+            <div class="container">
+                <h2 style="font-size:clamp(2rem, 4vw, 2.8rem);">
+                    START BUILDING YOUR <span class="highlight">CHARACTER</span> TODAY
+                </h2>
+                <p style="max-width:480px; margin:0 auto 24px;">
+                    Join The Iron and get access to all six plans, including the Character Plan.
+                </p>
+                <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
+                <div class="closing" style="margin-top:16px;">
+                    <strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">THE <span>IRON</span></div>
+                    <p>Build a life you respect. A private community for men building better lives.</p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="index.html#membership">Membership</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h5>About</h5>
+                    <a href="about.html">About</a>
+                    <a href="index.html#plans">The Plans</a>
+                    <a href="index.html#whofor">Who It's For</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 THE IRON. All rights reserved.</span>
+                <span>Plan your life. Build accordingly.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
