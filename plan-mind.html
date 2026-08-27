@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan 01: MIND · THE IRON</title>
+    
+    <meta name="description" content="Master your mind. The Mind Plan covers mental strength, emotional regulation, discipline, confidence, resilience and self-awareness." />
+    <meta name="theme-color" content="#0A0A0F" />
+    
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    
+    <!-- ===== BACKGROUND ===== -->
+    <div id="premium-bg">
+        <canvas id="bgCanvas"></canvas>
+        <div class="bg-overlay"></div>
+        <div class="bg-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+    </div>
+    
+    <div class="corner-accents">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+    </div>
+    
+    <div id="cursor-glow"></div>
+    <div id="scroll-progress"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo animate-fade-down">
+                THE <span>IRON</span>
+                <small>IRON SHARPENS IRON</small>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="index.html#plans">PLANS</a></li>
+                <li><a href="index.html#membership">MEMBERSHIP</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="#" class="btn-primary" id="joinNavBtn">ENTER</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#plans">PLANS</a>
+        <a href="index.html#membership">MEMBERSHIP</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
+    </nav>
+    
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main>
+        
+        <!-- ===== PLAN HERO ===== -->
+        <section class="page-hero plan-hero">
+            <div class="container page-hero-content">
+                <span class="hero-badge">PLAN 01</span>
+                <h1>
+                    MASTER <span class="highlight">YOURSELF</span>
+                </h1>
+                <div class="hero-verse" style="font-size:1.2rem; color:var(--color-gold-light);">
+                    "The mind is the foundation of everything."
+                </div>
+                <p class="hero-sub" style="max-width:600px;">
+                    Mental strength, emotional regulation, discipline, confidence, resilience and self-awareness. Build the mind that builds everything else.
+                </p>
+                <div class="hero-actions">
+                    <a href="index.html#membership" class="btn-accent">START BUILDING</a>
+                    <a href="index.html#plans" class="btn-outline">VIEW ALL PLANS</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHAT YOU'LL LEARN ===== -->
+        <section class="learn-section">
+            <div class="container">
+                <span class="section-label">What You'll Learn</span>
+                <h2 class="section-title">
+                    BUILD A MIND THAT <span class="highlight">CAN'T BE SHAKEN</span>
+                </h2>
+                
+                <div class="learn-grid">
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h4>Mental Strength</h4>
+                        <p>Develop the resilience to handle pressure, setbacks and uncertainty without breaking.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-heart"></i></div>
+                        <h4>Emotional Regulation</h4>
+                        <p>Learn to control your emotions rather than letting them control you. Respond, don't react.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-gavel"></i></div>
+                        <h4>Discipline</h4>
+                        <p>Build the ability to do what needs to be done, even when you don't feel like doing it.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                        <h4>Confidence</h4>
+                        <p>Develop unshakeable self-belief based on competence and real results, not empty affirmations.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-rocket"></i></div>
+                        <h4>Resilience</h4>
+                        <p>Learn to bounce back from failure stronger than before. Every setback is a setup for a comeback.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-eye"></i></div>
+                        <h4>Self-Awareness</h4>
+                        <p>Know yourself — your strengths, your weaknesses, your patterns. This is the foundation of all growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHY IT MATTERS ===== -->
+        <section class="why-matters" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+            <div class="container">
+                <span class="section-label">Why It Matters</span>
+                <h2 class="section-title">
+                    EVERYTHING STARTS <span class="highlight">WITH THE MIND</span>
+                </h2>
+                
+                <div class="why-grid-single">
+                    <div class="why-text">
+                        <p>
+                            Your mind is the operating system for your entire life. If it's weak, everything else is compromised. Your relationships, your money, your body, your purpose — all of it runs through your mind.
+                        </p>
+                        <p>
+                            The Mind Plan teaches you to strengthen that operating system. To build mental toughness, emotional control and the discipline to follow through on what you know you should do.
+                        </p>
+                        <p>
+                            You don't need to be born with a strong mind. You build it. One day at a time. One decision at a time.
+                        </p>
+                    </div>
+                    <div class="why-image">
+                        <div class="img-placeholder animate-glow">
+                            <div class="icon"><i class="fas fa-brain"></i></div>
+                            <div class="label">mind-matters.jpg</div>
+                            <div class="shimmer"></div>
+                            <div class="tag">🧠 Mind</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== TESTIMONIAL ===== -->
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="testimonial-card">
+                    <span class="display-tag" style="font-size:1.8rem;">"</span>
+                    <p>
+                        Before The Iron, I was all over the place. No discipline, no direction. The Mind Plan gave me the tools to get my head straight. I'm calmer, more focused, and actually follow through on what I say I'm going to do.
+                    </p>
+                    <div class="author">— Marcus, 24</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== CTA ===== -->
+        <section class="final-cta" style="padding:60px 0;">
+            <div class="container">
+                <h2 style="font-size:clamp(2rem, 4vw, 2.8rem);">
+                    START BUILDING YOUR <span class="highlight">MIND</span> TODAY
+                </h2>
+                <p style="max-width:480px; margin:0 auto 24px;">
+                    Join The Iron and get access to all six plans, including the Mind Plan.
+                </p>
+                <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
+                <div class="closing" style="margin-top:16px;">
+                    <strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">THE <span>IRON</span></div>
+                    <p>Build a life you respect. A private community for men building better lives.</p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="index.html#membership">Membership</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h5>About</h5>
+                    <a href="about.html">About</a>
+                    <a href="index.html#plans">The Plans</a>
+                    <a href="index.html#whofor">Who It's For</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 THE IRON. All rights reserved.</span>
+                <span>Plan your life. Build accordingly.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
