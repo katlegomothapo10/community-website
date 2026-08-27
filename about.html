@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About · THE IRON</title>
+    
+    <meta name="description" content="Learn about The Iron — a private community for men building better lives." />
+    <meta name="theme-color" content="#0A0A0F" />
+    
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    
+    <!-- ===== BACKGROUND ===== -->
+    <div id="premium-bg">
+        <canvas id="bgCanvas"></canvas>
+        <div class="bg-overlay"></div>
+        <div class="bg-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+    </div>
+    
+    <div class="corner-accents">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+    </div>
+    
+    <div id="cursor-glow"></div>
+    <div id="scroll-progress"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo animate-fade-down">
+                THE <span>IRON</span>
+                <small>IRON SHARPENS IRON</small>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="about.html" class="active">ABOUT</a></li>
+                <li><a href="index.html#plans">PLANS</a></li>
+                <li><a href="index.html#membership">MEMBERSHIP</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="#" class="btn-primary" id="joinNavBtn">ENTER</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#plans">PLANS</a>
+        <a href="index.html#membership">MEMBERSHIP</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
+    </nav>
+    
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main>
+        
+        <!-- ===== ABOUT HERO ===== -->
+        <section class="page-hero">
+            <div class="container page-hero-content">
+                <span class="hero-badge">ABOUT THE IRON</span>
+                <h1>
+                    BUILD A LIFE<br />
+                    <span class="highlight">YOU RESPECT.</span>
+                </h1>
+                <div class="hero-verse" style="font-size:1.4rem;">
+                    "Iron sharpens iron,
+                    <small style="font-size:0.85rem;">so one man sharpens another."<br />— Proverbs 27:17</small>
+                </div>
+                <p class="hero-sub" style="max-width:680px;">
+                    The Iron is a private community for men who want to become more capable, disciplined, grounded and self-respecting. Launched in 2025, it's built around the simple belief that men grow best in community with other men who challenge, encourage and hold them accountable.
+                </p>
+            </div>
+        </section>
+        
+        <!-- ===== STATS ===== -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="number">2025</span>
+                        <span class="label">Launched</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">6</span>
+                        <span class="label">Plans of Development</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">12+</span>
+                        <span class="label">Masterclasses</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">∞</span>
+                        <span class="label">Commitment Required</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHAT IS THE IRON ===== -->
+        <section class="what-section">
+            <div class="container">
+                <span class="section-label">What Is The Iron</span>
+                <h2 class="section-title">
+                    A FRAMEWORK FOR <span class="highlight">BETTER MEN</span>
+                </h2>
+                
+                <div class="what-grid">
+                    <div class="what-text">
+                        <p>
+                            The Iron isn't a course you finish and forget. It's a live community 
+                            where men learn, implement and improve together. Every day.
+                        </p>
+                        <p>
+                            For $[PRICE] a month, members get access to all six development plans, 
+                            live sessions, accountability, and a community of men who are serious 
+                            about becoming better.
+                        </p>
+                        <p>
+                            There's no long-term contract. You stay as long as it serves you. 
+                            Cancel anytime from your account settings.
+                        </p>
+                        <div class="what-features">
+                            <span><i class="fas fa-check"></i> All 6 Plans included</span>
+                            <span><i class="fas fa-check"></i> Live sessions</span>
+                            <span><i class="fas fa-check"></i> Accountability</span>
+                            <span><i class="fas fa-check"></i> Cancel anytime</span>
+                        </div>
+                        <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
+                    </div>
+                    <div class="what-visual">
+                        <div class="img-placeholder animate-glow">
+                            <div class="icon"><i class="fas fa-archway"></i></div>
+                            <div class="label">the-iron-platform.jpg</div>
+                            <div class="shimmer"></div>
+                            <div class="tag">📐 Platform Preview</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="how-works-section" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+            <div class="container">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">
+                    A MEMBERSHIP, <span class="highlight">NOT A COURSE</span>
+                </h2>
+                <p class="section-sub">
+                    The Iron is live and constantly updated. You don't buy a course that goes stale. You join a community that moves with the times.
+                </p>
+                
+                <div class="how-grid">
+                    <div class="how-card">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <h3>A Real Community</h3>
+                        <p>Direct messaging, group channels, and a daily checklist that keeps members accountable.</p>
+                    </div>
+                    <div class="how-card">
+                        <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Qualified Mentors</h3>
+                        <p>Every mentor is actively earning from the skill they teach. You learn from people doing the work.</p>
+                    </div>
+                    <div class="how-card">
+                        <div class="icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Always Improving</h3>
+                        <p>The platform ships updates continuously. New content, new tools, new ways to connect and grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== THE STORY ===== -->
+        <section class="story-section">
+            <div class="container">
+                <span class="section-label">The Story</span>
+                <h2 class="section-title">
+                    HOW THE IRON <span class="highlight">STARTED</span>
+                </h2>
+                
+                <div class="story-timeline">
+                    <div class="timeline-item">
+                        <span class="year">2025</span>
+                        <h4>Launch & Vision</h4>
+                        <p>The Iron was created to fill a gap — a space where men could build themselves across every dimension of life, with structure and brotherhood.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2025</span>
+                        <h4>Opening To Members</h4>
+                        <p>The community opened to new members. From day one, the model was a live membership — mentors active daily, lessons updated continuously.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="year">2025-26</span>
+                        <h4>Growth & Expansion</h4>
+                        <p>New plans were added, the mentor standard tightened, and the platform was rebuilt for speed and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== FAQ ===== -->
+        <section id="faq" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border);">
+            <div class="container">
+                <span class="section-label">Questions</span>
+                <h2 class="section-title">
+                    FREQUENTLY ASKED <span class="highlight">QUESTIONS</span>
+                </h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item open">
+                        <div class="question">IS THE IRON LEGIT? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">Yes. The Iron is a legitimate online community with active members, a custom-built platform, and a growing community of men building better lives.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">HOW MUCH DOES THE IRON COST? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">The standard membership is $[PRICE] per month. There is no per-plan charge — one membership covers all six plans. Membership is non-refundable once billed.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">HOW DO I JOIN? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">You can join at theiron.com/checkout. Sign-up takes a few minutes — you'll need an email and a payment method — and you get immediate access to every plan.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">DOES THE IRON MAKE YOU MONEY? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">The platform teaches skills that can earn money, but it doesn't generate income automatically. Results depend on the effort and consistency the member brings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">IS THE IRON THE SAME AS OTHER MEN'S COMMUNITIES? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">No. The Iron is built around the belief that men grow best in community — not through "alpha male" theatrics or quick fixes, but through genuine brotherhood and accountability.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== FINAL CTA ===== -->
+        <section class="final-cta">
+            <div class="container">
+                <h2>
+                    READY TO <span class="highlight">BUILD</span>?
+                </h2>
+                <span class="highlight-sentence" style="font-size:1.3rem;">
+                    "Iron sharpens iron."
+                </span>
+                <p>
+                    Join a community of men who are serious about becoming more capable, disciplined, and grounded.
+                </p>
+                <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
+                <div class="closing">
+                    <strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">THE <span>IRON</span></div>
+                    <p>Build a life you respect. A private community for men building better lives.</p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="index.html#membership">Membership</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h5>About</h5>
+                    <a href="about.html">About</a>
+                    <a href="index.html#plans">The Plans</a>
+                    <a href="index.html#whofor">Who It's For</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 THE IRON. All rights reserved.</span>
+                <span>Plan your life. Build accordingly.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
