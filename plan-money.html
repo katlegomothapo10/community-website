@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan 05: MONEY · THE IRON</title>
+    
+    <meta name="description" content="Become financially capable. The Money Plan covers financial literacy, saving, investing education, career, income and wealth-building principles." />
+    <meta name="theme-color" content="#0A0A0F" />
+    
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    
+    <!-- ===== BACKGROUND ===== -->
+    <div id="premium-bg">
+        <canvas id="bgCanvas"></canvas>
+        <div class="bg-overlay"></div>
+        <div class="bg-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+    </div>
+    
+    <div class="corner-accents">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+    </div>
+    
+    <div id="cursor-glow"></div>
+    <div id="scroll-progress"></div>
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo animate-fade-down">
+                THE <span>IRON</span>
+                <small>IRON SHARPENS IRON</small>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="index.html#plans">PLANS</a></li>
+                <li><a href="index.html#membership">MEMBERSHIP</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="#" class="btn-primary" id="joinNavBtn">ENTER</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#plans">PLANS</a>
+        <a href="index.html#membership">MEMBERSHIP</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
+    </nav>
+    
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <main>
+        
+        <!-- ===== PLAN HERO ===== -->
+        <section class="page-hero plan-hero">
+            <div class="container page-hero-content">
+                <span class="hero-badge">PLAN 05</span>
+                <h1>
+                    BECOME <span class="highlight">FINANCIALLY CAPABLE</span>
+                </h1>
+                <div class="hero-verse" style="font-size:1.2rem; color:var(--color-gold-light);">
+                    "Money doesn't change you. It reveals you."
+                </div>
+                <p class="hero-sub" style="max-width:600px;">
+                    Financial literacy, saving, investing education, career, income and long-term wealth-building principles. Take control of your financial future.
+                </p>
+                <div class="hero-actions">
+                    <a href="index.html#membership" class="btn-accent">START BUILDING</a>
+                    <a href="index.html#plans" class="btn-outline">VIEW ALL PLANS</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHAT YOU'LL LEARN ===== -->
+        <section class="learn-section">
+            <div class="container">
+                <span class="section-label">What You'll Learn</span>
+                <h2 class="section-title">
+                    BUILD WEALTH <span class="highlight">THAT LASTS</span>
+                </h2>
+                
+                <div class="learn-grid">
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-book"></i></div>
+                        <h4>Financial Literacy</h4>
+                        <p>Understand how money works. Learn the principles of wealth-building that the wealthy know and use.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-piggy-bank"></i></div>
+                        <h4>Saving</h4>
+                        <p>Learn how to save consistently and build a financial foundation that can weather any storm.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Investing Education</h4>
+                        <p>Learn how to invest wisely. Understand risk, return and the strategies that build real wealth.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <h4>Career</h4>
+                        <p>Build a career that pays you what you're worth. Develop skills that are valued in the marketplace.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-coins"></i></div>
+                        <h4>Income</h4>
+                        <p>Learn how to earn more. Multiple income streams, negotiations, and the mindset of high earners.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="icon"><i class="fas fa-building"></i></div>
+                        <h4>Wealth-Building</h4>
+                        <p>Build wealth that compounds over time. Principles that work for anyone, regardless of where you start.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== WHY IT MATTERS ===== -->
+        <section class="why-matters" style="background:var(--color-bg-secondary); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+            <div class="container">
+                <span class="section-label">Why It Matters</span>
+                <h2 class="section-title">
+                    MONEY IS <span class="highlight">FREEDOM</span>
+                </h2>
+                
+                <div class="why-grid-single">
+                    <div class="why-text">
+                        <p>
+                            Money isn't the goal. Freedom is. The ability to say yes to what matters and no to what doesn't. The ability to provide for yourself and the people you love.
+                        </p>
+                        <p>
+                            The Money Plan teaches you the principles of financial capability. How to earn, save and invest. How to build a career that pays. How to think about money like the wealthy do.
+                        </p>
+                        <p>
+                            You don't need to be born rich. You need to learn how money works. The rest is just discipline and time.
+                        </p>
+                    </div>
+                    <div class="why-image">
+                        <div class="img-placeholder animate-glow">
+                            <div class="icon"><i class="fas fa-coins"></i></div>
+                            <div class="label">money-matters.jpg</div>
+                            <div class="shimmer"></div>
+                            <div class="tag">💰 Money</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== TESTIMONIAL ===== -->
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="testimonial-card">
+                    <span class="display-tag" style="font-size:1.8rem;">"</span>
+                    <p>
+                        I was terrible with money. Living paycheck to paycheck, no savings, no plan. The Money Plan changed everything. I've built up savings, started investing, and actually feel like I'm in control of my finances.
+                    </p>
+                    <div class="author">— Thomas, 26</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== CTA ===== -->
+        <section class="final-cta" style="padding:60px 0;">
+            <div class="container">
+                <h2 style="font-size:clamp(2rem, 4vw, 2.8rem);">
+                    START BUILDING YOUR <span class="highlight">WEALTH</span> TODAY
+                </h2>
+                <p style="max-width:480px; margin:0 auto 24px;">
+                    Join The Iron and get access to all six plans, including the Money Plan.
+                </p>
+                <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
+                <div class="closing" style="margin-top:16px;">
+                    <strong>PLAN YOUR LIFE.</strong> BUILD ACCORDINGLY.
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">THE <span>IRON</span></div>
+                    <p>Build a life you respect. A private community for men building better lives.</p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Community</h5>
+                    <a href="index.html#membership">Membership</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h5>About</h5>
+                    <a href="about.html">About</a>
+                    <a href="index.html#plans">The Plans</a>
+                    <a href="index.html#whofor">Who It's For</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 THE IRON. All rights reserved.</span>
+                <span>Plan your life. Build accordingly.</span>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
