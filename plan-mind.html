@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plan 01: MIND · THE IRON</title>
+    <title>Mind Plan · THE IRON</title>
     
     <meta name="description" content="Master yourself. The Mind Plan covers mental strength, emotional regulation, discipline, confidence, resilience and self-awareness." />
     <meta name="theme-color" content="#0A0A0F" />
@@ -50,9 +50,6 @@
             color: inherit;
         }
         
-        /* ============================================================
-           CONTAINER
-           ============================================================ */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -182,7 +179,6 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
-        /* ===== NAV LINKS (Desktop - hidden, hamburger always shows) ===== */
         .nav-links {
             display: none;
             align-items: center;
@@ -222,7 +218,6 @@
             min-height: 36px;
         }
         
-        /* ===== DROPDOWN (Desktop - hidden) ===== */
         .dropdown {
             position: relative;
         }
@@ -290,8 +285,12 @@
             background: rgba(212, 168, 83, 0.04);
             border-left-color: #D4A853;
         }
+        .dropdown-menu .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.04);
+            margin: 4px 12px;
+        }
         
-        /* ===== HAMBURGER - Always visible ===== */
         .hamburger {
             display: flex !important;
             flex-direction: column;
@@ -324,7 +323,6 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
         
-        /* ===== MOBILE MENU ===== */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -363,7 +361,6 @@
             width: 100%;
         }
         
-        /* Mobile dropdown inside mobile menu */
         .mobile-dropdown-btn {
             display: flex;
             align-items: center;
@@ -428,9 +425,6 @@
             visibility: visible;
         }
         
-        /* ============================================================
-           SECTION BREAKERS
-           ============================================================ */
         .section-breaker {
             width: 100%;
             height: 1px;
@@ -439,9 +433,6 @@
             max-width: 1200px;
         }
         
-        /* ============================================================
-           SECTIONS
-           ============================================================ */
         section {
             padding: 80px 0;
             text-align: center;
@@ -527,7 +518,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         .page-hero h1 {
-            font-size: clamp(2.8rem, 8vw, 4rem);
+            font-size: clamp(2.8rem, 8vw, 4.5rem);
             font-weight: 400;
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 0.03em;
@@ -550,6 +541,13 @@
             opacity: 0.8;
             letter-spacing: 0.02em;
         }
+        .hero-verse small {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+        }
         .hero-sub {
             font-size: 1.05rem;
             color: #A8A4A0;
@@ -567,75 +565,29 @@
         }
         
         /* ============================================================
-           LEARN SECTION
+           OVERVIEW
            ============================================================ */
-        .learn-section {
+        .overview-section {
             background: #12121A;
-        }
-        .learn-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .learn-card {
-            background: #181820;
-            padding: 24px 20px;
-            border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .learn-card:hover {
-            border-color: rgba(212, 168, 83, 0.08);
-            transform: translateY(-4px);
-        }
-        .learn-card .icon {
-            font-size: 2rem;
-            color: #D4A853;
-            margin-bottom: 8px;
-        }
-        .learn-card h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #F0EDE8;
-        }
-        .learn-card p {
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: #A8A4A0;
-            line-height: 1.6;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        
-        /* ============================================================
-           WHY MATTERS
-           ============================================================ */
-        .why-matters {
-            background: #0A0A0F;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-        .why-grid-single {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin-top: 40px;
             text-align: left;
         }
-        .why-text p {
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .overview-text p {
             font-size: 1rem;
             color: #A8A4A0;
             line-height: 1.8;
             margin-bottom: 16px;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .why-image .img-placeholder {
+        .overview-image .img-placeholder {
             aspect-ratio: 4/3;
-            min-height: 200px;
+            min-height: 250px;
             background: #181820;
             border: 1px solid rgba(255,255,255,0.04);
             border-radius: 8px;
@@ -650,17 +602,12 @@
             position: relative;
             overflow: hidden;
         }
-        .why-image .img-placeholder .icon {
-            font-size: 2.5rem;
+        .overview-image .img-placeholder .icon {
+            font-size: 3rem;
             color: #D4A853;
             opacity: 0.06;
         }
-        .why-image .img-placeholder .label {
-            font-size: 0.65rem;
-            color: #6A6662;
-            opacity: 0.4;
-        }
-        .why-image .img-placeholder .tag {
+        .overview-image .img-placeholder .tag {
             position: absolute;
             top: 12px;
             left: 12px;
@@ -673,7 +620,7 @@
             border: 1px solid rgba(212, 168, 83, 0.08);
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .why-image .img-placeholder .shimmer {
+        .overview-image .img-placeholder .shimmer {
             position: absolute;
             top: 0;
             left: -100%;
@@ -688,42 +635,267 @@
         }
         
         /* ============================================================
-           TESTIMONIAL
+           MODULES
            ============================================================ */
-        .testimonial-section {
-            background: #12121A;
-            padding: 60px 0;
+        .modules-section {
+            background: #0A0A0F;
         }
-        .testimonial-card {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px;
+        .modules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .module-card {
             background: #181820;
             border: 1px solid rgba(255,255,255,0.04);
             border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .module-card:hover {
+            border-color: rgba(212, 168, 83, 0.08);
+            transform: translateY(-4px);
+        }
+        .module-card .module-number {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #D4A853;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .module-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 4px 0 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #F0EDE8;
+        }
+        .module-card p {
+            font-size: 0.85rem;
+            color: #A8A4A0;
+            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        /* ============================================================
+           TIER COMPARISON
+           ============================================================ */
+        .tier-section {
+            background: #12121A;
+        }
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .tier-card {
+            background: #181820;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 28px 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .tier-card:hover {
+            border-color: rgba(212, 168, 83, 0.08);
+            transform: translateY(-4px);
+        }
+        .tier-card .tier-badge {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #D4A853;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 4px;
+        }
+        .tier-card .tier-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #F0EDE8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .tier-card .tier-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D4A853;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 4px 0;
+        }
+        .tier-card .tier-price small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #6A6662;
+        }
+        .tier-card .tier-desc {
+            font-size: 0.85rem;
+            color: #A8A4A0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .tier-card ul {
+            list-style: none;
+            margin: 8px 0 20px;
+            flex: 1;
+        }
+        .tier-card ul li {
+            padding: 6px 0;
+            font-size: 0.8rem;
+            color: #A8A4A0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .tier-card ul li:last-child {
+            border-bottom: none;
+        }
+        .tier-card ul li i {
+            color: #D4A853;
+            font-size: 0.5rem;
+        }
+        .tier-card ul li .cross {
+            color: #6A6662;
+            opacity: 0.3;
+        }
+        .tier-card .btn-tier {
+            margin-top: auto;
             text-align: center;
         }
-        .testimonial-card .display-tag {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+        
+        .tier-card.vip {
+            border-color: #D4A853;
+            background: #1A1A2E;
+        }
+        .tier-card.vip .tier-badge {
             color: #D4A853;
-            opacity: 0.3;
-            display: block;
+        }
+        
+        .badge-limited {
+            display: inline-block;
+            font-size: 0.45rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #D4A853;
+            border: 1px solid rgba(212, 168, 83, 0.04);
+            padding: 2px 10px;
+            border-radius: 2px;
+            margin-bottom: 4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        /* ============================================================
+           TESTIMONIAL
+           ============================================================ */
+        .testimonial-section {
+            background: #0A0A0F;
+            padding: 60px 0;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .testimonial-card {
+            background: #181820;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: rgba(212, 168, 83, 0.08);
+        }
+        .testimonial-card .quote {
+            font-size: 1.8rem;
+            color: #D4A853;
+            opacity: 0.2;
+            font-family: 'Cormorant Garamond', serif;
             line-height: 1;
         }
         .testimonial-card p {
-            font-size: 1.1rem;
-            font-style: italic;
+            font-size: 0.9rem;
             color: #F0EDE8;
-            line-height: 1.8;
+            line-height: 1.7;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 8px 0 16px;
+            font-style: italic;
+            margin: 4px 0 12px;
         }
         .testimonial-card .author {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #A8A4A0;
             font-weight: 500;
             font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .testimonial-card .author span {
+            color: #6A6662;
+            font-weight: 400;
+        }
+        
+        /* ============================================================
+           FAQ
+           ============================================================ */
+        .faq-section {
+            background: #12121A;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding: 16px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: rgba(212, 168, 83, 0.08);
+        }
+        .faq-item .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 4px 0;
+            min-height: 44px;
+            transition: color 0.3s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #F0EDE8;
+        }
+        .faq-item .question:hover {
+            color: #D4A853;
+        }
+        .faq-item .question i {
+            color: #D4A853;
+            transition: transform 0.3s ease;
+        }
+        .faq-item .answer {
+            color: #A8A4A0;
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-top: 6px;
+            display: none;
+            line-height: 1.7;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .faq-item.open .answer {
+            display: block;
+        }
+        .faq-item.open .question i {
+            transform: rotate(180deg);
         }
         
         /* ============================================================
@@ -871,9 +1043,6 @@
             padding-right: 24px;
         }
         
-        /* ============================================================
-           BACK TO TOP
-           ============================================================ */
         #backToTop {
             position: fixed;
             bottom: 30px;
@@ -903,9 +1072,6 @@
             border-color: #D4A853;
         }
         
-        /* ============================================================
-           TOAST
-           ============================================================ */
         .toast-container {
             position: fixed;
             top: 100px;
@@ -930,127 +1096,51 @@
             border-left: 3px solid #D4A853;
         }
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-        .toast.hide {
-            animation: slideOut 0.3s ease forwards;
-        }
+        .toast.hide { animation: slideOut 0.3s ease forwards; }
         @keyframes slideOut {
-            to {
-                opacity: 0;
-                transform: translateX(60px);
-            }
+            to { opacity: 0; transform: translateX(60px); }
         }
         
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
-        /* Always show hamburger on all screen sizes */
-        .hamburger {
-            display: flex !important;
-        }
-        .nav-links {
-            display: none !important;
-        }
+        .hamburger { display: flex !important; }
+        .nav-links { display: none !important; }
         
         @media (max-width: 1024px) {
-            .learn-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .why-grid-single {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            .overview-grid { grid-template-columns: 1fr; gap: 30px; }
+            .modules-grid { grid-template-columns: 1fr; }
+            .tier-grid { grid-template-columns: 1fr 1fr; }
+            .tier-grid .tier-card:last-child { grid-column: span 2; max-width: 480px; margin: 0 auto; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         
         @media (max-width: 768px) {
-            .page-hero {
-                padding: 120px 0 40px;
-            }
-            .page-hero h1 {
-                font-size: clamp(2rem, 8vw, 2.8rem);
-            }
-            .hero-verse {
-                font-size: 1.2rem;
-            }
-            
-            .learn-grid {
-                grid-template-columns: 1fr;
-                max-width: 380px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                text-align: center;
-            }
-            .footer-brand p {
-                max-width: 100%;
-            }
-            .footer-social {
-                justify-content: center;
-            }
-            .testimonial-card {
-                padding: 24px;
-            }
-            .testimonial-card p {
-                font-size: 1rem;
-            }
+            .page-hero { padding: 120px 0 40px; }
+            .page-hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+            .hero-verse { font-size: 1.2rem; }
+            .tier-grid { grid-template-columns: 1fr; }
+            .tier-grid .tier-card:last-child { grid-column: span 1; max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+            .footer-brand p { max-width: 100%; }
+            .footer-social { justify-content: center; }
         }
         
         @media (max-width: 480px) {
-            .page-hero h1 {
-                font-size: clamp(1.6rem, 7vw, 2rem);
-            }
-            .section-title {
-                font-size: clamp(1.6rem, 4vw, 2rem);
-            }
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            .hero-actions .btn-accent,
-            .hero-actions .btn-outline {
-                width: 100%;
-                max-width: 320px;
-            }
-            .btn-primary {
-                width: 100%;
-                max-width: 320px;
-            }
-            .btn-accent {
-                width: 100%;
-                max-width: 320px;
-            }
-            .btn-outline {
-                width: 100%;
-                max-width: 320px;
-            }
+            .page-hero h1 { font-size: clamp(1.6rem, 7vw, 2rem); }
+            .section-title { font-size: clamp(1.6rem, 4vw, 2rem); }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn-accent, .hero-actions .btn-outline { width: 100%; max-width: 320px; }
+            .btn-primary, .btn-accent, .btn-outline { width: 100%; max-width: 320px; }
         }
     </style>
 </head>
 <body>
     
-    <!-- ===== TOAST ===== -->
     <div class="toast-container" id="toastContainer"></div>
+    <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     
-    <!-- ===== BACK TO TOP ===== -->
-    <button id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- ===== HEADER ===== -->
     <header class="header" id="header">
         <div class="header-inner">
             <a href="index.html" class="logo">
@@ -1060,9 +1150,7 @@
             
             <ul class="nav-links">
                 <li class="dropdown">
-                    <a href="#">
-                        PLANS <i class="fas fa-chevron-down"></i>
-                    </a>
+                    <a href="#">PLANS <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
                         <a href="plan-mind.html">Mind</a>
                         <a href="plan-character.html">Character</a>
@@ -1077,14 +1165,11 @@
             </ul>
             
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
     
-    <!-- ===== MOBILE MENU ===== -->
     <div class="overlay" id="overlay"></div>
     <nav class="mobile-menu" id="mobileMenu">
         <button class="mobile-dropdown-btn" id="mobileDropdownBtn">
@@ -1098,14 +1183,10 @@
             <a href="plan-money.html">Money</a>
             <a href="plan-purpose.html">Purpose</a>
         </div>
-        
         <a href="about.html">ABOUT</a>
         <a href="#" class="btn-primary" id="joinMobileBtn">ENTER THE IRON</a>
     </nav>
     
-    <!-- ============================================================
-    MAIN CONTENT
-    ============================================================ -->
     <main>
         
         <!-- ===== PLAN HERO ===== -->
@@ -1116,8 +1197,8 @@
                     MASTER <span class="highlight">YOURSELF</span>
                 </h1>
                 <div class="hero-verse">
-                    "As a man thinks in his heart, so is he."<br />
-                    <small style="font-size:0.8rem; opacity:0.5;">— Proverbs 23:7</small>
+                    "As a man thinks in his heart, so is he."
+                    <small>— Proverbs 23:7</small>
                 </div>
                 <p class="hero-sub">
                     Mental strength, emotional regulation, discipline, confidence, resilience and self-awareness. Build the mind that builds everything else.
@@ -1132,78 +1213,31 @@
         <!-- ===== SECTION BREAKER ===== -->
         <div class="section-breaker"></div>
         
-        <!-- ===== WHAT YOU'LL LEARN ===== -->
-        <section class="learn-section">
+        <!-- ===== OVERVIEW ===== -->
+        <section class="overview-section">
             <div class="container">
-                <span class="section-label">What You'll Learn</span>
+                <span class="section-label">Overview</span>
                 <h2 class="section-title">
                     BUILD A MIND <span class="highlight">THAT'S UNBREAKABLE</span>
                 </h2>
                 
-                <div class="learn-grid">
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-brain"></i></div>
-                        <h4>Mental Strength</h4>
-                        <p>Develop the resilience to handle anything life throws at you. Build an unbreakable mindset.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-heart"></i></div>
-                        <h4>Emotional Regulation</h4>
-                        <p>Master your emotions instead of letting them master you. Stay calm under pressure.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-gavel"></i></div>
-                        <h4>Discipline</h4>
-                        <p>Build the discipline to do what needs to be done, even when you don't feel like it.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-check-circle"></i></div>
-                        <h4>Confidence</h4>
-                        <p>Develop unshakable confidence rooted in competence and self-respect.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-eye"></i></div>
-                        <h4>Self-Awareness</h4>
-                        <p>Know yourself deeply. Your strengths, weaknesses, and what drives you.</p>
-                    </div>
-                    <div class="learn-card">
-                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                        <h4>Resilience</h4>
-                        <p>Bounce back from setbacks stronger than before. Build the mental toughness to keep going.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- ===== SECTION BREAKER ===== -->
-        <div class="section-breaker"></div>
-        
-        <!-- ===== WHY IT MATTERS ===== -->
-        <section class="why-matters">
-            <div class="container">
-                <span class="section-label">Why It Matters</span>
-                <h2 class="section-title">
-                    YOUR MIND IS <span class="highlight">YOUR COMMAND CENTER</span>
-                </h2>
-                
-                <div class="why-grid-single">
-                    <div class="why-text">
+                <div class="overview-grid">
+                    <div class="overview-text">
                         <p>
                             Everything begins in the mind. Every action, every decision, every habit starts with a thought. If your mind is weak, everything else is a struggle. If your mind is strong, everything else becomes possible.
                         </p>
                         <p>
-                            The Mind Plan teaches you to master your thoughts, control your emotions, and build the discipline to achieve anything. It's not about positive thinking — it's about building a mind that can handle reality and still move forward.
+                            The Mind Plan is a complete system for building mental strength, emotional regulation, discipline, and self-awareness. It's not about positive thinking — it's about building a mind that can handle reality and still move forward.
                         </p>
                         <p>
-                            No more excuses. No more giving up. Build the mind that can build anything you want.
+                            You'll learn how to master your thoughts, control your emotions, and build the discipline to achieve anything you set your mind to.
                         </p>
                     </div>
-                    <div class="why-image">
+                    <div class="overview-image">
                         <div class="img-placeholder">
                             <div class="shimmer"></div>
-                            <div class="tag">🧠 Mind</div>
+                            <div class="tag">🧠 Mind Plan</div>
                             <div class="icon"><i class="fas fa-brain"></i></div>
-                            <div class="label">mind-matters.jpg</div>
                         </div>
                     </div>
                 </div>
@@ -1213,15 +1247,53 @@
         <!-- ===== SECTION BREAKER ===== -->
         <div class="section-breaker"></div>
         
-        <!-- ===== TESTIMONIAL ===== -->
-        <section class="testimonial-section">
+        <!-- ===== MODULES ===== -->
+        <section class="modules-section">
             <div class="container">
-                <div class="testimonial-card">
-                    <span class="display-tag">"</span>
-                    <p>
-                        I was lost, anxious, and had no direction. The Mind Plan gave me clarity and control. I finally feel like I'm in the driver's seat of my own life.
-                    </p>
-                    <div class="author">— Marcus, 24</div>
+                <span class="section-label">What You'll Learn</span>
+                <h2 class="section-title">
+                    THE <span class="highlight">MIND</span> MODULES
+                </h2>
+                <p class="section-sub">
+                    Six comprehensive modules covering every aspect of building mental strength and resilience.
+                </p>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <span class="module-number">MODULE 01</span>
+                        <h4>Mental Strength & Resilience</h4>
+                        <p>Develop the resilience to handle anything life throws at you. Learn how to bounce back from setbacks, stay strong under pressure, and build an unbreakable mindset.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <span class="module-number">MODULE 02</span>
+                        <h4>Emotional Regulation</h4>
+                        <p>Master your emotions instead of letting them master you. Learn to stay calm under pressure, respond instead of react, and build emotional intelligence.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <span class="module-number">MODULE 03</span>
+                        <h4>Discipline & Consistency</h4>
+                        <p>Build the discipline to do what needs to be done, even when you don't feel like it. Learn how to stay consistent and build habits that last.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <span class="module-number">MODULE 04</span>
+                        <h4>Confidence & Self-Belief</h4>
+                        <p>Develop unshakable confidence rooted in competence and self-respect. Learn to trust yourself and believe in your ability to achieve your goals.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <span class="module-number">MODULE 05</span>
+                        <h4>Self-Awareness & Reflection</h4>
+                        <p>Know yourself deeply. Your strengths, weaknesses, and what drives you. Learn to reflect honestly and grow from every experience.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <span class="module-number">MODULE 06</span>
+                        <h4>Managing Anxiety, Fear & Doubt</h4>
+                        <p>Learn to face your fears, manage anxiety, and overcome self-doubt. Build the mental toughness to keep moving forward no matter what.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1229,14 +1301,151 @@
         <!-- ===== SECTION BREAKER ===== -->
         <div class="section-breaker"></div>
         
-        <!-- ===== CTA ===== -->
+        <!-- ===== TIER COMPARISON ===== -->
+        <section class="tier-section">
+            <div class="container">
+                <span class="section-label">Membership</span>
+                <h2 class="section-title">
+                    MIND PLAN ACCESS <span class="highlight">BY TIER</span>
+                </h2>
+                <p class="section-sub">
+                    How the Mind Plan differs across membership levels.
+                </p>
+                
+                <div class="tier-grid">
+                    <!-- Free Tier -->
+                    <div class="tier-card">
+                        <span class="tier-badge">Free</span>
+                        <div class="tier-name">Foundation Access</div>
+                        <div class="tier-price">$0 <small>/month</small></div>
+                        <p class="tier-desc">Get started with the basics. Learn the fundamentals of mental strength.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Module 1: Mental Strength Basics</li>
+                            <li><i class="fas fa-check"></i> Community Access</li>
+                            <li><i class="fas fa-check"></i> Reflection Exercises</li>
+                            <li><i class="fas fa-times" style="color:#6A6662; opacity:0.3;"></i> Full Module Access</li>
+                            <li><i class="fas fa-times" style="color:#6A6662; opacity:0.3;"></i> Advanced Exercises</li>
+                            <li><i class="fas fa-times" style="color:#6A6662; opacity:0.3;"></i> Live Sessions</li>
+                            <li><i class="fas fa-times" style="color:#6A6662; opacity:0.3;"></i> Personalized Feedback</li>
+                        </ul>
+                        <div class="btn-tier">
+                            <a href="#" class="btn-outline">JOIN FREE</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Paid Tier -->
+                    <div class="tier-card">
+                        <span class="tier-badge">Paid</span>
+                        <div class="tier-name">Full Mind Access</div>
+                        <div class="tier-price">$19 <small>/month</small></div>
+                        <p class="tier-desc">Complete access to all Mind Plan modules, exercises, and community features.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> All 6 Modules</li>
+                            <li><i class="fas fa-check"></i> Complete Exercise Library</li>
+                            <li><i class="fas fa-check"></i> Live Group Sessions</li>
+                            <li><i class="fas fa-check"></i> Accountability Groups</li>
+                            <li><i class="fas fa-check"></i> Reflection Tools</li>
+                            <li><i class="fas fa-times" style="color:#6A6662; opacity:0.3;"></i> 1-on-1 Coaching</li>
+                            <li><i class="fas fa-times" style="color:#6A6662; opacity:0.3;"></i> Priority Support</li>
+                        </ul>
+                        <div class="btn-tier">
+                            <a href="#" class="btn-primary">BUILD WITH US</a>
+                        </div>
+                    </div>
+                    
+                    <!-- VIP Tier -->
+                    <div class="tier-card vip">
+                        <span class="badge-limited">Limited</span>
+                        <span class="tier-badge">Inner Circle</span>
+                        <div class="tier-name">Premium Mind Access</div>
+                        <div class="tier-price">$199 <small>/month</small></div>
+                        <p class="tier-desc">Maximum access with personalized coaching, private sessions, and direct mentorship.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Everything in Paid</li>
+                            <li><i class="fas fa-check"></i> 1-on-1 Coaching</li>
+                            <li><i class="fas fa-check"></i> Personalized Exercises</li>
+                            <li><i class="fas fa-check"></i> Private Sessions</li>
+                            <li><i class="fas fa-check"></i> Direct Mentor Access</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                            <li><i class="fas fa-check"></i> Exclusive Community</li>
+                        </ul>
+                        <div class="btn-tier">
+                            <a href="#" class="btn-primary">APPLY NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== SECTION BREAKER ===== -->
+        <div class="section-breaker"></div>
+        
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonial-section">
+            <div class="container">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">
+                    REAL RESULTS FROM <span class="highlight">REAL MEN</span>
+                </h2>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="quote">"</div>
+                        <p>I was lost, anxious, and had no direction. The Mind Plan gave me clarity and control. I finally feel like I'm in the driver's seat of my own life.</p>
+                        <div class="author">— Marcus, 24 <span>· 4 months in</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote">"</div>
+                        <p>My anxiety was controlling my life. The Mind Plan taught me how to manage my thoughts and emotions. I'm calmer, more focused, and actually enjoy my life now.</p>
+                        <div class="author">— James, 31 <span>· 6 months in</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== SECTION BREAKER ===== -->
+        <div class="section-breaker"></div>
+        
+        <!-- ===== FAQ ===== -->
+        <section class="faq-section">
+            <div class="container">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">
+                    FREQUENTLY ASKED <span class="highlight">QUESTIONS</span>
+                </h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item open">
+                        <div class="question">WHAT'S INCLUDED IN THE MIND PLAN? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">The Mind Plan includes six comprehensive modules covering Mental Strength, Emotional Regulation, Discipline, Confidence, Self-Awareness, and Managing Anxiety & Fear. You get access to video lessons, exercises, community support, and reflection tools.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">IS THIS FOR BEGINNERS? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">Yes. The Mind Plan is designed for all levels — from complete beginners to those who've done personal development work before. There are foundational exercises for beginners and advanced practices for those further along.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">HOW DOES THE MIND PLAN DIFFER BY TIER? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">Free members get Module 1 (Mental Strength Basics) and community access. Paid members get all 6 modules, live sessions, and accountability groups. VIP members get 1-on-1 coaching, personalized exercises, and direct mentor access.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">HOW LONG DOES IT TAKE TO SEE RESULTS? <i class="fas fa-chevron-down"></i></div>
+                        <div class="answer">Most members start noticing changes within 2-4 weeks of consistent practice. Significant transformation typically takes 3-6 months. The program is designed for sustainable, long-term mental growth.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== SECTION BREAKER ===== -->
+        <div class="section-breaker"></div>
+        
+        <!-- ===== FINAL CTA ===== -->
         <section class="final-cta">
             <div class="container">
                 <h2>
                     START BUILDING YOUR <span class="highlight">MIND</span> TODAY
                 </h2>
                 <p>
-                    Join The Iron and get access to all six plans, including the Mind Plan.
+                    Join The Iron and get access to the complete Mind Plan — plus all six plans.
                 </p>
                 <a href="index.html#membership" class="btn-accent">VIEW MEMBERSHIP</a>
                 <div class="closing">
@@ -1247,7 +1456,6 @@
         
     </main>
     
-    <!-- ===== FOOTER ===== -->
     <footer class="footer" id="footer">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -1286,13 +1494,7 @@
         </div>
     </footer>
     
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
     <script>
-        // ============================================================
-        // TOAST
-        // ============================================================
         const toastContainer = document.getElementById('toastContainer');
         function showToast(message, duration = 4000) {
             const toast = document.createElement('div');
@@ -1306,17 +1508,11 @@
         }
         window.showToast = showToast;
         
-        // ============================================================
-        // HEADER SCROLL
-        // ============================================================
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.pageYOffset > 50);
         });
         
-        // ============================================================
-        // BACK TO TOP
-        // ============================================================
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTop.classList.toggle('visible', window.pageYOffset > 500);
@@ -1325,9 +1521,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // ============================================================
-        // MOBILE MENU
-        // ============================================================
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const overlay = document.getElementById('overlay');
@@ -1362,9 +1555,15 @@
             });
         });
         
-        // ============================================================
-        // JOIN BUTTONS
-        // ============================================================
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+        
         ['joinNavBtn', 'joinMobileBtn'].forEach(id => {
             const btn = document.getElementById(id);
             if (btn) {
@@ -1375,9 +1574,6 @@
             }
         });
         
-        // ============================================================
-        // SMOOTH SCROLL
-        // ============================================================
         document.querySelectorAll('a[href^="#"]:not(.join-btn)').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const target = document.querySelector(this.getAttribute('href'));
@@ -1390,7 +1586,6 @@
         
         console.log('=== ⚔️ THE IRON — MIND PLAN ===');
         console.log('Build a life you respect.');
-        console.log('Plan your life. Build accordingly.');
         console.log('================================');
     </script>
 </body>
