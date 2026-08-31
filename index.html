@@ -201,7 +201,6 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
-        /* ===== NAV LINKS (Desktop - hidden, hamburger always shows) ===== */
         .nav-links {
             display: none;
             align-items: center;
@@ -241,7 +240,6 @@
             min-height: 36px;
         }
         
-        /* ===== DROPDOWN (Desktop - hidden) ===== */
         .dropdown {
             position: relative;
         }
@@ -315,7 +313,6 @@
             margin: 4px 12px;
         }
         
-        /* ===== HAMBURGER - Always visible ===== */
         .hamburger {
             display: flex !important;
             flex-direction: column;
@@ -348,7 +345,6 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
         
-        /* ===== MOBILE MENU ===== */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -387,7 +383,6 @@
             width: 100%;
         }
         
-        /* Mobile dropdown inside mobile menu */
         .mobile-dropdown-btn {
             display: flex;
             align-items: center;
@@ -631,29 +626,56 @@
             background: #0A0A0F;
             text-align: center;
         }
-        .philosophy-section .verse-block {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.8rem;
-            color: #E8C87A;
-            margin: 20px 0 30px;
-            opacity: 0.7;
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .philosophy-section p {
-            font-size: 1rem;
-            color: #A8A4A0;
-            max-width: 700px;
-            margin: 0 auto 16px;
+        .philosophy-card {
+            background: #181820;
+            padding: 32px 24px;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .philosophy-card:hover {
+            border-color: rgba(212, 168, 83, 0.08);
+            transform: translateY(-4px);
+        }
+        .philosophy-card .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            background: linear-gradient(135deg, #D4A853, #E8C87A, #D4A853);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            letter-spacing: 0.02em;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .philosophy-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.8;
+            color: #F0EDE8;
         }
-        .philosophy-section .highlight-gold {
-            color: #D4A853;
-            font-weight: 600;
+        .philosophy-card p {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #A8A4A0;
+            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
         /* ============================================================
-           SIX PILLARS
+           PILLARS
            ============================================================ */
         .pillars-section {
             background: #12121A;
@@ -741,6 +763,31 @@
         .pillar-card .pillar-link:hover {
             border-color: #D4A853;
         }
+        /* Pillar image placeholder */
+        .pillar-img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #181820;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 6px;
+            color: #6A6662;
+            font-size: 0.65rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .pillar-img-placeholder i {
+            font-size: 2.5rem;
+            color: #D4A853;
+            opacity: 0.06;
+        }
+        .pillar-card-inner {
+            padding: 0 4px;
+        }
         
         /* ============================================================
            BECOMING MORE
@@ -781,7 +828,7 @@
         }
         
         /* ============================================================
-           THREE LEVELS
+           LEVELS
            ============================================================ */
         .levels-section {
             background: #12121A;
@@ -828,6 +875,18 @@
             letter-spacing: 0.05em;
             font-family: 'Plus Jakarta Sans', sans-serif;
             margin-bottom: 8px;
+        }
+        .level-card .level-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #D4A853;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 8px;
+        }
+        .level-card .level-price small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #6A6662;
         }
         .level-card .level-desc {
             font-size: 0.85rem;
@@ -887,6 +946,10 @@
         }
         .level-card.coming-soon .level-number {
             color: #6A6662;
+        }
+        .level-card.coming-soon .level-price {
+            color: #6A6662;
+            font-size: 1.2rem;
         }
         .badge-coming {
             display: inline-block;
@@ -955,7 +1018,7 @@
             background: #12121A;
         }
         .comparison-table {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto 0;
             border: 1px solid rgba(255,255,255,0.04);
             border-radius: 8px;
@@ -1003,6 +1066,11 @@
             color: #6A6662;
             opacity: 0.3;
         }
+        .comparison-table .price-row td {
+            font-weight: 700;
+            color: #D4A853;
+            font-size: 1rem;
+        }
         
         /* ============================================================
            COMMUNITY
@@ -1030,6 +1098,30 @@
         .community-section .highlight-gold {
             color: #D4A853;
             font-weight: 600;
+        }
+        .community-visual {
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+        .community-visual .img-placeholder {
+            aspect-ratio: 16/9;
+            min-height: 180px;
+            background: #181820;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6A6662;
+            font-size: 0.7rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .community-visual .img-placeholder i {
+            font-size: 2.5rem;
+            color: #D4A853;
+            opacity: 0.06;
         }
         
         /* ============================================================
@@ -1412,6 +1504,9 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+            .philosophy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1425,6 +1520,12 @@
                 font-size: 1.2rem;
             }
             
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+                margin-left: auto;
+                margin-right: auto;
+            }
             .pillars-grid {
                 grid-template-columns: 1fr;
                 max-width: 380px;
@@ -1440,6 +1541,16 @@
             .levels-grid .level-card:last-child {
                 grid-column: span 1;
                 max-width: 100%;
+            }
+            .who-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .becoming-section .what-box {
+                grid-template-columns: 1fr;
+                max-width: 300px;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -1467,16 +1578,6 @@
             .comparison-table th,
             .comparison-table td {
                 padding: 6px 8px;
-            }
-            .who-grid {
-                grid-template-columns: 1fr;
-                max-width: 380px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .becoming-section .what-box {
-                grid-template-columns: 1fr;
-                max-width: 300px;
             }
         }
         
@@ -1515,9 +1616,15 @@
 </head>
 <body>
     
+    <!-- ===== TOAST ===== -->
     <div class="toast-container" id="toastContainer"></div>
-    <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ===== HEADER ===== -->
     <header class="header" id="header">
         <div class="header-inner">
             <a href="index.html" class="logo">
@@ -1527,7 +1634,9 @@
             
             <ul class="nav-links">
                 <li class="dropdown">
-                    <a href="#">PILLARS <i class="fas fa-chevron-down"></i></a>
+                    <a href="#">
+                        PILLARS <i class="fas fa-chevron-down"></i>
+                    </a>
                     <div class="dropdown-menu">
                         <a href="plan-mind.html">Mind</a>
                         <a href="plan-character.html">Character</a>
@@ -1537,17 +1646,19 @@
                         <a href="plan-purpose.html">Purpose</a>
                     </div>
                 </li>
-                <li><a href="#levels">MEMBERSHIP</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#" class="btn-primary" id="joinNavBtn">JOIN FREE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="#levels" class="btn-primary" id="joinNavBtn">JOIN FREE</a></li>
             </ul>
             
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </header>
     
+    <!-- ===== MOBILE MENU ===== -->
     <div class="overlay" id="overlay"></div>
     <nav class="mobile-menu" id="mobileMenu">
         <button class="mobile-dropdown-btn" id="mobileDropdownBtn">
@@ -1561,11 +1672,15 @@
             <a href="plan-money.html">Money</a>
             <a href="plan-purpose.html">Purpose</a>
         </div>
+        
         <a href="#levels">MEMBERSHIP</a>
-        <a href="#faq">FAQ</a>
+        <a href="about.html">ABOUT</a>
         <a href="#" class="btn-primary" id="joinMobileBtn">JOIN FREE</a>
     </nav>
     
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
     <main>
         
         <!-- ===== HERO ===== -->
@@ -1587,7 +1702,7 @@
                     Not through motivation. Through standards, structure, action and accountability.
                 </p>
                 <div class="hero-actions">
-                    <a href="#" class="btn-primary" id="joinHeroBtn">ENTER THE IRON</a>
+                    <a href="#levels" class="btn-primary" id="joinHeroBtn">JOIN THE IRON</a>
                     <a href="#pillars" class="btn-outline">EXPLORE THE PILLARS</a>
                 </div>
             </div>
@@ -1641,7 +1756,7 @@
                 <h2 class="section-title">
                     BECOME A MAN <span class="highlight">YOU RESPECT</span>
                 </h2>
-                <div class="verse-block">
+                <div class="verse-block" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.8rem; color:#E8C87A; margin:20px 0 30px; opacity:0.7;">
                     "Iron sharpens iron."
                 </div>
                 <p>
@@ -1654,6 +1769,24 @@
                     The goal isn't perfection.<br />
                     <span class="highlight-gold">The goal is to become more capable than you were yesterday — and to keep going.</span>
                 </p>
+                
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <span class="number">01</span>
+                        <h4>Standards</h4>
+                        <p>Define what you will and won't accept from yourself and from others.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <span class="number">02</span>
+                        <h4>Framework</h4>
+                        <p>A structured approach to building your life — pillar by pillar.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <span class="number">03</span>
+                        <h4>Action</h4>
+                        <p>Knowledge without action is just entertainment. This is about building.</p>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -1674,110 +1807,146 @@
                 <div class="pillars-grid">
                     <!-- Mind -->
                     <div class="pillar-card">
-                        <span class="pillar-number">01 — MIND</span>
-                        <h4>Master yourself.</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Mental strength</li>
-                            <li><i class="fas fa-check"></i> Emotional regulation</li>
-                            <li><i class="fas fa-check"></i> Discipline</li>
-                            <li><i class="fas fa-check"></i> Confidence</li>
-                            <li><i class="fas fa-check"></i> Resilience</li>
-                            <li><i class="fas fa-check"></i> Self-awareness</li>
-                        </ul>
-                        <div class="pillar-desc">
-                            Learn to respond instead of react.
+                        <div class="pillar-img-placeholder">
+                            <i class="fas fa-brain"></i>
+                            <span>mind-pillar.jpg</span>
                         </div>
-                        <a href="plan-mind.html" class="pillar-link">View Plan →</a>
+                        <div class="pillar-card-inner">
+                            <span class="pillar-number">01 — MIND</span>
+                            <h4>Master yourself.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Mental strength</li>
+                                <li><i class="fas fa-check"></i> Emotional regulation</li>
+                                <li><i class="fas fa-check"></i> Discipline</li>
+                                <li><i class="fas fa-check"></i> Confidence</li>
+                                <li><i class="fas fa-check"></i> Resilience</li>
+                                <li><i class="fas fa-check"></i> Self-awareness</li>
+                            </ul>
+                            <div class="pillar-desc">
+                                Learn to respond instead of react.
+                            </div>
+                            <a href="plan-mind.html" class="pillar-link">View Plan →</a>
+                        </div>
                     </div>
                     
                     <!-- Character -->
                     <div class="pillar-card">
-                        <span class="pillar-number">02 — CHARACTER</span>
-                        <h4>Become someone you respect.</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Integrity</li>
-                            <li><i class="fas fa-check"></i> Responsibility</li>
-                            <li><i class="fas fa-check"></i> Courage</li>
-                            <li><i class="fas fa-check"></i> Leadership</li>
-                            <li><i class="fas fa-check"></i> Standards</li>
-                            <li><i class="fas fa-check"></i> Self-respect</li>
-                        </ul>
-                        <div class="pillar-desc">
-                            Your character is what remains when nobody is watching.
+                        <div class="pillar-img-placeholder">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>character-pillar.jpg</span>
                         </div>
-                        <a href="plan-character.html" class="pillar-link">View Plan →</a>
+                        <div class="pillar-card-inner">
+                            <span class="pillar-number">02 — CHARACTER</span>
+                            <h4>Become someone you respect.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Integrity</li>
+                                <li><i class="fas fa-check"></i> Responsibility</li>
+                                <li><i class="fas fa-check"></i> Courage</li>
+                                <li><i class="fas fa-check"></i> Leadership</li>
+                                <li><i class="fas fa-check"></i> Standards</li>
+                                <li><i class="fas fa-check"></i> Self-respect</li>
+                            </ul>
+                            <div class="pillar-desc">
+                                Your character is what remains when nobody is watching.
+                            </div>
+                            <a href="plan-character.html" class="pillar-link">View Plan →</a>
+                        </div>
                     </div>
                     
                     <!-- Body -->
                     <div class="pillar-card">
-                        <span class="pillar-number">03 — BODY</span>
-                        <h4>Take care of what carries you.</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Strength</li>
-                            <li><i class="fas fa-check"></i> Nutrition</li>
-                            <li><i class="fas fa-check"></i> Sleep</li>
-                            <li><i class="fas fa-check"></i> Recovery</li>
-                            <li><i class="fas fa-check"></i> Physical discipline</li>
-                            <li><i class="fas fa-check"></i> Health</li>
-                        </ul>
-                        <div class="pillar-desc">
-                            Build a body that supports the life you want to live.
+                        <div class="pillar-img-placeholder">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>body-pillar.jpg</span>
                         </div>
-                        <a href="plan-body.html" class="pillar-link">View Plan →</a>
+                        <div class="pillar-card-inner">
+                            <span class="pillar-number">03 — BODY</span>
+                            <h4>Take care of what carries you.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Strength</li>
+                                <li><i class="fas fa-check"></i> Nutrition</li>
+                                <li><i class="fas fa-check"></i> Sleep</li>
+                                <li><i class="fas fa-check"></i> Recovery</li>
+                                <li><i class="fas fa-check"></i> Physical discipline</li>
+                                <li><i class="fas fa-check"></i> Health</li>
+                            </ul>
+                            <div class="pillar-desc">
+                                Build a body that supports the life you want to live.
+                            </div>
+                            <a href="plan-body.html" class="pillar-link">View Plan →</a>
+                        </div>
                     </div>
                     
                     <!-- Relationships -->
                     <div class="pillar-card">
-                        <span class="pillar-number">04 — RELATIONSHIPS</span>
-                        <h4>Build relationships without losing yourself.</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Communication</li>
-                            <li><i class="fas fa-check"></i> Boundaries</li>
-                            <li><i class="fas fa-check"></i> Emotional maturity</li>
-                            <li><i class="fas fa-check"></i> Friendship</li>
-                            <li><i class="fas fa-check"></i> Partnership</li>
-                            <li><i class="fas fa-check"></i> Self-respect</li>
-                        </ul>
-                        <div class="pillar-desc">
-                            Build relationships without losing yourself.
+                        <div class="pillar-img-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <span>relationships-pillar.jpg</span>
                         </div>
-                        <a href="plan-relationships.html" class="pillar-link">View Plan →</a>
+                        <div class="pillar-card-inner">
+                            <span class="pillar-number">04 — RELATIONSHIPS</span>
+                            <h4>Build relationships without losing yourself.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Communication</li>
+                                <li><i class="fas fa-check"></i> Boundaries</li>
+                                <li><i class="fas fa-check"></i> Emotional maturity</li>
+                                <li><i class="fas fa-check"></i> Friendship</li>
+                                <li><i class="fas fa-check"></i> Partnership</li>
+                                <li><i class="fas fa-check"></i> Self-respect</li>
+                            </ul>
+                            <div class="pillar-desc">
+                                Build relationships without losing yourself.
+                            </div>
+                            <a href="plan-relationships.html" class="pillar-link">View Plan →</a>
+                        </div>
                     </div>
                     
                     <!-- Money -->
                     <div class="pillar-card">
-                        <span class="pillar-number">05 — MONEY</span>
-                        <h4>Become financially capable.</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Financial literacy</li>
-                            <li><i class="fas fa-check"></i> Saving</li>
-                            <li><i class="fas fa-check"></i> Investing education</li>
-                            <li><i class="fas fa-check"></i> Career</li>
-                            <li><i class="fas fa-check"></i> Income</li>
-                            <li><i class="fas fa-check"></i> Long-term wealth</li>
-                        </ul>
-                        <div class="pillar-desc">
-                            Learn to make better financial decisions and build something that lasts.
+                        <div class="pillar-img-placeholder">
+                            <i class="fas fa-coins"></i>
+                            <span>money-pillar.jpg</span>
                         </div>
-                        <a href="plan-money.html" class="pillar-link">View Plan →</a>
+                        <div class="pillar-card-inner">
+                            <span class="pillar-number">05 — MONEY</span>
+                            <h4>Become financially capable.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Financial literacy</li>
+                                <li><i class="fas fa-check"></i> Saving</li>
+                                <li><i class="fas fa-check"></i> Investing education</li>
+                                <li><i class="fas fa-check"></i> Career</li>
+                                <li><i class="fas fa-check"></i> Income</li>
+                                <li><i class="fas fa-check"></i> Long-term wealth</li>
+                            </ul>
+                            <div class="pillar-desc">
+                                Learn to make better financial decisions and build something that lasts.
+                            </div>
+                            <a href="plan-money.html" class="pillar-link">View Plan →</a>
+                        </div>
                     </div>
                     
                     <!-- Purpose -->
                     <div class="pillar-card">
-                        <span class="pillar-number">06 — PURPOSE</span>
-                        <h4>Build something worth living for.</h4>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Direction</li>
-                            <li><i class="fas fa-check"></i> Career</li>
-                            <li><i class="fas fa-check"></i> Skills</li>
-                            <li><i class="fas fa-check"></i> Ambition</li>
-                            <li><i class="fas fa-check"></i> Meaning</li>
-                            <li><i class="fas fa-check"></i> Contribution</li>
-                        </ul>
-                        <div class="pillar-desc">
-                            Know where you're going — then build accordingly.
+                        <div class="pillar-img-placeholder">
+                            <i class="fas fa-rocket"></i>
+                            <span>purpose-pillar.jpg</span>
                         </div>
-                        <a href="plan-purpose.html" class="pillar-link">View Plan →</a>
+                        <div class="pillar-card-inner">
+                            <span class="pillar-number">06 — PURPOSE</span>
+                            <h4>Build something worth living for.</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Direction</li>
+                                <li><i class="fas fa-check"></i> Career</li>
+                                <li><i class="fas fa-check"></i> Skills</li>
+                                <li><i class="fas fa-check"></i> Ambition</li>
+                                <li><i class="fas fa-check"></i> Meaning</li>
+                                <li><i class="fas fa-check"></i> Contribution</li>
+                            </ul>
+                            <div class="pillar-desc">
+                                Know where you're going — then build accordingly.
+                            </div>
+                            <a href="plan-purpose.html" class="pillar-link">View Plan →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1834,6 +2003,7 @@
                         <span class="level-number">01</span>
                         <div class="level-name">FREE</div>
                         <div class="level-sub">Understand.</div>
+                        <div class="level-price">R0 <small>/month</small></div>
                         <p class="level-desc">
                             Learn what matters, why it matters, and the principles behind building a better life.
                         </p>
@@ -1857,6 +2027,7 @@
                         <span class="level-number">02</span>
                         <div class="level-name">THE FORGE</div>
                         <div class="level-sub">Implement.</div>
+                        <div class="level-price">R149 <small>/month</small></div>
                         <p class="level-desc">
                             Turn the principles into a practical system with detailed frameworks, tools, challenges and accountability.
                         </p>
@@ -1881,6 +2052,7 @@
                         <span class="level-number">03</span>
                         <div class="level-name">INNER CIRCLE</div>
                         <div class="level-sub">Personalize.</div>
+                        <div class="level-price">Coming Soon</div>
                         <p class="level-desc">
                             Apply the Iron frameworks to your specific circumstances with individualized guidance and accountability.
                         </p>
@@ -1960,6 +2132,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr class="price-row">
+                                <td>Price</td>
+                                <td>R0 / month</td>
+                                <td>R149 / month</td>
+                                <td>Coming Soon</td>
+                            </tr>
                             <tr>
                                 <td>Purpose</td>
                                 <td>Understand</td>
@@ -1996,6 +2174,36 @@
                                 <td>Building</td>
                                 <td>Accelerating</td>
                             </tr>
+                            <tr>
+                                <td>Live Sessions</td>
+                                <td>Selected</td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Masterclasses</td>
+                                <td>Selected</td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Direct Founder Access</td>
+                                <td><span class="cross"><i class="fas fa-minus"></i></span></td>
+                                <td><span class="cross"><i class="fas fa-minus"></i></span></td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Private Sessions</td>
+                                <td><span class="cross"><i class="fas fa-minus"></i></span></td>
+                                <td><span class="cross"><i class="fas fa-minus"></i></span></td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td>Personalized Roadmap</td>
+                                <td><span class="cross"><i class="fas fa-minus"></i></span></td>
+                                <td><span class="cross"><i class="fas fa-minus"></i></span></td>
+                                <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -2027,6 +2235,13 @@
                 <p style="font-size:1.05rem; font-weight:600; color:#D4A853;">
                     One standard: keep building.
                 </p>
+                
+                <div class="community-visual">
+                    <div class="img-placeholder">
+                        <i class="fas fa-users"></i>
+                        <span>community-dashboard.jpg</span>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -2143,7 +2358,7 @@
                     "Iron sharpens iron."
                 </div>
                 <div class="cta-buttons">
-                    <a href="#" class="btn-primary" id="finalJoinBtn">JOIN FREE</a>
+                    <a href="#levels" class="btn-primary" id="finalJoinBtn">JOIN FREE</a>
                     <a href="#levels" class="btn-gold-outline">ENTER THE FORGE</a>
                 </div>
                 <div class="closing">
@@ -2154,6 +2369,7 @@
         
     </main>
     
+    <!-- ===== FOOTER ===== -->
     <footer class="footer" id="footer">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -2173,13 +2389,10 @@
                 <a href="#faq">FAQ</a>
             </div>
             <div class="footer-col">
-                <h5>Pillars</h5>
-                <a href="plan-mind.html">Mind</a>
-                <a href="plan-character.html">Character</a>
-                <a href="plan-body.html">Body</a>
-                <a href="plan-relationships.html">Relationships</a>
-                <a href="plan-money.html">Money</a>
-                <a href="plan-purpose.html">Purpose</a>
+                <h5>About</h5>
+                <a href="about.html">About</a>
+                <a href="#pillars">The Pillars</a>
+                <a href="#whofor">Who It's For</a>
             </div>
             <div class="footer-col">
                 <h5>Connect</h5>
@@ -2195,6 +2408,9 @@
         </div>
     </footer>
     
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
     <script>
         const toastContainer = document.getElementById('toastContainer');
         function showToast(message, duration = 4000) {
