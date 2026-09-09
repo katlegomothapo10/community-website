@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>THE IRON — Insights</title>
-    <meta name="description" content="The Iron Review: Ideas worth thinking about. Long-form essays, conversations, research and frameworks for men building greater capability." />
+    <title>THE IRON — Membership</title>
+    <meta name="description" content="Join The Iron: Three ways to build. Foundation (Free), The Iron (R149/month), and Inner Circle (Coming Soon)." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -710,132 +710,196 @@
         }
 
         /* ============================================================
-           11. INSIGHTS GRID
+           11. MEMBERSHIP GRID
            ============================================================ */
-        .insights-grid {
+        .membership-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md, 32px);
             margin-top: var(--space-lg, 64px);
         }
 
-        .insight-card {
-            padding: var(--space-md, 32px);
+        .membership-tier {
+            padding: clamp(var(--space-md, 32px), 2.5vw, var(--space-lg, 64px));
             border: 1px solid var(--iron-rule, #d9d9d4);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             background: var(--iron-white, #f7f7f4);
-            cursor: default;
+            position: relative;
+            text-align: center;
             display: flex;
             flex-direction: column;
         }
 
-        .insight-card:hover {
+        .membership-tier:hover {
             border-color: var(--iron-black, #111111);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.06);
         }
 
-        .insight-card.featured {
-            grid-column: 1 / -1;
+        .membership-tier.featured {
             border-color: var(--iron-black, #111111);
             background: var(--iron-white, #f7f7f4);
-            padding: var(--space-lg, 64px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+            transform: scale(1.02);
         }
 
-        .insight-card.featured .insight-meta .pillar {
-            border-color: var(--iron-red, #a32621);
-            color: var(--iron-red, #a32621);
+        .membership-tier.featured:hover {
+            transform: scale(1.02) translateY(-6px);
         }
 
-        .insight-card .insight-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: var(--space-sm, 16px);
-            margin-bottom: var(--space-sm, 16px);
-        }
-
-        .insight-card .insight-meta .pillar {
+        .membership-tier .badge {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 12px);
+            font-size: clamp(9px, 0.6vw, 11px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            padding: 2px 12px;
+            color: var(--iron-red, #a32621);
+            border: 1px solid var(--iron-red, #a32621);
+            padding: 2px clamp(10px, 0.8vw, 14px);
+            display: inline-block;
+            margin-bottom: var(--space-xs, 8px);
+            align-self: center;
         }
 
-        .insight-card .insight-meta .read-time {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 12px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .insight-card h3 {
+        .membership-tier .tier-name {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             font-size: clamp(22px, 1.8vw, 28px);
-            line-height: 1.2;
-            margin-bottom: var(--space-sm, 16px);
         }
 
-        .insight-card.featured h3 {
-            font-size: clamp(28px, 2.5vw, 36px);
-        }
-
-        .insight-card .excerpt {
+        .membership-tier .tier-price {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(14px, 0.9vw, 16px);
+            font-weight: 500;
+            font-size: clamp(26px, 2.2vw, 32px);
+            margin: var(--space-xs, 8px) 0;
+        }
+
+        .membership-tier .tier-price span {
+            font-size: clamp(13px, 0.9vw, 16px);
+            font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
-            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .membership-tier .tier-desc {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .membership-tier ul {
+            list-style: none;
+            margin-bottom: var(--space-md, 32px);
+            text-align: left;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
             flex-grow: 1;
         }
 
-        .insight-card .read-link {
+        .membership-tier ul li {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
             font-size: clamp(12px, 0.7vw, 14px);
-            color: var(--iron-black, #111111);
+            padding: 6px 0;
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            color: var(--iron-ink, #1c1c1c);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            margin-top: auto;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 8px;
         }
 
-        .insight-card .read-link:hover {
+        .membership-tier ul li::before {
+            content: '✓';
+            color: var(--iron-red, #a32621);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .membership-tier ul li:last-child {
+            border-bottom: none;
+        }
+
+        .membership-tier:hover ul li {
+            border-bottom-color: var(--iron-black, #111111);
+        }
+
+        .membership-tier .btn-primary,
+        .membership-tier .btn-secondary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .membership-tier .btn-primary {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            border-color: var(--iron-black, #111111);
+        }
+
+        .membership-tier .btn-primary:hover {
+            background: var(--iron-red, #a32621);
+            border-color: var(--iron-red, #a32621);
+        }
+
+        .membership-tier .btn-secondary {
+            border-bottom: 2px solid var(--iron-black, #111111);
+        }
+
+        .membership-tier .btn-secondary:hover {
+            border-bottom-color: var(--iron-red, #a32621);
             color: var(--iron-red, #a32621);
         }
 
-        .insight-card .read-link::after {
-            content: '→';
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        .membership-tier.featured .btn-primary {
+            background: var(--iron-red, #a32621);
+            border-color: var(--iron-red, #a32621);
         }
 
-        .insight-card .read-link:hover::after {
-            transform: translateX(4px);
+        .membership-tier.featured .btn-primary:hover {
+            background: var(--iron-red-dark, #7f1d1d);
+            border-color: var(--iron-red-dark, #7f1d1d);
+        }
+
+        .membership-tier .cancel-note {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(10px, 0.6vw, 12px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: var(--space-xs, 8px);
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .membership-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-md, 32px);
+            }
+            .membership-tier.featured {
+                transform: scale(1);
+            }
+            .membership-tier.featured:hover {
+                transform: translateY(-6px);
+            }
         }
 
         @media (max-width: 768px) {
-            .insights-grid {
+            .membership-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-sm, 16px);
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
             }
-
-            .insight-card.featured {
-                grid-column: 1;
-                padding: var(--space-md, 32px);
+            .membership-tier.featured {
+                transform: scale(1);
+                order: -1;
             }
-
-            .insight-card.featured h3 {
-                font-size: clamp(24px, 4vw, 28px);
+            .membership-tier.featured:hover {
+                transform: translateY(-6px);
             }
         }
 
         /* ============================================================
-           12. IRON INDEX (COMING SOON)
+           12. PROGRESSION PATH
            ============================================================ */
-        .index-section {
+        .progression-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
             padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
@@ -844,7 +908,7 @@
             overflow: hidden;
         }
 
-        .index-section::before {
+        .progression-section::before {
             content: '';
             position: absolute;
             top: -30%;
@@ -855,144 +919,188 @@
             pointer-events: none;
         }
 
-        .index-section .section-number {
+        .progression-section .section-number {
             color: var(--iron-red, #a32621);
         }
 
-        .index-section .heading-display-md {
+        .progression-section .heading-display-md {
             color: var(--iron-white, #f7f7f4);
         }
 
-        .index-section p {
+        .progression-section p {
             color: var(--iron-grey, #6b6b6b);
             max-width: 600px;
-            margin: 0 auto var(--space-md, 32px);
+            margin: 0 auto;
         }
 
-        .index-badge {
-            display: inline-block;
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 12px);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--iron-red, #a32621);
-            border: 1px solid var(--iron-red, #a32621);
-            padding: 4px 16px;
-            margin-bottom: var(--space-md, 32px);
-        }
-
-        .index-grid {
+        .progression-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md, 32px);
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
-        .index-item {
+        .progression-step {
             padding: var(--space-md, 32px);
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             text-align: center;
         }
 
-        .index-item:hover {
+        .progression-step:hover {
             border-color: var(--iron-red, #a32621);
         }
 
-        .index-item .icon-svg {
-            width: 32px;
-            height: 32px;
-            margin: 0 auto var(--space-sm, 16px);
-            flex-shrink: 0;
+        .progression-step .number {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-size: clamp(28px, 2.5vw, 36px);
+            color: var(--iron-rule, #d9d9d4);
         }
 
-        .index-item .icon-svg svg {
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: var(--iron-grey, #6b6b6b);
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        .progression-step .step-name {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-size: clamp(22px, 1.8vw, 28px);
+            color: var(--iron-white, #f7f7f4);
         }
 
-        .index-item .icon-svg svg .accent {
-            stroke: var(--iron-red, #a32621);
-        }
-
-        .index-item .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+        .progression-step .step-label {
+            font-size: clamp(13px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
         }
 
-        .index-item .value {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(28px, 3vw, 40px);
-            color: var(--iron-white, #f7f7f4);
-            display: block;
-            margin-top: var(--space-xs, 8px);
-        }
-
-        .index-item .bar-track {
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 2px;
+        .progression-step .step-desc {
+            font-size: clamp(13px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-sm, 16px);
-            overflow: hidden;
         }
 
-        .index-item .bar-fill {
-            height: 100%;
-            background: var(--iron-red, #a32621);
-            border-radius: 2px;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        .progression-step.featured-step {
+            border-color: var(--iron-red, #a32621);
         }
 
-        .index-item:hover .bar-fill {
-            background: var(--iron-white, #f7f7f4);
+        .progression-step.featured-step .number {
+            color: var(--iron-red, #a32621);
         }
 
         @media (max-width: 768px) {
-            .index-grid {
-                grid-template-columns: 1fr 1fr;
+            .progression-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
                 gap: var(--space-sm, 16px);
             }
         }
 
-        @media (max-width: 500px) {
-            .index-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* ============================================================
-           13. CTA SECTION
+           13. FAQ SECTION
            ============================================================ */
-        .cta-insights {
+        .faq-section {
             background: var(--iron-white, #f7f7f4);
-            text-align: center;
             border-top: 1px solid var(--iron-rule, #d9d9d4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .cta-insights .heading-display-md {
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            padding: var(--space-md, 32px) 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 500;
+            font-size: clamp(18px, 1.4vw, 22px);
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            color: var(--iron-black, #111111);
+            padding: 4px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .faq-question:hover {
+            color: var(--iron-red, #a32621);
+        }
+
+        .faq-question .toggle {
+            font-size: clamp(20px, 1.6vw, 24px);
+            color: var(--iron-grey, #6b6b6b);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            font-family: var(--font-body, 'Inter', sans-serif);
+            flex-shrink: 0;
+            margin-left: var(--space-sm, 16px);
+        }
+
+        .faq-item.open .faq-question .toggle {
+            transform: rotate(45deg);
+            color: var(--iron-red, #a32621);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 500ms ease, padding 500ms ease;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(15px, 0.9vw, 17px);
+            color: var(--iron-grey, #6b6b6b);
+            padding: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            padding-top: var(--space-sm, 16px);
+        }
+
+        /* ============================================================
+           14. CTA SECTION
+           ============================================================ */
+        .cta-membership {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            text-align: center;
+            padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
+        }
+
+        .cta-membership .heading-display-md {
             margin-bottom: var(--space-md, 32px);
         }
 
-        .cta-insights p {
+        .cta-membership p {
             max-width: 500px;
             margin: 0 auto var(--space-md, 32px);
             color: var(--iron-grey, #6b6b6b);
         }
 
+        .cta-membership .btn-primary {
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            border-color: var(--iron-white, #f7f7f4);
+        }
+
+        .cta-membership .btn-primary:hover {
+            background: var(--iron-red, #a32621);
+            border-color: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
+        }
+
         /* ============================================================
-           14. UTILITY
+           15. UTILITY
            ============================================================ */
         .text-center {
             text-align: center;
@@ -1045,8 +1153,8 @@
                 <a href="framework.html">Framework</a>
                 <a href="community.html">Community</a>
                 <a href="library.html">Library</a>
-                <a href="insights.html" class="active">Insights</a>
-                <a href="membership.html" class="nav-cta">Enter The Iron →</a>
+                <a href="insights.html">Insights</a>
+                <a href="membership.html" class="active nav-cta">Enter The Iron →</a>
             </nav>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -1059,266 +1167,276 @@
     ============================================================ -->
     <section class="page-header">
         <div class="container">
-            <div class="section-number">The Iron Review</div>
-            <h1 class="heading-display heading-display-lg">Ideas Worth Thinking About.</h1>
+            <div class="section-number">Membership</div>
+            <h1 class="heading-display heading-display-lg">Three Ways to Build.</h1>
             <p class="text-body">
-                Long-form essays. Conversations. Research. Frameworks. Perspectives.
-            </p>
-            <p class="text-body" style="font-style: italic; color: var(--iron-grey); margin-top: var(--space-sm);">
-                Not content for the sake of publishing.<br />
-                Ideas worth returning to.
+                Start where you are. Go deeper when you're ready.<br />
+                The Iron has been designed as a progression—not a hierarchy of worth.
             </p>
         </div>
     </section>
 
     <!-- ============================================================
-    INSIGHTS GRID
+    MEMBERSHIP TIERS
     ============================================================ -->
     <section>
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">Featured</div>
-                <h2 class="heading-display heading-display-md">Ideas Worth Returning To.</h2>
+                <div class="section-number">Choose Your Path</div>
+                <h2 class="heading-display heading-display-md">Build at Your Own Pace.</h2>
                 <p class="text-body">
-                    Essays, conversations and frameworks that examine the ideas, behaviours and systems that shape men's lives.
+                    Every man's journey is different. Choose the path that matches where you are right now.
                 </p>
             </div>
 
             <!-- BIBLE VERSE -->
             <div class="bible-verse reveal">
-                "The heart of the discerning acquires knowledge,<br />
-                for the ears of the wise seek it out."
-                <span class="ref">— Proverbs 18:15</span>
+                "The one who is faithful in a very little thing<br />
+                is also faithful in much."
+                <span class="ref">— Luke 16:10</span>
             </div>
 
-            <div class="insights-grid">
-                <!-- FEATURED -->
-                <div class="insight-card featured reveal">
-                    <div class="insight-meta">
-                        <span class="pillar">Mind</span>
-                        <span class="read-time">8 MIN READ</span>
-                    </div>
-                    <h3>Why Discipline Is More Useful Than Motivation</h3>
-                    <p class="excerpt">
-                        Motivation can start a behaviour. Discipline allows you to continue it. This essay explores why relying on motivation is a trap, and how to build the discipline that actually produces results.
-                    </p>
-                    <a href="#" class="read-link">Read</a>
+            <div class="membership-grid">
+                <!-- FOUNDATION -->
+                <div class="membership-tier reveal">
+                    <span class="badge">Free</span>
+                    <div class="tier-name">Foundation</div>
+                    <div class="tier-price">R0 <span>/ month</span></div>
+                    <p class="tier-desc">A starting point for men who want to understand the philosophy, meet the community and begin building.</p>
+                    <ul>
+                        <li>Community access</li>
+                        <li>Introductions and discussions</li>
+                        <li>Selected educational content</li>
+                        <li>Community challenges</li>
+                        <li>Wins and accountability</li>
+                        <li>Selected live events</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Join Free →</a>
                 </div>
 
-                <!-- CHARACTER -->
-                <div class="insight-card reveal">
-                    <div class="insight-meta">
-                        <span class="pillar">Character</span>
-                        <span class="read-time">7 MIN READ</span>
-                    </div>
-                    <h3>The Difference Between Confidence and Self-Respect</h3>
-                    <p class="excerpt">
-                        Confidence asks whether you believe you can do something. Self-respect asks whether you can trust yourself to do what you said you would.
-                    </p>
-                    <a href="#" class="read-link">Read</a>
+                <!-- THE IRON MEMBERSHIP (FEATURED) -->
+                <div class="membership-tier featured reveal">
+                    <span class="badge">Most Popular</span>
+                    <div class="tier-name">The Iron</div>
+                    <div class="tier-price">R149 <span>/ month</span></div>
+                    <p class="tier-desc">For men who want greater structure, education and accountability.</p>
+                    <ul>
+                        <li>Everything in Foundation</li>
+                        <li>Full education library</li>
+                        <li>Complete development paths</li>
+                        <li>Advanced resources</li>
+                        <li>Masterclass recordings</li>
+                        <li>Member-only sessions</li>
+                        <li>Structured accountability</li>
+                        <li>Advanced challenges</li>
+                        <li>Practical frameworks and exercises</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Join The Iron →</a>
+                    <span class="cancel-note">Cancel anytime.</span>
                 </div>
 
-                <!-- MONEY -->
-                <div class="insight-card reveal">
-                    <div class="insight-meta">
-                        <span class="pillar">Money</span>
-                        <span class="read-time">10 MIN READ</span>
-                    </div>
-                    <h3>Why Most Men Don't Actually Have a Money Problem</h3>
-                    <p class="excerpt">
-                        Financial capability begins long before wealth. It starts with behaviour. This essay examines the habits that determine financial outcomes.
-                    </p>
-                    <a href="#" class="read-link">Read</a>
+                <!-- INNER CIRCLE -->
+                <div class="membership-tier reveal">
+                    <span class="badge">Limited</span>
+                    <div class="tier-name">Inner Circle</div>
+                    <div class="tier-price">Coming Soon</div>
+                    <p class="tier-desc">A smaller environment for men who want greater accountability, deeper feedback and closer interaction.</p>
+                    <ul>
+                        <li>Everything in The Iron</li>
+                        <li>Private Inner Circle community</li>
+                        <li>Small-group sessions</li>
+                        <li>Scheduled founder sessions</li>
+                        <li>Hot seats</li>
+                        <li>90-day development planning</li>
+                        <li>Deeper feedback</li>
+                        <li>Limited membership</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Join Waitlist →</a>
                 </div>
-
-                <!-- CHARACTER -->
-                <div class="insight-card reveal">
-                    <div class="insight-meta">
-                        <span class="pillar">Character</span>
-                        <span class="read-time">9 MIN READ</span>
-                    </div>
-                    <h3>What Healthy Masculinity Actually Requires</h3>
-                    <p class="excerpt">
-                        Strength without responsibility becomes recklessness. Vulnerability without boundaries becomes dependence. Mature masculinity requires both strength and self-command.
-                    </p>
-                    <a href="#" class="read-link">Read</a>
-                </div>
-
-                <!-- BODY -->
-                <div class="insight-card reveal">
-                    <div class="insight-meta">
-                        <span class="pillar">Body</span>
-                        <span class="read-time">6 MIN READ</span>
-                    </div>
-                    <h3>The Quiet Discipline of Physical Capability</h3>
-                    <p class="excerpt">
-                        Your body is not the whole of your life. But it carries you through all of it. Building physical capability is about more than appearance—it's about capacity.
-                    </p>
-                    <a href="#" class="read-link">Read</a>
-                </div>
-
-                <!-- RELATIONSHIPS -->
-                <div class="insight-card reveal">
-                    <div class="insight-meta">
-                        <span class="pillar">Relationships</span>
-                        <span class="read-time">8 MIN READ</span>
-                    </div>
-                    <h3>Building Relationships Without Losing Yourself</h3>
-                    <p class="excerpt">
-                        The quality of your relationships shapes the quality of your life. But how do you build deep connections without abandoning your own standards and direction?
-                    </p>
-                    <a href="#" class="read-link">Read</a>
-                </div>
-            </div>
-
-            <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
-                <a href="#" class="btn-secondary btn-arrow">View All Insights →</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    IRON INDEX — COMING SOON
+    PROGRESSION PATH
     ============================================================ -->
-    <section class="index-section">
+    <section class="progression-section">
         <div class="container">
             <div class="reveal">
-                <span class="index-badge">Coming Soon</span>
-                <div class="section-number" style="color: var(--iron-red);">Research</div>
-                <h2 class="heading-display heading-display-md">Understanding the Modern Man.</h2>
-                <p>
-                    We believe meaningful development begins with understanding where people actually are.<br />
-                    The Iron Index will examine the state of men's development across six areas.
+                <div class="section-number" style="color: var(--iron-red);">The Path</div>
+                <h2 class="heading-display heading-display-md">Discover. Build. Deepen.</h2>
+                <p style="max-width: 600px; margin: 0 auto;">
+                    Your starting point doesn't determine your destination.<br />
+                    What you do next does.
                 </p>
+
+                <div class="progression-grid" style="margin-top: var(--space-xl);">
+                    <div class="progression-step reveal">
+                        <div class="number">01</div>
+                        <div class="step-name">Discover</div>
+                        <div class="step-label">Foundation</div>
+                        <div class="step-desc">
+                            Understand the philosophy.<br />
+                            Meet the community.<br />
+                            Start building.
+                        </div>
+                    </div>
+                    <div class="progression-step featured-step reveal">
+                        <div class="number">02</div>
+                        <div class="step-name">Build</div>
+                        <div class="step-label">The Iron</div>
+                        <div class="step-desc">
+                            Follow structured paths.<br />
+                            Learn. Implement.<br />
+                            Track your progress.
+                        </div>
+                    </div>
+                    <div class="progression-step reveal">
+                        <div class="number">03</div>
+                        <div class="step-name">Deepen</div>
+                        <div class="step-label">Inner Circle</div>
+                        <div class="step-desc">
+                            Work in a smaller environment.<br />
+                            Receive deeper feedback.<br />
+                            Build alongside committed men.
+                        </div>
+                    </div>
+                </div>
 
                 <!-- BIBLE VERSE (DARK) -->
-                <div class="bible-verse-dark" style="margin-top: var(--space-md); max-width: 650px;">
-                    "Plans fail for lack of counsel,<br />
-                    but with many advisers they succeed."
-                    <span class="ref">— Proverbs 15:22</span>
-                </div>
-
-                <div class="index-grid" style="margin-top: var(--space-xl);">
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                <path d="M24 12v6" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M24 30v6" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M12 24h6" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M30 24h6" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="24" cy="24" r="3" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </div>
-                        <span class="label">Mind</span>
-                        <span class="value">74</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:74%;"></div>
-                        </div>
-                    </div>
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M24 6L24 12" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M24 36L24 42" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M6 24L12 24" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M36 24L42 24" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M24 18C20.686 18 18 20.686 18 24C18 27.314 20.686 30 24 30C27.314 30 30 27.314 30 24C30 20.686 27.314 18 24 18Z" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </div>
-                        <span class="label">Character</span>
-                        <span class="value">68</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:68%;"></div>
-                        </div>
-                    </div>
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M24 8L24 16" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M24 32L24 40" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M8 24L16 24" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M32 24L40 24" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="24" cy="24" r="8" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
-                                <circle cx="24" cy="24" r="3" fill="var(--iron-red)"/>
-                            </svg>
-                        </div>
-                        <span class="label">Body</span>
-                        <span class="value">71</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:71%;"></div>
-                        </div>
-                    </div>
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M16 12C18 10 20 10 22 12L24 14L26 12C28 10 30 10 32 12C34 14 34 18 32 20L24 28L16 20C14 18 14 14 16 12Z" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </div>
-                        <span class="label">Relationships</span>
-                        <span class="value">59</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:59%;"></div>
-                        </div>
-                    </div>
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                <path d="M20 18L24 14L28 18" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
-                                <path d="M24 14L24 28" stroke="var(--iron-red)" stroke-width="1.5"/>
-                                <path d="M20 26L28 26" stroke="var(--iron-red)" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                        <span class="label">Money</span>
-                        <span class="value">48</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:48%;"></div>
-                        </div>
-                    </div>
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                <path d="M24 18L28 22L24 26L20 22L24 18Z" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
-                                <path d="M24 26L24 32" stroke="var(--iron-red)" stroke-width="1.5"/>
-                                <path d="M18 30L30 30" stroke="var(--iron-red)" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                        <span class="label">Purpose</span>
-                        <span class="value">62</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:62%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: var(--space-xl);">
-                    <a href="#" class="btn-primary btn-arrow"><span>Join The Research →</span></a>
+                <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                    "Do not despise these small beginnings,<br />
+                    for the Lord rejoices to see the work begin."
+                    <span class="ref">— Zechariah 4:10</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    CTA — SUBSCRIBE TO INSIGHTS
+    FAQ
     ============================================================ -->
-    <section class="cta-insights">
+    <section class="faq-section" id="faq">
         <div class="container">
-            <div class="reveal">
-                <div class="section-number">Stay Informed</div>
-                <h2 class="heading-display heading-display-md">Ideas Worth Returning To.</h2>
+            <div class="section-header reveal">
+                <div class="section-number">Questions</div>
+                <h2 class="heading-display heading-display-md">Before You Enter.</h2>
                 <p class="text-body">
-                    Subscribe to The Iron Review and receive thoughtful essays, research and frameworks directly.
+                    Answers to the most common questions about The Iron.
                 </p>
-                <a href="#" class="btn-primary btn-arrow"><span>Subscribe →</span></a>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What is The Iron?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The Iron is a private development community for men built around six areas: Mind, Character, Body, Relationships, Money and Purpose.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        Who is it for?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Men who want to become more capable and are willing to take responsibility for their development.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        Do I need to have my life figured out?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. The Iron is designed for men at different stages of development. You simply need to be willing to build.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What do I get for free?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The free community gives you an introduction to the philosophy, community discussions, selected educational resources, challenges and selected events.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What does the R149 membership include?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Full development paths, the education library, masterclasses, member sessions, accountability systems, challenges and practical frameworks.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What is the Inner Circle?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        A smaller environment designed for deeper accountability, feedback and interaction. It will launch separately.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        Can I cancel?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. Membership terms and cancellation information are provided when you join.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What happens after I join?
+                        <span class="toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        You'll be guided through your first steps: entering the community, assessing where you are, choosing an initial development area and beginning the work.
+                    </div>
+                </div>
             </div>
 
             <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Get wisdom, get understanding;<br />
-                do not forget my words or turn away from them."
-                <span class="ref">— Proverbs 4:5</span>
+                "If any of you lacks wisdom, you should ask God,<br />
+                who gives generously to all without finding fault, and it will be given to you."
+                <span class="ref">— James 1:5</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA — JOIN THE IRON
+    ============================================================ -->
+    <section class="cta-membership">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-number" style="color: var(--iron-red);">Begin</div>
+                <h2 class="heading-display heading-display-md">Build a Life You Respect.</h2>
+                <p class="text-body">
+                    You don't need to change everything tomorrow.<br />
+                    You need to decide what needs to change. Then start.
+                </p>
+                <a href="#" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+            </div>
+
+            <!-- BIBLE VERSE (DARK) -->
+            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                "For God gave us a spirit not of fear<br />
+                but of <strong>power and love and self-control.</strong>"
+                <span class="ref">— 2 Timothy 1:7</span>
             </div>
         </div>
     </section>
@@ -1451,7 +1569,26 @@
                 });
             }
 
-            console.log('THE IRON — Insights page initialized successfully.');
+            // ============================================================
+            // 4. FAQ ACCORDION
+            // ============================================================
+            var faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                var question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    var isOpen = item.classList.contains('open');
+                    // Close all
+                    faqItems.forEach(function(i) {
+                        i.classList.remove('open');
+                    });
+                    // Toggle this one
+                    if (!isOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+
+            console.log('THE IRON — Membership page initialized successfully.');
         })();
     </script>
 
