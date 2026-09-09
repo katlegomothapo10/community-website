@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE IRON — Purpose</title>
+    <meta name="description" content="Find something worth building. Develop direction, skills, work, meaning and contribution." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ============================================================
+           THE IRON — Global Styles
+           ============================================================ */
+
+        /* ============================================================
+           1. DESIGN TOKENS
+           ============================================================ */
+        :root {
+            --iron-black: #111111;
+            --iron-ink: #1c1c1c;
+            --iron-white: #f7f7f4;
+            --iron-paper: #ffffff;
+            --iron-grey: #6b6b6b;
+            --iron-rule: #d9d9d4;
+            --iron-red: #a32621;
+            --iron-red-dark: #7f1d1d;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+            --space-xxl: 160px;
+            --container-width: min(1200px, calc(100% - 80px));
+            --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ============================================================
+           2. RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ::selection {
+            background: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        /* ============================================================
+           3. CONTAINER
+           ============================================================ */
+        .container {
+            width: var(--container-width, min(1200px, calc(100% - 80px)));
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                --container-width: min(100% - 60px, 1200px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --container-width: min(100% - 40px, 1200px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 0 16px;
+            }
+            :root {
+                --container-width: min(100% - 32px, 1200px);
+            }
+        }
+
+        /* ============================================================
+           4. TYPOGRAPHY
+           ============================================================ */
+        .heading-display {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .heading-display-lg {
+            font-size: clamp(36px, 8vw, 80px);
+        }
+
+        .heading-display-md {
+            font-size: clamp(30px, 6vw, 64px);
+        }
+
+        .heading-display-sm {
+            font-size: clamp(24px, 4vw, 40px);
+        }
+
+        .text-body {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 400;
+            font-size: clamp(15px, 1.1vw, 18px);
+            line-height: 1.7;
+            color: var(--iron-ink, #1c1c1c);
+        }
+
+        .text-body-sm {
+            font-size: clamp(13px, 0.9vw, 15px);
+            line-height: 1.6;
+        }
+
+        .text-meta {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .section-number {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--iron-red, #a32621);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(17px, 1.2vw, 20px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: var(--space-md, 32px) auto;
+            padding-left: var(--space-md, 32px);
+            border-left: 2px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .verse strong {
+            color: var(--iron-black, #111111);
+            font-weight: 600;
+        }
+
+        .verse-reference {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.7vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(18px, 1.4vw, 24px);
+            color: var(--iron-ink, #1c1c1c);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .bible-verse strong {
+            color: var(--iron-red, #a32621);
+            font-weight: 600;
+        }
+
+        .bible-verse .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse-dark {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(18px, 1.4vw, 24px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .bible-verse-dark strong {
+            color: var(--iron-white, #f7f7f4);
+            font-weight: 600;
+        }
+
+        .bible-verse-dark .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        @media (max-width: 500px) {
+            .verse {
+                padding-left: var(--space-sm, 16px);
+                font-size: 16px;
+                margin: var(--space-sm, 16px) auto;
+            }
+            .bible-verse,
+            .bible-verse-dark {
+                font-size: 16px;
+                padding: var(--space-sm, 16px);
+            }
+        }
+
+        /* ============================================================
+           5. BUTTONS
+           ============================================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 15px);
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            border: 1px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--iron-red, #a32621);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            z-index: 0;
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            border-color: var(--iron-red, #a32621);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 15px);
+            background: transparent;
+            color: var(--iron-black, #111111);
+            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            border: none;
+            border-bottom: 2px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: pointer;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-secondary:hover {
+            border-bottom-color: var(--iron-red, #a32621);
+            color: var(--iron-red, #a32621);
+        }
+
+        .btn-arrow::after {
+            content: '→';
+            margin-left: 4px;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .btn-arrow:hover::after {
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 500px) {
+            .btn-primary,
+            .btn-secondary {
+                min-width: 120px;
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+        }
+
+        /* ============================================================
+           6. HEADER / NAVIGATION
+           ============================================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            padding: 14px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .site-header.scrolled {
+            padding: 8px 0;
+            background: rgba(247, 247, 244, 0.98);
+        }
+
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .site-logo {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.4vw, 22px);
+            letter-spacing: 0.04em;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            flex-shrink: 0;
+        }
+
+        .site-logo span {
+            color: var(--iron-red, #a32621);
+        }
+
+        .site-logo:hover {
+            opacity: 0.7;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2vw, 32px);
+            flex-wrap: nowrap;
+        }
+
+        .nav-desktop a {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(11px, 0.8vw, 14px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-grey, #6b6b6b);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-desktop a:hover {
+            color: var(--iron-black, #111111);
+        }
+
+        .nav-desktop a:hover::after {
+            width: 100%;
+        }
+
+        .nav-desktop a.active {
+            color: var(--iron-black, #111111);
+        }
+
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+
+        .nav-desktop .nav-cta {
+            color: var(--iron-black, #111111);
+            font-weight: 600;
+            padding: 6px 14px;
+            border: 1px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-desktop .nav-cta::after {
+            display: none;
+        }
+
+        .nav-desktop .nav-cta:hover {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-desktop {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--iron-white, #ffffff);
+                padding: 20px 0;
+                border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+                width: 100%;
+            }
+
+            .nav-desktop.open {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-desktop a {
+                padding: 12px 24px;
+                width: 100%;
+                border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+                font-size: 14px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .nav-desktop a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-desktop .nav-cta {
+                border: none;
+                padding: 12px 24px;
+                text-align: center;
+            }
+
+            .nav-desktop .nav-cta:hover {
+                background: transparent;
+                color: var(--iron-red, #a32621);
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* ============================================================
+           7. SECTIONS
+           ============================================================ */
+        section {
+            padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-lg, 64px);
+            text-align: center;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-header.text-left {
+            text-align: left;
+        }
+
+        .section-header.text-left p {
+            margin: 0;
+        }
+
+        /* ============================================================
+           8. REVEAL ANIMATION
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           9. FOOTER
+           ============================================================ */
+        .site-footer {
+            background: var(--iron-black, #111111);
+            color: var(--iron-grey, #6b6b6b);
+            padding: var(--space-lg, 64px) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: clamp(var(--space-md, 32px), 4vw, var(--space-lg, 64px));
+        }
+
+        .footer-brand .site-logo {
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .footer-brand .site-logo span {
+            color: var(--iron-red, #a32621);
+        }
+
+        .footer-brand p {
+            font-size: clamp(12px, 0.7vw, 14px);
+            max-width: 300px;
+        }
+
+        .footer-brand .footer-verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-style: italic;
+            font-size: clamp(13px, 0.8vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: var(--space-sm, 16px);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 600;
+            font-size: clamp(11px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: clamp(12px, 0.7vw, 14px);
+            padding: 4px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .footer-col a:hover {
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: var(--space-lg, 64px);
+            padding-top: var(--space-md, 32px);
+            display: flex;
+            justify-content: space-between;
+            font-size: clamp(11px, 0.6vw, 13px);
+            flex-wrap: wrap;
+            gap: var(--space-sm, 16px);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-md, 32px);
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-xs, 8px);
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md, 32px);
+            }
+        }
+
+        /* ============================================================
+           10. PAGE HEADER
+           ============================================================ */
+        .page-header {
+            padding-top: clamp(90px, 12vh, 140px);
+            padding-bottom: var(--space-lg, 64px);
+            background: var(--iron-white, #f7f7f4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            text-align: center;
+        }
+
+        .page-header .heading-display-lg {
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           11. PILLAR CONTENT
+           ============================================================ */
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-md, 32px);
+        }
+
+        .pillar-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--iron-black, #111111);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .pillar-icon svg .accent {
+            stroke: var(--iron-red, #a32621);
+        }
+
+        .pillar-intro {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pillar-intro .text-body {
+            font-size: clamp(17px, 1.2vw, 20px);
+        }
+
+        /* ============================================================
+           12. FOCUS AREAS
+           ============================================================ */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md, 32px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .focus-item {
+            padding: var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+        }
+
+        .focus-item:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .focus-item .number {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(24px, 2vw, 32px);
+            color: var(--iron-rule, #d9d9d4);
+            line-height: 1;
+            margin-bottom: var(--space-xs, 8px);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .focus-item:hover .number {
+            color: var(--iron-red, #a32621);
+        }
+
+        .focus-item h4 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.4vw, 22px);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .focus-item p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        @media (max-width: 768px) {
+            .focus-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm, 16px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           13. PURPOSE QUESTION
+           ============================================================ */
+        .question-section {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 40%;
+            height: 80%;
+            background: radial-gradient(ellipse at center, rgba(163, 38, 33, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .question-section .section-number {
+            color: var(--iron-red, #a32621);
+        }
+
+        .question-section .heading-display-md {
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .question-section p {
+            color: var(--iron-grey, #6b6b6b);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .question-block {
+            max-width: 700px;
+            margin: var(--space-xl, 96px) auto 0;
+            padding: var(--space-lg, 64px);
+            border-top: 2px solid var(--iron-red, #a32621);
+            border-bottom: 2px solid var(--iron-red, #a32621);
+            position: relative;
+            z-index: 1;
+        }
+
+        .question-block blockquote {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(22px, 2.5vw, 32px);
+            color: var(--iron-white, #f7f7f4);
+            line-height: 1.4;
+        }
+
+        .question-block blockquote strong {
+            color: var(--iron-red, #a32621);
+            font-weight: 600;
+        }
+
+        /* ============================================================
+           14. CTA SECTION
+           ============================================================ */
+        .cta-pillar {
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .cta-pillar .heading-display-sm {
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .cta-pillar p {
+            max-width: 500px;
+            margin: 0 auto var(--space-md, 32px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm, 16px);
+            justify-content: center;
+        }
+
+        /* ============================================================
+           15. UTILITY
+           ============================================================ */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mt-sm {
+            margin-top: var(--space-sm, 16px);
+        }
+
+        .mt-md {
+            margin-top: var(--space-md, 32px);
+        }
+
+        .mt-lg {
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .border-top {
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .bg-white {
+            background: var(--iron-white, #f7f7f4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <div class="container">
+            <a href="../index.html" class="site-logo">THE IRON<span>.</span></a>
+            <nav class="nav-desktop" id="mainNav" role="navigation" aria-label="Main navigation">
+                <a href="../philosophy.html">Philosophy</a>
+                <a href="../framework.html">Framework</a>
+                <a href="../community.html">Community</a>
+                <a href="../library.html">Library</a>
+                <a href="../insights.html">Insights</a>
+                <a href="../membership.html" class="nav-cta">Enter The Iron →</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    PAGE HEADER
+    ============================================================ -->
+    <section class="page-header">
+        <div class="container">
+            <div class="section-number">06 / Purpose</div>
+            <div class="pillar-icon">
+                <svg viewBox="0 0 80 80">
+                    <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <path d="M40 16.7V26.7" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M40 53.3V63.3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M16.7 40H26.7" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M53.3 40H63.3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M40 30L46.7 36.7L40 43.3L33.3 36.7L40 30Z" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
+                    <path d="M40 43.3V53.3" stroke="var(--iron-red)" stroke-width="1.5"/>
+                    <path d="M30 50L50 50" stroke="var(--iron-red)" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <h1 class="heading-display heading-display-lg">Find Something Worth Building.</h1>
+            <p class="text-body">
+                A life without direction eventually becomes a life dictated by circumstance.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    INTRODUCTION
+    ============================================================ -->
+    <section>
+        <div class="container">
+            <div class="pillar-intro reveal">
+                <p class="text-body">
+                    Purpose doesn't always arrive as a revelation.<br /><br />
+                    Sometimes it is built through work. Through developing useful skills. Through taking responsibility. Through discovering what you're willing to spend years becoming good at.
+                </p>
+                <p class="text-body" style="margin-top: var(--space-md); font-style: italic; color: var(--iron-grey);">
+                    Develop useful skills, meaningful work and a reason to keep moving forward.
+                </p>
+
+                <!-- BIBLE VERSE -->
+                <div class="bible-verse" style="margin-top: var(--space-xl);">
+                    "For I know the plans I have for you," declares the Lord,<br />
+                    "plans to prosper you and not to harm you,<br />
+                    plans to give you hope and a future."
+                    <span class="ref">— Jeremiah 29:11</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOCUS AREAS
+    ============================================================ -->
+    <section style="border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">The Work</div>
+                <h2 class="heading-display heading-display-md">What You'll Build.</h2>
+                <p class="text-body">
+                    The Purpose pillar focuses on five core areas of development.
+                </p>
+            </div>
+
+            <div class="focus-grid">
+                <div class="focus-item reveal">
+                    <div class="number">01</div>
+                    <h4>Direction</h4>
+                    <p>Clarify what you want to build and where you want to go.</p>
+                </div>
+                <div class="focus-item reveal">
+                    <div class="number">02</div>
+                    <h4>Skills</h4>
+                    <p>Develop the capabilities that make you useful and valuable.</p>
+                </div>
+                <div class="focus-item reveal">
+                    <div class="number">03</div>
+                    <h4>Work</h4>
+                    <p>Build meaningful work that aligns with your skills and values.</p>
+                </div>
+                <div class="focus-item reveal">
+                    <div class="number">04</div>
+                    <h4>Meaning</h4>
+                    <p>Find purpose in what you do and why you do it.</p>
+                </div>
+                <div class="focus-item reveal">
+                    <div class="number">05</div>
+                    <h4>Contribution</h4>
+                    <p>Build something that outlasts you. Leave people and places better.</p>
+                </div>
+                <div class="focus-item reveal">
+                    <div class="number">06</div>
+                    <h4>Legacy</h4>
+                    <p>Consider what you want to be remembered for and build toward it.</p>
+                </div>
+            </div>
+
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
+                "Commit to the Lord whatever you do,<br />
+                and he will establish your plans."
+                <span class="ref">— Proverbs 16:3</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PURPOSE QUESTION
+    ============================================================ -->
+    <section class="question-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-number" style="color: var(--iron-red);">The Question</div>
+                <h2 class="heading-display heading-display-md">What Is Worth Becoming Capable Of?</h2>
+                <p style="max-width: 600px; margin: 0 auto;">
+                    Purpose is not always found. Sometimes it is built through the process of becoming good at something that matters.
+                </p>
+
+                <div class="question-block">
+                    <blockquote>
+                        "What is worth spending years becoming good at?<br />
+                        <strong>That is where purpose begins.</strong>"
+                    </blockquote>
+                </div>
+
+                <!-- BIBLE VERSE (DARK) -->
+                <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                    "Whatever your hand finds to do, do it with all your might."
+                    <span class="ref">— Ecclesiastes 9:10</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA
+    ============================================================ -->
+    <section class="cta-pillar">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-number">Begin Your Journey</div>
+                <h2 class="heading-display heading-display-sm">Start Building Your Purpose.</h2>
+                <p class="text-body">
+                    Join The Iron and access the full Purpose development path, resources and community.
+                </p>
+                <div class="cta-actions">
+                    <a href="../membership.html" class="btn-primary btn-arrow"><span>Join The Iron →</span></a>
+                    <a href="../framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
+                </div>
+            </div>
+
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
+                "Therefore, my dear brothers and sisters, stand firm.<br />
+                Let nothing move you. Always give yourselves fully to the work of the Lord,<br />
+                because you know that your labor in the Lord is not in vain."
+                <span class="ref">— 1 Corinthians 15:58</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="site-logo">THE IRON<span>.</span></div>
+                    <p>Build a life you respect.</p>
+                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                        Mind. Character. Body. Relationships. Money. Purpose.
+                    </p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="../philosophy.html">Philosophy</a>
+                    <a href="../framework.html">Framework</a>
+                    <a href="../community.html">Community</a>
+                    <a href="../library.html">Library</a>
+                    <a href="../insights.html">Insights</a>
+                    <a href="../membership.html">Membership</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../faq.html">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 THE IRON. All rights reserved.</span>
+                <span>"Iron sharpens iron." — Proverbs 27:17</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ============================================================
+            // 1. MOBILE NAVIGATION
+            // ============================================================
+            var navToggle = document.getElementById('navToggle');
+            var mainNav = document.getElementById('mainNav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    var isOpen = mainNav.classList.toggle('open');
+                    navToggle.classList.toggle('active');
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                });
+
+                mainNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                document.addEventListener('click', function(event) {
+                    var isClickInsideNav = mainNav.contains(event.target);
+                    var isClickOnToggle = navToggle.contains(event.target);
+                    if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('open')) {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                navToggle.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        navToggle.click();
+                    }
+                });
+
+                mainNav.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+                        navToggle.click();
+                        navToggle.focus();
+                    }
+                });
+            }
+
+            // ============================================================
+            // 2. HEADER SCROLL EFFECT
+            // ============================================================
+            var header = document.getElementById('siteHeader');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }, { passive: true });
+            }
+
+            // ============================================================
+            // 3. REVEAL ANIMATIONS
+            // ============================================================
+            var revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            }
+
+            console.log('THE IRON — Purpose pillar page initialized successfully.');
+        })();
+    </script>
+
+</body>
+</html>
