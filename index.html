@@ -1,3 +1,6 @@
+<!-- ============================================================
+INDEX.HTML — Main Page (Fully Centralized & Responsive)
+============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
 
     <style>
         /* ============================================================
-           DESIGN TOKENS
+           GLOBAL DESIGN TOKENS (shared across all pages)
            ============================================================ */
         :root {
             --iron-black: #111111;
@@ -22,7 +25,6 @@
             --iron-rule: #d9d9d4;
             --iron-red: #a32621;
             --iron-red-dark: #7f1d1d;
-            --iron-gold: #c9a84c;
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Inter', sans-serif;
             --space-xs: 8px;
@@ -49,7 +51,6 @@
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
@@ -74,12 +75,10 @@
             color: var(--iron-white);
         }
 
-        /* ============================================================
-           CONTAINER
-           ============================================================ */
         .container {
             width: var(--container-width);
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         @media (max-width: 768px) {
@@ -97,57 +96,39 @@
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
         .heading-display-lg {
-            font-size: clamp(48px, 10vw, 96px);
+            font-size: clamp(40px, 10vw, 96px);
         }
         .heading-display-md {
-            font-size: clamp(40px, 7vw, 72px);
+            font-size: clamp(32px, 7vw, 72px);
         }
         .heading-display-sm {
-            font-size: clamp(32px, 5vw, 48px);
-        }
-
-        .heading-serif {
-            font-family: var(--font-display);
-            font-weight: 500;
-            line-height: 1.2;
+            font-size: clamp(28px, 5vw, 48px);
         }
 
         .text-body {
             font-family: var(--font-body);
             font-weight: 400;
-            font-size: 18px;
+            font-size: clamp(16px, 1.2vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink);
         }
-
         .text-body-sm {
-            font-size: 15px;
+            font-size: clamp(14px, 1vw, 15px);
             line-height: 1.6;
         }
-
         .text-meta {
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 13px;
+            font-size: clamp(11px, 0.8vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-grey);
         }
-
-        .text-numeral {
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: clamp(48px, 8vw, 80px);
-            line-height: 1;
-            color: var(--iron-black);
-        }
-
         .section-number {
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 13px;
+            font-size: clamp(11px, 0.8vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-red);
@@ -158,7 +139,7 @@
             font-family: var(--font-display);
             font-weight: 400;
             font-style: italic;
-            font-size: 20px;
+            font-size: clamp(18px, 1.4vw, 20px);
             color: var(--iron-grey);
             line-height: 1.6;
             max-width: 600px;
@@ -166,15 +147,13 @@
             padding-left: var(--space-md);
             border-left: 2px solid var(--iron-rule);
         }
-
         .verse strong {
             color: var(--iron-black);
             font-weight: 600;
         }
-
         .verse-reference {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: clamp(12px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey);
@@ -188,20 +167,22 @@
         .btn-primary {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 15px;
+            font-size: clamp(14px, 0.9vw, 15px);
             background: var(--iron-black);
             color: var(--iron-white);
-            padding: 16px 28px;
+            padding: clamp(14px, 1.2vw, 16px) clamp(20px, 2vw, 28px);
             border: 1px solid var(--iron-black);
             transition: var(--transition);
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            text-align: center;
+            min-width: 160px;
         }
-
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -213,16 +194,13 @@
             transition: var(--transition);
             z-index: 0;
         }
-
         .btn-primary:hover::before {
             left: 0;
         }
-
         .btn-primary span {
             position: relative;
             z-index: 1;
         }
-
         .btn-primary:hover {
             border-color: var(--iron-red);
         }
@@ -230,32 +208,41 @@
         .btn-secondary {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 15px;
+            font-size: clamp(14px, 0.9vw, 15px);
             background: transparent;
             color: var(--iron-black);
-            padding: 16px 28px;
+            padding: clamp(14px, 1.2vw, 16px) clamp(20px, 2vw, 28px);
             border: none;
             border-bottom: 2px solid var(--iron-black);
             transition: var(--transition);
             cursor: pointer;
+            text-align: center;
+            min-width: 160px;
         }
-
         .btn-secondary:hover {
             border-bottom-color: var(--iron-red);
             color: var(--iron-red);
         }
-
         .btn-arrow::after {
             content: '→';
             margin-left: 4px;
             transition: var(--transition);
         }
-
         .btn-arrow:hover::after {
             transform: translateX(6px);
+        }
+
+        @media (max-width: 500px) {
+            .btn-primary,
+            .btn-secondary {
+                min-width: 140px;
+                padding: 14px 20px;
+                font-size: 14px;
+            }
         }
 
         /* ============================================================
@@ -273,12 +260,10 @@
             padding: 16px 0;
             transition: var(--transition);
         }
-
         .site-header.scrolled {
             padding: 10px 0;
             background: rgba(247, 247, 244, 0.98);
         }
-
         .site-header .container {
             display: flex;
             align-items: center;
@@ -288,15 +273,14 @@
         .site-logo {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 22px;
+            font-size: clamp(20px, 1.6vw, 22px);
             letter-spacing: 0.04em;
             transition: var(--transition);
+            flex-shrink: 0;
         }
-
         .site-logo span {
             color: var(--iron-red);
         }
-
         .site-logo:hover {
             opacity: 0.7;
         }
@@ -304,20 +288,19 @@
         .nav-desktop {
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: clamp(16px, 2.5vw, 36px);
         }
-
         .nav-desktop a {
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 14px;
+            font-size: clamp(12px, 0.9vw, 14px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-grey);
             transition: var(--transition);
             position: relative;
+            white-space: nowrap;
         }
-
         .nav-desktop a::after {
             content: '';
             position: absolute;
@@ -328,23 +311,18 @@
             background: var(--iron-black);
             transition: var(--transition);
         }
-
         .nav-desktop a:hover {
             color: var(--iron-black);
         }
-
         .nav-desktop a:hover::after {
             width: 100%;
         }
-
         .nav-desktop a.active {
             color: var(--iron-black);
         }
-
         .nav-desktop a.active::after {
             width: 100%;
         }
-
         .nav-desktop .nav-cta {
             color: var(--iron-black);
             font-weight: 600;
@@ -352,11 +330,9 @@
             border: 1px solid var(--iron-black);
             transition: var(--transition);
         }
-
         .nav-desktop .nav-cta::after {
             display: none;
         }
-
         .nav-desktop .nav-cta:hover {
             background: var(--iron-black);
             color: var(--iron-white);
@@ -371,7 +347,6 @@
             border: none;
             padding: 4px;
         }
-
         .nav-toggle span {
             display: block;
             width: 24px;
@@ -379,7 +354,6 @@
             background: var(--iron-black);
             transition: var(--transition);
         }
-
         .nav-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
@@ -404,12 +378,10 @@
                 border-bottom: 1px solid var(--iron-rule);
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
             }
-
             .nav-desktop.open {
                 display: flex;
                 animation: slideDown 0.3s ease;
             }
-
             @keyframes slideDown {
                 from {
                     opacity: 0;
@@ -420,70 +392,165 @@
                     transform: translateY(0);
                 }
             }
-
             .nav-desktop a {
                 padding: 14px 24px;
                 width: 100%;
                 border-bottom: 1px solid var(--iron-rule);
+                font-size: 14px;
             }
-
             .nav-desktop a:last-child {
                 border-bottom: none;
             }
-
             .nav-desktop .nav-cta {
                 border: none;
                 padding: 14px 24px;
                 text-align: left;
             }
-
             .nav-desktop .nav-cta:hover {
                 background: transparent;
                 color: var(--iron-red);
             }
-
             .nav-toggle {
                 display: flex;
             }
         }
 
         /* ============================================================
-           SECTION SPACING
+           SECTIONS
            ============================================================ */
         section {
-            padding: var(--space-xl) 0;
+            padding: clamp(var(--space-lg), 8vw, var(--space-xl)) 0;
         }
-
-        .section-compact {
-            padding: var(--space-lg) 0;
-        }
-
-        .section-tight {
-            padding: var(--space-md) 0;
-        }
-
         .section-header {
             margin-bottom: var(--space-lg);
         }
-
         .section-header p {
+            max-width: 600px;
+        }
+        .section-header.text-center p {
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           REVEAL ANIMATION
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: var(--iron-black);
+            color: var(--iron-grey);
+            padding: var(--space-lg) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: clamp(var(--space-md), 4vw, var(--space-lg));
+        }
+        .footer-brand .site-logo {
+            color: var(--iron-white);
+            margin-bottom: var(--space-xs);
+        }
+        .footer-brand .site-logo span {
+            color: var(--iron-red);
+        }
+        .footer-brand p {
+            font-size: clamp(13px, 0.8vw, 14px);
+            max-width: 300px;
+        }
+        .footer-brand .footer-verse {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: clamp(14px, 0.9vw, 16px);
+            color: var(--iron-grey);
+            margin-top: var(--space-sm);
+        }
+        .footer-col h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: clamp(12px, 0.8vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-white);
+            margin-bottom: var(--space-sm);
+        }
+        .footer-col a {
+            display: block;
+            font-size: clamp(13px, 0.8vw, 14px);
+            padding: 4px 0;
+            transition: var(--transition);
+        }
+        .footer-col a:hover {
+            color: var(--iron-white);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: var(--space-lg);
+            padding-top: var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            font-size: clamp(12px, 0.7vw, 13px);
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-md);
+            }
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-xs);
+                text-align: center;
+            }
+        }
+
+        /* ============================================================
+           PAGE HEADER
+           ============================================================ */
+        .page-header {
+            padding-top: clamp(100px, 15vh, 140px);
+            padding-bottom: var(--space-lg);
+            background: var(--iron-white);
+            border-bottom: 1px solid var(--iron-rule);
+        }
+        .page-header .heading-display-lg {
+            margin-bottom: var(--space-xs);
+        }
+        .page-header p {
             max-width: 600px;
         }
 
         /* ============================================================
-           HERO
+           INDEX.HTML SPECIFIC STYLES
            ============================================================ */
+
+        /* Hero */
         .hero {
-            padding-top: 120px;
-            padding-bottom: var(--space-xl);
+            padding-top: clamp(80px, 15vh, 120px);
+            padding-bottom: clamp(var(--space-lg), 8vw, var(--space-xl));
             background: var(--iron-white);
             position: relative;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: clamp(80vh, 90vh, 100vh);
             display: flex;
             align-items: center;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -494,20 +561,18 @@
             background: radial-gradient(ellipse at center, rgba(163, 38, 33, 0.03) 0%, transparent 70%);
             pointer-events: none;
         }
-
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-lg);
+            gap: clamp(var(--space-md), 5vw, var(--space-lg));
             align-items: center;
             position: relative;
             z-index: 1;
         }
-
         .hero-eyebrow {
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 12px;
+            font-size: clamp(10px, 0.8vw, 12px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-red);
@@ -515,37 +580,32 @@
             opacity: 0;
             animation: fadeUp 0.8s ease 0.2s forwards;
         }
-
         .hero-title {
             margin-bottom: var(--space-md);
             opacity: 0;
             animation: fadeUp 0.8s ease 0.4s forwards;
         }
-
         .hero-title .highlight {
             position: relative;
             display: inline-block;
         }
-
         .hero-title .highlight::after {
             content: '';
             position: absolute;
             bottom: 4px;
             left: 0;
             right: 0;
-            height: 6px;
+            height: clamp(4px, 0.4vw, 6px);
             background: var(--iron-red);
             opacity: 0.2;
             border-radius: 2px;
         }
-
         .hero-description {
             max-width: 520px;
             margin-bottom: var(--space-md);
             opacity: 0;
             animation: fadeUp 0.8s ease 0.6s forwards;
         }
-
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -553,29 +613,20 @@
             opacity: 0;
             animation: fadeUp 0.8s ease 0.8s forwards;
         }
-
         .hero-verse {
             margin-top: var(--space-md);
             opacity: 0;
             animation: fadeUp 0.8s ease 1s forwards;
         }
-
         .hero-image {
             position: relative;
-            height: 520px;
+            height: clamp(300px, 40vh, 520px);
             background: var(--iron-ink);
             overflow: hidden;
             opacity: 0;
             animation: fadeIn 1s ease 0.6s forwards;
+            border-radius: 4px;
         }
-
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 60%, rgba(17, 17, 17, 0.3));
-        }
-
         .hero-image-placeholder {
             width: 100%;
             height: 100%;
@@ -585,7 +636,7 @@
             background: var(--iron-ink);
             color: var(--iron-grey);
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: clamp(12px, 0.9vw, 14px);
             letter-spacing: 0.06em;
             background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"%3E%3Crect width="800" height="600" fill="%231C1C1C"/%3E%3Ctext x="400" y="290" font-family="Inter, sans-serif" font-size="18" fill="%236B6B6B" text-anchor="middle" letter-spacing="4"%3EMAN · JOHANNESBURG%3C/text%3E%3C/svg%3E');
             background-size: cover;
@@ -602,7 +653,6 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -618,67 +668,66 @@
                 gap: var(--space-md);
             }
             .hero-image {
-                height: 320px;
+                height: clamp(220px, 35vh, 320px);
                 order: -1;
             }
             .hero {
-                padding-top: 100px;
+                padding-top: clamp(70px, 12vh, 100px);
                 min-height: auto;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                justify-content: center;
             }
         }
 
-        /* ============================================================
-           DATA STRIP
-           ============================================================ */
+        /* Data Strip */
         .data-strip {
             border-top: 1px solid var(--iron-rule);
             border-bottom: 1px solid var(--iron-rule);
             padding: var(--space-md) 0;
             background: var(--iron-white);
-            position: relative;
         }
-
         .data-strip-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--space-md);
             text-align: center;
         }
-
         .data-strip-item {
             opacity: 0;
             transform: translateY(20px);
             transition: var(--transition);
         }
-
         .data-strip-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .data-strip-item .numeral {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: clamp(36px, 5vw, 56px);
+            font-size: clamp(32px, 5vw, 56px);
             line-height: 1;
             color: var(--iron-black);
             display: block;
         }
-
         .data-strip-item .numeral .counter {
             display: inline-block;
         }
-
         .data-strip-item .label {
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: clamp(11px, 0.8vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-grey);
             margin-top: 4px;
             display: block;
         }
-
         @media (max-width: 600px) {
             .data-strip-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -686,76 +735,66 @@
             }
         }
 
-        /* ============================================================
-           PROBLEM / PHILOSOPHY
-           ============================================================ */
+        /* Problem / Philosophy Grid */
         .problem-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            gap: clamp(var(--space-md), 5vw, var(--space-xl));
             align-items: start;
         }
-
         .problem-visual {
             background: var(--iron-ink);
-            padding: var(--space-lg);
-            min-height: 320px;
+            padding: clamp(var(--space-md), 3vw, var(--space-lg));
+            min-height: clamp(250px, 30vh, 320px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             transition: var(--transition);
+            border-radius: 4px;
         }
-
         .problem-visual:hover {
             transform: scale(1.01);
         }
-
         .problem-visual .diagram-title {
             font-family: var(--font-body);
-            font-size: 12px;
+            font-size: clamp(10px, 0.8vw, 12px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-grey);
             margin-bottom: var(--space-md);
         }
-
         .diagram-flow {
             display: flex;
             flex-direction: column;
             gap: 6px;
         }
-
         .diagram-flow .step {
             display: flex;
             align-items: center;
             gap: var(--space-sm);
-            padding: 10px 0;
+            padding: clamp(8px, 0.8vw, 10px) 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             color: var(--iron-white);
             font-family: var(--font-body);
             font-weight: 400;
-            font-size: 18px;
+            font-size: clamp(16px, 1.2vw, 18px);
             transition: var(--transition);
             cursor: default;
         }
-
         .diagram-flow .step:hover {
             padding-left: 12px;
             border-bottom-color: var(--iron-red);
         }
-
         .diagram-flow .step .arrow {
             color: var(--iron-grey);
-            font-size: 20px;
+            font-size: clamp(16px, 1.2vw, 20px);
             margin-left: auto;
             transition: var(--transition);
         }
-
         .diagram-flow .step:hover .arrow {
             color: var(--iron-red);
             transform: translateX(4px);
         }
-
         .diagram-flow .step:last-child {
             border-bottom: none;
         }
@@ -763,41 +802,37 @@
         .philosophy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
+            gap: clamp(var(--space-md), 3vw, var(--space-lg));
             margin-top: var(--space-lg);
         }
-
         .philosophy-card {
-            padding: var(--space-md);
+            padding: clamp(var(--space-sm), 2vw, var(--space-md));
             border: 1px solid var(--iron-rule);
             transition: var(--transition);
             cursor: default;
+            background: var(--iron-white);
         }
-
         .philosophy-card:hover {
             border-color: var(--iron-black);
             transform: translateY(-4px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
         }
-
         .philosophy-card .number {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 48px;
+            font-size: clamp(36px, 4vw, 48px);
             color: var(--iron-rule);
             line-height: 1;
             margin-bottom: var(--space-xs);
             transition: var(--transition);
         }
-
         .philosophy-card:hover .number {
             color: var(--iron-red);
         }
-
         .philosophy-card h3 {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 28px;
+            font-size: clamp(24px, 2vw, 28px);
             margin-bottom: var(--space-xs);
         }
 
@@ -812,20 +847,17 @@
             }
         }
 
-        /* ============================================================
-           FRAMEWORK (SIX PLANS)
-           ============================================================ */
+        /* Framework List */
         .framework-list {
             display: flex;
             flex-direction: column;
             gap: 0;
         }
-
         .framework-item {
             display: grid;
-            grid-template-columns: 80px 1fr 120px;
-            gap: var(--space-md);
-            padding: var(--space-lg) 0;
+            grid-template-columns: clamp(60px, 6vw, 80px) 1fr clamp(60px, 8vw, 120px);
+            gap: clamp(var(--space-sm), 2vw, var(--space-md));
+            padding: clamp(var(--space-md), 4vw, var(--space-lg)) 0;
             border-bottom: 1px solid var(--iron-rule);
             align-items: center;
             transition: var(--transition);
@@ -833,7 +865,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .framework-item::before {
             content: '';
             position: absolute;
@@ -845,78 +876,66 @@
             opacity: 0;
             transition: var(--transition);
         }
-
         .framework-item:hover::before {
             opacity: 1;
         }
-
         .framework-item:hover {
             padding-left: var(--space-sm);
         }
-
         .framework-item:last-child {
             border-bottom: none;
         }
-
         .framework-item .number {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 36px;
+            font-size: clamp(28px, 3vw, 36px);
             color: var(--iron-rule);
             line-height: 1;
             transition: var(--transition);
         }
-
         .framework-item:hover .number {
             color: var(--iron-red);
         }
-
         .framework-item .content h3 {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 32px;
+            font-size: clamp(24px, 2.5vw, 32px);
             line-height: 1.1;
         }
-
         .framework-item .content .subtitle {
             font-family: var(--font-body);
             font-weight: 400;
-            font-size: 18px;
+            font-size: clamp(16px, 1.2vw, 18px);
             color: var(--iron-grey);
             margin-top: 2px;
         }
-
         .framework-item .content .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
             margin-top: var(--space-xs);
         }
-
         .framework-item .content .tags span {
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: clamp(11px, 0.8vw, 13px);
             color: var(--iron-grey);
             background: var(--iron-rule);
-            padding: 2px 14px;
+            padding: 2px clamp(10px, 1vw, 14px);
             border-radius: 20px;
             transition: var(--transition);
         }
-
         .framework-item:hover .content .tags span {
             background: var(--iron-black);
             color: var(--iron-white);
         }
-
         .framework-item .action {
             text-align: right;
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 14px;
+            font-size: clamp(13px, 0.9vw, 14px);
             color: var(--iron-grey);
             transition: var(--transition);
         }
-
         .framework-item:hover .action {
             color: var(--iron-black);
             transform: translateX(4px);
@@ -939,17 +958,14 @@
             }
         }
 
-        /* ============================================================
-           THE STANDARD
-           ============================================================ */
+        /* Standard Section (dark) */
         .standard-section {
             background: var(--iron-black);
             color: var(--iron-white);
-            padding: var(--space-xxl) 0;
+            padding: clamp(var(--space-xl), 10vw, var(--space-xxl)) 0;
             position: relative;
             overflow: hidden;
         }
-
         .standard-section::before {
             content: '';
             position: absolute;
@@ -960,15 +976,12 @@
             background: radial-gradient(ellipse at center, rgba(163, 38, 33, 0.04) 0%, transparent 70%);
             pointer-events: none;
         }
-
         .standard-section .section-number {
             color: var(--iron-red);
         }
-
         .standard-section .section-header p {
             color: var(--iron-grey);
         }
-
         .standard-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -977,7 +990,6 @@
             position: relative;
             z-index: 1;
         }
-
         .standard-item {
             padding: var(--space-md) 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -986,60 +998,51 @@
             opacity: 0;
             transform: translateY(20px);
         }
-
         .standard-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .standard-item:hover {
             border-bottom-color: var(--iron-red);
             padding-left: var(--space-sm);
         }
-
         .standard-item:last-child {
             border-bottom: none;
         }
-
         .standard-item .principle {
             font-family: var(--font-display);
             font-weight: 500;
-            font-size: clamp(28px, 4vw, 40px);
+            font-size: clamp(24px, 3vw, 40px);
             line-height: 1.2;
         }
-
         .standard-item .description {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: clamp(13px, 0.9vw, 15px);
             color: var(--iron-grey);
             margin-top: 4px;
         }
-
         .standard-verse {
             margin-top: var(--space-xl);
             padding-top: var(--space-lg);
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
         }
-
         .standard-verse blockquote {
             font-family: var(--font-display);
             font-weight: 400;
             font-style: italic;
-            font-size: 28px;
+            font-size: clamp(20px, 2.5vw, 28px);
             color: var(--iron-grey);
             max-width: 700px;
             margin: 0 auto;
         }
-
         .standard-verse blockquote strong {
             color: var(--iron-white);
             font-weight: 600;
         }
-
         .standard-verse .ref {
             font-family: var(--font-body);
-            font-size: 16px;
+            font-size: clamp(14px, 0.9vw, 16px);
             font-style: normal;
             color: var(--iron-grey);
             display: block;
@@ -1051,121 +1054,106 @@
                 grid-template-columns: 1fr;
             }
             .standard-verse blockquote {
-                font-size: 22px;
+                font-size: 20px;
             }
         }
 
-        /* ============================================================
-           COMMUNITY
-           ============================================================ */
+        /* Community */
         .community-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            gap: clamp(var(--space-md), 5vw, var(--space-xl));
             align-items: center;
         }
-
         .community-visual {
             background: var(--iron-ink);
-            padding: var(--space-lg);
-            min-height: 380px;
+            padding: clamp(var(--space-md), 3vw, var(--space-lg));
+            min-height: clamp(300px, 35vh, 380px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             transition: var(--transition);
+            border-radius: 4px;
         }
-
         .community-visual:hover {
             transform: scale(1.01);
         }
-
         .community-visual .mockup-label {
             font-family: var(--font-body);
-            font-size: 12px;
+            font-size: clamp(10px, 0.8vw, 12px);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--iron-grey);
             margin-bottom: var(--space-md);
         }
-
         .community-visual .mockup-channel {
             display: flex;
             align-items: center;
             gap: var(--space-sm);
-            padding: 10px 0;
+            padding: clamp(8px, 0.8vw, 10px) 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             color: var(--iron-white);
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: clamp(14px, 1vw, 15px);
             transition: var(--transition);
         }
-
         .community-visual .mockup-channel:hover {
             padding-left: 8px;
             border-bottom-color: var(--iron-red);
         }
-
         .community-visual .mockup-channel .hash {
             color: var(--iron-grey);
         }
-
         .community-flow {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-sm);
             margin-top: var(--space-md);
         }
-
         .community-flow .step {
             text-align: center;
-            padding: var(--space-sm);
+            padding: clamp(var(--space-xs), 1.5vw, var(--space-sm));
             border: 1px solid var(--iron-rule);
             transition: var(--transition);
             cursor: default;
+            background: var(--iron-white);
         }
-
         .community-flow .step:hover {
             border-color: var(--iron-black);
             transform: translateY(-4px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
-
         .community-flow .step .num {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 24px;
+            font-size: clamp(20px, 1.8vw, 24px);
             color: var(--iron-red);
         }
-
         .community-flow .step .label {
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: clamp(11px, 0.8vw, 13px);
             font-weight: 500;
         }
-
         .community-verse {
             margin-top: var(--space-lg);
             padding: var(--space-md);
             background: var(--iron-white);
             border: 1px solid var(--iron-rule);
         }
-
         .community-verse blockquote {
             font-family: var(--font-display);
             font-weight: 400;
             font-style: italic;
-            font-size: 20px;
+            font-size: clamp(17px, 1.2vw, 20px);
             color: var(--iron-ink);
         }
-
         .community-verse blockquote strong {
             color: var(--iron-black);
             font-weight: 600;
         }
-
         .community-verse .ref {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: clamp(12px, 0.8vw, 14px);
             font-style: normal;
             color: var(--iron-grey);
             display: block;
@@ -1181,23 +1169,19 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-
         @media (max-width: 500px) {
             .community-flow {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        /* ============================================================
-           LIBRARY
-           ============================================================ */
+        /* Library */
         .library-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md);
             margin-top: var(--space-lg);
         }
-
         .library-card {
             padding: var(--space-md);
             border: 1px solid var(--iron-rule);
@@ -1205,31 +1189,27 @@
             cursor: default;
             background: var(--iron-white);
         }
-
         .library-card:hover {
             border-color: var(--iron-black);
             transform: translateY(-6px);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
         }
-
         .library-card .meta {
             font-family: var(--font-body);
-            font-size: 12px;
+            font-size: clamp(10px, 0.7vw, 12px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-red);
         }
-
         .library-card h4 {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 22px;
+            font-size: clamp(20px, 1.6vw, 22px);
             margin: var(--space-xs) 0 4px;
         }
-
         .library-card p {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: clamp(14px, 0.9vw, 15px);
             color: var(--iron-grey);
         }
 
@@ -1238,103 +1218,87 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
-
         @media (max-width: 500px) {
             .library-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* ============================================================
-           MEMBERSHIP
-           ============================================================ */
+        /* Membership */
         .membership-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md);
             margin-top: var(--space-lg);
         }
-
         .membership-tier {
-            padding: var(--space-lg);
+            padding: clamp(var(--space-md), 3vw, var(--space-lg));
             border: 1px solid var(--iron-rule);
             transition: var(--transition);
             background: var(--iron-white);
             position: relative;
         }
-
         .membership-tier:hover {
             border-color: var(--iron-black);
             transform: translateY(-4px);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
         }
-
         .membership-tier.featured {
             border-color: var(--iron-black);
             background: var(--iron-white);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
         }
-
         .membership-tier .badge {
             font-family: var(--font-body);
-            font-size: 11px;
+            font-size: clamp(10px, 0.7vw, 11px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-red);
             border: 1px solid var(--iron-red);
-            padding: 2px 14px;
+            padding: 2px clamp(10px, 1vw, 14px);
             display: inline-block;
             margin-bottom: var(--space-xs);
         }
-
         .membership-tier .tier-name {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 28px;
+            font-size: clamp(24px, 2vw, 28px);
         }
-
         .membership-tier .tier-price {
             font-family: var(--font-body);
             font-weight: 500;
-            font-size: 32px;
+            font-size: clamp(28px, 2.5vw, 32px);
             margin: var(--space-xs) 0;
         }
-
         .membership-tier .tier-price span {
-            font-size: 16px;
+            font-size: clamp(14px, 1vw, 16px);
             font-weight: 400;
             color: var(--iron-grey);
         }
-
         .membership-tier .tier-desc {
             font-family: var(--font-body);
-            font-size: 15px;
+            font-size: clamp(14px, 0.9vw, 15px);
             color: var(--iron-grey);
             margin-bottom: var(--space-md);
         }
-
         .membership-tier ul {
             list-style: none;
             margin-bottom: var(--space-md);
         }
-
         .membership-tier ul li {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: clamp(13px, 0.8vw, 14px);
             padding: 6px 0;
             border-bottom: 1px solid var(--iron-rule);
             color: var(--iron-ink);
             transition: var(--transition);
         }
-
         .membership-tier ul li:last-child {
             border-bottom: none;
         }
-
         .membership-tier:hover ul li {
             border-bottom-color: var(--iron-black);
         }
-
         .membership-tier .btn-primary,
         .membership-tier .btn-secondary {
             width: 100%;
@@ -1350,58 +1314,48 @@
             }
         }
 
-        /* ============================================================
-           FOR / NOT FOR
-           ============================================================ */
+        /* For / Not For */
         .for-not-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
+            gap: clamp(var(--space-md), 5vw, var(--space-xl));
             margin-top: var(--space-lg);
         }
-
         .for-col {
-            padding: var(--space-lg);
+            padding: clamp(var(--space-md), 3vw, var(--space-lg));
             border: 1px solid var(--iron-rule);
             transition: var(--transition);
+            background: var(--iron-white);
         }
-
         .for-col:hover {
             border-color: var(--iron-black);
         }
-
         .for-col h3 {
             font-family: var(--font-display);
             font-weight: 600;
-            font-size: 32px;
+            font-size: clamp(28px, 2.5vw, 32px);
             margin-bottom: var(--space-sm);
             letter-spacing: -0.01em;
         }
-
         .for-col ul {
             list-style: none;
         }
-
         .for-col ul li {
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: clamp(15px, 1vw, 17px);
             padding: 8px 0;
             border-bottom: 1px solid var(--iron-rule);
             transition: var(--transition);
         }
-
         .for-col ul li:last-child {
             border-bottom: none;
         }
-
         .for-col:hover ul li {
             border-bottom-color: var(--iron-black);
         }
-
         .for-col.not-for h3 {
             color: var(--iron-grey);
         }
-
         .for-col.not-for ul li {
             color: var(--iron-grey);
         }
@@ -1413,25 +1367,20 @@
             }
         }
 
-        /* ============================================================
-           FAQ
-           ============================================================ */
+        /* FAQ */
         .faq-list {
             max-width: 800px;
             margin: 0 auto;
             margin-top: var(--space-lg);
         }
-
         .faq-item {
             border-bottom: 1px solid var(--iron-rule);
             padding: var(--space-md) 0;
             transition: var(--transition);
         }
-
         .faq-item:last-child {
             border-bottom: none;
         }
-
         .faq-question {
             display: flex;
             justify-content: space-between;
@@ -1439,7 +1388,7 @@
             cursor: pointer;
             font-family: var(--font-display);
             font-weight: 500;
-            font-size: 22px;
+            font-size: clamp(18px, 1.5vw, 22px);
             background: none;
             border: none;
             width: 100%;
@@ -1448,50 +1397,44 @@
             padding: 4px 0;
             transition: var(--transition);
         }
-
         .faq-question:hover {
             color: var(--iron-red);
         }
-
         .faq-question .toggle {
-            font-size: 24px;
+            font-size: clamp(20px, 1.6vw, 24px);
             color: var(--iron-grey);
             transition: var(--transition);
             font-family: var(--font-body);
+            flex-shrink: 0;
+            margin-left: var(--space-sm);
         }
-
         .faq-item.open .faq-question .toggle {
             transform: rotate(45deg);
             color: var(--iron-red);
         }
-
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 500ms ease, padding 500ms ease;
             font-family: var(--font-body);
-            font-size: 17px;
+            font-size: clamp(16px, 1vw, 17px);
             color: var(--iron-grey);
             padding: 0;
         }
-
         .faq-item.open .faq-answer {
             max-height: 400px;
             padding-top: var(--space-sm);
         }
 
-        /* ============================================================
-           FINAL CTA
-           ============================================================ */
+        /* Final CTA */
         .cta-final {
             background: var(--iron-black);
             color: var(--iron-white);
-            padding: var(--space-xxl) 0;
+            padding: clamp(var(--space-xl), 10vw, var(--space-xxl)) 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-
         .cta-final::before {
             content: '';
             position: absolute;
@@ -1502,19 +1445,16 @@
             background: radial-gradient(ellipse at center, rgba(163, 38, 33, 0.04) 0%, transparent 70%);
             pointer-events: none;
         }
-
         .cta-final .heading-display-lg {
             margin-bottom: var(--space-md);
             opacity: 0;
             transform: translateY(30px);
             transition: var(--transition);
         }
-
         .cta-final .heading-display-lg.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .cta-final p {
             max-width: 500px;
             margin: 0 auto var(--space-md);
@@ -1524,12 +1464,10 @@
             transition: var(--transition);
             transition-delay: 0.2s;
         }
-
         .cta-final p.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .cta-final .btn-primary {
             background: var(--iron-white);
             color: var(--iron-black);
@@ -1539,22 +1477,19 @@
             transition: var(--transition);
             transition-delay: 0.4s;
         }
-
         .cta-final .btn-primary.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .cta-final .btn-primary:hover {
             background: var(--iron-red);
             border-color: var(--iron-red);
             color: var(--iron-white);
         }
-
         .cta-final .tagline {
             font-family: var(--font-display);
             font-weight: 400;
-            font-size: 20px;
+            font-size: clamp(18px, 1.4vw, 20px);
             color: var(--iron-grey);
             margin-top: var(--space-lg);
             font-style: italic;
@@ -1563,12 +1498,10 @@
             transition: var(--transition);
             transition-delay: 0.6s;
         }
-
         .cta-final .tagline.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .cta-final .verse-final {
             margin-top: var(--space-md);
             padding-top: var(--space-md);
@@ -1576,119 +1509,31 @@
             font-family: var(--font-display);
             font-weight: 400;
             font-style: italic;
-            font-size: 18px;
+            font-size: clamp(16px, 1.2vw, 18px);
             color: var(--iron-grey);
             opacity: 0;
             transform: translateY(20px);
             transition: var(--transition);
             transition-delay: 0.8s;
         }
-
         .cta-final .verse-final.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .cta-final .verse-final strong {
             color: var(--iron-white);
             font-weight: 600;
         }
-
         .cta-final .verse-final .ref {
             font-family: var(--font-body);
-            font-size: 14px;
+            font-size: clamp(12px, 0.8vw, 14px);
             font-style: normal;
             color: var(--iron-grey);
             display: block;
             margin-top: 4px;
         }
 
-        /* ============================================================
-           FOOTER
-           ============================================================ */
-        .site-footer {
-            background: var(--iron-black);
-            color: var(--iron-grey);
-            padding: var(--space-lg) 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: var(--space-lg);
-        }
-
-        .footer-brand .site-logo {
-            color: var(--iron-white);
-            margin-bottom: var(--space-xs);
-        }
-
-        .footer-brand .site-logo span {
-            color: var(--iron-red);
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            max-width: 300px;
-        }
-
-        .footer-brand .footer-verse {
-            font-family: var(--font-display);
-            font-style: italic;
-            font-size: 16px;
-            color: var(--iron-grey);
-            margin-top: var(--space-sm);
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--iron-white);
-            margin-bottom: var(--space-sm);
-        }
-
-        .footer-col a {
-            display: block;
-            font-size: 14px;
-            padding: 4px 0;
-            transition: var(--transition);
-        }
-
-        .footer-col a:hover {
-            color: var(--iron-white);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: var(--space-lg);
-            padding-top: var(--space-md);
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-        }
-
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-md);
-            }
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                gap: var(--space-xs);
-                text-align: center;
-            }
-        }
-
-        /* ============================================================
-           UTILITY
-           ============================================================ */
+        /* Utility */
         .text-center {
             text-align: center;
         }
@@ -1714,69 +1559,34 @@
         .bg-white {
             background: var(--iron-white);
         }
-        .bg-black {
-            background: var(--iron-black);
-            color: var(--iron-white);
-        }
-        .bg-black .section-number {
-            color: var(--iron-red);
-        }
-        .bg-black .heading-display-md {
-            color: var(--iron-white);
-        }
-        .bg-black p {
-            color: var(--iron-grey);
-        }
 
-        /* Reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Parallax image placeholder */
-        .img-placeholder {
-            background: var(--iron-ink);
-            color: var(--iron-grey);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            letter-spacing: 0.04em;
-            font-family: var(--font-body);
-            min-height: 300px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .img-placeholder.light {
-            background: var(--iron-rule);
-            color: var(--iron-grey);
+        @media (max-width: 500px) {
+            .container {
+                padding: 0 16px;
+            }
+            .verse {
+                padding-left: var(--space-sm);
+                font-size: 17px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================================
-    HEADER / NAVIGATION
+    HEADER
     ============================================================ -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
-            <a href="/" class="site-logo">THE IRON<span>.</span></a>
+            <a href="/index.html" class="site-logo">THE IRON<span>.</span></a>
 
             <nav class="nav-desktop" id="mainNav" role="navigation">
-                <a href="#philosophy">Philosophy</a>
-                <a href="#framework">Framework</a>
-                <a href="#community">Community</a>
-                <a href="#membership">Membership</a>
-                <a href="#insights">Insights</a>
-                <a href="#join" class="nav-cta">Enter The Iron →</a>
+                <a href="/philosophy.html">Philosophy</a>
+                <a href="/framework.html">Framework</a>
+                <a href="/community.html">Community</a>
+                <a href="/membership.html">Membership</a>
+                <a href="/insights.html">Insights</a>
+                <a href="/membership.html" class="nav-cta">Enter The Iron →</a>
             </nav>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -1805,8 +1615,8 @@
                         capability, physical strength and purpose.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#join" class="btn-primary btn-arrow"><span>Enter The Iron</span></a>
-                        <a href="#framework" class="btn-secondary btn-arrow">Explore the Framework</a>
+                        <a href="/membership.html" class="btn-primary btn-arrow"><span>Enter The Iron</span></a>
+                        <a href="/framework.html" class="btn-secondary btn-arrow">Explore the Framework</a>
                     </div>
                     <div class="hero-verse">
                         <div class="verse">
@@ -1818,9 +1628,7 @@
                 </div>
 
                 <div class="hero-image">
-                    <div class="hero-image-placeholder">
-                        <!-- Replace with actual documentary-style photo -->
-                    </div>
+                    <div class="hero-image-placeholder"></div>
                 </div>
             </div>
         </div>
@@ -1853,7 +1661,7 @@
     </div>
 
     <!-- ============================================================
-    PHILOSOPHY / THE PROBLEM
+    PHILOSOPHY PREVIEW
     ============================================================ -->
     <section id="philosophy">
         <div class="container">
@@ -1904,64 +1712,27 @@
                             <span class="verse-reference">— Romans 12:2</span>
                         </div>
                     </div>
+
+                    <div class="reveal" style="margin-top: var(--space-md);">
+                        <a href="/philosophy.html" class="btn-secondary btn-arrow">Read the full philosophy →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    PHILOSOPHY — FOUNDATION
+    FRAMEWORK PREVIEW
     ============================================================ -->
-    <section class="bg-white border-top">
+    <section style="background:var(--iron-white); border-top:1px solid var(--iron-rule);" id="framework">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">02 / Philosophy</div>
-                <h2 class="heading-display heading-display-md">Start With<br />The Foundation.</h2>
-                <p class="text-body">
-                    You don't need another motivational speech. You need standards.
-                    You need structure. You need repeated action. And you need an
-                    environment that makes those things easier to sustain.
-                </p>
-            </div>
-
-            <div class="philosophy-grid" style="margin-top: var(--space-lg);">
-                <div class="philosophy-card reveal">
-                    <div class="number">01</div>
-                    <h3>Standards</h3>
-                    <p class="text-body-sm">What you accept determines what you become.</p>
-                </div>
-                <div class="philosophy-card reveal">
-                    <div class="number">02</div>
-                    <h3>Structure</h3>
-                    <p class="text-body-sm">A goal without a system remains a wish.</p>
-                </div>
-                <div class="philosophy-card reveal">
-                    <div class="number">03</div>
-                    <h3>Action</h3>
-                    <p class="text-body-sm">Knowledge only matters when it changes behaviour.</p>
-                </div>
-            </div>
-
-            <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
-                <a href="#framework" class="btn-secondary btn-arrow">Explore the framework →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    FRAMEWORK — SIX PLANS
-    ============================================================ -->
-    <section id="framework" class="bg-white">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">03 / The Framework</div>
+                <div class="section-number">02 / The Framework</div>
                 <h2 class="heading-display heading-display-md">The Six Plans</h2>
                 <p class="text-body">A complete system for becoming more capable in every area of life.</p>
             </div>
 
             <div class="framework-list">
-
-                <!-- MIND -->
                 <div class="framework-item reveal">
                     <div class="number">01</div>
                     <div class="content">
@@ -1971,14 +1742,11 @@
                             <span>Mental strength</span>
                             <span>Emotional regulation</span>
                             <span>Discipline</span>
-                            <span>Confidence</span>
                             <span>Resilience</span>
                         </div>
                     </div>
                     <div class="action">→</div>
                 </div>
-
-                <!-- CHARACTER -->
                 <div class="framework-item reveal">
                     <div class="number">02</div>
                     <div class="content">
@@ -1988,14 +1756,11 @@
                             <span>Integrity</span>
                             <span>Responsibility</span>
                             <span>Courage</span>
-                            <span>Leadership</span>
                             <span>Standards</span>
                         </div>
                     </div>
                     <div class="action">→</div>
                 </div>
-
-                <!-- BODY -->
                 <div class="framework-item reveal">
                     <div class="number">03</div>
                     <div class="content">
@@ -2010,8 +1775,6 @@
                     </div>
                     <div class="action">→</div>
                 </div>
-
-                <!-- RELATIONSHIPS -->
                 <div class="framework-item reveal">
                     <div class="number">04</div>
                     <div class="content">
@@ -2026,8 +1789,6 @@
                     </div>
                     <div class="action">→</div>
                 </div>
-
-                <!-- MONEY -->
                 <div class="framework-item reveal">
                     <div class="number">05</div>
                     <div class="content">
@@ -2042,8 +1803,6 @@
                     </div>
                     <div class="action">→</div>
                 </div>
-
-                <!-- PURPOSE -->
                 <div class="framework-item reveal">
                     <div class="number">06</div>
                     <div class="content">
@@ -2058,32 +1817,23 @@
                     </div>
                     <div class="action">→</div>
                 </div>
-
             </div>
 
             <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
-                <div class="verse" style="margin: 0 auto; border-left-color: var(--iron-red);">
-                    "For God gave us a spirit not of fear but of <strong>power and love and self-control.</strong>"
-                    <span class="verse-reference">— 2 Timothy 1:7</span>
-                </div>
+                <a href="/framework.html" class="btn-secondary btn-arrow">Explore the full framework →</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    THE STANDARD
+    THE STANDARD (preview)
     ============================================================ -->
-    <section class="standard-section" id="standard">
+    <section class="standard-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">04 / The Standard</div>
+                <div class="section-number">03 / The Standard</div>
                 <h2 class="heading-display heading-display-md">How We Show Up.</h2>
-                <p class="text-body">
-                    A better life isn't built by motivation. It's built through the
-                    standards you set, the decisions you make and the actions you repeat.
-                </p>
             </div>
-
             <div class="standard-grid">
                 <div class="standard-item" data-delay="0">
                     <div class="principle">Take responsibility.</div>
@@ -2110,91 +1860,50 @@
                     <div class="description">The standard applies to how you treat others too.</div>
                 </div>
             </div>
-
-            <div class="standard-verse reveal">
-                <blockquote>
-                    "Finally, brothers, whatever is true, whatever is honourable,
-                    whatever is just, whatever is pure, whatever is lovely, whatever is commendable —
-                    <strong>if there is any excellence, if there is anything worthy of praise,
-                    think about these things.</strong>"
-                </blockquote>
-                <span class="ref">— Philippians 4:8</span>
-            </div>
         </div>
     </section>
 
     <!-- ============================================================
-    COMMUNITY
+    COMMUNITY PREVIEW
     ============================================================ -->
-    <section id="community" class="bg-white">
+    <section style="padding:var(--space-xl) 0; background:var(--iron-white);" id="community">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">05 / The Community</div>
+                <div class="section-number">04 / The Community</div>
                 <h2 class="heading-display heading-display-md">The Build<br />Happens Together.</h2>
                 <p class="text-body">
                     The Iron is not simply a library of information. It is an
                     environment designed to make action easier to sustain.
                 </p>
             </div>
-
             <div class="community-grid">
                 <div class="community-visual reveal">
                     <div class="mockup-label">THE IRON / COMMUNITY</div>
-                    <div class="mockup-channel">
-                        <span class="hash">#</span> welcome — Introduce yourself
-                    </div>
-                    <div class="mockup-channel">
-                        <span class="hash">#</span> accountability — Weekly check-ins
-                    </div>
-                    <div class="mockup-channel">
-                        <span class="hash">#</span> mind — Philosophy &amp; mental discipline
-                    </div>
-                    <div class="mockup-channel">
-                        <span class="hash">#</span> body — Training &amp; nutrition
-                    </div>
-                    <div class="mockup-channel">
-                        <span class="hash">#</span> money — Financial capability
-                    </div>
-                    <div class="mockup-channel">
-                        <span class="hash">#</span> events — Live sessions &amp; workshops
-                    </div>
+                    <div class="mockup-channel"><span class="hash">#</span> welcome — Introduce yourself</div>
+                    <div class="mockup-channel"><span class="hash">#</span> accountability — Weekly check-ins</div>
+                    <div class="mockup-channel"><span class="hash">#</span> mind — Philosophy &amp; mental discipline</div>
+                    <div class="mockup-channel"><span class="hash">#</span> body — Training &amp; nutrition</div>
+                    <div class="mockup-channel"><span class="hash">#</span> money — Financial capability</div>
+                    <div class="mockup-channel"><span class="hash">#</span> events — Live sessions &amp; workshops</div>
                 </div>
-
                 <div>
                     <div class="community-flow">
-                        <div class="step reveal">
-                            <div class="num">01</div>
-                            <div class="label">Learn</div>
-                        </div>
-                        <div class="step reveal">
-                            <div class="num">02</div>
-                            <div class="label">Discuss</div>
-                        </div>
-                        <div class="step reveal">
-                            <div class="num">03</div>
-                            <div class="label">Apply</div>
-                        </div>
-                        <div class="step reveal">
-                            <div class="num">04</div>
-                            <div class="label">Track</div>
-                        </div>
-                        <div class="step reveal">
-                            <div class="num">05</div>
-                            <div class="label">Share</div>
-                        </div>
-                        <div class="step reveal">
-                            <div class="num">06</div>
-                            <div class="label">Sharpen</div>
-                        </div>
+                        <div class="step reveal"><div class="num">01</div><div class="label">Learn</div></div>
+                        <div class="step reveal"><div class="num">02</div><div class="label">Discuss</div></div>
+                        <div class="step reveal"><div class="num">03</div><div class="label">Apply</div></div>
+                        <div class="step reveal"><div class="num">04</div><div class="label">Track</div></div>
+                        <div class="step reveal"><div class="num">05</div><div class="label">Share</div></div>
+                        <div class="step reveal"><div class="num">06</div><div class="label">Sharpen</div></div>
                     </div>
-
                     <div class="community-verse reveal">
                         <blockquote>
                             "And let us consider how to stir up one another to love and good works,
-                            <strong>not neglecting to meet together</strong>, as is the habit of some,
-                            but encouraging one another..."
+                            <strong>not neglecting to meet together</strong>..."
                             <span class="ref">— Hebrews 10:24-25</span>
                         </blockquote>
+                    </div>
+                    <div class="reveal" style="margin-top: var(--space-md);">
+                        <a href="/community.html" class="btn-secondary btn-arrow">Join the community →</a>
                     </div>
                 </div>
             </div>
@@ -2202,28 +1911,20 @@
     </section>
 
     <!-- ============================================================
-    LIBRARY / INSIGHTS
+    INSIGHTS / LIBRARY PREVIEW
     ============================================================ -->
-    <section id="insights" class="bg-white border-top">
+    <section style="padding:var(--space-xl) 0; background:var(--iron-white); border-top:1px solid var(--iron-rule);" id="insights">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">06 / The Iron Library</div>
+                <div class="section-number">05 / The Iron Library</div>
                 <h2 class="heading-display heading-display-md">Selected Education</h2>
-                <p class="text-body">
-                    Programmes, masterclasses and field notes for the work of becoming more capable.
-                </p>
+                <p class="text-body">Programmes, masterclasses and field notes for the work of becoming more capable.</p>
             </div>
-
             <div class="library-grid">
                 <div class="library-card reveal">
                     <div class="meta">Finance / 45 min</div>
                     <h4>Investing Foundations</h4>
                     <p>The principles behind disciplined long-term investing.</p>
-                </div>
-                <div class="library-card reveal">
-                    <div class="meta">Finance / 30 min</div>
-                    <h4>Financial Discipline</h4>
-                    <p>Build the habits required for financial capability.</p>
                 </div>
                 <div class="library-card reveal">
                     <div class="meta">Mind / 35 min</div>
@@ -2235,71 +1936,49 @@
                     <h4>Healthy Masculinity</h4>
                     <p>A grounded approach to becoming a capable man.</p>
                 </div>
-                <div class="library-card reveal">
-                    <div class="meta">Relationships / 35 min</div>
-                    <h4>Dating with Self-Respect</h4>
-                    <p>Build healthier relationships through standards and communication.</p>
-                </div>
-                <div class="library-card reveal">
-                    <div class="meta">Purpose / 40 min</div>
-                    <h4>Finding Direction</h4>
-                    <p>Build a career and life around something worth pursuing.</p>
-                </div>
             </div>
-
             <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
-                <a href="#join" class="btn-secondary btn-arrow">Access the full library →</a>
+                <a href="/insights.html" class="btn-secondary btn-arrow">Explore the full library →</a>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    MEMBERSHIP
+    MEMBERSHIP PREVIEW
     ============================================================ -->
-    <section id="membership" class="bg-white border-top">
+    <section style="padding:var(--space-xl) 0; background:var(--iron-white); border-top:1px solid var(--iron-rule);" id="membership">
         <div class="container">
             <div class="section-header text-center reveal">
-                <div class="section-number">07 / Membership</div>
+                <div class="section-number">06 / Membership</div>
                 <h2 class="heading-display heading-display-md">Three Ways to Build.</h2>
-                <p class="text-body mx-auto">Choose the path that fits where you are and where you're going.</p>
             </div>
-
             <div class="membership-grid">
-
-                <!-- FREE -->
                 <div class="membership-tier reveal">
                     <div class="tier-name">Foundation</div>
                     <div class="tier-price">R0 <span>/ month</span></div>
-                    <div class="tier-desc">Start building. Discover the philosophy, meet the community.</div>
+                    <div class="tier-desc">Start building. Discover the philosophy.</div>
                     <ul>
                         <li>Community access</li>
                         <li>Selected education</li>
                         <li>Challenges</li>
-                        <li>Reflection tools</li>
                         <li>Selected events</li>
                     </ul>
-                    <a href="#" class="btn-secondary btn-arrow" style="width:100%; justify-content:center;">Join the Foundation →</a>
+                    <a href="/membership.html" class="btn-secondary btn-arrow" style="width:100%; justify-content:center;">Join →</a>
                 </div>
-
-                <!-- PAID -->
                 <div class="membership-tier featured reveal">
                     <div class="badge">Most Popular</div>
                     <div class="tier-name">The Iron</div>
                     <div class="tier-price">R149 <span>/ month</span></div>
-                    <div class="tier-desc">Build with structure. Full learning paths and accountability.</div>
+                    <div class="tier-desc">Build with structure. Full learning paths.</div>
                     <ul>
                         <li>Everything in Foundation</li>
                         <li>Full learning paths</li>
-                        <li>Premium education</li>
                         <li>Masterclasses</li>
                         <li>Live sessions</li>
                         <li>Accountability</li>
-                        <li>Premium resources</li>
                     </ul>
-                    <a href="#" class="btn-primary btn-arrow" style="width:100%; justify-content:center;"><span>Join The Iron →</span></a>
+                    <a href="/membership.html" class="btn-primary btn-arrow" style="width:100%; justify-content:center;"><span>Join The Iron →</span></a>
                 </div>
-
-                <!-- INNER CIRCLE -->
                 <div class="membership-tier reveal">
                     <div class="badge">Limited</div>
                     <div class="tier-name">Inner Circle</div>
@@ -2309,131 +1988,13 @@
                         <li>Everything in The Iron</li>
                         <li>Small-group sessions</li>
                         <li>Private sessions</li>
-                        <li>Priority questions</li>
                         <li>Direct founder access</li>
-                        <li>Premium networking</li>
                     </ul>
-                    <a href="#" class="btn-secondary btn-arrow" style="width:100%; justify-content:center;">Apply for the Inner Circle →</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    FOR / NOT FOR
-    ============================================================ -->
-    <section class="bg-white border-top">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">08 / Who It's For</div>
-                <h2 class="heading-display heading-display-md">For Men Who Build.</h2>
-            </div>
-
-            <div class="for-not-grid">
-                <div class="for-col reveal">
-                    <h3>For</h3>
-                    <ul>
-                        <li>Men who want discipline</li>
-                        <li>Men who want character</li>
-                        <li>Men who want stronger relationships</li>
-                        <li>Men who want financial capability</li>
-                        <li>Men who want emotional maturity</li>
-                        <li>Men who want physical discipline</li>
-                        <li>Men who want direction</li>
-                        <li>Men who want serious peers</li>
-                    </ul>
-                </div>
-                <div class="for-col not-for reveal">
-                    <h3>Not For</h3>
-                    <ul>
-                        <li>Quick fixes</li>
-                        <li>Get-rich-quick schemes</li>
-                        <li>"Alpha male" theatrics</li>
-                        <li>Blaming women</li>
-                        <li>Blaming society</li>
-                        <li>Constant motivation without action</li>
-                        <li>Performative masculinity</li>
-                    </ul>
+                    <a href="/membership.html" class="btn-secondary btn-arrow" style="width:100%; justify-content:center;">Apply →</a>
                 </div>
             </div>
-
             <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
-                <div class="verse" style="margin: 0 auto;">
-                    "For the Spirit God gave us does not make us timid, but gives us
-                    <strong>power, love and self-discipline.</strong>"
-                    <span class="verse-reference">— 2 Timothy 1:7</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    FAQ
-    ============================================================ -->
-    <section class="bg-white border-top" id="faq">
-        <div class="container">
-            <div class="section-header text-center reveal">
-                <div class="section-number">09 / Questions</div>
-                <h2 class="heading-display heading-display-md">Frequently Asked</h2>
-                <p class="text-body mx-auto">Everything you need to know before you join.</p>
-            </div>
-
-            <div class="faq-list">
-                <div class="faq-item open reveal">
-                    <button class="faq-question">
-                        What is The Iron?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        The Iron is a private community and structured framework for men building greater discipline, character, relationships, financial capability, physical strength and purpose. It's a place to learn, implement, and grow alongside other men doing the same.
-                    </div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Who is The Iron for?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        The Iron is for men who are ready to build—whether you're just starting or already on the path. You don't need to have your life figured out. You just need to be willing to do the work.
-                    </div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Do I need my life figured out?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        Absolutely not. The Iron is designed for men at every stage. If you already had it all figured out, you wouldn't need a framework. Start where you are. Build from there.
-                    </div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What do I get for free?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        The Foundation tier gives you access to the community, selected educational content, challenges, reflection tools, and selected live events. It's a place to discover the philosophy and begin working on yourself.
-                    </div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What is the Inner Circle?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        The Inner Circle is a smaller, more intensive environment for men who want greater accountability, deeper feedback, and closer interaction. It includes small-group sessions, priority questions, and direct founder access. Membership is limited.
-                    </div>
-                </div>
-                <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Is this financial advice?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        No. The Iron provides education and frameworks for developing financial capability, but it does not provide personalised financial advice. Always consult a qualified professional for your specific situation.
-                    </div>
-                </div>
+                <a href="/membership.html" class="btn-secondary btn-arrow">View all membership options →</a>
             </div>
         </div>
     </section>
@@ -2448,10 +2009,8 @@
                 You don't need everything figured out.<br />
                 You need a foundation, a direction and standards.
             </p>
-            <a href="#membership" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
-
+            <a href="/membership.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
             <div class="tagline">Iron sharpens iron.</div>
-
             <div class="verse-final">
                 "Not perfection. <strong>Progress with standards.</strong>"
                 <span class="ref">— The Iron Philosophy</span>
@@ -2472,15 +2031,15 @@
                 </div>
                 <div class="footer-col">
                     <h4>Explore</h4>
-                    <a href="#philosophy">Philosophy</a>
-                    <a href="#framework">Framework</a>
-                    <a href="#community">Community</a>
-                    <a href="#membership">Membership</a>
-                    <a href="#insights">Insights</a>
+                    <a href="/philosophy.html">Philosophy</a>
+                    <a href="/framework.html">Framework</a>
+                    <a href="/community.html">Community</a>
+                    <a href="/membership.html">Membership</a>
+                    <a href="/insights.html">Insights</a>
                 </div>
                 <div class="footer-col">
                     <h4>Connect</h4>
-                    <a href="#faq">FAQ</a>
+                    <a href="/index.html#faq">FAQ</a>
                     <a href="#">Contact</a>
                     <a href="#">About</a>
                 </div>
@@ -2502,9 +2061,7 @@
     JAVASCRIPT
     ============================================================ -->
     <script>
-        // ============================================================
-        // Mobile Nav Toggle
-        // ============================================================
+        // Mobile nav toggle
         const navToggle = document.getElementById('navToggle');
         const mainNav = document.getElementById('mainNav');
 
@@ -2520,61 +2077,30 @@
             });
         });
 
-        // ============================================================
-        // Header Scroll Effect
-        // ============================================================
+        // Header scroll effect
         const header = document.getElementById('siteHeader');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 50) {
+            if (window.pageYOffset > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            lastScroll = currentScroll;
         });
 
-        // ============================================================
-        // FAQ Accordion
-        // ============================================================
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const button = item.querySelector('.faq-question');
-            button.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-                faqItems.forEach(i => i.classList.remove('open'));
-                if (!isOpen) {
-                    item.classList.add('open');
-                }
-            });
-        });
-
-        // ============================================================
-        // Scroll Reveal (Intersection Observer)
-        // ============================================================
+        // Scroll reveal
         const revealElements = document.querySelectorAll('.reveal');
-
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
-        });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // ============================================================
-        // Standard Items Staggered Reveal
-        // ============================================================
+        // Standard items staggered reveal
         const standardItems = document.querySelectorAll('.standard-item');
-
         const standardObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2584,18 +2110,12 @@
                     }, delay);
                 }
             });
-        }, {
-            threshold: 0.3,
-            rootMargin: '0px 0px -40px 0px'
-        });
+        }, { threshold: 0.3, rootMargin: '0px 0px -40px 0px' });
 
         standardItems.forEach(item => standardObserver.observe(item));
 
-        // ============================================================
-        // Data Strip Counter Animation
-        // ============================================================
+        // Data strip counter animation
         const dataItems = document.querySelectorAll('.data-strip-item');
-
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2617,51 +2137,36 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, {
-            threshold: 0.5
-        });
+        }, { threshold: 0.5 });
 
         dataItems.forEach(item => counterObserver.observe(item));
 
-        // ============================================================
-        // Final CTA Reveal
-        // ============================================================
+        // Final CTA reveal
         const ctaElements = document.querySelectorAll('.cta-final .heading-display-lg, .cta-final p, .cta-final .btn-primary, .cta-final .tagline, .cta-final .verse-final');
-
         const ctaObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -40px 0px'
-        });
+        }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
 
         ctaElements.forEach(el => ctaObserver.observe(el));
 
-        // ============================================================
-        // Smooth anchor scroll
-        // ============================================================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    const headerOffset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
-                        headerOffset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // FAQ accordion (for index.html)
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('.faq-question');
+            if (button) {
+                button.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+                    faqItems.forEach(i => i.classList.remove('open'));
+                    if (!isOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            }
         });
     </script>
-
 </body>
 </html>
