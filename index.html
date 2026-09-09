@@ -81,7 +81,7 @@
         }
 
         /* ============================================================
-           3. CONTAINER — CENTRALIZED
+           3. CONTAINER — FULLY RESPONSIVE
            ============================================================ */
         .container {
             width: var(--container-width, min(1200px, calc(100% - 80px)));
@@ -99,14 +99,17 @@
             :root {
                 --container-width: min(100% - 40px, 1200px);
             }
+            .container {
+                padding: 0 16px;
+            }
         }
 
         @media (max-width: 500px) {
             .container {
-                padding: 0 16px;
+                padding: 0 12px;
             }
             :root {
-                --container-width: min(100% - 32px, 1200px);
+                --container-width: min(100% - 24px, 1200px);
             }
         }
 
@@ -121,34 +124,34 @@
         }
 
         .heading-display-lg {
-            font-size: clamp(36px, 8vw, 80px);
+            font-size: clamp(32px, 8vw, 80px);
         }
 
         .heading-display-md {
-            font-size: clamp(30px, 6vw, 64px);
+            font-size: clamp(28px, 6vw, 64px);
         }
 
         .heading-display-sm {
-            font-size: clamp(24px, 4vw, 40px);
+            font-size: clamp(22px, 4vw, 40px);
         }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 400;
-            font-size: clamp(15px, 1.1vw, 18px);
+            font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
         }
 
         .text-body-sm {
-            font-size: clamp(13px, 0.9vw, 15px);
+            font-size: clamp(12px, 0.9vw, 15px);
             line-height: 1.6;
         }
 
         .text-meta {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-grey, #6b6b6b);
@@ -157,7 +160,7 @@
         .section-number {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
@@ -168,7 +171,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(17px, 1.2vw, 20px);
+            font-size: clamp(16px, 1.2vw, 20px);
             color: var(--iron-grey, #6b6b6b);
             line-height: 1.6;
             max-width: 600px;
@@ -184,7 +187,7 @@
 
         .verse-reference {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 14px);
+            font-size: clamp(10px, 0.7vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -196,7 +199,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-ink, #1c1c1c);
             line-height: 1.6;
             max-width: 650px;
@@ -214,7 +217,7 @@
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -226,7 +229,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-grey, #6b6b6b);
             line-height: 1.6;
             max-width: 650px;
@@ -244,7 +247,7 @@
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -255,12 +258,12 @@
         @media (max-width: 500px) {
             .verse {
                 padding-left: var(--space-sm, 16px);
-                font-size: 16px;
+                font-size: 15px;
                 margin: var(--space-sm, 16px) auto;
             }
             .bible-verse,
             .bible-verse-dark {
-                font-size: 16px;
+                font-size: 15px;
                 padding: var(--space-sm, 16px);
             }
         }
@@ -275,17 +278,18 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             position: relative;
             overflow: hidden;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
+            width: auto;
         }
 
         .btn-primary::before {
@@ -320,16 +324,17 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: transparent;
             color: var(--iron-black, #111111);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: none;
             border-bottom: 2px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
+            width: auto;
         }
 
         .btn-secondary:hover {
@@ -347,37 +352,14 @@
             transform: translateX(6px);
         }
 
-        .btn-outline-light {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
-            background: transparent;
-            color: var(--iron-white, #f7f7f4);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            cursor: pointer;
-            text-align: center;
-            min-width: 140px;
-        }
-
-        .btn-outline-light:hover {
-            border-color: var(--iron-white, #f7f7f4);
-            background: var(--iron-white, #f7f7f4);
-            color: var(--iron-black, #111111);
-        }
-
         @media (max-width: 500px) {
             .btn-primary,
-            .btn-secondary,
-            .btn-outline-light {
-                min-width: 120px;
-                padding: 12px 16px;
-                font-size: 13px;
+            .btn-secondary {
+                min-width: 100px;
+                padding: 10px 14px;
+                font-size: 12px;
+                width: 100%;
+                max-width: 280px;
             }
         }
 
@@ -394,12 +376,12 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            padding: 14px 0;
+            padding: 12px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
         .site-header.scrolled {
-            padding: 8px 0;
+            padding: 6px 0;
             background: rgba(247, 247, 244, 0.98);
         }
 
@@ -413,7 +395,7 @@
         .site-logo {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(16px, 1.4vw, 22px);
             letter-spacing: 0.04em;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             flex-shrink: 0;
@@ -430,14 +412,14 @@
         .nav-desktop {
             display: flex;
             align-items: center;
-            gap: clamp(12px, 2vw, 32px);
+            gap: clamp(8px, 2vw, 32px);
             flex-wrap: nowrap;
         }
 
         .nav-desktop a {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(11px, 0.8vw, 14px);
+            font-size: clamp(9px, 0.8vw, 14px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-grey, #6b6b6b);
@@ -476,9 +458,10 @@
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 4px 10px;
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            font-size: clamp(8px, 0.7vw, 13px);
         }
 
         .nav-desktop .nav-cta::after {
@@ -493,7 +476,7 @@
         .nav-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
             background: none;
             border: none;
@@ -502,7 +485,7 @@
 
         .nav-toggle span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
@@ -530,7 +513,7 @@
                 flex-direction: column;
                 gap: 0;
                 background: var(--iron-white, #ffffff);
-                padding: 20px 0;
+                padding: 16px 0;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
                 width: 100%;
@@ -553,10 +536,10 @@
             }
 
             .nav-desktop a {
-                padding: 12px 24px;
+                padding: 10px 20px;
                 width: 100%;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-                font-size: 14px;
+                font-size: 13px;
                 white-space: normal;
                 text-align: center;
             }
@@ -567,8 +550,9 @@
 
             .nav-desktop .nav-cta {
                 border: none;
-                padding: 12px 24px;
+                padding: 10px 20px;
                 text-align: center;
+                font-size: 13px;
             }
 
             .nav-desktop .nav-cta:hover {
@@ -646,14 +630,14 @@
         }
 
         .footer-brand p {
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             max-width: 300px;
         }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-style: italic;
-            font-size: clamp(13px, 0.8vw, 16px);
+            font-size: clamp(12px, 0.8vw, 16px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-sm, 16px);
         }
@@ -661,7 +645,7 @@
         .footer-col h4 {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 600;
-            font-size: clamp(11px, 0.7vw, 13px);
+            font-size: clamp(10px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-white, #f7f7f4);
@@ -670,7 +654,7 @@
 
         .footer-col a {
             display: block;
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             padding: 4px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
@@ -685,7 +669,7 @@
             padding-top: var(--space-md, 32px);
             display: flex;
             justify-content: space-between;
-            font-size: clamp(11px, 0.6vw, 13px);
+            font-size: clamp(10px, 0.6vw, 13px);
             flex-wrap: wrap;
             gap: var(--space-sm, 16px);
         }
@@ -718,7 +702,7 @@
            10. PAGE HEADER
            ============================================================ */
         .page-header {
-            padding-top: clamp(90px, 12vh, 140px);
+            padding-top: clamp(80px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -765,7 +749,7 @@
         .data-strip-item .numeral {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(28px, 4vw, 52px);
+            font-size: clamp(24px, 4vw, 52px);
             line-height: 1;
             color: var(--iron-black, #111111);
             display: block;
@@ -777,7 +761,7 @@
 
         .data-strip-item .label {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-grey, #6b6b6b);
@@ -792,11 +776,21 @@
             }
         }
 
+        @media (max-width: 400px) {
+            .data-strip-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm, 16px);
+            }
+            .data-strip-item .numeral {
+                font-size: 28px;
+            }
+        }
+
         /* ============================================================
            12. HERO
            ============================================================ */
         .hero {
-            padding-top: clamp(80px, 10vh, 100px);
+            padding-top: clamp(70px, 10vh, 100px);
             padding-bottom: var(--space-xl, 96px);
             background: var(--iron-white, #f7f7f4);
             position: relative;
@@ -836,35 +830,49 @@
         }
 
         .hero-image {
-            background: var(--iron-ink, #1c1c1c);
-            min-height: 380px;
+            min-height: 280px;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--iron-grey, #6b6b6b);
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.9vw, 16px);
             position: relative;
             overflow: hidden;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
         }
 
         .hero-image .placeholder-text {
             text-align: center;
             padding: var(--space-md, 32px);
+            color: var(--iron-grey, #6b6b6b);
         }
 
         .hero-image .placeholder-text .icon {
             font-size: 48px;
             display: block;
             margin-bottom: var(--space-sm, 16px);
+            opacity: 0.5;
+        }
+
+        .hero-image .placeholder-text .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .hero-image .placeholder-text .sub-label {
+            font-size: clamp(10px, 0.6vw, 12px);
+            opacity: 0.5;
+            margin-top: var(--space-xs, 8px);
         }
 
         .hero-verse {
             margin-top: var(--space-md, 32px);
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-style: italic;
-            font-size: clamp(17px, 1.3vw, 22px);
+            font-size: clamp(16px, 1.3vw, 22px);
             color: var(--iron-grey, #6b6b6b);
         }
 
@@ -892,23 +900,32 @@
             }
 
             .hero-image {
-                min-height: 250px;
+                min-height: 200px;
                 order: -1;
+            }
+
+            .hero-image .placeholder-text .icon {
+                font-size: 36px;
             }
         }
 
         @media (max-width: 500px) {
             .hero-image {
-                min-height: 200px;
+                min-height: 160px;
             }
             .hero-actions {
                 flex-direction: column;
                 width: 100%;
+                align-items: center;
             }
             .hero-actions .btn-primary,
             .hero-actions .btn-secondary {
                 width: 100%;
+                max-width: 280px;
                 justify-content: center;
+            }
+            .hero-content .heading-display-lg {
+                font-size: clamp(28px, 8vw, 40px);
             }
         }
 
@@ -944,7 +961,7 @@
         .gap-statement {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(22px, 2.5vw, 36px);
+            font-size: clamp(20px, 2.5vw, 36px);
             line-height: 1.2;
             color: var(--iron-black, #111111);
             border-top: 2px solid var(--iron-red, #a32621);
@@ -952,15 +969,42 @@
         }
 
         .gap-image {
-            background: var(--iron-ink, #1c1c1c);
-            min-height: 280px;
+            min-height: 220px;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
             color: var(--iron-grey, #6b6b6b);
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.9vw, 16px);
+            font-size: clamp(12px, 0.9vw, 16px);
+        }
+
+        .gap-image .placeholder-text {
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .gap-image .placeholder-text .icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: var(--space-sm, 16px);
+            opacity: 0.5;
+        }
+
+        .gap-image .placeholder-text .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.7vw, 13px);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .gap-image .placeholder-text .sub-label {
+            font-size: clamp(9px, 0.5vw, 11px);
+            opacity: 0.5;
+            margin-top: var(--space-xs, 8px);
         }
 
         @media (max-width: 768px) {
@@ -979,8 +1023,12 @@
             }
 
             .gap-image {
-                min-height: 200px;
+                min-height: 160px;
                 order: -1;
+            }
+
+            .gap-image .placeholder-text .icon {
+                font-size: 28px;
             }
         }
 
@@ -1012,7 +1060,7 @@
         .framework-preview-card .number {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(24px, 2.2vw, 36px);
+            font-size: clamp(22px, 2.2vw, 36px);
             color: var(--iron-rule, #d9d9d4);
             line-height: 1;
             margin-bottom: var(--space-xs, 8px);
@@ -1026,13 +1074,13 @@
         .framework-preview-card h3 {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(20px, 1.6vw, 26px);
+            font-size: clamp(18px, 1.6vw, 26px);
             margin-bottom: var(--space-xs, 8px);
         }
 
         .framework-preview-card p {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
         }
 
@@ -1041,7 +1089,7 @@
             margin-top: var(--space-sm, 16px);
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             color: var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
@@ -1064,11 +1112,17 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-sm, 16px);
             }
+            .framework-preview-card {
+                padding: var(--space-sm, 16px);
+            }
         }
 
         @media (max-width: 500px) {
             .framework-preview-grid {
                 grid-template-columns: 1fr;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
@@ -1127,7 +1181,7 @@
         .method-step .step-number {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(28px, 2.5vw, 40px);
+            font-size: clamp(24px, 2.5vw, 40px);
             color: var(--iron-red, #a32621);
             line-height: 1;
             margin-bottom: var(--space-xs, 8px);
@@ -1136,13 +1190,13 @@
         .method-step h4 {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(16px, 1.4vw, 24px);
             margin-bottom: var(--space-xs, 8px);
         }
 
         .method-step p {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
         }
 
@@ -1159,7 +1213,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 2.2vw, 28px);
+            font-size: clamp(17px, 2.2vw, 28px);
             color: var(--iron-grey, #6b6b6b);
             max-width: 700px;
             margin: 0 auto;
@@ -1175,9 +1229,11 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-sm, 16px);
             }
-
+            .method-step {
+                padding: var(--space-sm, 16px);
+            }
             .method-statement blockquote {
-                font-size: 18px;
+                font-size: 17px;
             }
         }
 
@@ -1213,8 +1269,6 @@
 
         .standard-item:hover {
             border-bottom-color: var(--iron-red, #a32621);
-            padding-left: var(--space-sm, 16px);
-            padding-right: var(--space-sm, 16px);
         }
 
         .standard-item:last-child {
@@ -1224,13 +1278,13 @@
         .standard-item .principle {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.6vw, 28px);
+            font-size: clamp(17px, 1.6vw, 28px);
             line-height: 1.2;
         }
 
         .standard-item .description {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: 2px;
         }
@@ -1245,7 +1299,7 @@
         .standard-quote blockquote {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(24px, 3.5vw, 48px);
+            font-size: clamp(22px, 3.5vw, 48px);
             line-height: 1.1;
             color: var(--iron-black, #111111);
             max-width: 800px;
@@ -1270,15 +1324,42 @@
         }
 
         .community-preview-image {
-            background: var(--iron-ink, #1c1c1c);
-            min-height: 280px;
+            min-height: 220px;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
             color: var(--iron-grey, #6b6b6b);
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.9vw, 16px);
+            font-size: clamp(12px, 0.9vw, 16px);
+        }
+
+        .community-preview-image .placeholder-text {
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .community-preview-image .placeholder-text .icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: var(--space-sm, 16px);
+            opacity: 0.5;
+        }
+
+        .community-preview-image .placeholder-text .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.7vw, 13px);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .community-preview-image .placeholder-text .sub-label {
+            font-size: clamp(9px, 0.5vw, 11px);
+            opacity: 0.5;
+            margin-top: var(--space-xs, 8px);
         }
 
         .community-preview-content {
@@ -1318,13 +1399,13 @@
         .community-flow .step .num {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(16px, 1.3vw, 22px);
+            font-size: clamp(15px, 1.3vw, 22px);
             color: var(--iron-red, #a32621);
         }
 
         .community-flow .step .label {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             font-weight: 500;
         }
 
@@ -1344,7 +1425,7 @@
             }
 
             .community-preview-image {
-                min-height: 200px;
+                min-height: 160px;
                 order: -1;
             }
 
@@ -1356,6 +1437,9 @@
         @media (max-width: 500px) {
             .community-flow {
                 grid-template-columns: 1fr 1fr;
+            }
+            .community-preview-image .placeholder-text .icon {
+                font-size: 32px;
             }
         }
 
@@ -1380,6 +1464,8 @@
             background: var(--iron-white, #f7f7f4);
             position: relative;
             text-align: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .membership-tier:hover {
@@ -1401,38 +1487,39 @@
 
         .membership-tier .badge {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(9px, 0.6vw, 11px);
+            font-size: clamp(8px, 0.6vw, 11px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-red, #a32621);
             border: 1px solid var(--iron-red, #a32621);
-            padding: 2px clamp(10px, 0.8vw, 14px);
+            padding: 2px clamp(8px, 0.8vw, 14px);
             display: inline-block;
             margin-bottom: var(--space-xs, 8px);
+            align-self: center;
         }
 
         .membership-tier .tier-name {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(22px, 1.8vw, 28px);
+            font-size: clamp(20px, 1.8vw, 28px);
         }
 
         .membership-tier .tier-price {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(26px, 2.2vw, 32px);
+            font-size: clamp(22px, 2.2vw, 32px);
             margin: var(--space-xs, 8px) 0;
         }
 
         .membership-tier .tier-price span {
-            font-size: clamp(13px, 0.9vw, 16px);
+            font-size: clamp(12px, 0.9vw, 16px);
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
         }
 
         .membership-tier .tier-desc {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
             margin-bottom: var(--space-md, 32px);
         }
@@ -1444,12 +1531,13 @@
             max-width: 320px;
             margin-left: auto;
             margin-right: auto;
+            flex-grow: 1;
         }
 
         .membership-tier ul li {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.7vw, 14px);
-            padding: 6px 0;
+            font-size: clamp(11px, 0.7vw, 14px);
+            padding: 5px 0;
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
             color: var(--iron-ink, #1c1c1c);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
@@ -1479,39 +1567,9 @@
             justify-content: center;
         }
 
-        .membership-tier .btn-primary {
-            background: var(--iron-black, #111111);
-            color: var(--iron-white, #f7f7f4);
-            border-color: var(--iron-black, #111111);
-        }
-
-        .membership-tier .btn-primary:hover {
-            background: var(--iron-red, #a32621);
-            border-color: var(--iron-red, #a32621);
-        }
-
-        .membership-tier .btn-secondary {
-            border-bottom: 2px solid var(--iron-black, #111111);
-        }
-
-        .membership-tier .btn-secondary:hover {
-            border-bottom-color: var(--iron-red, #a32621);
-            color: var(--iron-red, #a32621);
-        }
-
-        .membership-tier.featured .btn-primary {
-            background: var(--iron-red, #a32621);
-            border-color: var(--iron-red, #a32621);
-        }
-
-        .membership-tier.featured .btn-primary:hover {
-            background: var(--iron-red-dark, #7f1d1d);
-            border-color: var(--iron-red-dark, #7f1d1d);
-        }
-
         .membership-tier .cancel-note {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.6vw, 12px);
+            font-size: clamp(9px, 0.6vw, 12px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-xs, 8px);
             display: block;
@@ -1533,7 +1591,7 @@
         @media (max-width: 768px) {
             .membership-grid {
                 grid-template-columns: 1fr;
-                max-width: 480px;
+                max-width: 420px;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -1543,6 +1601,9 @@
             }
             .membership-tier.featured:hover {
                 transform: translateY(-6px);
+            }
+            .membership-tier {
+                padding: var(--space-md, 32px);
             }
         }
 
@@ -1616,7 +1677,7 @@
         .cta-final .tagline {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
-            font-size: clamp(17px, 1.3vw, 20px);
+            font-size: clamp(16px, 1.3vw, 20px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-lg, 64px);
             font-style: italic;
@@ -1630,7 +1691,10 @@
             .cta-final .cta-actions .btn-primary,
             .cta-final .cta-actions .btn-secondary {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
+            }
+            .cta-final .heading-display-lg {
+                font-size: clamp(28px, 8vw, 40px);
             }
         }
 
@@ -1672,6 +1736,126 @@
 
         .bg-white {
             background: var(--iron-white, #f7f7f4);
+        }
+
+        /* ============================================================
+           21. IMAGE PLACEHOLDER UTILITIES
+           ============================================================ */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .icon {
+            font-size: 42px;
+            opacity: 0.4;
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        .img-placeholder-sm {
+            min-height: 140px;
+        }
+
+        .img-placeholder-sm .content .icon {
+            font-size: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder {
+                min-height: 140px;
+            }
+            .img-placeholder .content .icon {
+                font-size: 28px;
+            }
+            .img-placeholder-sm {
+                min-height: 100px;
+            }
+            .img-placeholder-sm .content .icon {
+                font-size: 20px;
+            }
+        }
+
+        /* ============================================================
+           22. DARK PANEL — STACKED LAYOUT
+           ============================================================ */
+        .dark-panel {
+            background: var(--iron-ink, #1c1c1c);
+            padding: clamp(var(--space-md), 4vw, var(--space-lg));
+            border-radius: 4px;
+            color: var(--iron-white, #f7f7f4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 280px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .dark-panel .line {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-size: clamp(16px, 1.6vw, 24px);
+            line-height: 1.5;
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .dark-panel .line:last-of-type {
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .dark-panel .sub-text {
+            color: var(--iron-grey, #6b6b6b);
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.9vw, 16px);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .dark-panel .italic-text {
+            color: var(--iron-white, #f7f7f4);
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-size: clamp(17px, 1.3vw, 22px);
+            font-style: italic;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 500px) {
+            .dark-panel {
+                min-height: 200px;
+                padding: var(--space-md, 32px);
+            }
+            .dark-panel .line {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -1715,7 +1899,7 @@
                         Through standards, structure, action and accountability.
                     </p>
                     <div class="hero-actions">
-                        <a href="#membership" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                        <a href="membership.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                         <a href="framework.html" class="btn-secondary btn-arrow">Explore The Framework →</a>
                     </div>
                     <div class="hero-verse">
@@ -1725,8 +1909,9 @@
                 <div class="hero-image">
                     <div class="placeholder-text">
                         <span class="icon">🏙️</span>
-                        <p>Hero Image</p>
-                        <p style="font-size: 12px; opacity: 0.6;">A man walking through Johannesburg early morning</p>
+                        <span class="label">Hero Image</span>
+                        <span class="sub-label">assets/images/hero/iron-hero.jpg</span>
+                        <span class="sub-label" style="margin-top:4px;">A man walking through Johannesburg early morning</span>
                     </div>
                 </div>
             </div>
@@ -1766,10 +1951,11 @@
         <div class="container">
             <div class="gap-grid">
                 <div class="gap-image">
-                    <div style="text-align:center; padding: var(--space-md);">
-                        <span style="font-size: 36px; display: block; margin-bottom: var(--space-sm);">📝</span>
-                        <p style="font-size: 14px;">Image Placeholder</p>
-                        <p style="font-size: 12px; opacity: 0.6;">Man at desk, early morning light</p>
+                    <div class="placeholder-text">
+                        <span class="icon">📝</span>
+                        <span class="label">Editorial Image</span>
+                        <span class="sub-label">assets/images/editorial/the-gap.jpg</span>
+                        <span class="sub-label" style="margin-top:4px;">Man at desk, early morning light</span>
                     </div>
                 </div>
                 <div class="gap-content">
@@ -1791,8 +1977,6 @@
                         The question isn't whether you can become more.<br />
                         It's whether you're willing to build.
                     </div>
-
-                    <!-- BIBLE VERSE -->
                     <div class="bible-verse" style="margin-top: var(--space-lg);">
                         "For the Lord gives wisdom;<br />
                         from his mouth come knowledge and understanding."
@@ -1804,7 +1988,7 @@
     </section>
 
     <!-- ============================================================
-    WHAT IS THE IRON
+    WHAT IS THE IRON — IMAGE REMOVED, FULL WIDTH DARK PANEL
     ============================================================ -->
     <section>
         <div class="container">
@@ -1816,36 +2000,17 @@
                     A place to learn, reflect, implement and improve alongside other men doing the same.
                 </p>
             </div>
-            <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); align-items: stretch;">
-                <div style="background: var(--iron-ink); padding: var(--space-lg); border-radius: 4px; color: var(--iron-white); display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-family: var(--font-display); font-size: clamp(18px, 1.8vw, 28px); line-height: 1.4;">
-                        Your mind affects your decisions.<br />
-                        Your character affects your relationships.<br />
-                        Your body affects your capacity.<br />
-                        Your finances affect your freedom.<br />
-                        Your purpose affects your direction.
-                    </p>
-                    <p style="margin-top: var(--space-md); color: var(--iron-grey); font-family: var(--font-body); font-size: clamp(14px, 0.9vw, 16px);">
-                        The work is connected.
-                    </p>
-                    <p style="margin-top: var(--space-sm); color: var(--iron-white); font-family: var(--font-display); font-size: clamp(17px, 1.3vw, 22px); font-style: italic;">
-                        The Iron exists to help you build all of it.
-                    </p>
+            <div class="reveal">
+                <!-- DARK PANEL — FULL WIDTH, NO IMAGE -->
+                <div class="dark-panel full-width">
+                    <p class="line">Your mind affects your decisions.</p>
+                    <p class="line">Your character affects your relationships.</p>
+                    <p class="line">Your body affects your capacity.</p>
+                    <p class="line">Your finances affect your freedom.</p>
+                    <p class="line">Your purpose affects your direction.</p>
+                    <p class="sub-text">The work is connected.</p>
+                    <p class="italic-text">The Iron exists to help you build all of it.</p>
                 </div>
-                <div style="background: var(--iron-rule); min-height: 250px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--iron-grey); font-family: var(--font-body); font-size: 14px;">
-                    <div style="text-align:center; padding: var(--space-md);">
-                        <span style="font-size: 48px; display: block; margin-bottom: var(--space-sm);">👥</span>
-                        <p>Image Placeholder</p>
-                        <p style="font-size: 12px; opacity: 0.6;">Men around a table</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "As iron sharpens iron,<br />
-                so one person sharpens another."
-                <span class="ref">— Proverbs 27:17</span>
             </div>
         </div>
     </section>
@@ -1907,7 +2072,6 @@
                 <a href="framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
             </div>
 
-            <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
                 "Do not conform to the pattern of this world,<br />
                 but be transformed by the renewing of your mind."
@@ -1970,7 +2134,6 @@
                 </blockquote>
             </div>
 
-            <!-- BIBLE VERSE (DARK) -->
             <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
                 "Do not merely listen to the word, and so deceive yourselves.<br />
                 <strong>Do what it says.</strong>"
@@ -2035,7 +2198,6 @@
                 </blockquote>
             </div>
 
-            <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
                 "Whatever you do, work at it with all your heart,<br />
                 as working for the Lord, not for human masters."
@@ -2071,7 +2233,7 @@
                         That's the point.
                     </p>
                     <div style="margin-top: var(--space-md);">
-                        <div class="hero-verse" style="font-size: clamp(20px, 1.8vw, 28px);">
+                        <div class="hero-verse" style="font-size: clamp(18px, 1.8vw, 28px);">
                             <strong>"Iron sharpens iron."</strong> — Proverbs 27:17
                         </div>
                     </div>
@@ -2079,11 +2241,12 @@
                         <a href="community.html" class="btn-secondary btn-arrow">Explore The Community →</a>
                     </div>
                 </div>
-                <div class="community-preview-image reveal">
-                    <div style="text-align:center; padding: var(--space-md);">
-                        <span style="font-size: 48px; display: block; margin-bottom: var(--space-sm);">💬</span>
-                        <p style="font-size: 14px;">Community Dashboard</p>
-                        <p style="font-size: 12px; opacity: 0.6;">Discord community mockup</p>
+                <div class="community-preview-image">
+                    <div class="placeholder-text">
+                        <span class="icon">💬</span>
+                        <span class="label">Community Dashboard</span>
+                        <span class="sub-label">assets/images/community/community-dashboard.jpg</span>
+                        <span class="sub-label" style="margin-top:4px;">Discord community mockup</span>
                     </div>
                 </div>
             </div>
@@ -2115,7 +2278,6 @@
                 </div>
             </div>
 
-            <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
                 "Therefore encourage one another and build each other up,<br />
                 just as in fact you are doing."
@@ -2125,7 +2287,7 @@
     </section>
 
     <!-- ============================================================
-    MEMBERSHIP — INTEGRATED ON HOMEPAGE
+    MEMBERSHIP
     ============================================================ -->
     <section class="membership-section" id="membership">
         <div class="container">
@@ -2140,9 +2302,8 @@
             </div>
 
             <div class="membership-grid">
-                <!-- FOUNDATION -->
                 <div class="membership-tier reveal">
-                    <div class="badge">Free</div>
+                    <span class="badge">Free</span>
                     <div class="tier-name">Foundation</div>
                     <div class="tier-price">R0 <span>/ month</span></div>
                     <p class="tier-desc">A starting point for men who want to understand the philosophy, meet the community and begin building.</p>
@@ -2157,9 +2318,8 @@
                     <a href="#" class="btn-secondary">Join Free →</a>
                 </div>
 
-                <!-- THE IRON MEMBERSHIP (FEATURED) -->
                 <div class="membership-tier featured reveal">
-                    <div class="badge">Most Popular</div>
+                    <span class="badge">Most Popular</span>
                     <div class="tier-name">The Iron</div>
                     <div class="tier-price">R149 <span>/ month</span></div>
                     <p class="tier-desc">For men who want greater structure, education and accountability.</p>
@@ -2178,9 +2338,8 @@
                     <span class="cancel-note">Cancel anytime.</span>
                 </div>
 
-                <!-- INNER CIRCLE -->
                 <div class="membership-tier reveal">
-                    <div class="badge">Limited</div>
+                    <span class="badge">Limited</span>
                     <div class="tier-name">Inner Circle</div>
                     <div class="tier-price">Coming Soon</div>
                     <p class="tier-desc">A smaller environment for men who want greater accountability, deeper feedback and closer interaction.</p>
@@ -2198,34 +2357,32 @@
                 </div>
             </div>
 
-            <!-- PROGRESSION PATH -->
             <div class="reveal" style="margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--iron-rule);">
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); max-width: 800px; margin: 0 auto;">
                     <div style="text-align: center;">
-                        <div style="font-family: var(--font-display); font-size: clamp(28px, 2.5vw, 36px); color: var(--iron-rule);">01</div>
-                        <div style="font-weight: 600; font-size: clamp(16px, 1.2vw, 20px);">Discover</div>
-                        <div style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey);">Foundation</div>
+                        <div style="font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); color: var(--iron-rule);">01</div>
+                        <div style="font-weight: 600; font-size: clamp(14px, 1.2vw, 20px);">Discover</div>
+                        <div style="font-size: clamp(12px, 0.8vw, 15px); color: var(--iron-grey);">Foundation</div>
                     </div>
                     <div style="text-align: center; position: relative;">
-                        <div style="font-family: var(--font-display); font-size: clamp(28px, 2.5vw, 36px); color: var(--iron-red);">02</div>
-                        <div style="font-weight: 600; font-size: clamp(16px, 1.2vw, 20px);">Build</div>
-                        <div style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey);">The Iron</div>
+                        <div style="font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); color: var(--iron-red);">02</div>
+                        <div style="font-weight: 600; font-size: clamp(14px, 1.2vw, 20px);">Build</div>
+                        <div style="font-size: clamp(12px, 0.8vw, 15px); color: var(--iron-grey);">The Iron</div>
                     </div>
                     <div style="text-align: center;">
-                        <div style="font-family: var(--font-display); font-size: clamp(28px, 2.5vw, 36px); color: var(--iron-rule);">03</div>
-                        <div style="font-weight: 600; font-size: clamp(16px, 1.2vw, 20px);">Deepen</div>
-                        <div style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey);">Inner Circle</div>
+                        <div style="font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); color: var(--iron-rule);">03</div>
+                        <div style="font-weight: 600; font-size: clamp(14px, 1.2vw, 20px);">Deepen</div>
+                        <div style="font-size: clamp(12px, 0.8vw, 15px); color: var(--iron-grey);">Inner Circle</div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: var(--space-md);">
-                    <p class="text-body" style="font-family: var(--font-display); font-size: clamp(18px, 1.4vw, 24px); font-weight: 600;">
+                    <p class="text-body" style="font-family: var(--font-display); font-size: clamp(16px, 1.4vw, 24px); font-weight: 600;">
                         Your starting point doesn't determine your destination.<br />
                         What you do next does.
                     </p>
                 </div>
             </div>
 
-            <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
                 "The one who is faithful in a very little thing<br />
                 is also faithful in much."
@@ -2247,14 +2404,13 @@
                 Then start.
             </p>
             <div class="cta-actions">
-                <a href="#membership" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
-                <a href="#membership" class="btn-secondary btn-arrow">Explore Membership →</a>
+                <a href="membership.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                <a href="membership.html" class="btn-secondary btn-arrow">Explore Membership →</a>
             </div>
             <div class="tagline">
                 <strong>"Iron sharpens iron."</strong> — Proverbs 27:17
             </div>
 
-            <!-- BIBLE VERSE (DARK) -->
             <div class="bible-verse-dark" style="margin-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: var(--space-md);">
                 "For God gave us a spirit not of fear<br />
                 but of <strong>power and love and self-control.</strong>"
@@ -2272,7 +2428,7 @@
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
                     <p>Build a life you respect.</p>
-                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                    <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
                         Mind. Character. Body. Relationships. Money. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
@@ -2313,9 +2469,7 @@
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. MOBILE NAVIGATION
-            // ============================================================
+            // MOBILE NAVIGATION
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -2359,9 +2513,7 @@
                 });
             }
 
-            // ============================================================
-            // 2. HEADER SCROLL EFFECT
-            // ============================================================
+            // HEADER SCROLL EFFECT
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -2373,9 +2525,7 @@
                 }, { passive: true });
             }
 
-            // ============================================================
-            // 3. REVEAL ANIMATIONS
-            // ============================================================
+            // REVEAL ANIMATIONS
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
@@ -2391,9 +2541,7 @@
                 });
             }
 
-            // ============================================================
-            // 4. DATA STRIP COUNTER
-            // ============================================================
+            // DATA STRIP COUNTER
             var dataItems = document.querySelectorAll('.data-strip-item');
             if (dataItems.length) {
                 var counterObserver = new IntersectionObserver(function(entries) {
@@ -2429,9 +2577,7 @@
                 });
             }
 
-            // ============================================================
-            // 5. SMOOTH SCROLL FOR ANCHOR LINKS
-            // ============================================================
+            // SMOOTH SCROLL FOR ANCHOR LINKS
             document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
                 anchor.addEventListener('click', function(e) {
                     var targetId = this.getAttribute('href');
