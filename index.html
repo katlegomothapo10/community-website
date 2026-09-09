@@ -16,7 +16,7 @@
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
             <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
-            <nav class="nav-desktop" id="mainNav" role="navigation">
+            <nav class="nav-desktop" id="mainNav" role="navigation" aria-label="Main navigation">
                 <a href="philosophy.html">Philosophy</a>
                 <a href="framework.html" class="active">Framework</a>
                 <a href="community.html">Community</a>
@@ -24,7 +24,7 @@
                 <a href="insights.html">Insights</a>
                 <a href="membership.html" class="nav-cta">Enter The Iron →</a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -245,67 +245,111 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        const navToggle = document.getElementById('navToggle');
-        const mainNav = document.getElementById('mainNav');
+        (function() {
+            'use strict';
 
-        navToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('open');
-            navToggle.classList.toggle('active');
-        });
+            // Mobile Navigation Toggle
+            var navToggle = document.getElementById('navToggle');
+            var mainNav = document.getElementById('mainNav');
 
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('open');
-                navToggle.classList.remove('active');
-            });
-        });
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    var isOpen = mainNav.classList.toggle('open');
+                    navToggle.classList.toggle('active');
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                });
 
-        const header = document.getElementById('siteHeader');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+                mainNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
             }
-        });
 
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Data strip counter
-        const dataItems = document.querySelectorAll('.data-strip-item');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target.querySelector('.counter');
-                    if (counter && !counter.dataset.animated) {
-                        counter.dataset.animated = 'true';
-                        const target = parseInt(counter.dataset.target);
-                        let current = 0;
-                        const increment = target / 50;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            counter.textContent = Math.floor(current);
-                        }, 30);
+            // Header Scroll Effect
+            var header = document.getElementById('siteHeader');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
                     }
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.5 });
+                });
+            }
 
-        dataItems.forEach(item => counterObserver.observe(item));
+            // Reveal Animations
+            var revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            }
+
+            // Data Strip Counter
+            var dataItems = document.querySelectorAll('.data-strip-item');
+            if (dataItems.length) {
+                var counterObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var counter = entry.target.querySelector('.counter');
+                            if (counter && !counter.dataset.animated) {
+                                counter.dataset.animated = 'true';
+                                var target = parseInt(counter.dataset.target, 10);
+                                if (!isNaN(target) && target > 0) {
+                                    var current = 0;
+                                    var increment = target / 50;
+                                    var timer = setInterval(function() {
+                                        current += increment;
+                                        if (current >= target) {
+                                            current = target;
+                                            clearInterval(timer);
+                                        }
+                                        counter.textContent = Math.floor(current);
+                                    }, 30);
+                                }
+                            }
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                dataItems.forEach(function(item) {
+                    counterObserver.observe(item);
+                });
+            }
+
+            // Smooth anchor scrolling for FAQ link
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId && targetId.length > 1) {
+                        var targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            var headerOffset = 80;
+                            var elementPosition = targetElement.getBoundingClientRect().top;
+                            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+        })();
     </script>
 
 </body>
