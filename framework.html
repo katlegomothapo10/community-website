@@ -4,27 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — Framework</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
     <style>
         /* ============================================================
-           Copy all global styles from index.html here
+           COPY ALL GLOBAL STYLES FROM INDEX.HTML HERE
            ============================================================ */
-        /* ... (paste all the global CSS from index.html here) ... */
-        /* For brevity in this response, I'll include only page-specific styles */
     </style>
 </head>
 <body>
-
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
-    <header class="site-header" role="banner">
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
-            <a href="/" class="site-logo">THE IRON<span>.</span></a>
+            <a href="/index.html" class="site-logo">THE IRON<span>.</span></a>
             <nav class="nav-desktop" id="mainNav" role="navigation">
                 <a href="/philosophy.html">Philosophy</a>
                 <a href="/framework.html" class="active">Framework</a>
@@ -39,9 +32,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    PAGE HEADER
-    ============================================================ -->
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">The Framework</div>
@@ -50,35 +41,31 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    DATA STRIP
-    ============================================================ -->
+    <!-- DATA STRIP -->
     <div class="data-strip">
         <div class="container">
             <div class="data-strip-grid">
-                <div class="data-strip-item">
-                    <div class="numeral">6</div>
-                    <div class="label">Plans of Development</div>
+                <div class="data-strip-item" data-delay="0">
+                    <span class="numeral"><span class="counter" data-target="6">0</span></span>
+                    <span class="label">Plans of Development</span>
                 </div>
-                <div class="data-strip-item">
-                    <div class="numeral">12+</div>
-                    <div class="label">Masterclasses</div>
+                <div class="data-strip-item" data-delay="200">
+                    <span class="numeral"><span class="counter" data-target="12">0</span><span style="font-size:0.6em;">+</span></span>
+                    <span class="label">Masterclasses</span>
                 </div>
-                <div class="data-strip-item">
-                    <div class="numeral">1</div>
-                    <div class="label">Framework</div>
+                <div class="data-strip-item" data-delay="400">
+                    <span class="numeral"><span class="counter" data-target="1">0</span></span>
+                    <span class="label">Framework</span>
                 </div>
-                <div class="data-strip-item">
-                    <div class="numeral">∞</div>
-                    <div class="label">Commitment</div>
+                <div class="data-strip-item" data-delay="600">
+                    <span class="numeral">∞</span>
+                    <span class="label">Commitment</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ============================================================
-    FRAMEWORK LIST (full)
-    ============================================================ -->
+    <!-- FULL FRAMEWORK LIST -->
     <section>
         <div class="container">
             <div class="section-header reveal">
@@ -90,121 +77,145 @@
                 </p>
             </div>
 
-            <div style="display:flex; flex-direction:column; gap:0;">
-
+            <div class="framework-list">
                 <!-- MIND -->
-                <div class="reveal" style="display:grid; grid-template-columns:80px 1fr 120px; gap:var(--space-md); padding:var(--space-lg) 0; border-bottom:1px solid var(--iron-rule); align-items:center;">
-                    <span style="font-family:var(--font-display); font-weight:600; font-size:36px; color:var(--iron-rule);">01</span>
-                    <div>
-                        <h3 style="font-family:var(--font-display); font-weight:600; font-size:32px; line-height:1.1;">Mind</h3>
-                        <div style="font-family:var(--font-body); color:var(--iron-grey);">Master yourself.</div>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--space-xs);">
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Mental strength</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Emotional regulation</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Discipline</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Resilience</span>
+                <div class="framework-item reveal">
+                    <div class="number">01</div>
+                    <div class="content">
+                        <h3>Mind</h3>
+                        <div class="subtitle">Master yourself.</div>
+                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                            Mental strength. Emotional regulation. Discipline. Confidence. Resilience.
+                        </p>
+                        <div class="tags">
+                            <span>Mental strength</span>
+                            <span>Emotional regulation</span>
+                            <span>Discipline</span>
+                            <span>Confidence</span>
+                            <span>Resilience</span>
                         </div>
                     </div>
-                    <span style="text-align:right; font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--iron-grey);">→</span>
+                    <div class="action">→</div>
                 </div>
 
                 <!-- CHARACTER -->
-                <div class="reveal" style="display:grid; grid-template-columns:80px 1fr 120px; gap:var(--space-md); padding:var(--space-lg) 0; border-bottom:1px solid var(--iron-rule); align-items:center;">
-                    <span style="font-family:var(--font-display); font-weight:600; font-size:36px; color:var(--iron-rule);">02</span>
-                    <div>
-                        <h3 style="font-family:var(--font-display); font-weight:600; font-size:32px; line-height:1.1;">Character</h3>
-                        <div style="font-family:var(--font-body); color:var(--iron-grey);">Become someone you respect.</div>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--space-xs);">
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Integrity</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Responsibility</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Courage</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Standards</span>
+                <div class="framework-item reveal">
+                    <div class="number">02</div>
+                    <div class="content">
+                        <h3>Character</h3>
+                        <div class="subtitle">Become someone you respect.</div>
+                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                            Integrity. Responsibility. Courage. Leadership. Standards.
+                        </p>
+                        <div class="tags">
+                            <span>Integrity</span>
+                            <span>Responsibility</span>
+                            <span>Courage</span>
+                            <span>Leadership</span>
+                            <span>Standards</span>
                         </div>
                     </div>
-                    <span style="text-align:right; font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--iron-grey);">→</span>
+                    <div class="action">→</div>
                 </div>
 
                 <!-- BODY -->
-                <div class="reveal" style="display:grid; grid-template-columns:80px 1fr 120px; gap:var(--space-md); padding:var(--space-lg) 0; border-bottom:1px solid var(--iron-rule); align-items:center;">
-                    <span style="font-family:var(--font-display); font-weight:600; font-size:36px; color:var(--iron-rule);">03</span>
-                    <div>
-                        <h3 style="font-family:var(--font-display); font-weight:600; font-size:32px; line-height:1.1;">Body</h3>
-                        <div style="font-family:var(--font-body); color:var(--iron-grey);">Take care of what carries you.</div>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--space-xs);">
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Strength</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Nutrition</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Recovery</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Health</span>
+                <div class="framework-item reveal">
+                    <div class="number">03</div>
+                    <div class="content">
+                        <h3>Body</h3>
+                        <div class="subtitle">Take care of what carries you.</div>
+                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                            Strength. Nutrition. Recovery. Health.
+                        </p>
+                        <div class="tags">
+                            <span>Strength</span>
+                            <span>Nutrition</span>
+                            <span>Recovery</span>
+                            <span>Health</span>
                         </div>
                     </div>
-                    <span style="text-align:right; font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--iron-grey);">→</span>
+                    <div class="action">→</div>
                 </div>
 
                 <!-- RELATIONSHIPS -->
-                <div class="reveal" style="display:grid; grid-template-columns:80px 1fr 120px; gap:var(--space-md); padding:var(--space-lg) 0; border-bottom:1px solid var(--iron-rule); align-items:center;">
-                    <span style="font-family:var(--font-display); font-weight:600; font-size:36px; color:var(--iron-rule);">04</span>
-                    <div>
-                        <h3 style="font-family:var(--font-display); font-weight:600; font-size:32px; line-height:1.1;">Relationships</h3>
-                        <div style="font-family:var(--font-body); color:var(--iron-grey);">Build connections that matter.</div>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--space-xs);">
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Communication</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Boundaries</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Trust</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Connection</span>
+                <div class="framework-item reveal">
+                    <div class="number">04</div>
+                    <div class="content">
+                        <h3>Relationships</h3>
+                        <div class="subtitle">Build connections that matter.</div>
+                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                            Communication. Boundaries. Trust. Connection.
+                        </p>
+                        <div class="tags">
+                            <span>Communication</span>
+                            <span>Boundaries</span>
+                            <span>Trust</span>
+                            <span>Connection</span>
                         </div>
                     </div>
-                    <span style="text-align:right; font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--iron-grey);">→</span>
+                    <div class="action">→</div>
                 </div>
 
                 <!-- MONEY -->
-                <div class="reveal" style="display:grid; grid-template-columns:80px 1fr 120px; gap:var(--space-md); padding:var(--space-lg) 0; border-bottom:1px solid var(--iron-rule); align-items:center;">
-                    <span style="font-family:var(--font-display); font-weight:600; font-size:36px; color:var(--iron-rule);">05</span>
-                    <div>
-                        <h3 style="font-family:var(--font-display); font-weight:600; font-size:32px; line-height:1.1;">Money</h3>
-                        <div style="font-family:var(--font-body); color:var(--iron-grey);">Become financially capable.</div>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--space-xs);">
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Income</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Saving</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Investing</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Ownership</span>
+                <div class="framework-item reveal">
+                    <div class="number">05</div>
+                    <div class="content">
+                        <h3>Money</h3>
+                        <div class="subtitle">Become financially capable.</div>
+                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                            Income. Saving. Investing. Ownership.
+                        </p>
+                        <div class="tags">
+                            <span>Income</span>
+                            <span>Saving</span>
+                            <span>Investing</span>
+                            <span>Ownership</span>
                         </div>
                     </div>
-                    <span style="text-align:right; font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--iron-grey);">→</span>
+                    <div class="action">→</div>
                 </div>
 
                 <!-- PURPOSE -->
-                <div class="reveal" style="display:grid; grid-template-columns:80px 1fr 120px; gap:var(--space-md); padding:var(--space-lg) 0; align-items:center;">
-                    <span style="font-family:var(--font-display); font-weight:600; font-size:36px; color:var(--iron-rule);">06</span>
-                    <div>
-                        <h3 style="font-family:var(--font-display); font-weight:600; font-size:32px; line-height:1.1;">Purpose</h3>
-                        <div style="font-family:var(--font-body); color:var(--iron-grey);">Find something worth building.</div>
-                        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--space-xs);">
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Direction</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Skill</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Work</span>
-                            <span style="font-family:var(--font-body); font-size:13px; color:var(--iron-grey); background:var(--iron-rule); padding:2px 12px; border-radius:20px;">Contribution</span>
+                <div class="framework-item reveal">
+                    <div class="number">06</div>
+                    <div class="content">
+                        <h3>Purpose</h3>
+                        <div class="subtitle">Find something worth building.</div>
+                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                            Direction. Skill. Work. Contribution.
+                        </p>
+                        <div class="tags">
+                            <span>Direction</span>
+                            <span>Skill</span>
+                            <span>Work</span>
+                            <span>Contribution</span>
                         </div>
                     </div>
-                    <span style="text-align:right; font-family:var(--font-body); font-weight:500; font-size:14px; color:var(--iron-grey);">→</span>
+                    <div class="action">→</div>
                 </div>
-
             </div>
 
-            <div style="text-align:center; margin-top:var(--space-xl);">
-                <a href="/membership.html" class="btn-primary btn-arrow">Start building →</a>
+            <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
+                <div class="verse" style="margin: 0 auto; border-left-color: var(--iron-red);">
+                    "For God gave us a spirit not of fear but of <strong>power and love and self-control.</strong>"
+                    <span class="verse-reference">— 2 Timothy 1:7</span>
+                </div>
+            </div>
+
+            <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
+                <a href="/membership.html" class="btn-primary btn-arrow"><span>Start building →</span></a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
                     <p>Build a life you respect.</p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
                 <div class="footer-col">
                     <h4>Explore</h4>
@@ -216,7 +227,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Connect</h4>
-                    <a href="#">FAQ</a>
+                    <a href="/index.html#faq">FAQ</a>
                     <a href="#">Contact</a>
                     <a href="#">About</a>
                 </div>
@@ -234,21 +245,9 @@
         </div>
     </footer>
 
+    <!-- JAVASCRIPT (copy from index.html) -->
     <script>
-        const navToggle = document.getElementById('navToggle');
-        const mainNav = document.getElementById('mainNav');
-        navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mainNav.classList.remove('open'));
-        });
-
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-        revealElements.forEach(el => revealObserver.observe(el));
+        // Copy all JavaScript from index.html here
     </script>
 </body>
 </html>
