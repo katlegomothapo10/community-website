@@ -4,147 +4,1387 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — Community</title>
+    <meta name="description" content="Join a private community of men building greater capability together. Iron sharpens iron." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
     <style>
-        /* COPY ALL GLOBAL STYLES FROM INDEX.HTML HERE */
+        /* ============================================================
+           THE IRON — Global Styles
+           ============================================================ */
+
+        /* ============================================================
+           1. DESIGN TOKENS
+           ============================================================ */
+        :root {
+            --iron-black: #111111;
+            --iron-ink: #1c1c1c;
+            --iron-white: #f7f7f4;
+            --iron-paper: #ffffff;
+            --iron-grey: #6b6b6b;
+            --iron-rule: #d9d9d4;
+            --iron-red: #a32621;
+            --iron-red-dark: #7f1d1d;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+            --space-xxl: 160px;
+            --container-width: min(1200px, calc(100% - 80px));
+            --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ============================================================
+           2. RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ::selection {
+            background: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        /* ============================================================
+           3. CONTAINER
+           ============================================================ */
+        .container {
+            width: var(--container-width, min(1200px, calc(100% - 80px)));
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                --container-width: min(100% - 60px, 1200px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --container-width: min(100% - 40px, 1200px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 0 16px;
+            }
+            :root {
+                --container-width: min(100% - 32px, 1200px);
+            }
+        }
+
+        /* ============================================================
+           4. TYPOGRAPHY
+           ============================================================ */
+        .heading-display {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .heading-display-lg {
+            font-size: clamp(36px, 8vw, 80px);
+        }
+
+        .heading-display-md {
+            font-size: clamp(30px, 6vw, 64px);
+        }
+
+        .heading-display-sm {
+            font-size: clamp(24px, 4vw, 40px);
+        }
+
+        .text-body {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 400;
+            font-size: clamp(15px, 1.1vw, 18px);
+            line-height: 1.7;
+            color: var(--iron-ink, #1c1c1c);
+        }
+
+        .text-body-sm {
+            font-size: clamp(13px, 0.9vw, 15px);
+            line-height: 1.6;
+        }
+
+        .text-meta {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .section-number {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--iron-red, #a32621);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(17px, 1.2vw, 20px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: var(--space-md, 32px) auto;
+            padding-left: var(--space-md, 32px);
+            border-left: 2px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .verse strong {
+            color: var(--iron-black, #111111);
+            font-weight: 600;
+        }
+
+        .verse-reference {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.7vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(18px, 1.4vw, 24px);
+            color: var(--iron-ink, #1c1c1c);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .bible-verse strong {
+            color: var(--iron-red, #a32621);
+            font-weight: 600;
+        }
+
+        .bible-verse .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse-dark {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(18px, 1.4vw, 24px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .bible-verse-dark strong {
+            color: var(--iron-white, #f7f7f4);
+            font-weight: 600;
+        }
+
+        .bible-verse-dark .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        @media (max-width: 500px) {
+            .verse {
+                padding-left: var(--space-sm, 16px);
+                font-size: 16px;
+                margin: var(--space-sm, 16px) auto;
+            }
+            .bible-verse,
+            .bible-verse-dark {
+                font-size: 16px;
+                padding: var(--space-sm, 16px);
+            }
+        }
+
+        /* ============================================================
+           5. BUTTONS
+           ============================================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 15px);
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            border: 1px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--iron-red, #a32621);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            z-index: 0;
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            border-color: var(--iron-red, #a32621);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 15px);
+            background: transparent;
+            color: var(--iron-black, #111111);
+            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            border: none;
+            border-bottom: 2px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: pointer;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-secondary:hover {
+            border-bottom-color: var(--iron-red, #a32621);
+            color: var(--iron-red, #a32621);
+        }
+
+        .btn-arrow::after {
+            content: '→';
+            margin-left: 4px;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .btn-arrow:hover::after {
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 500px) {
+            .btn-primary,
+            .btn-secondary {
+                min-width: 120px;
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+        }
+
+        /* ============================================================
+           6. HEADER / NAVIGATION
+           ============================================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            padding: 14px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .site-header.scrolled {
+            padding: 8px 0;
+            background: rgba(247, 247, 244, 0.98);
+        }
+
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .site-logo {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.4vw, 22px);
+            letter-spacing: 0.04em;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            flex-shrink: 0;
+        }
+
+        .site-logo span {
+            color: var(--iron-red, #a32621);
+        }
+
+        .site-logo:hover {
+            opacity: 0.7;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2vw, 32px);
+            flex-wrap: nowrap;
+        }
+
+        .nav-desktop a {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(11px, 0.8vw, 14px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-grey, #6b6b6b);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-desktop a:hover {
+            color: var(--iron-black, #111111);
+        }
+
+        .nav-desktop a:hover::after {
+            width: 100%;
+        }
+
+        .nav-desktop a.active {
+            color: var(--iron-black, #111111);
+        }
+
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+
+        .nav-desktop .nav-cta {
+            color: var(--iron-black, #111111);
+            font-weight: 600;
+            padding: 6px 14px;
+            border: 1px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-desktop .nav-cta::after {
+            display: none;
+        }
+
+        .nav-desktop .nav-cta:hover {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-desktop {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--iron-white, #ffffff);
+                padding: 20px 0;
+                border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+                width: 100%;
+            }
+
+            .nav-desktop.open {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-desktop a {
+                padding: 12px 24px;
+                width: 100%;
+                border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+                font-size: 14px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .nav-desktop a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-desktop .nav-cta {
+                border: none;
+                padding: 12px 24px;
+                text-align: center;
+            }
+
+            .nav-desktop .nav-cta:hover {
+                background: transparent;
+                color: var(--iron-red, #a32621);
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* ============================================================
+           7. SECTIONS
+           ============================================================ */
+        section {
+            padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-lg, 64px);
+            text-align: center;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-header.text-left {
+            text-align: left;
+        }
+
+        .section-header.text-left p {
+            margin: 0;
+        }
+
+        /* ============================================================
+           8. REVEAL ANIMATION
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           9. FOOTER
+           ============================================================ */
+        .site-footer {
+            background: var(--iron-black, #111111);
+            color: var(--iron-grey, #6b6b6b);
+            padding: var(--space-lg, 64px) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: clamp(var(--space-md, 32px), 4vw, var(--space-lg, 64px));
+        }
+
+        .footer-brand .site-logo {
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .footer-brand .site-logo span {
+            color: var(--iron-red, #a32621);
+        }
+
+        .footer-brand p {
+            font-size: clamp(12px, 0.7vw, 14px);
+            max-width: 300px;
+        }
+
+        .footer-brand .footer-verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-style: italic;
+            font-size: clamp(13px, 0.8vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: var(--space-sm, 16px);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 600;
+            font-size: clamp(11px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: clamp(12px, 0.7vw, 14px);
+            padding: 4px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .footer-col a:hover {
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: var(--space-lg, 64px);
+            padding-top: var(--space-md, 32px);
+            display: flex;
+            justify-content: space-between;
+            font-size: clamp(11px, 0.6vw, 13px);
+            flex-wrap: wrap;
+            gap: var(--space-sm, 16px);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-md, 32px);
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-xs, 8px);
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md, 32px);
+            }
+        }
+
+        /* ============================================================
+           10. PAGE HEADER
+           ============================================================ */
+        .page-header {
+            padding-top: clamp(90px, 12vh, 140px);
+            padding-bottom: var(--space-lg, 64px);
+            background: var(--iron-white, #f7f7f4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            text-align: center;
+        }
+
+        .page-header .heading-display-lg {
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           11. COMMUNITY CONTENT
+           ============================================================ */
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(var(--space-md, 32px), 5vw, var(--space-xl, 96px));
+            align-items: center;
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .community-content .heading-display-sm {
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .community-content p {
+            margin-bottom: var(--space-md, 32px);
+            color: var(--iron-ink, #1c1c1c);
+        }
+
+        .community-content .community-statement {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(24px, 3vw, 36px);
+            line-height: 1.2;
+            color: var(--iron-black, #111111);
+            border-top: 2px solid var(--iron-red, #a32621);
+            padding-top: var(--space-md, 32px);
+            margin-top: var(--space-md, 32px);
+        }
+
+        .community-image {
+            background: var(--iron-ink, #1c1c1c);
+            min-height: 300px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--iron-grey, #6b6b6b);
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.9vw, 16px);
+        }
+
+        /* ============================================================
+           12. COMMUNITY FLOW
+           ============================================================ */
+        .community-flow-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--space-sm, 16px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .community-flow-step {
+            text-align: center;
+            padding: var(--space-md, 32px) var(--space-sm, 16px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            background: var(--iron-white, #f7f7f4);
+        }
+
+        .community-flow-step:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .community-flow-step .num {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 1.8vw, 28px);
+            color: var(--iron-red, #a32621);
+            display: block;
+        }
+
+        .community-flow-step .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-weight: 500;
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .community-flow-step .arrow {
+            color: var(--iron-grey, #6b6b6b);
+            font-size: clamp(14px, 1vw, 18px);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        @media (max-width: 768px) {
+            .community-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md, 32px);
+            }
+
+            .community-content {
+                text-align: center;
+            }
+
+            .community-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .community-image {
+                min-height: 200px;
+                order: -1;
+            }
+
+            .community-flow-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-sm, 16px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .community-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ============================================================
+           13. COMMUNITY FEATURES
+           ============================================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md, 32px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .feature-item {
+            padding: var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+        }
+
+        .feature-item:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-item .icon {
+            font-size: clamp(32px, 3vw, 48px);
+            display: block;
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .feature-item h4 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.4vw, 22px);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .feature-item p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm, 16px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           14. TESTIMONIALS / COMMUNITY VOICES
+           ============================================================ */
+        .voices-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md, 32px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .voice-item {
+            padding: var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .voice-item:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .voice-item .quote {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-style: italic;
+            font-size: clamp(17px, 1.2vw, 20px);
+            color: var(--iron-ink, #1c1c1c);
+            line-height: 1.5;
+        }
+
+        .voice-item .attribution {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.7vw, 14px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: var(--space-sm, 16px);
+        }
+
+        @media (max-width: 768px) {
+            .voices-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm, 16px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .voices-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           15. CTA SECTION
+           ============================================================ */
+        .cta-community {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            text-align: center;
+            padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
+        }
+
+        .cta-community .heading-display-md {
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .cta-community p {
+            max-width: 500px;
+            margin: 0 auto var(--space-md, 32px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .cta-community .btn-primary {
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            border-color: var(--iron-white, #f7f7f4);
+        }
+
+        .cta-community .btn-primary:hover {
+            background: var(--iron-red, #a32621);
+            border-color: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        /* ============================================================
+           16. UTILITY
+           ============================================================ */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mt-sm {
+            margin-top: var(--space-sm, 16px);
+        }
+
+        .mt-md {
+            margin-top: var(--space-md, 32px);
+        }
+
+        .mt-lg {
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .border-top {
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .bg-white {
+            background: var(--iron-white, #f7f7f4);
+        }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
-            <a href="/index.html" class="site-logo">THE IRON<span>.</span></a>
-            <nav class="nav-desktop" id="mainNav" role="navigation">
-                <a href="/philosophy.html">Philosophy</a>
-                <a href="/framework.html">Framework</a>
-                <a href="/community.html" class="active">Community</a>
-                <a href="/membership.html">Membership</a>
-                <a href="/insights.html">Insights</a>
-                <a href="/membership.html" class="nav-cta">Enter The Iron →</a>
+            <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
+            <nav class="nav-desktop" id="mainNav" role="navigation" aria-label="Main navigation">
+                <a href="philosophy.html">Philosophy</a>
+                <a href="framework.html">Framework</a>
+                <a href="community.html" class="active">Community</a>
+                <a href="library.html">Library</a>
+                <a href="insights.html">Insights</a>
+                <a href="membership.html" class="nav-cta">Enter The Iron →</a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- PAGE HEADER -->
+    <!-- ============================================================
+    PAGE HEADER
+    ============================================================ -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">The Community</div>
-            <h1 class="heading-display heading-display-lg">The Build<br />Happens Together.</h1>
+            <h1 class="heading-display heading-display-lg">The Build Happens Together.</h1>
             <p class="text-body">
-                The Iron is not simply a library of information. It is an
-                environment designed to make action easier to sustain.
+                Personal development is personal. But it doesn't have to be solitary.
             </p>
         </div>
     </section>
 
-    <!-- COMMUNITY OVERVIEW -->
+    <!-- ============================================================
+    COMMUNITY INTRODUCTION
+    ============================================================ -->
     <section>
         <div class="container">
             <div class="community-grid">
-                <div>
-                    <div class="section-header reveal">
-                        <div class="section-number">How it works</div>
-                        <h2 class="heading-display heading-display-md">Learn. Apply.<br />Share. Grow.</h2>
-                        <p class="text-body">
-                            Every part of the community is designed to move you from
-                            intention to action. You're not just consuming content—
-                            you're building alongside men who are doing the same.
-                        </p>
+                <div class="community-content reveal">
+                    <div class="section-number">Iron Sharpens Iron</div>
+                    <h2 class="heading-display heading-display-sm">A Community of Men Building Together.</h2>
+                    <p class="text-body">
+                        The Iron brings together men who are at different stages of the same pursuit: becoming more capable and building lives they respect.
+                    </p>
+                    <p class="text-body">
+                        You will find conversations, challenges, education, accountability, live sessions and people willing to share what they're learning.
+                    </p>
+                    <p class="text-body" style="font-style: italic; color: var(--iron-grey);">
+                        Not everyone will be at your level.<br />
+                        That's the point.
+                    </p>
+                    <div class="community-statement">
+                        Iron sharpens iron.
                     </div>
-                    <div class="community-flow">
-                        <div class="step reveal"><div class="num">01</div><div class="label">Learn</div></div>
-                        <div class="step reveal"><div class="num">02</div><div class="label">Discuss</div></div>
-                        <div class="step reveal"><div class="num">03</div><div class="label">Apply</div></div>
-                        <div class="step reveal"><div class="num">04</div><div class="label">Track</div></div>
-                        <div class="step reveal"><div class="num">05</div><div class="label">Share</div></div>
-                        <div class="step reveal"><div class="num">06</div><div class="label">Sharpen</div></div>
-                    </div>
-                    <div class="community-verse reveal">
-                        <blockquote>
-                            "And let us consider how to stir up one another to love and good works,
-                            <strong>not neglecting to meet together</strong>..."
-                            <span class="ref">— Hebrews 10:24-25</span>
-                        </blockquote>
+                    <div style="margin-top: var(--space-md);">
+                        <a href="#features" class="btn-secondary btn-arrow">Explore The Community →</a>
                     </div>
                 </div>
+                <div class="community-image reveal">
+                    <div style="text-align:center; padding: var(--space-md);">
+                        <span style="font-size: 64px; display: block; margin-bottom: var(--space-sm);">👥</span>
+                        <p style="font-size: 14px;">Community Image</p>
+                        <p style="font-size: 12px; opacity: 0.6;">Men gathering together</p>
+                    </div>
+                </div>
+            </div>
 
-                <div class="community-visual reveal">
-                    <div class="mockup-label">THE IRON / COMMUNITY</div>
-                    <div class="mockup-channel"><span class="hash">#</span> welcome — Introduce yourself</div>
-                    <div class="mockup-channel"><span class="hash">#</span> accountability — Weekly check-ins</div>
-                    <div class="mockup-channel"><span class="hash">#</span> mind — Philosophy &amp; mental discipline</div>
-                    <div class="mockup-channel"><span class="hash">#</span> body — Training &amp; nutrition</div>
-                    <div class="mockup-channel"><span class="hash">#</span> money — Financial capability</div>
-                    <div class="mockup-channel"><span class="hash">#</span> events — Live sessions &amp; workshops</div>
-                </div>
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal">
+                "As iron sharpens iron,<br />
+                so one person sharpens another."
+                <span class="ref">— Proverbs 27:17</span>
             </div>
         </div>
     </section>
 
-    <!-- WHAT YOU DO HERE -->
-    <section style="background:var(--iron-white); border-top:1px solid var(--iron-rule);">
+    <!-- ============================================================
+    COMMUNITY FLOW
+    ============================================================ -->
+    <section style="border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
         <div class="container">
-            <div class="section-header text-center reveal">
-                <div class="section-number">What you actually do here</div>
-                <h2 class="heading-display heading-display-md">Not a content warehouse.</h2>
-                <p class="text-body mx-auto" style="max-width:600px;">
-                    You won't join and be handed hundreds of videos with no idea
-                    where to start. Everything is designed around
-                    learning → implementation → reflection.
+            <div class="section-header reveal">
+                <div class="section-number">The Community Flow</div>
+                <h2 class="heading-display heading-display-md">Learn. Discuss. Apply. Share. Reflect. Sharpen.</h2>
+                <p class="text-body">
+                    The Iron is designed to move you through a cycle of continuous improvement.
                 </p>
             </div>
 
-            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-md); margin-top:var(--space-lg);">
-                <div class="reveal" style="padding:var(--space-md); border:1px solid var(--iron-rule); background:var(--iron-white);">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:48px; color:var(--iron-rule); line-height:1;">01</div>
-                    <h4 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:var(--space-xs) 0;">Learn</h4>
-                    <p class="text-body-sm">Structured education across the six pillars.</p>
+            <div class="community-flow-grid">
+                <div class="community-flow-step reveal">
+                    <span class="num">01</span>
+                    <span class="label">Learn</span>
+                    <span class="arrow">↓</span>
                 </div>
-                <div class="reveal" style="padding:var(--space-md); border:1px solid var(--iron-rule); background:var(--iron-white);">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:48px; color:var(--iron-rule); line-height:1;">02</div>
-                    <h4 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:var(--space-xs) 0;">Implement</h4>
-                    <p class="text-body-sm">Challenges and exercises designed to turn knowledge into action.</p>
+                <div class="community-flow-step reveal">
+                    <span class="num">02</span>
+                    <span class="label">Discuss</span>
+                    <span class="arrow">↓</span>
                 </div>
-                <div class="reveal" style="padding:var(--space-md); border:1px solid var(--iron-rule); background:var(--iron-white);">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:48px; color:var(--iron-rule); line-height:1;">03</div>
-                    <h4 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:var(--space-xs) 0;">Connect</h4>
-                    <p class="text-body-sm">Talk with men who are also taking their development seriously.</p>
+                <div class="community-flow-step reveal">
+                    <span class="num">03</span>
+                    <span class="label">Apply</span>
+                    <span class="arrow">↓</span>
                 </div>
-                <div class="reveal" style="padding:var(--space-md); border:1px solid var(--iron-rule); background:var(--iron-white);">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:48px; color:var(--iron-rule); line-height:1;">04</div>
-                    <h4 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:var(--space-xs) 0;">Accountability</h4>
-                    <p class="text-body-sm">Set commitments, track progress and follow through.</p>
+                <div class="community-flow-step reveal">
+                    <span class="num">04</span>
+                    <span class="label">Share</span>
+                    <span class="arrow">↓</span>
                 </div>
-                <div class="reveal" style="padding:var(--space-md); border:1px solid var(--iron-rule); background:var(--iron-white);">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:48px; color:var(--iron-rule); line-height:1;">05</div>
-                    <h4 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:var(--space-xs) 0;">Reflect</h4>
-                    <p class="text-body-sm">Review what worked, what didn't and what needs to change.</p>
+                <div class="community-flow-step reveal">
+                    <span class="num">05</span>
+                    <span class="label">Reflect</span>
+                    <span class="arrow">↓</span>
                 </div>
-                <div class="reveal" style="padding:var(--space-md); border:1px solid var(--iron-rule); background:var(--iron-white);">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:48px; color:var(--iron-rule); line-height:1;">06</div>
-                    <h4 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:var(--space-xs) 0;">Build</h4>
-                    <p class="text-body-sm">Take what you've learned and apply it to your actual life.</p>
+                <div class="community-flow-step reveal">
+                    <span class="num">06</span>
+                    <span class="label">Sharpen</span>
+                    <span style="font-size: clamp(18px, 1.4vw, 24px); display: block; margin-top: var(--space-xs, 8px); color: var(--iron-red);">⟳</span>
                 </div>
             </div>
 
-            <div style="text-align:center; margin-top:var(--space-xl);">
-                <a href="/membership.html" class="btn-primary btn-arrow"><span>Join the community →</span></a>
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
+                "Therefore encourage one another and build each other up,<br />
+                just as in fact you are doing."
+                <span class="ref">— 1 Thessalonians 5:11</span>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ============================================================
+    COMMUNITY FEATURES
+    ============================================================ -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">What You'll Find</div>
+                <h2 class="heading-display heading-display-md">Inside The Iron Community.</h2>
+                <p class="text-body">
+                    A space designed for real conversations, real accountability and real growth.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item reveal">
+                    <span class="icon">💬</span>
+                    <h4>Conversations</h4>
+                    <p>Real discussions about the things that actually matter in men's lives.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <span class="icon">⚡</span>
+                    <h4>Challenges</h4>
+                    <p>Structured challenges designed to build capability through action.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <span class="icon">📚</span>
+                    <h4>Education</h4>
+                    <p>Practical education built around the six areas of development.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <span class="icon">🎯</span>
+                    <h4>Accountability</h4>
+                    <p>Men who will hold you to the standards you set for yourself.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <span class="icon">🎤</span>
+                    <h4>Live Sessions</h4>
+                    <p>Regular live calls, discussions and Q&A sessions with the community.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <span class="icon">🤝</span>
+                    <h4>Connection</h4>
+                    <p>Build relationships with men who are on the same path of development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    COMMUNITY VOICES (TESTIMONIALS)
+    ============================================================ -->
+    <section style="background: var(--iron-white); border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">Community Voices</div>
+                <h2 class="heading-display heading-display-md">What Men Are Saying.</h2>
+                <p class="text-body">
+                    The Iron is built by men, for men. Here's what the community has to say.
+                </p>
+            </div>
+
+            <div class="voices-grid">
+                <div class="voice-item reveal">
+                    <p class="quote">"I came for the structure. I stayed for the men. The conversations here are unlike anything I've found elsewhere."</p>
+                    <p class="attribution">— Member, Johannesburg</p>
+                </div>
+                <div class="voice-item reveal">
+                    <p class="quote">"The Iron gave me permission to be honest about where I am. And the accountability to do something about it."</p>
+                    <p class="attribution">— Member, Cape Town</p>
+                </div>
+                <div class="voice-item reveal">
+                    <p class="quote">"I've read a hundred books. The Iron is the first community that actually helped me apply what I was learning."</p>
+                    <p class="attribution">— Member, Pretoria</p>
+                </div>
+            </div>
+
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
+                "Two are better than one,<br />
+                because they have a good return for their labor."
+                <span class="ref">— Ecclesiastes 4:9</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA — JOIN THE COMMUNITY
+    ============================================================ -->
+    <section class="cta-community">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-number" style="color: var(--iron-red);">Join The Iron</div>
+                <h2 class="heading-display heading-display-md">The Build Happens Together.</h2>
+                <p class="text-body">
+                    You don't have to do this alone. Join a community of men who are building lives they respect.
+                </p>
+                <a href="membership.html" class="btn-primary btn-arrow"><span>Join The Community →</span></a>
+            </div>
+
+            <!-- BIBLE VERSE (DARK) -->
+            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                "For God gave us a spirit not of fear<br />
+                but of <strong>power and love and self-control.</strong>"
+                <span class="ref">— 2 Timothy 1:7</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
     <footer class="site-footer">
-        <!-- Same as index.html -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="site-logo">THE IRON<span>.</span></div>
+                    <p>Build a life you respect.</p>
+                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                        Mind. Character. Body. Relationships. Money. Purpose.
+                    </p>
+                    <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="philosophy.html">Philosophy</a>
+                    <a href="framework.html">Framework</a>
+                    <a href="community.html">Community</a>
+                    <a href="library.html">Library</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="membership.html">Membership</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 THE IRON. All rights reserved.</span>
+                <span>"Iron sharpens iron." — Proverbs 27:17</span>
+            </div>
+        </div>
     </footer>
 
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
     <script>
-        // Copy all JavaScript from index.html here
+        (function() {
+            'use strict';
+
+            // ============================================================
+            // 1. MOBILE NAVIGATION
+            // ============================================================
+            var navToggle = document.getElementById('navToggle');
+            var mainNav = document.getElementById('mainNav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    var isOpen = mainNav.classList.toggle('open');
+                    navToggle.classList.toggle('active');
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                });
+
+                mainNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                document.addEventListener('click', function(event) {
+                    var isClickInsideNav = mainNav.contains(event.target);
+                    var isClickOnToggle = navToggle.contains(event.target);
+                    if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('open')) {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                navToggle.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        navToggle.click();
+                    }
+                });
+
+                mainNav.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+                        navToggle.click();
+                        navToggle.focus();
+                    }
+                });
+            }
+
+            // ============================================================
+            // 2. HEADER SCROLL EFFECT
+            // ============================================================
+            var header = document.getElementById('siteHeader');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }, { passive: true });
+            }
+
+            // ============================================================
+            // 3. REVEAL ANIMATIONS
+            // ============================================================
+            var revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            }
+
+            console.log('THE IRON — Community page initialized successfully.');
+        })();
     </script>
+
 </body>
 </html>
