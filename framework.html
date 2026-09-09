@@ -4,35 +4,990 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — Framework</title>
+    <meta name="description" content="The Iron Framework: Six Plans of Development for men building greater capability in mind, character, body, relationships, money and purpose." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
     <style>
         /* ============================================================
-           COPY ALL GLOBAL STYLES FROM INDEX.HTML HERE
+           THE IRON — Global Styles
            ============================================================ */
+
+        /* ============================================================
+           1. DESIGN TOKENS
+           ============================================================ */
+        :root {
+            --iron-black: #111111;
+            --iron-ink: #1c1c1c;
+            --iron-white: #f7f7f4;
+            --iron-paper: #ffffff;
+            --iron-grey: #6b6b6b;
+            --iron-rule: #d9d9d4;
+            --iron-red: #a32621;
+            --iron-red-dark: #7f1d1d;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+            --space-xxl: 160px;
+            --container-width: min(1200px, calc(100% - 80px));
+            --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ============================================================
+           2. RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ::selection {
+            background: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        /* ============================================================
+           3. CONTAINER
+           ============================================================ */
+        .container {
+            width: var(--container-width, min(1200px, calc(100% - 80px)));
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                --container-width: min(100% - 60px, 1200px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --container-width: min(100% - 40px, 1200px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 0 16px;
+            }
+            :root {
+                --container-width: min(100% - 32px, 1200px);
+            }
+        }
+
+        /* ============================================================
+           4. TYPOGRAPHY
+           ============================================================ */
+        .heading-display {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .heading-display-lg {
+            font-size: clamp(36px, 8vw, 80px);
+        }
+
+        .heading-display-md {
+            font-size: clamp(30px, 6vw, 64px);
+        }
+
+        .heading-display-sm {
+            font-size: clamp(24px, 4vw, 40px);
+        }
+
+        .text-body {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 400;
+            font-size: clamp(15px, 1.1vw, 18px);
+            line-height: 1.7;
+            color: var(--iron-ink, #1c1c1c);
+        }
+
+        .text-body-sm {
+            font-size: clamp(13px, 0.9vw, 15px);
+            line-height: 1.6;
+        }
+
+        .text-meta {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .section-number {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--iron-red, #a32621);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(17px, 1.2vw, 20px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: var(--space-md, 32px) auto;
+            padding-left: var(--space-md, 32px);
+            border-left: 2px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .verse strong {
+            color: var(--iron-black, #111111);
+            font-weight: 600;
+        }
+
+        .verse-reference {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.7vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(18px, 1.4vw, 24px);
+            color: var(--iron-ink, #1c1c1c);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .bible-verse strong {
+            color: var(--iron-red, #a32621);
+            font-weight: 600;
+        }
+
+        .bible-verse .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse-dark {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(18px, 1.4vw, 24px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .bible-verse-dark strong {
+            color: var(--iron-white, #f7f7f4);
+            font-weight: 600;
+        }
+
+        .bible-verse-dark .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        @media (max-width: 500px) {
+            .verse {
+                padding-left: var(--space-sm, 16px);
+                font-size: 16px;
+                margin: var(--space-sm, 16px) auto;
+            }
+            .bible-verse,
+            .bible-verse-dark {
+                font-size: 16px;
+                padding: var(--space-sm, 16px);
+            }
+        }
+
+        /* ============================================================
+           5. BUTTONS
+           ============================================================ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 15px);
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            border: 1px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--iron-red, #a32621);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            z-index: 0;
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            border-color: var(--iron-red, #a32621);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 15px);
+            background: transparent;
+            color: var(--iron-black, #111111);
+            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            border: none;
+            border-bottom: 2px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: pointer;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-secondary:hover {
+            border-bottom-color: var(--iron-red, #a32621);
+            color: var(--iron-red, #a32621);
+        }
+
+        .btn-arrow::after {
+            content: '→';
+            margin-left: 4px;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .btn-arrow:hover::after {
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 500px) {
+            .btn-primary,
+            .btn-secondary {
+                min-width: 120px;
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+        }
+
+        /* ============================================================
+           6. HEADER / NAVIGATION
+           ============================================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 247, 244, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            padding: 14px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .site-header.scrolled {
+            padding: 8px 0;
+            background: rgba(247, 247, 244, 0.98);
+        }
+
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .site-logo {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.4vw, 22px);
+            letter-spacing: 0.04em;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            flex-shrink: 0;
+        }
+
+        .site-logo span {
+            color: var(--iron-red, #a32621);
+        }
+
+        .site-logo:hover {
+            opacity: 0.7;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: clamp(12px, 2vw, 32px);
+            flex-wrap: nowrap;
+        }
+
+        .nav-desktop a {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(11px, 0.8vw, 14px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-grey, #6b6b6b);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-desktop a:hover {
+            color: var(--iron-black, #111111);
+        }
+
+        .nav-desktop a:hover::after {
+            width: 100%;
+        }
+
+        .nav-desktop a.active {
+            color: var(--iron-black, #111111);
+        }
+
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+
+        .nav-desktop .nav-cta {
+            color: var(--iron-black, #111111);
+            font-weight: 600;
+            padding: 6px 14px;
+            border: 1px solid var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-desktop .nav-cta::after {
+            display: none;
+        }
+
+        .nav-desktop .nav-cta:hover {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-desktop {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--iron-white, #ffffff);
+                padding: 20px 0;
+                border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+                width: 100%;
+            }
+
+            .nav-desktop.open {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-desktop a {
+                padding: 12px 24px;
+                width: 100%;
+                border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+                font-size: 14px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .nav-desktop a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-desktop .nav-cta {
+                border: none;
+                padding: 12px 24px;
+                text-align: center;
+            }
+
+            .nav-desktop .nav-cta:hover {
+                background: transparent;
+                color: var(--iron-red, #a32621);
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* ============================================================
+           7. SECTIONS
+           ============================================================ */
+        section {
+            padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-lg, 64px);
+            text-align: center;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-header.text-left {
+            text-align: left;
+        }
+
+        .section-header.text-left p {
+            margin: 0;
+        }
+
+        /* ============================================================
+           8. REVEAL ANIMATION
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           9. FOOTER
+           ============================================================ */
+        .site-footer {
+            background: var(--iron-black, #111111);
+            color: var(--iron-grey, #6b6b6b);
+            padding: var(--space-lg, 64px) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: clamp(var(--space-md, 32px), 4vw, var(--space-lg, 64px));
+        }
+
+        .footer-brand .site-logo {
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .footer-brand .site-logo span {
+            color: var(--iron-red, #a32621);
+        }
+
+        .footer-brand p {
+            font-size: clamp(12px, 0.7vw, 14px);
+            max-width: 300px;
+        }
+
+        .footer-brand .footer-verse {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-style: italic;
+            font-size: clamp(13px, 0.8vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: var(--space-sm, 16px);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 600;
+            font-size: clamp(11px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: clamp(12px, 0.7vw, 14px);
+            padding: 4px 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .footer-col a:hover {
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: var(--space-lg, 64px);
+            padding-top: var(--space-md, 32px);
+            display: flex;
+            justify-content: space-between;
+            font-size: clamp(11px, 0.6vw, 13px);
+            flex-wrap: wrap;
+            gap: var(--space-sm, 16px);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-md, 32px);
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: var(--space-xs, 8px);
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md, 32px);
+            }
+        }
+
+        /* ============================================================
+           10. PAGE HEADER
+           ============================================================ */
+        .page-header {
+            padding-top: clamp(90px, 12vh, 140px);
+            padding-bottom: var(--space-lg, 64px);
+            background: var(--iron-white, #f7f7f4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            text-align: center;
+        }
+
+        .page-header .heading-display-lg {
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .page-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           11. DATA STRIP
+           ============================================================ */
+        .data-strip {
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            padding: var(--space-md, 32px) 0;
+            background: var(--iron-white, #f7f7f4);
+        }
+
+        .data-strip-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md, 32px);
+            text-align: center;
+        }
+
+        .data-strip-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .data-strip-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .data-strip-item .numeral {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(28px, 4vw, 52px);
+            line-height: 1;
+            color: var(--iron-black, #111111);
+            display: block;
+        }
+
+        .data-strip-item .numeral .counter {
+            display: inline-block;
+        }
+
+        .data-strip-item .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: 4px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .data-strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md, 32px);
+            }
+        }
+
+        /* ============================================================
+           12. FRAMEWORK LIST
+           ============================================================ */
+        .framework-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .framework-item {
+            display: grid;
+            grid-template-columns: clamp(60px, 6vw, 80px) 1fr clamp(60px, 8vw, 120px);
+            gap: clamp(var(--space-sm, 16px), 2vw, var(--space-md, 32px));
+            padding: clamp(var(--space-md, 32px), 4vw, var(--space-lg, 64px)) 0;
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+            align-items: center;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .framework-item::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--iron-red, #a32621);
+            opacity: 0;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .framework-item:hover::before {
+            opacity: 1;
+        }
+
+        .framework-item:hover {
+            padding-left: var(--space-sm, 16px);
+        }
+
+        .framework-item:last-child {
+            border-bottom: none;
+        }
+
+        .framework-item .number {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(24px, 2.5vw, 36px);
+            color: var(--iron-rule, #d9d9d4);
+            line-height: 1;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .framework-item:hover .number {
+            color: var(--iron-red, #a32621);
+        }
+
+        .framework-item .content h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(22px, 2.2vw, 32px);
+            line-height: 1.1;
+        }
+
+        .framework-item .content .subtitle {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 400;
+            font-size: clamp(15px, 1.1vw, 18px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: 2px;
+        }
+
+        .framework-item .content .description {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(14px, 0.9vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-top: var(--space-xs, 8px);
+            max-width: 500px;
+        }
+
+        .framework-item .content .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .framework-item .content .tags span {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(10px, 0.7vw, 13px);
+            color: var(--iron-grey, #6b6b6b);
+            background: var(--iron-rule, #d9d9d4);
+            padding: 2px clamp(8px, 0.8vw, 14px);
+            border-radius: 20px;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .framework-item:hover .content .tags span {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .framework-item .action {
+            text-align: right;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(13px, 0.8vw, 14px);
+            color: var(--iron-grey, #6b6b6b);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .framework-item .action a {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .framework-item .action a:hover {
+            border-color: var(--iron-black, #111111);
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .framework-item:hover .action {
+            color: var(--iron-black, #111111);
+        }
+
+        @media (max-width: 768px) {
+            .framework-item {
+                grid-template-columns: 1fr;
+                gap: var(--space-xs, 8px);
+                padding: var(--space-md, 32px) 0;
+            }
+
+            .framework-item .number {
+                font-size: 24px;
+            }
+
+            .framework-item .content h3 {
+                font-size: 24px;
+            }
+
+            .framework-item .action {
+                text-align: left;
+            }
+
+            .framework-item .action a {
+                display: inline-block;
+            }
+        }
+
+        /* ============================================================
+           13. UTILITY
+           ============================================================ */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mt-sm {
+            margin-top: var(--space-sm, 16px);
+        }
+
+        .mt-md {
+            margin-top: var(--space-md, 32px);
+        }
+
+        .mt-lg {
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .border-top {
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .bg-white {
+            background: var(--iron-white, #f7f7f4);
+        }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
-            <a href="/index.html" class="site-logo">THE IRON<span>.</span></a>
-            <nav class="nav-desktop" id="mainNav" role="navigation">
-                <a href="/philosophy.html">Philosophy</a>
-                <a href="/framework.html" class="active">Framework</a>
-                <a href="/community.html">Community</a>
-                <a href="/membership.html">Membership</a>
-                <a href="/insights.html">Insights</a>
-                <a href="/membership.html" class="nav-cta">Enter The Iron →</a>
+            <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
+            <nav class="nav-desktop" id="mainNav" role="navigation" aria-label="Main navigation">
+                <a href="philosophy.html">Philosophy</a>
+                <a href="framework.html" class="active">Framework</a>
+                <a href="community.html">Community</a>
+                <a href="library.html">Library</a>
+                <a href="insights.html">Insights</a>
+                <a href="membership.html" class="nav-cta">Enter The Iron →</a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- PAGE HEADER -->
+    <!-- ============================================================
+    PAGE HEADER
+    ============================================================ -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">The Framework</div>
@@ -41,7 +996,9 @@
         </div>
     </section>
 
-    <!-- DATA STRIP -->
+    <!-- ============================================================
+    DATA STRIP
+    ============================================================ -->
     <div class="data-strip">
         <div class="container">
             <div class="data-strip-grid">
@@ -65,27 +1022,37 @@
         </div>
     </div>
 
-    <!-- FULL FRAMEWORK LIST -->
+    <!-- ============================================================
+    FRAMEWORK INTRODUCTION
+    ============================================================ -->
     <section>
         <div class="container">
             <div class="section-header reveal">
                 <div class="section-number">The Iron Framework</div>
                 <h2 class="heading-display heading-display-md">Six Plans of Development</h2>
                 <p class="text-body">
-                    Each plan is a chapter in your development. Start anywhere.
+                    Each plan is a chapter in your development. Start anywhere.<br />
                     Build in any order. The framework is designed to be flexible.
                 </p>
             </div>
 
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal">
+                "Do not conform to the pattern of this world,<br />
+                but be transformed by the renewing of your mind."
+                <span class="ref">— Romans 12:2</span>
+            </div>
+
             <div class="framework-list">
-                <!-- MIND -->
+                <!-- 01 — MIND -->
                 <div class="framework-item reveal">
                     <div class="number">01</div>
                     <div class="content">
                         <h3>Mind</h3>
                         <div class="subtitle">Master yourself.</div>
-                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                        <p class="description">
                             Mental strength. Emotional regulation. Discipline. Confidence. Resilience.
+                            Develop the ability to think clearly, regulate your emotions, stay disciplined and remain resilient when circumstances become difficult.
                         </p>
                         <div class="tags">
                             <span>Mental strength</span>
@@ -93,19 +1060,23 @@
                             <span>Discipline</span>
                             <span>Confidence</span>
                             <span>Resilience</span>
+                            <span>Self-awareness</span>
                         </div>
                     </div>
-                    <div class="action">→</div>
+                    <div class="action">
+                        <a href="pillars/mind.html">Explore →</a>
+                    </div>
                 </div>
 
-                <!-- CHARACTER -->
+                <!-- 02 — CHARACTER -->
                 <div class="framework-item reveal">
                     <div class="number">02</div>
                     <div class="content">
                         <h3>Character</h3>
                         <div class="subtitle">Become someone you respect.</div>
-                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                        <p class="description">
                             Integrity. Responsibility. Courage. Leadership. Standards.
+                            Character is what remains when nobody is watching. Build integrity, responsibility, courage, confidence and the ability to keep your word.
                         </p>
                         <div class="tags">
                             <span>Integrity</span>
@@ -113,123 +1084,212 @@
                             <span>Courage</span>
                             <span>Leadership</span>
                             <span>Standards</span>
+                            <span>Self-respect</span>
                         </div>
                     </div>
-                    <div class="action">→</div>
+                    <div class="action">
+                        <a href="pillars/character.html">Explore →</a>
+                    </div>
                 </div>
 
-                <!-- BODY -->
+                <!-- 03 — BODY -->
                 <div class="framework-item reveal">
                     <div class="number">03</div>
                     <div class="content">
                         <h3>Body</h3>
                         <div class="subtitle">Take care of what carries you.</div>
-                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                        <p class="description">
                             Strength. Nutrition. Recovery. Health.
+                            Your body is not the whole of your life. But it carries you through all of it. Build strength, health, physical discipline and habits that increase your capacity.
                         </p>
                         <div class="tags">
                             <span>Strength</span>
+                            <span>Training</span>
                             <span>Nutrition</span>
-                            <span>Recovery</span>
+                            <span>Sleep</span>
                             <span>Health</span>
+                            <span>Recovery</span>
                         </div>
                     </div>
-                    <div class="action">→</div>
+                    <div class="action">
+                        <a href="pillars/body.html">Explore →</a>
+                    </div>
                 </div>
 
-                <!-- RELATIONSHIPS -->
+                <!-- 04 — RELATIONSHIPS -->
                 <div class="framework-item reveal">
                     <div class="number">04</div>
                     <div class="content">
                         <h3>Relationships</h3>
                         <div class="subtitle">Build connections that matter.</div>
-                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                        <p class="description">
                             Communication. Boundaries. Trust. Connection.
+                            The quality of your relationships shapes the quality of your life. Develop communication, emotional maturity, boundaries, trust and the ability to build relationships without losing yourself.
                         </p>
                         <div class="tags">
                             <span>Communication</span>
                             <span>Boundaries</span>
-                            <span>Trust</span>
+                            <span>Emotional maturity</span>
                             <span>Connection</span>
+                            <span>Respect</span>
+                            <span>Trust</span>
                         </div>
                     </div>
-                    <div class="action">→</div>
+                    <div class="action">
+                        <a href="pillars/relationships.html">Explore →</a>
+                    </div>
                 </div>
 
-                <!-- MONEY -->
+                <!-- 05 — MONEY -->
                 <div class="framework-item reveal">
                     <div class="number">05</div>
                     <div class="content">
                         <h3>Money</h3>
                         <div class="subtitle">Become financially capable.</div>
-                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                        <p class="description">
                             Income. Saving. Investing. Ownership.
+                            Money is not the purpose of life. But financial capability gives you options, responsibility and greater control over the direction of your life. Learn to earn, manage, save and invest with discipline.
                         </p>
                         <div class="tags">
+                            <span>Financial literacy</span>
                             <span>Income</span>
                             <span>Saving</span>
                             <span>Investing</span>
+                            <span>Career</span>
                             <span>Ownership</span>
                         </div>
                     </div>
-                    <div class="action">→</div>
+                    <div class="action">
+                        <a href="pillars/money.html">Explore →</a>
+                    </div>
                 </div>
 
-                <!-- PURPOSE -->
+                <!-- 06 — PURPOSE -->
                 <div class="framework-item reveal">
                     <div class="number">06</div>
                     <div class="content">
                         <h3>Purpose</h3>
                         <div class="subtitle">Find something worth building.</div>
-                        <p class="text-body-sm" style="margin-top:var(--space-xs); color:var(--iron-grey);">
+                        <p class="description">
                             Direction. Skill. Work. Contribution.
+                            A life without direction eventually becomes a life dictated by circumstance. Develop useful skills, meaningful work and a reason to keep moving forward.
                         </p>
                         <div class="tags">
                             <span>Direction</span>
-                            <span>Skill</span>
+                            <span>Skills</span>
                             <span>Work</span>
+                            <span>Meaning</span>
                             <span>Contribution</span>
+                            <span>Purpose</span>
                         </div>
                     </div>
-                    <div class="action">→</div>
+                    <div class="action">
+                        <a href="pillars/purpose.html">Explore →</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
-                <div class="verse" style="margin: 0 auto; border-left-color: var(--iron-red);">
-                    "For God gave us a spirit not of fear but of <strong>power and love and self-control.</strong>"
-                    <span class="verse-reference">— 2 Timothy 1:7</span>
-                </div>
+            <!-- BIBLE VERSE -->
+            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
+                "For God gave us a spirit not of fear<br />
+                but of <strong>power and love and self-control.</strong>"
+                <span class="ref">— 2 Timothy 1:7</span>
             </div>
 
-            <div class="reveal" style="margin-top: var(--space-lg); text-align: center;">
-                <a href="/membership.html" class="btn-primary btn-arrow"><span>Start building →</span></a>
+            <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
+                <a href="membership.html" class="btn-primary btn-arrow"><span>Start building →</span></a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ============================================================
+    THE PROGRESSION
+    ============================================================ -->
+    <section style="background: var(--iron-black); color: var(--iron-white);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number" style="color: var(--iron-red);">The Path</div>
+                <h2 class="heading-display heading-display-md" style="color: var(--iron-white);">Discover. Build. Deepen.</h2>
+                <p class="text-body" style="color: var(--iron-grey);">
+                    Your starting point doesn't determine your destination.<br />
+                    What you do next does.
+                </p>
+            </div>
+
+            <div class="reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; padding: var(--space-md); border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="font-family: var(--font-display); font-size: clamp(28px, 2.5vw, 36px); color: var(--iron-rule);">01</div>
+                    <div style="font-family: var(--font-display); font-size: clamp(22px, 1.8vw, 28px); color: var(--iron-white);">Discover</div>
+                    <div style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey);">Foundation</div>
+                    <p style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey); margin-top: var(--space-sm);">
+                        Understand the philosophy.<br />
+                        Meet the community.<br />
+                        Start building.
+                    </p>
+                </div>
+                <div style="text-align: center; padding: var(--space-md); border: 1px solid rgba(255,255,255,0.06); border-color: var(--iron-red);">
+                    <div style="font-family: var(--font-display); font-size: clamp(28px, 2.5vw, 36px); color: var(--iron-red);">02</div>
+                    <div style="font-family: var(--font-display); font-size: clamp(22px, 1.8vw, 28px); color: var(--iron-white);">Build</div>
+                    <div style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey);">The Iron</div>
+                    <p style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey); margin-top: var(--space-sm);">
+                        Follow structured paths.<br />
+                        Learn. Implement.<br />
+                        Track your progress.
+                    </p>
+                </div>
+                <div style="text-align: center; padding: var(--space-md); border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="font-family: var(--font-display); font-size: clamp(28px, 2.5vw, 36px); color: var(--iron-rule);">03</div>
+                    <div style="font-family: var(--font-display); font-size: clamp(22px, 1.8vw, 28px); color: var(--iron-white);">Deepen</div>
+                    <div style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey);">Inner Circle</div>
+                    <p style="font-size: clamp(13px, 0.8vw, 15px); color: var(--iron-grey); margin-top: var(--space-sm);">
+                        Work in a smaller environment.<br />
+                        Receive deeper feedback.<br />
+                        Build alongside committed men.
+                    </p>
+                </div>
+            </div>
+
+            <!-- BIBLE VERSE (DARK) -->
+            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                "The one who is faithful in a very little thing<br />
+                is also faithful in much."
+                <span class="ref">— Luke 16:10</span>
+            </div>
+
+            <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
+                <a href="membership.html" class="btn-primary btn-arrow"><span>Start Your Path →</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
                     <p>Build a life you respect.</p>
+                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                        Mind. Character. Body. Relationships. Money. Purpose.
+                    </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
                 <div class="footer-col">
                     <h4>Explore</h4>
-                    <a href="/philosophy.html">Philosophy</a>
-                    <a href="/framework.html">Framework</a>
-                    <a href="/community.html">Community</a>
-                    <a href="/membership.html">Membership</a>
-                    <a href="/insights.html">Insights</a>
+                    <a href="philosophy.html">Philosophy</a>
+                    <a href="framework.html">Framework</a>
+                    <a href="community.html">Community</a>
+                    <a href="library.html">Library</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="membership.html">Membership</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Connect</h4>
-                    <a href="/index.html#faq">FAQ</a>
-                    <a href="#">Contact</a>
-                    <a href="#">About</a>
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="faq.html">FAQ</a>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
@@ -239,15 +1299,138 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; 2026 THE IRON</span>
-                <span>Built with purpose.</span>
+                <span>&copy; 2026 THE IRON. All rights reserved.</span>
+                <span>"Iron sharpens iron." — Proverbs 27:17</span>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT (copy from index.html) -->
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
     <script>
-        // Copy all JavaScript from index.html here
+        (function() {
+            'use strict';
+
+            // ============================================================
+            // 1. MOBILE NAVIGATION
+            // ============================================================
+            var navToggle = document.getElementById('navToggle');
+            var mainNav = document.getElementById('mainNav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    var isOpen = mainNav.classList.toggle('open');
+                    navToggle.classList.toggle('active');
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                });
+
+                mainNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+
+                document.addEventListener('click', function(event) {
+                    var isClickInsideNav = mainNav.contains(event.target);
+                    var isClickOnToggle = navToggle.contains(event.target);
+                    if (!isClickInsideNav && !isClickOnToggle && mainNav.classList.contains('open')) {
+                        mainNav.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                navToggle.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        navToggle.click();
+                    }
+                });
+
+                mainNav.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+                        navToggle.click();
+                        navToggle.focus();
+                    }
+                });
+            }
+
+            // ============================================================
+            // 2. HEADER SCROLL EFFECT
+            // ============================================================
+            var header = document.getElementById('siteHeader');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }, { passive: true });
+            }
+
+            // ============================================================
+            // 3. REVEAL ANIMATIONS
+            // ============================================================
+            var revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            }
+
+            // ============================================================
+            // 4. DATA STRIP COUNTER
+            // ============================================================
+            var dataItems = document.querySelectorAll('.data-strip-item');
+            if (dataItems.length) {
+                var counterObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var counter = entry.target.querySelector('.counter');
+                            if (counter && !counter.dataset.animated) {
+                                counter.dataset.animated = 'true';
+                                var target = parseInt(counter.dataset.target, 10);
+
+                                if (!isNaN(target) && target > 0) {
+                                    var current = 0;
+                                    var increment = target / 50;
+                                    var interval = 30;
+
+                                    var timer = setInterval(function() {
+                                        current += increment;
+                                        if (current >= target) {
+                                            current = target;
+                                            clearInterval(timer);
+                                        }
+                                        counter.textContent = Math.floor(current);
+                                    }, interval);
+                                }
+                            }
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                dataItems.forEach(function(item) {
+                    counterObserver.observe(item);
+                });
+            }
+
+            console.log('THE IRON — Framework page initialized successfully.');
+        })();
     </script>
+
 </body>
 </html>
