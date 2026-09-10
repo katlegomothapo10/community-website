@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — Insights</title>
-    <meta name="description" content="The Iron Review: Ideas worth thinking about. Long-form essays, conversations, research and frameworks for men building greater capability." />
+    <meta name="description" content="The Iron Review: essays and frameworks examining the ideas, behaviours and systems that shape men's lives. Ideas worth returning to." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           THE IRON — Global Styles
-           ============================================================ */
-
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -58,16 +54,8 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
 
         ::selection {
             background: var(--iron-red, #a32621);
@@ -83,26 +71,21 @@
         @media (max-width: 1024px) {
             :root { --container-width: min(100% - 60px, 1200px); }
         }
-
         @media (max-width: 768px) {
             :root { --container-width: min(100% - 40px, 1200px); }
         }
-
         @media (max-width: 500px) {
             .container { padding: 0 16px; }
             :root { --container-width: min(100% - 32px, 1200px); }
         }
 
-        /* ============================================================
-           TYPOGRAPHY
-           ============================================================ */
+        /* TYPOGRAPHY */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
         .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
         .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
         .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
@@ -113,11 +96,6 @@
             font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
-        }
-
-        .text-body-sm {
-            font-size: clamp(12px, 0.9vw, 15px);
-            line-height: 1.6;
         }
 
         .section-number {
@@ -145,10 +123,7 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bible-verse strong {
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-        }
+        .bible-verse strong { color: var(--iron-red, #a32621); font-weight: 600; }
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -175,10 +150,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .bible-verse-dark strong {
-            color: var(--iron-white, #f7f7f4);
-            font-weight: 600;
-        }
+        .bible-verse-dark strong { color: var(--iron-white, #f7f7f4); font-weight: 600; }
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -191,16 +163,10 @@
         }
 
         @media (max-width: 500px) {
-            .bible-verse,
-            .bible-verse-dark {
-                font-size: 15px;
-                padding: var(--space-sm, 16px);
-            }
+            .bible-verse, .bible-verse-dark { font-size: 15px; padding: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           BUTTONS
-           ============================================================ */
+        /* BUTTONS */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -234,12 +200,7 @@
         }
 
         .btn-primary:hover::before { left: 0; }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
+        .btn-primary span { position: relative; z-index: 1; }
         .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
@@ -275,8 +236,7 @@
         .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
-            .btn-primary,
-            .btn-secondary {
+            .btn-primary, .btn-secondary {
                 min-width: 100px;
                 padding: 10px 14px;
                 font-size: 12px;
@@ -285,9 +245,7 @@
             }
         }
 
-        /* ============================================================
-           HEADER
-           ============================================================ */
+        /* HEADER */
         .site-header {
             position: fixed;
             top: 0;
@@ -451,9 +409,7 @@
             .nav-toggle { display: flex; }
         }
 
-        /* ============================================================
-           SECTIONS
-           ============================================================ */
+        /* SECTIONS */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
         }
@@ -468,9 +424,6 @@
             margin: 0 auto;
         }
 
-        /* ============================================================
-           REVEAL
-           ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -482,9 +435,7 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-           FOOTER
-           ============================================================ */
+        /* FOOTER */
         .site-footer {
             background: var(--iron-black, #111111);
             color: var(--iron-grey, #6b6b6b);
@@ -561,11 +512,9 @@
             .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
-        /* ============================================================
-           PAGE HEADER
-           ============================================================ */
+        /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -575,9 +524,63 @@
         .page-header .heading-display-lg { margin-bottom: var(--space-xs, 8px); }
         .page-header p { max-width: 600px; margin: 0 auto; }
 
-        /* ============================================================
-           INSIGHTS GRID
-           ============================================================ */
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
+
+        /* INTRO */
+        .insights-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .insights-intro p {
+            font-size: clamp(15px, 1.2vw, 20px);
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        /* FEATURED SECTION */
+        .featured-section {
+            background: var(--iron-white, #f7f7f4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
         .insights-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -590,7 +593,7 @@
             border: 1px solid var(--iron-rule, #d9d9d4);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             background: var(--iron-white, #f7f7f4);
-            cursor: default;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
         }
@@ -651,10 +654,11 @@
 
         .insight-card .excerpt {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(14px, 0.9vw, 16px);
+            font-size: clamp(13px, 0.9vw, 16px);
             color: var(--iron-grey, #6b6b6b);
             margin-bottom: var(--space-sm, 16px);
             flex-grow: 1;
+            line-height: 1.7;
         }
 
         .insight-card .read-link {
@@ -694,19 +698,16 @@
             }
         }
 
-        /* ============================================================
-           IRON INDEX — COMING SOON
-           ============================================================ */
-        .index-section {
+        /* THEMES SECTION */
+        .themes-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
             padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .index-section::before {
+        .themes-section::before {
             content: '';
             position: absolute;
             top: -30%;
@@ -717,58 +718,47 @@
             pointer-events: none;
         }
 
-        .index-section .section-number { color: var(--iron-red, #a32621); }
-        .index-section .heading-display-md { color: var(--iron-white, #f7f7f4); }
+        .themes-section .section-number { color: var(--iron-red, #a32621); }
+        .themes-section .heading-display-md { color: var(--iron-white, #f7f7f4); }
 
-        .index-section p {
+        .themes-section p {
             color: var(--iron-grey, #6b6b6b);
             max-width: 600px;
-            margin: 0 auto var(--space-md, 32px);
+            margin: 0 auto;
         }
 
-        .index-badge {
-            display: inline-block;
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 12px);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--iron-red, #a32621);
-            border: 1px solid var(--iron-red, #a32621);
-            padding: 4px 16px;
-            margin-bottom: var(--space-md, 32px);
-        }
-
-        .index-grid {
+        .themes-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--space-md, 32px);
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: var(--space-xl, 96px) auto 0;
             position: relative;
             z-index: 1;
         }
 
-        .index-item {
+        .theme-item {
             padding: var(--space-md, 32px);
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             text-align: center;
         }
 
-        .index-item:hover {
+        .theme-item:hover {
             border-color: var(--iron-red, #a32621);
+            transform: translateY(-4px);
         }
 
-        .index-item .icon-svg {
-            width: 32px;
-            height: 32px;
+        .theme-item .icon-svg {
+            width: 40px;
+            height: 40px;
             margin: 0 auto var(--space-sm, 16px);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .index-item .icon-svg svg {
+        .theme-item .icon-svg svg {
             width: 100%;
             height: 100%;
             fill: none;
@@ -779,67 +769,88 @@
             vector-effect: non-scaling-stroke;
         }
 
-        .index-item .icon-svg svg .accent {
+        .theme-item .icon-svg svg .accent {
             stroke: var(--iron-red, #a32621);
         }
 
-        .index-item .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .index-item .value {
+        .theme-item h4 {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(28px, 3vw, 40px);
+            font-size: clamp(17px, 1.4vw, 22px);
+            margin-bottom: var(--space-xs, 8px);
             color: var(--iron-white, #f7f7f4);
-            display: block;
-            margin-top: var(--space-xs, 8px);
         }
 
-        .index-item .bar-track {
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 2px;
-            margin-top: var(--space-sm, 16px);
-            overflow: hidden;
-        }
-
-        .index-item .bar-fill {
-            height: 100%;
-            background: var(--iron-red, #a32621);
-            border-radius: 2px;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .index-item:hover .bar-fill {
-            background: var(--iron-white, #f7f7f4);
+        .theme-item p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
+            max-width: 100%;
+            margin: 0;
         }
 
         @media (max-width: 768px) {
-            .index-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
+            .themes-grid { grid-template-columns: 1fr; gap: var(--space-sm, 16px); }
         }
 
-        @media (max-width: 500px) {
-            .index-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ============================================================
-           CTA INSIGHTS
-           ============================================================ */
-        .cta-insights {
+        /* HOW WE THINK */
+        .how-section {
             background: var(--iron-white, #f7f7f4);
-            text-align: center;
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .cta-insights .heading-display-md { margin-bottom: var(--space-md, 32px); }
+        .how-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(var(--space-md, 32px), 5vw, var(--space-xl, 96px));
+            align-items: center;
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .how-content h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 2vw, 32px);
+            margin-bottom: var(--space-sm, 16px);
+            line-height: 1.3;
+        }
+
+        .how-content p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(14px, 1vw, 17px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-bottom: var(--space-md, 32px);
+            line-height: 1.7;
+        }
+
+        .how-statement {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 2.5vw, 32px);
+            line-height: 1.3;
+            color: var(--iron-black, #111111);
+            border-top: 2px solid var(--iron-red, #a32621);
+            padding-top: var(--space-md, 32px);
+            margin-top: var(--space-md, 32px);
+        }
+
+        @media (max-width: 768px) {
+            .how-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
+
+            .how-content { text-align: center; }
+            .how-content p { margin-left: auto; margin-right: auto; }
+        }
+
+        /* CTA */
+        .cta-insights {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            text-align: center;
+            padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
+        }
+
+        .cta-insights .heading-display-md {
+            margin-bottom: var(--space-md, 32px);
+        }
 
         .cta-insights p {
             max-width: 500px;
@@ -847,45 +858,16 @@
             color: var(--iron-grey, #6b6b6b);
         }
 
-        /* ============================================================
-           IMAGE PLACEHOLDER
-           ============================================================ */
-        .img-placeholder {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 200px;
-            width: 100%;
-            color: var(--iron-grey, #6b6b6b);
-            text-align: center;
-            padding: var(--space-md, 32px);
+        .cta-insights .btn-primary {
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            border-color: var(--iron-white, #f7f7f4);
         }
 
-        .img-placeholder .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs, 8px);
-        }
-
-        .img-placeholder .content .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .img-placeholder .content .sub-label {
-            font-size: clamp(9px, 0.6vw, 12px);
-            opacity: 0.4;
-        }
-
-        @media (max-width: 768px) {
-            .img-placeholder { min-height: 140px; }
+        .cta-insights .btn-primary:hover {
+            background: var(--iron-red, #a32621);
+            border-color: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
         }
     </style>
 </head>
@@ -915,43 +897,62 @@
             <div class="section-number">The Iron Review</div>
             <h1 class="heading-display heading-display-lg">Ideas Worth Thinking About.</h1>
             <p class="text-body">
-                Long-form essays. Conversations. Research. Frameworks. Perspectives.
-            </p>
-            <p class="text-body" style="font-style: italic; color: var(--iron-grey); margin-top: var(--space-sm);">
-                Not content for the sake of publishing.<br />
-                Ideas worth returning to.
+                Long-form essays. Frameworks. Perspectives.<br />
+                Not content for the sake of publishing. Ideas worth returning to.
             </p>
         </div>
     </section>
 
-    <!-- INSIGHTS GRID -->
+    <!-- INTRO -->
     <section>
+        <div class="container">
+            <div class="insights-intro reveal">
+                <div class="section-number">The Iron Review</div>
+                <h2 class="heading-display heading-display-md">Serious Ideas, Seriously Written.</h2>
+                <p class="text-body">
+                    Most men's content is either shallow or manipulative.<br /><br />
+                    The Iron Review is different. It exists to examine the ideas, behaviours and systems that actually shape men's lives — without hype, without shortcuts, and without pretending life is simple.
+                </p>
+            </div>
+
+            <!-- Bible verse — strategic break -->
+            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
+                "The heart of the discerning acquires knowledge,<br />
+                for the ears of the wise seek it out."
+                <span class="ref">— Proverbs 18:15</span>
+            </div>
+
+            <!-- Image placeholder 1 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
+                <div class="content">
+                    <span class="label">The Iron Review</span>
+                    <span class="sub-label">assets/images/insights/iron-review-hero.jpg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED INSIGHTS -->
+    <section class="featured-section">
         <div class="container">
             <div class="section-header reveal">
                 <div class="section-number">Featured</div>
                 <h2 class="heading-display heading-display-md">Ideas Worth Returning To.</h2>
                 <p class="text-body">
-                    Essays, conversations and frameworks that examine the ideas, behaviours and systems that shape men's lives.
+                    Essays, frameworks and perspectives on the ideas that shape men's lives.
                 </p>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal">
-                "The heart of the discerning acquires knowledge,<br />
-                for the ears of the wise seek it out."
-                <span class="ref">— Proverbs 18:15</span>
             </div>
 
             <div class="insights-grid">
                 <!-- FEATURED -->
                 <div class="insight-card featured reveal">
                     <div class="insight-meta">
-                        <span class="pillar">Mind</span>
+                        <span class="pillar">Philosophy</span>
                         <span class="read-time">8 MIN READ</span>
                     </div>
                     <h3>Why Discipline Is More Useful Than Motivation</h3>
                     <p class="excerpt">
-                        Motivation can start a behaviour. Discipline allows you to continue it. This essay explores why relying on motivation is a trap, and how to build the discipline that actually produces results.
+                        Motivation can start a behaviour. Discipline allows you to continue it. This essay explores why relying on motivation is a trap — and how to build the discipline that actually produces results.
                     </p>
                     <a href="#" class="read-link">Read</a>
                 </div>
@@ -1003,7 +1004,7 @@
                     </div>
                     <h3>The Quiet Discipline of Physical Capability</h3>
                     <p class="excerpt">
-                        Your body is not the whole of your life. But it carries you through all of it. Building physical capability is about more than appearance—it's about capacity.
+                        Your body is not the whole of your life. But it carries you through all of it. Building physical capability is about more than appearance — it's about capacity.
                     </p>
                     <a href="#" class="read-link">Read</a>
                 </div>
@@ -1020,13 +1021,31 @@
                     </p>
                     <a href="#" class="read-link">Read</a>
                 </div>
-            </div>
 
-            <!-- IMAGE PLACEHOLDER 1 -->
-            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
-                <div class="content">
-                    <span class="label">Featured Insights</span>
-                    <span class="sub-label">assets/images/insights/featured-insights.jpg</span>
+                <!-- PURPOSE -->
+                <div class="insight-card reveal">
+                    <div class="insight-meta">
+                        <span class="pillar">Purpose</span>
+                        <span class="read-time">7 MIN READ</span>
+                    </div>
+                    <h3>Purpose Isn't Found. It's Built.</h3>
+                    <p class="excerpt">
+                        Most men wait for purpose to arrive. It doesn't. Purpose is built through work, skill and responsibility — through becoming good at something worth doing.
+                    </p>
+                    <a href="#" class="read-link">Read</a>
+                </div>
+
+                <!-- CAREER -->
+                <div class="insight-card reveal">
+                    <div class="insight-meta">
+                        <span class="pillar">Career</span>
+                        <span class="read-time">6 MIN READ</span>
+                    </div>
+                    <h3>Become Valuable Before You Chase Money</h3>
+                    <p class="excerpt">
+                        Money follows value. Skill precedes opportunity. The men who build careers that last understand this simple order.
+                    </p>
+                    <a href="#" class="read-link">Read</a>
                 </div>
             </div>
 
@@ -1036,166 +1055,174 @@
         </div>
     </section>
 
-    <!-- IRON INDEX -->
-    <section class="index-section">
+    <!-- THEMES -->
+    <section class="themes-section">
         <div class="container">
-            <div class="reveal">
-                <span class="index-badge">Coming Soon</span>
-                <div class="section-number" style="color: var(--iron-red);">Research</div>
-                <h2 class="heading-display heading-display-md">Understanding the Modern Man.</h2>
-                <p>
-                    We believe meaningful development begins with understanding where people actually are.<br />
-                    The Iron Index will examine the state of men's development across six areas.
+            <div class="section-header reveal">
+                <div class="section-number" style="color: var(--iron-red);">Themes</div>
+                <h2 class="heading-display heading-display-md">What The Iron Review Examines.</h2>
+                <p style="max-width: 600px; margin: 0 auto;">
+                    Every essay, framework and perspective falls under one of six themes.
                 </p>
+            </div>
 
-                <!-- BIBLE VERSE (DARK) -->
-                <div class="bible-verse-dark" style="margin-top: var(--space-md); max-width: 650px;">
-                    "Plans fail for lack of counsel,<br />
-                    but with many advisers they succeed."
-                    <span class="ref">— Proverbs 15:22</span>
+            <div class="themes-grid">
+                <!-- MIND -->
+                <div class="theme-item reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="14" />
+                            <circle cx="24" cy="24" r="6" class="accent" />
+                            <line x1="24" y1="4" x2="24" y2="10" />
+                            <line x1="24" y1="38" x2="24" y2="44" />
+                            <line x1="4" y1="24" x2="10" y2="24" />
+                            <line x1="38" y1="24" x2="44" y2="24" />
+                        </svg>
+                    </div>
+                    <h4>Mind</h4>
+                    <p>Clarity, emotion, discipline, resilience, self-awareness.</p>
                 </div>
 
-                <div class="index-grid" style="margin-top: var(--space-xl);">
-                    <!-- MIND -->
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="14" />
-                                <circle cx="24" cy="24" r="6" class="accent" />
-                                <line x1="24" y1="4" x2="24" y2="10" />
-                                <line x1="24" y1="38" x2="24" y2="44" />
-                                <line x1="4" y1="24" x2="10" y2="24" />
-                                <line x1="38" y1="24" x2="44" y2="24" />
-                            </svg>
-                        </div>
-                        <span class="label">Mind</span>
-                        <span class="value">74</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:74%;"></div>
-                        </div>
+                <!-- CHARACTER -->
+                <div class="theme-item reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 6 L38 12 V24 C38 34 24 42 24 42 C24 42 10 34 10 24 V12 Z" />
+                            <line x1="24" y1="18" x2="24" y2="30" class="accent" />
+                            <line x1="18" y1="24" x2="30" y2="24" class="accent" />
+                        </svg>
                     </div>
-
-                    <!-- CHARACTER -->
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M24 6 L38 12 V24 C38 34 24 42 24 42 C24 42 10 34 10 24 V12 Z" />
-                                <line x1="24" y1="18" x2="24" y2="30" class="accent" />
-                                <line x1="18" y1="24" x2="30" y2="24" class="accent" />
-                            </svg>
-                        </div>
-                        <span class="label">Character</span>
-                        <span class="value">68</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:68%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- BODY -->
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <line x1="24" y1="6" x2="24" y2="14" />
-                                <line x1="24" y1="34" x2="24" y2="42" />
-                                <line x1="6" y1="24" x2="14" y2="24" />
-                                <line x1="34" y1="24" x2="42" y2="24" />
-                                <circle cx="24" cy="24" r="8" class="accent" />
-                            </svg>
-                        </div>
-                        <span class="label">Body</span>
-                        <span class="value">71</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:71%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- RELATIONSHIPS -->
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <path d="M24 40 C24 40 8 30 8 20 C8 14 12 10 18 10 C22 10 24 14 24 14 C24 14 26 10 30 10 C36 10 40 14 40 20 C40 30 24 40 24 40 Z" />
-                                <line x1="24" y1="20" x2="24" y2="30" class="accent" />
-                            </svg>
-                        </div>
-                        <span class="label">Relationships</span>
-                        <span class="value">59</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:59%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- MONEY -->
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <polyline points="8,36 18,26 26,32 40,12" />
-                                <polyline points="32,12 40,12 40,20" class="accent" />
-                                <line x1="8" y1="42" x2="40" y2="42" />
-                            </svg>
-                        </div>
-                        <span class="label">Money</span>
-                        <span class="value">48</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:48%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- PURPOSE -->
-                    <div class="index-item">
-                        <div class="icon-svg">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="16" />
-                                <polygon points="24,14 30,30 24,26 18,30" class="accent" />
-                            </svg>
-                        </div>
-                        <span class="label">Purpose</span>
-                        <span class="value">62</span>
-                        <div class="bar-track">
-                            <div class="bar-fill" style="width:62%;"></div>
-                        </div>
-                    </div>
+                    <h4>Character</h4>
+                    <p>Integrity, responsibility, courage, standards.</p>
                 </div>
 
-                <!-- IMAGE PLACEHOLDER 2 -->
-                <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
-                    <div class="content">
-                        <span class="label">Iron Index Research</span>
-                        <span class="sub-label">assets/images/insights/iron-index.jpg</span>
+                <!-- BODY -->
+                <div class="theme-item reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <line x1="24" y1="6" x2="24" y2="14" />
+                            <line x1="24" y1="34" x2="24" y2="42" />
+                            <line x1="6" y1="24" x2="14" y2="24" />
+                            <line x1="34" y1="24" x2="42" y2="24" />
+                            <circle cx="24" cy="24" r="8" class="accent" />
+                        </svg>
                     </div>
+                    <h4>Body</h4>
+                    <p>Training, nutrition, recovery, physical capability.</p>
                 </div>
 
-                <div style="margin-top: var(--space-xl);">
-                    <a href="#" class="btn-primary btn-arrow"><span>Join The Research →</span></a>
+                <!-- MONEY & CAREER -->
+                <div class="theme-item reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <polyline points="8,36 18,26 26,32 40,12" />
+                            <polyline points="32,12 40,12 40,20" class="accent" />
+                            <line x1="8" y1="42" x2="40" y2="42" />
+                        </svg>
+                    </div>
+                    <h4>Money & Career</h4>
+                    <p>Financial capability, skills, ownership, direction.</p>
+                </div>
+
+                <!-- RELATIONSHIPS -->
+                <div class="theme-item reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 40 C24 40 8 30 8 20 C8 14 12 10 18 10 C22 10 24 14 24 14 C24 14 26 10 30 10 C36 10 40 14 40 20 C40 30 24 40 24 40 Z" />
+                            <line x1="24" y1="20" x2="24" y2="30" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>Relationships</h4>
+                    <p>Communication, boundaries, trust, connection.</p>
+                </div>
+
+                <!-- PURPOSE -->
+                <div class="theme-item reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="16" />
+                            <polygon points="24,14 30,30 24,26 18,30" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>Purpose</h4>
+                    <p>Direction, meaning, contribution, legacy.</p>
+                </div>
+            </div>
+
+            <!-- Bible verse — strategic break -->
+            <div class="bible-verse-dark" style="margin-top: var(--space-xl);">
+                "Get wisdom, get understanding;<br />
+                do not forget my words or turn away from them."
+                <span class="ref">— Proverbs 4:5</span>
+            </div>
+
+            <!-- Image placeholder 2 -->
+            <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
+                <div class="content">
+                    <span class="label">Themes</span>
+                    <span class="sub-label">assets/images/insights/themes.jpg</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA — SUBSCRIBE -->
+    <!-- HOW WE THINK -->
+    <section class="how-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">How We Think</div>
+                <h2 class="heading-display heading-display-md">Editorial Standards.</h2>
+                <p class="text-body">
+                    What makes The Iron Review different from most men's content.
+                </p>
+            </div>
+
+            <div class="how-grid">
+                <div class="how-content reveal">
+                    <h3>Not Loud. Not Reactive. Not Performative.</h3>
+                    <p>
+                        Most men's content is optimized for clicks, outrage or empty inspiration. The Iron Review is not.
+                    </p>
+                    <p>
+                        Every essay is written to be re-read. Every framework is designed to be applied. Every perspective is meant to help you think more clearly — not to make you feel something in the moment and forget it by tomorrow.
+                    </p>
+                    <p>
+                        We don't chase trends. We don't manufacture urgency. We don't pretend to have answers we don't have.
+                    </p>
+                    <p>
+                        What we do is write seriously about serious things — and trust that the men who need it will find it.
+                    </p>
+
+                    <div class="how-statement">
+                        Ideas that reward a second read.<br />
+                        And a third.
+                    </div>
+                </div>
+
+                <!-- Image placeholder 3 -->
+                <div class="img-placeholder reveal">
+                    <div class="content">
+                        <span class="label">Editorial Standards</span>
+                        <span class="sub-label">assets/images/insights/editorial-standards.jpg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-insights">
         <div class="container">
             <div class="reveal">
-                <div class="section-number">Stay Informed</div>
+                <div class="section-number" style="color: var(--iron-red);">Stay Informed</div>
                 <h2 class="heading-display heading-display-md">Ideas Worth Returning To.</h2>
                 <p class="text-body">
-                    Subscribe to The Iron Review and receive thoughtful essays, research and frameworks directly.
+                    The Iron Review publishes when there's something worth publishing.<br />
+                    Not on a schedule. On a standard.
                 </p>
-                <a href="#" class="btn-primary btn-arrow"><span>Subscribe →</span></a>
-            </div>
-
-            <!-- IMAGE PLACEHOLDER 3 -->
-            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
-                <div class="content">
-                    <span class="label">Subscribe</span>
-                    <span class="sub-label">assets/images/insights/subscribe.jpg</span>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center;">
+                    <a href="#" class="btn-primary btn-arrow"><span>Subscribe to The Iron Review →</span></a>
                 </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Get wisdom, get understanding;<br />
-                do not forget my words or turn away from them."
-                <span class="ref">— Proverbs 4:5</span>
             </div>
         </div>
     </section>
@@ -1206,9 +1233,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1241,7 +1268,6 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
