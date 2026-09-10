@@ -514,7 +514,7 @@
 
         /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -555,6 +555,45 @@
         }
 
         .pillar-intro .text-body { font-size: clamp(15px, 1.2vw, 20px); }
+
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
 
         /* FOCUS GRID */
         .focus-grid {
@@ -611,7 +650,7 @@
             .focus-grid { grid-template-columns: 1fr; }
         }
 
-        /* PRINCIPLE SECTION (DARK) */
+        /* PRINCIPLE SECTION */
         .principle-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
@@ -672,7 +711,7 @@
             }
         }
 
-        /* CTA PILLAR */
+        /* CTA */
         .cta-pillar {
             background: var(--iron-white, #f7f7f4);
             text-align: center;
@@ -706,45 +745,6 @@
                 max-width: 280px;
             }
         }
-
-        /* IMAGE PLACEHOLDER */
-        .img-placeholder {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 200px;
-            width: 100%;
-            color: var(--iron-grey, #6b6b6b);
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .img-placeholder .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs, 8px);
-        }
-
-        .img-placeholder .content .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .img-placeholder .content .sub-label {
-            font-size: clamp(9px, 0.6vw, 12px);
-            opacity: 0.4;
-        }
-
-        @media (max-width: 768px) {
-            .img-placeholder { min-height: 140px; }
-        }
     </style>
 </head>
 <body>
@@ -770,7 +770,7 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <div class="section-number">04 / Relationships</div>
+            <div class="section-number">06 / Relationships</div>
             <div class="pillar-icon">
                 <svg viewBox="0 0 48 48">
                     <path d="M24 40 C24 40 8 30 8 20 C8 14 12 10 18 10 C22 10 24 14 24 14 C24 14 26 10 30 10 C36 10 40 14 40 20 C40 30 24 40 24 40 Z" />
@@ -796,14 +796,7 @@
                     Develop communication, emotional maturity, boundaries, trust and the ability to build relationships without losing yourself.
                 </p>
 
-                <!-- BIBLE VERSE -->
-                <div class="bible-verse" style="margin-top: var(--space-xl);">
-                    "Two are better than one,<br />
-                    because they have a good return for their labor."
-                    <span class="ref">— Ecclesiastes 4:9</span>
-                </div>
-
-                <!-- IMAGE PLACEHOLDER 1 -->
+                <!-- Image placeholder 1 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl);">
                     <div class="content">
                         <span class="label">Relationships Pillar Image</span>
@@ -857,13 +850,6 @@
                     <p>Treat others with dignity while maintaining your own self-respect.</p>
                 </div>
             </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Therefore encourage one another and build each other up,<br />
-                just as in fact you are doing."
-                <span class="ref">— 1 Thessalonians 5:11</span>
-            </div>
         </div>
     </section>
 
@@ -884,7 +870,7 @@
                     </blockquote>
                 </div>
 
-                <!-- IMAGE PLACEHOLDER 2 -->
+                <!-- Image placeholder 2 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
                     <div class="content">
                         <span class="label">Relationship Principle</span>
@@ -892,11 +878,11 @@
                     </div>
                 </div>
 
-                <!-- BIBLE VERSE (DARK) -->
+                <!-- Bible verse — strategic break -->
                 <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                    "Above all, love each other deeply,<br />
-                    because love covers over a multitude of sins."
-                    <span class="ref">— 1 Peter 4:8</span>
+                    "Two are better than one,<br />
+                    because they have a good return for their labor."
+                    <span class="ref">— Ecclesiastes 4:9</span>
                 </div>
             </div>
         </div>
@@ -909,27 +895,20 @@
                 <div class="section-number">Begin Your Journey</div>
                 <h2 class="heading-display heading-display-sm">Start Building Your Relationships.</h2>
                 <p class="text-body">
-                    Join The Iron and access the full Relationships development path, resources and community.
+                    Join The Iron Open and access the Relationships development path, resources and community.
                 </p>
                 <div class="cta-actions">
-                    <a href="../membership.html" class="btn-primary btn-arrow"><span>Join The Iron →</span></a>
+                    <a href="../community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                     <a href="../framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
                 </div>
             </div>
 
-            <!-- IMAGE PLACEHOLDER 3 -->
+            <!-- Image placeholder 3 -->
             <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
                 <div class="content">
-                    <span class="label">Start Your Journey</span>
+                    <span class="label">Begin the Work</span>
                     <span class="sub-label">assets/images/pillars/relationships-cta.jpg</span>
                 </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Be kind and compassionate to one another,<br />
-                forgiving each other, just as in Christ God forgave you."
-                <span class="ref">— Ephesians 4:32</span>
             </div>
         </div>
     </section>
@@ -940,9 +919,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -975,7 +954,6 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
