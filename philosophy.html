@@ -4,20 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — Philosophy</title>
-    <meta name="description" content="The philosophy behind THE IRON: becoming more capable of being yourself through standards, structure, action and accountability." />
+    <meta name="description" content="The philosophy behind THE IRON: Stop drifting. Start building. A structured personal-development community for men." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           THE IRON — Global Styles
-           ============================================================ */
-
-        /* ============================================================
-           1. DESIGN TOKENS
-           ============================================================ */
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -39,9 +32,6 @@
             --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================================
-           2. RESET & BASE
-           ============================================================ */
         *,
         *::before,
         *::after {
@@ -64,25 +54,14 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
 
         ::selection {
             background: var(--iron-red, #a32621);
             color: var(--iron-white, #f7f7f4);
         }
 
-        /* ============================================================
-           3. CONTAINER
-           ============================================================ */
         .container {
             width: var(--container-width, min(1200px, calc(100% - 80px)));
             margin: 0 auto;
@@ -90,47 +69,26 @@
         }
 
         @media (max-width: 1024px) {
-            :root {
-                --container-width: min(100% - 60px, 1200px);
-            }
+            :root { --container-width: min(100% - 60px, 1200px); }
         }
-
         @media (max-width: 768px) {
-            :root {
-                --container-width: min(100% - 40px, 1200px);
-            }
+            :root { --container-width: min(100% - 40px, 1200px); }
         }
-
         @media (max-width: 500px) {
-            .container {
-                padding: 0 16px;
-            }
-            :root {
-                --container-width: min(100% - 32px, 1200px);
-            }
+            .container { padding: 0 16px; }
+            :root { --container-width: min(100% - 32px, 1200px); }
         }
 
-        /* ============================================================
-           4. TYPOGRAPHY
-           ============================================================ */
+        /* TYPOGRAPHY */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
-        .heading-display-lg {
-            font-size: clamp(32px, 8vw, 80px);
-        }
-
-        .heading-display-md {
-            font-size: clamp(28px, 6vw, 64px);
-        }
-
-        .heading-display-sm {
-            font-size: clamp(22px, 4vw, 40px);
-        }
+        .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
+        .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
+        .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -138,20 +96,6 @@
             font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
-        }
-
-        .text-body-sm {
-            font-size: clamp(12px, 0.9vw, 15px);
-            line-height: 1.6;
-        }
-
-        .text-meta {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(9px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
         }
 
         .section-number {
@@ -162,34 +106,6 @@
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
             margin-bottom: var(--space-xs, 8px);
-        }
-
-        .verse {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(16px, 1.2vw, 20px);
-            color: var(--iron-grey, #6b6b6b);
-            line-height: 1.6;
-            max-width: 600px;
-            margin: var(--space-md, 32px) auto;
-            padding-left: var(--space-md, 32px);
-            border-left: 2px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .verse strong {
-            color: var(--iron-black, #111111);
-            font-weight: 600;
-        }
-
-        .verse-reference {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 14px);
-            font-style: normal;
-            font-weight: 400;
-            color: var(--iron-grey, #6b6b6b);
-            display: block;
-            margin-top: var(--space-xs, 8px);
         }
 
         .bible-verse {
@@ -207,10 +123,7 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bible-verse strong {
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-        }
+        .bible-verse strong { color: var(--iron-red, #a32621); font-weight: 600; }
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -237,10 +150,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .bible-verse-dark strong {
-            color: var(--iron-white, #f7f7f4);
-            font-weight: 600;
-        }
+        .bible-verse-dark strong { color: var(--iron-white, #f7f7f4); font-weight: 600; }
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -253,21 +163,10 @@
         }
 
         @media (max-width: 500px) {
-            .verse {
-                padding-left: var(--space-sm, 16px);
-                font-size: 15px;
-                margin: var(--space-sm, 16px) auto;
-            }
-            .bible-verse,
-            .bible-verse-dark {
-                font-size: 15px;
-                padding: var(--space-sm, 16px);
-            }
+            .bible-verse, .bible-verse-dark { font-size: 15px; padding: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           5. BUTTONS
-           ============================================================ */
+        /* BUTTONS */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -286,7 +185,6 @@
             overflow: hidden;
             text-align: center;
             min-width: 120px;
-            width: auto;
         }
 
         .btn-primary::before {
@@ -301,18 +199,9 @@
             z-index: 0;
         }
 
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary:hover {
-            border-color: var(--iron-red, #a32621);
-        }
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
             display: inline-flex;
@@ -331,7 +220,6 @@
             cursor: pointer;
             text-align: center;
             min-width: 120px;
-            width: auto;
         }
 
         .btn-secondary:hover {
@@ -345,13 +233,10 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .btn-arrow:hover::after {
-            transform: translateX(6px);
-        }
+        .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
-            .btn-primary,
-            .btn-secondary {
+            .btn-primary, .btn-secondary {
                 min-width: 100px;
                 padding: 10px 14px;
                 font-size: 12px;
@@ -360,9 +245,7 @@
             }
         }
 
-        /* ============================================================
-           6. HEADER / NAVIGATION
-           ============================================================ */
+        /* HEADER */
         .site-header {
             position: fixed;
             top: 0;
@@ -398,13 +281,8 @@
             flex-shrink: 0;
         }
 
-        .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .site-logo:hover {
-            opacity: 0.7;
-        }
+        .site-logo span { color: var(--iron-red, #a32621); }
+        .site-logo:hover { opacity: 0.7; }
 
         .nav-desktop {
             display: flex;
@@ -436,21 +314,10 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-desktop a:hover {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-
-        .nav-desktop a.active {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a.active::after {
-            width: 100%;
-        }
+        .nav-desktop a:hover { color: var(--iron-black, #111111); }
+        .nav-desktop a:hover::after { width: 100%; }
+        .nav-desktop a.active { color: var(--iron-black, #111111); }
+        .nav-desktop a.active::after { width: 100%; }
 
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
@@ -461,9 +328,7 @@
             font-size: clamp(8px, 0.7vw, 13px);
         }
 
-        .nav-desktop .nav-cta::after {
-            display: none;
-        }
+        .nav-desktop .nav-cta::after { display: none; }
 
         .nav-desktop .nav-cta:hover {
             background: var(--iron-black, #111111);
@@ -488,17 +353,9 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         @media (max-width: 900px) {
             .nav-desktop {
@@ -522,14 +379,8 @@
             }
 
             @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
 
             .nav-desktop a {
@@ -541,9 +392,7 @@
                 text-align: center;
             }
 
-            .nav-desktop a:last-child {
-                border-bottom: none;
-            }
+            .nav-desktop a:last-child { border-bottom: none; }
 
             .nav-desktop .nav-cta {
                 border: none;
@@ -557,14 +406,10 @@
                 color: var(--iron-red, #a32621);
             }
 
-            .nav-toggle {
-                display: flex;
-            }
+            .nav-toggle { display: flex; }
         }
 
-        /* ============================================================
-           7. SECTIONS
-           ============================================================ */
+        /* SECTIONS */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
         }
@@ -579,17 +424,6 @@
             margin: 0 auto;
         }
 
-        .section-header.text-left {
-            text-align: left;
-        }
-
-        .section-header.text-left p {
-            margin: 0;
-        }
-
-        /* ============================================================
-           8. REVEAL ANIMATION
-           ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -601,9 +435,7 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-           9. FOOTER
-           ============================================================ */
+        /* FOOTER */
         .site-footer {
             background: var(--iron-black, #111111);
             color: var(--iron-grey, #6b6b6b);
@@ -622,14 +454,8 @@
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .footer-brand .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .footer-brand p {
-            font-size: clamp(11px, 0.7vw, 14px);
-            max-width: 300px;
-        }
+        .footer-brand .site-logo span { color: var(--iron-red, #a32621); }
+        .footer-brand p { font-size: clamp(11px, 0.7vw, 14px); max-width: 300px; }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
@@ -656,9 +482,7 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .footer-col a:hover {
-            color: var(--iron-white, #f7f7f4);
-        }
+        .footer-col a:hover { color: var(--iron-white, #f7f7f4); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -676,11 +500,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md, 32px);
             }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-
+            .footer-brand { grid-column: 1 / -1; }
             .footer-bottom {
                 flex-direction: column;
                 gap: var(--space-xs, 8px);
@@ -689,273 +509,22 @@
         }
 
         @media (max-width: 500px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
-        /* ============================================================
-           10. PAGE HEADER
-           ============================================================ */
+        /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
             text-align: center;
         }
 
-        .page-header .heading-display-lg {
-            margin-bottom: var(--space-xs, 8px);
-        }
+        .page-header .heading-display-lg { margin-bottom: var(--space-xs, 8px); }
+        .page-header p { max-width: 600px; margin: 0 auto; }
 
-        .page-header p {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ============================================================
-           11. PHILOSOPHY CONTENT
-           ============================================================ */
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(var(--space-md, 32px), 5vw, var(--space-xl, 96px));
-            align-items: center;
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .philosophy-grid-reverse {
-            direction: rtl;
-        }
-
-        .philosophy-grid-reverse > * {
-            direction: ltr;
-        }
-
-        .philosophy-content .heading-display-sm {
-            margin-bottom: var(--space-sm, 16px);
-        }
-
-        .philosophy-content p {
-            margin-bottom: var(--space-md, 32px);
-            color: var(--iron-ink, #1c1c1c);
-        }
-
-        .philosophy-image {
-            min-height: 220px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            color: var(--iron-grey, #6b6b6b);
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.9vw, 16px);
-        }
-
-        .philosophy-image .placeholder-text {
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .philosophy-image .placeholder-text .icon {
-            font-size: 48px;
-            display: block;
-            margin-bottom: var(--space-sm, 16px);
-            opacity: 0.5;
-        }
-
-        .philosophy-image .placeholder-text .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 13px);
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .philosophy-image .placeholder-text .sub-label {
-            font-size: clamp(9px, 0.5vw, 11px);
-            opacity: 0.5;
-            margin-top: var(--space-xs, 8px);
-        }
-
-        .philosophy-principles {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-md, 32px);
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .philosophy-principle {
-            padding: var(--space-md, 32px);
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            background: var(--iron-white, #f7f7f4);
-            text-align: center;
-        }
-
-        .philosophy-principle:hover {
-            border-color: var(--iron-black, #111111);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .philosophy-principle .number {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(24px, 2.5vw, 36px);
-            color: var(--iron-red, #a32621);
-            line-height: 1;
-            margin-bottom: var(--space-xs, 8px);
-        }
-
-        .philosophy-principle h3 {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(18px, 1.6vw, 26px);
-            margin-bottom: var(--space-xs, 8px);
-        }
-
-        .philosophy-principle p {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .philosophy-statement-large {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(24px, 4vw, 52px);
-            line-height: 1.1;
-            color: var(--iron-black, #111111);
-            text-align: center;
-            max-width: 800px;
-            margin: var(--space-xl, 96px) auto 0;
-            padding-top: var(--space-lg, 64px);
-            border-top: 2px solid var(--iron-red, #a32621);
-        }
-
-        .philosophy-statement-large .highlight {
-            color: var(--iron-red, #a32621);
-        }
-
-        .philosophy-statement {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(20px, 2.5vw, 36px);
-            line-height: 1.2;
-            color: var(--iron-black, #111111);
-            border-top: 2px solid var(--iron-red, #a32621);
-            padding-top: var(--space-md, 32px);
-            margin-top: var(--space-md, 32px);
-        }
-
-        @media (max-width: 768px) {
-            .philosophy-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
-
-            .philosophy-grid-reverse {
-                direction: ltr;
-            }
-
-            .philosophy-content {
-                text-align: center;
-            }
-
-            .philosophy-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .philosophy-image {
-                min-height: 160px;
-                order: -1;
-            }
-
-            .philosophy-image .placeholder-text .icon {
-                font-size: 28px;
-            }
-
-            .philosophy-principles {
-                grid-template-columns: 1fr;
-                gap: var(--space-sm, 16px);
-            }
-
-            .philosophy-statement-large {
-                font-size: clamp(22px, 5vw, 36px);
-            }
-        }
-
-        /* ============================================================
-           12. WHAT WE ARE NOT
-           ============================================================ */
-        .what-we-are-not {
-            background: var(--iron-white, #f7f7f4);
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .not-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md, 32px);
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .not-item {
-            padding: var(--space-md, 32px);
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            background: var(--iron-white, #f7f7f4);
-            text-align: center;
-        }
-
-        .not-item:hover {
-            border-color: var(--iron-black, #111111);
-            transform: translateY(-4px);
-        }
-
-        .not-item .icon {
-            font-size: clamp(32px, 3vw, 48px);
-            display: block;
-            margin-bottom: var(--space-sm, 16px);
-            opacity: 0.6;
-        }
-
-        .not-item h4 {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(17px, 1.4vw, 22px);
-            margin-bottom: var(--space-xs, 8px);
-        }
-
-        .not-item p {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        @media (max-width: 768px) {
-            .not-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .not-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ============================================================
-           13. IMAGE PLACEHOLDER UTILITIES
-           ============================================================ */
+        /* IMAGE PLACEHOLDER */
         .img-placeholder {
             background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
             border-radius: 4px;
@@ -976,11 +545,6 @@
             gap: var(--space-xs, 8px);
         }
 
-        .img-placeholder .content .icon {
-            font-size: 42px;
-            opacity: 0.4;
-        }
-
         .img-placeholder .content .label {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-size: clamp(11px, 0.8vw, 14px);
@@ -996,64 +560,257 @@
         }
 
         @media (max-width: 768px) {
-            .img-placeholder {
-                min-height: 140px;
-            }
-            .img-placeholder .content .icon {
-                font-size: 28px;
-            }
+            .img-placeholder { min-height: 140px; }
         }
 
-        /* ============================================================
-           14. UTILITY
-           ============================================================ */
-        .text-center {
+        /* CORE BELIEF */
+        .core-belief {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .text-left {
+        .core-belief .philosophy-statement {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 2.5vw, 36px);
+            line-height: 1.3;
+            color: var(--iron-black, #111111);
+            border-top: 2px solid var(--iron-red, #a32621);
+            padding-top: var(--space-md, 32px);
+            margin-top: var(--space-md, 32px);
             text-align: left;
         }
 
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
+        .core-belief .philosophy-statement p {
+            margin-bottom: var(--space-xs, 8px);
         }
 
-        .mt-sm {
-            margin-top: var(--space-sm, 16px);
+        .core-belief .philosophy-statement p:last-child {
+            margin-bottom: 0;
         }
 
-        .mt-md {
-            margin-top: var(--space-md, 32px);
-        }
-
-        .mt-lg {
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .border-top {
+        /* BELIEFS SECTION */
+        .beliefs-section {
             border-top: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .border-bottom {
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bg-white {
+        .beliefs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md, 32px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .belief-item {
+            padding: var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             background: var(--iron-white, #f7f7f4);
         }
 
-        .full-width {
-            grid-column: 1 / -1;
+        .belief-item:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .belief-item h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.6vw, 24px);
+            margin-bottom: var(--space-xs, 8px);
+            line-height: 1.3;
+        }
+
+        .belief-item p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.9vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .beliefs-grid { grid-template-columns: 1fr; gap: var(--space-sm, 16px); }
+        }
+
+        /* REJECT SECTION */
+        .reject-section {
+            background: var(--iron-black, #111111);
+            color: var(--iron-white, #f7f7f4);
+            padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reject-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 40%;
+            height: 80%;
+            background: radial-gradient(ellipse at center, rgba(163, 38, 33, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .reject-section .section-number { color: var(--iron-red, #a32621); }
+        .reject-section .heading-display-md { color: var(--iron-white, #f7f7f4); }
+
+        .reject-section p {
+            color: var(--iron-grey, #6b6b6b);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reject-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm, 16px);
+            max-width: 800px;
+            margin: var(--space-lg, 64px) auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reject-item {
+            padding: var(--space-sm, 16px) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(14px, 1vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .reject-item:hover {
+            color: var(--iron-white, #f7f7f4);
+            padding-left: 8px;
+        }
+
+        .reject-item::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--iron-red, #a32621);
+            flex-shrink: 0;
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 768px) {
+            .reject-list { grid-template-columns: 1fr; }
+        }
+
+        /* WHAT WE BELIEVE LINE */
+        .belief-line {
+            margin-top: var(--space-xl, 96px);
+            padding-top: var(--space-lg, 64px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .belief-line blockquote {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(20px, 3vw, 36px);
+            color: var(--iron-white, #f7f7f4);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.3;
+        }
+
+        .belief-line blockquote span {
+            color: var(--iron-red, #a32621);
+        }
+
+        /* CHARACTER FOUNDATION */
+        .character-section {
+            background: var(--iron-white, #f7f7f4);
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(var(--space-md, 32px), 5vw, var(--space-xl, 96px));
+            align-items: center;
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .character-content .heading-display-sm {
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .character-content p {
+            margin-bottom: var(--space-md, 32px);
+            color: var(--iron-ink, #1c1c1c);
+        }
+
+        .character-statement {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 2.5vw, 32px);
+            line-height: 1.3;
+            color: var(--iron-black, #111111);
+            border-top: 2px solid var(--iron-red, #a32621);
+            padding-top: var(--space-md, 32px);
+            margin-top: var(--space-md, 32px);
+        }
+
+        @media (max-width: 768px) {
+            .character-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
+
+            .character-content { text-align: center; }
+            .character-content p { margin-left: auto; margin-right: auto; }
+        }
+
+        /* CTA */
+        .cta-philosophy {
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .cta-philosophy .heading-display-sm {
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .cta-philosophy p {
+            max-width: 500px;
+            margin: 0 auto var(--space-md, 32px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm, 16px);
+            justify-content: center;
+        }
+
+        @media (max-width: 500px) {
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
             <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
@@ -1071,54 +828,46 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    PAGE HEADER
-    ============================================================ -->
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">The Philosophy</div>
-            <h1 class="heading-display heading-display-lg">The Iron Isn't About Becoming Someone Else.</h1>
+            <h1 class="heading-display heading-display-lg">Stop Drifting. Start Building.</h1>
             <p class="text-body">
-                It's about becoming more capable of being yourself.
+                The Iron is a South African men's personal-development platform for men who want more from themselves but need the structure, accountability and environment to follow through.
             </p>
         </div>
     </section>
 
-    <!-- ============================================================
-    THE CORE BELIEF
-    ============================================================ -->
+    <!-- THE CORE BELIEF -->
     <section>
         <div class="container">
-            <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="core-belief reveal">
                 <div class="section-number">The Core Belief</div>
-                <h2 class="heading-display heading-display-md">A Development System for Men Who Are Willing to Build.</h2>
+                <h2 class="heading-display heading-display-md">A Man Is Responsible For His Development.</h2>
                 <p class="text-body" style="margin-top: var(--space-md);">
-                    The Iron isn't about performing an image of masculinity.<br />
-                    It is about developing the capabilities that allow you to live a life you respect.
+                    Not everything that happens to him is his fault.<br />
+                    But what he does next is his responsibility.
                 </p>
 
                 <div class="philosophy-statement">
-                    To think clearly.<br />
-                    To control yourself.<br />
-                    To keep your word.<br />
-                    To take care of your body.<br />
-                    To build healthy relationships.<br />
-                    To become financially capable.<br />
-                    To find direction.<br />
-                    And to keep improving.
+                    <p>We don't sell information.</p>
+                    <p>We sell structured progress.</p>
+                    <p style="color: var(--iron-red); margin-top: var(--space-sm);">Stop drifting. Start building.</p>
                 </div>
 
-                <!-- BIBLE VERSE -->
+                <!-- Bible verse — strategic break #1 -->
                 <div class="bible-verse" style="margin-top: var(--space-xl);">
-                    "Do not conform to the pattern of this world,<br />
-                    but be transformed by the renewing of your mind."
-                    <span class="ref">— Romans 12:2</span>
+                    "Trust in the Lord with all your heart<br />
+                    and lean not on your own understanding;<br />
+                    in all your ways submit to him,<br />
+                    and he will make your paths straight."
+                    <span class="ref">— Proverbs 3:5-6</span>
                 </div>
 
-                <!-- IMAGE PLACEHOLDER 1 -->
+                <!-- Image placeholder 1 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl);">
                     <div class="content">
-                        <span class="icon">🧠</span>
                         <span class="label">Philosophy Image</span>
                         <span class="sub-label">assets/images/editorial/philosophy-core.jpg</span>
                     </div>
@@ -1127,256 +876,171 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    THE PHILOSOPHY IN PRACTICE
-    ============================================================ -->
-    <section style="border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
+    <!-- WHAT WE BELIEVE -->
+    <section class="beliefs-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">The Philosophy in Practice</div>
-                <h2 class="heading-display heading-display-md">What We Believe</h2>
+                <div class="section-number">What We Believe</div>
+                <h2 class="heading-display heading-display-md">Six Beliefs.</h2>
                 <p class="text-body">
-                    The Iron is built on a foundation of principles that guide everything we do.
+                    These are not slogans. They are the principles that guide every decision we make.
                 </p>
             </div>
 
-            <div class="philosophy-principles">
-                <div class="philosophy-principle reveal">
-                    <div class="number">01</div>
-                    <h3>Capability Over Performance</h3>
-                    <p>We don't care about how you appear. We care about what you can actually do.</p>
+            <div class="beliefs-grid">
+                <div class="belief-item reveal">
+                    <h3>A man is responsible for his development.</h3>
+                    <p>Not everything that happens to him is his fault. But what he does next is his responsibility.</p>
                 </div>
-                <div class="philosophy-principle reveal">
-                    <div class="number">02</div>
-                    <h3>Standards Over Motivation</h3>
-                    <p>Motivation fades. Standards endure. Build a life that doesn't depend on how you feel.</p>
+
+                <div class="belief-item reveal">
+                    <h3>Strength is more than physical.</h3>
+                    <p>Mental strength. Emotional stability. Financial discipline. Physical health. Character. Relationships. Purpose.</p>
                 </div>
-                <div class="philosophy-principle reveal">
-                    <div class="number">03</div>
-                    <h3>Action Over Information</h3>
-                    <p>Knowledge without action changes very little. Implementation is the work.</p>
+
+                <div class="belief-item reveal">
+                    <h3>Discipline beats motivation.</h3>
+                    <p>You shouldn't need to feel inspired to do what matters. Build a life that doesn't depend on how you feel.</p>
                 </div>
-                <div class="philosophy-principle reveal">
-                    <div class="number">04</div>
-                    <h3>Community Over Isolation</h3>
-                    <p>The build happens together. Iron sharpens iron.</p>
+
+                <div class="belief-item reveal">
+                    <h3>Men need other men.</h3>
+                    <p>Not competition. Not posturing. Not hierarchy for its own sake. Brotherhood.</p>
                 </div>
-                <div class="philosophy-principle reveal">
-                    <div class="number">05</div>
-                    <h3>Responsibility Over Blame</h3>
-                    <p>Take ownership of what you can control. Build from there.</p>
+
+                <div class="belief-item reveal">
+                    <h3>Capability creates confidence.</h3>
+                    <p>Don't just tell a man to believe in himself. Help him become someone who has earned that belief.</p>
                 </div>
-                <div class="philosophy-principle reveal">
-                    <div class="number">06</div>
-                    <h3>Progress Over Perfection</h3>
-                    <p>You don't need to have it all figured out. You need to be willing to build.</p>
+
+                <div class="belief-item reveal">
+                    <h3>Masculinity should produce responsibility.</h3>
+                    <p>Not entitlement. Not domination. Not resentment. Responsibility.</p>
                 </div>
             </div>
 
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "For the Lord gives wisdom;<br />
-                from his mouth come knowledge and understanding."
-                <span class="ref">— Proverbs 2:6</span>
-            </div>
-
-            <!-- IMAGE PLACEHOLDER 2 -->
-            <div class="img-placeholder" style="margin-top: var(--space-xl);">
+            <!-- Image placeholder 2 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
                 <div class="content">
-                    <span class="icon">📖</span>
-                    <span class="label">Principles Image</span>
-                    <span class="sub-label">assets/images/editorial/philosophy-principles.jpg</span>
+                    <span class="label">Beliefs Image</span>
+                    <span class="sub-label">assets/images/editorial/philosophy-beliefs.jpg</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    WHAT THE IRON IS NOT
-    ============================================================ -->
-    <section class="what-we-are-not">
+    <!-- WHAT WE REJECT -->
+    <section class="reject-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">What We Are Not</div>
-                <h2 class="heading-display heading-display-md">Not Another Internet Persona.</h2>
+                <div class="section-number">What We Reject</div>
+                <h2 class="heading-display heading-display-md">What The Iron Is Not.</h2>
+                <p>
+                    Every strong brand has something it stands against. We are clear about what we reject — so you can be clear about what we are.
+                </p>
+            </div>
+
+            <div class="reject-list reveal">
+                <div class="reject-item">Red-pill ideology</div>
+                <div class="reject-item">Misogyny</div>
+                <div class="reject-item">Victim mentality</div>
+                <div class="reject-item">Manipulation</div>
+                <div class="reject-item">Pickup tactics</div>
+                <div class="reject-item">Fake alpha culture</div>
+                <div class="reject-item">Performative masculinity</div>
+                <div class="reject-item">Guru culture</div>
+                <div class="reject-item">Overnight-success promises</div>
+                <div class="reject-item">Toxic positivity</div>
+                <div class="reject-item">Endless motivational content</div>
+                <div class="reject-item">Pretending life is easy</div>
+            </div>
+
+            <div class="belief-line reveal">
+                <blockquote>
+                    The Iron can discuss difficult subjects.<br />
+                    But the conclusion should almost always come back to:<br />
+                    <span>"What is within your control?"</span>
+                </blockquote>
+            </div>
+
+            <!-- Bible verse — strategic break #2 -->
+            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                "For God gave us a spirit not of fear<br />
+                but of <strong>power and love and self-control.</strong>"
+                <span class="ref">— 2 Timothy 1:7</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHARACTER AS FOUNDATION -->
+    <section class="character-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">The Foundation</div>
+                <h2 class="heading-display heading-display-md">Character Under Everything.</h2>
                 <p class="text-body">
-                    We're clear about what The Iron isn't. So you can be clear about what it is.
+                    The point isn't simply to become successful.<br />
+                    It's to become someone worth becoming.
                 </p>
             </div>
 
-            <div class="not-grid">
-                <div class="not-item reveal">
-                    <span class="icon">✖</span>
-                    <h4>Not a Motivation Cult</h4>
-                    <p>You don't need someone screaming at you every morning.</p>
-                </div>
-                <div class="not-item reveal">
-                    <span class="icon">✖</span>
-                    <h4>Not a Dating Guru Community</h4>
-                    <p>Relationships matter. But The Iron isn't built around chasing women.</p>
-                </div>
-                <div class="not-item reveal">
-                    <span class="icon">✖</span>
-                    <h4>Not a Get-Rich-Quick Program</h4>
-                    <p>Money matters. Financial capability takes time.</p>
-                </div>
-                <div class="not-item reveal">
-                    <span class="icon">✖</span>
-                    <h4>Not a Fitness Club</h4>
-                    <p>Your body matters. But physical development is only one part of a complete life.</p>
-                </div>
-                <div class="not-item reveal">
-                    <span class="icon">✖</span>
-                    <h4>Not a Place to Perform</h4>
-                    <p>You don't need to pretend you've got everything figured out.</p>
-                </div>
-                <div class="not-item reveal">
-                    <span class="icon">✖</span>
-                    <h4>Not a Place to Blame</h4>
-                    <p>Take responsibility for what you can control.</p>
-                </div>
-            </div>
-
-            <div class="reveal" style="text-align: center; margin-top: var(--space-xl);">
-                <div class="philosophy-statement">
-                    The Iron is about becoming more capable.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    THE STANDARD
-    ============================================================ -->
-    <section>
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">The Iron Code</div>
-                <h2 class="heading-display heading-display-md">How We Show Up.</h2>
-            </div>
-
-            <div class="philosophy-grid">
-                <div class="philosophy-content reveal">
-                    <div style="margin-bottom: var(--space-md);">
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">01</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Take Responsibility.</h3>
-                        <p class="text-body">Own your decisions.</p>
-                    </div>
-                    <div style="margin-bottom: var(--space-md);">
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">02</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Keep Your Word.</h3>
-                        <p class="text-body">Especially the promises you make to yourself.</p>
-                    </div>
-                    <div style="margin-bottom: var(--space-md);">
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">03</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Respect People.</h3>
-                        <p class="text-body">Strength does not require disrespect.</p>
-                    </div>
-                    <div style="margin-bottom: var(--space-md);">
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">04</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Stay Curious.</h3>
-                        <p class="text-body">Don't pretend to be an expert.</p>
-                    </div>
-                    <div style="margin-bottom: var(--space-md);">
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">05</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Do The Work.</h3>
-                        <p class="text-body">Knowledge without action changes very little.</p>
-                    </div>
-                    <div style="margin-bottom: var(--space-md);">
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">06</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Build Quietly.</h3>
-                        <p class="text-body">Your development doesn't need to become a performance.</p>
-                    </div>
-                    <div>
-                        <div style="font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 32px); font-weight: 600; color: var(--iron-red);">07</div>
-                        <h3 class="heading-display-sm" style="font-size: clamp(18px, 1.6vw, 26px);">Leave People Better.</h3>
-                        <p class="text-body">The standard applies to how you treat others too.</p>
-                    </div>
-                </div>
-                <!-- IMAGE PLACEHOLDER 3 -->
-                <div class="philosophy-image reveal">
-                    <div class="placeholder-text">
-                        <span class="icon">⚔️</span>
-                        <span class="label">Iron Code Image</span>
-                        <span class="sub-label">assets/images/editorial/iron-code.jpg</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Whatever you do, work at it with all your heart,<br />
-                as working for the Lord, not for human masters."
-                <span class="ref">— Colossians 3:23</span>
-            </div>
-
-            <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
-                <div class="philosophy-statement-large">
-                    Raise the standard.<br />
-                    Do the work.<br />
-                    <span class="highlight">Build accordingly.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    WHY THE IRON EXISTS
-    ============================================================ -->
-    <section style="background: var(--iron-black); color: var(--iron-white);">
-        <div class="container">
-            <div class="reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="section-number" style="color: var(--iron-red);">Why The Iron Exists</div>
-                <h2 class="heading-display heading-display-md" style="color: var(--iron-white);">There Are Enough People Telling Men Who They Should Be.</h2>
-                <p class="text-body" style="color: var(--iron-grey); margin-top: var(--space-md);">
-                    Be richer. Be stronger. Be more dominant. Get more women. Work harder. Never show weakness. Become an entirely different person.
-                </p>
-                <p class="text-body" style="color: var(--iron-grey); margin-top: var(--space-sm);">
-                    The internet has no shortage of instructions for performing masculinity.
-                </p>
-
-                <div style="margin-top: var(--space-xl); padding: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
-                    <p style="font-family: var(--font-display); font-size: clamp(18px, 2.5vw, 32px); line-height: 1.3; color: var(--iron-white);">
-                        The Iron believes:<br />
-                        Becoming a better man isn't about performing an image.<br />
-                        <span style="color: var(--iron-red);">It is about developing the capabilities that allow you to live a life you respect.</span>
+            <div class="character-grid">
+                <div class="character-content reveal">
+                    <h3 class="heading-display-sm">Underneath The Six Areas.</h3>
+                    <p class="text-body">
+                        You can develop your mind, body, money, career, relationships and purpose — and still become someone you don't respect.
                     </p>
-                </div>
+                    <p class="text-body">
+                        Character is the foundation. It is what remains when nobody is watching. It is the relationship between what you believe and how you behave.
+                    </p>
+                    <p class="text-body">
+                        The Iron is not built around performance. It is built around the person you are becoming.
+                    </p>
 
-                <!-- BIBLE VERSE (DARK) -->
-                <div class="bible-verse-dark" style="margin-top: var(--space-xl);">
-                    "For God gave us a spirit not of fear<br />
-                    but of <strong>power and love and self-control.</strong>"
-                    <span class="ref">— 2 Timothy 1:7</span>
-                </div>
-
-                <!-- IMAGE PLACEHOLDER 4 -->
-                <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
-                    <div class="content">
-                        <span class="icon">🌅</span>
-                        <span class="label">Mission Image</span>
-                        <span class="sub-label">assets/images/editorial/why-we-exist.jpg</span>
+                    <div class="character-statement">
+                        Become a man<br />
+                        you respect.
                     </div>
                 </div>
 
-                <div style="margin-top: var(--space-lg);">
-                    <a href="membership.html" class="btn-primary btn-arrow"><span>Join The Iron →</span></a>
+                <!-- Image placeholder 3 -->
+                <div class="img-placeholder reveal">
+                    <div class="content">
+                        <span class="label">Character Image</span>
+                        <span class="sub-label">assets/images/editorial/philosophy-character.jpg</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- CTA -->
+    <section class="cta-philosophy">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-number">Begin Your Journey</div>
+                <h2 class="heading-display heading-display-sm">The Philosophy Is Simple.</h2>
+                <p class="text-body">
+                    Stop drifting. Start building.<br />
+                    And do it alongside men doing the same.
+                </p>
+                <div class="cta-actions">
+                    <a href="community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                    <a href="framework.html" class="btn-secondary btn-arrow">Explore The Framework →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1409,16 +1073,10 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. MOBILE NAVIGATION
-            // ============================================================
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -1462,9 +1120,6 @@
                 });
             }
 
-            // ============================================================
-            // 2. HEADER SCROLL EFFECT
-            // ============================================================
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -1476,9 +1131,6 @@
                 }, { passive: true });
             }
 
-            // ============================================================
-            // 3. REVEAL ANIMATIONS
-            // ============================================================
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
