@@ -514,7 +514,7 @@
 
         /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -555,6 +555,45 @@
         }
 
         .pillar-intro .text-body { font-size: clamp(15px, 1.2vw, 20px); }
+
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
 
         /* FOCUS GRID */
         .focus-grid {
@@ -611,7 +650,7 @@
             .focus-grid { grid-template-columns: 1fr; }
         }
 
-        /* FRAMEWORK SECTION (DARK) */
+        /* FRAMEWORK SECTION */
         .framework-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
@@ -714,7 +753,7 @@
             .framework-steps { grid-template-columns: 1fr 1fr; }
         }
 
-        /* CTA PILLAR */
+        /* CTA */
         .cta-pillar {
             background: var(--iron-white, #f7f7f4);
             text-align: center;
@@ -748,45 +787,6 @@
                 max-width: 280px;
             }
         }
-
-        /* IMAGE PLACEHOLDER */
-        .img-placeholder {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 200px;
-            width: 100%;
-            color: var(--iron-grey, #6b6b6b);
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .img-placeholder .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs, 8px);
-        }
-
-        .img-placeholder .content .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .img-placeholder .content .sub-label {
-            font-size: clamp(9px, 0.6vw, 12px);
-            opacity: 0.4;
-        }
-
-        @media (max-width: 768px) {
-            .img-placeholder { min-height: 140px; }
-        }
     </style>
 </head>
 <body>
@@ -812,7 +812,7 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <div class="section-number">05 / Money</div>
+            <div class="section-number">04 / Money</div>
             <div class="pillar-icon">
                 <svg viewBox="0 0 48 48">
                     <polyline points="8,36 18,26 26,32 40,12" />
@@ -839,14 +839,7 @@
                     Learn to earn, manage, save and invest with discipline.
                 </p>
 
-                <!-- BIBLE VERSE -->
-                <div class="bible-verse" style="margin-top: var(--space-xl);">
-                    "The wise store up choice food and olive oil,<br />
-                    but fools gulp theirs down."
-                    <span class="ref">— Proverbs 21:20</span>
-                </div>
-
-                <!-- IMAGE PLACEHOLDER 1 -->
+                <!-- Image placeholder 1 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl);">
                     <div class="content">
                         <span class="label">Money Pillar Image</span>
@@ -900,13 +893,6 @@
                     <p>Take ownership of your financial future and the decisions that shape it.</p>
                 </div>
             </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "The plans of the diligent lead to profit<br />
-                as surely as haste leads to poverty."
-                <span class="ref">— Proverbs 21:5</span>
-            </div>
         </div>
     </section>
 
@@ -948,7 +934,7 @@
                     </div>
                 </div>
 
-                <!-- IMAGE PLACEHOLDER 2 -->
+                <!-- Image placeholder 2 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
                     <div class="content">
                         <span class="label">Money Framework</span>
@@ -956,12 +942,11 @@
                     </div>
                 </div>
 
-                <!-- BIBLE VERSE (DARK) -->
+                <!-- Bible verse — strategic break -->
                 <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                    "Whoever loves money never has enough;<br />
-                    whoever loves wealth is never satisfied with their income.<br />
-                    <strong>This too is meaningless.</strong>"
-                    <span class="ref">— Ecclesiastes 5:10</span>
+                    "The plans of the diligent lead to profit<br />
+                    as surely as haste leads to poverty."
+                    <span class="ref">— Proverbs 21:5</span>
                 </div>
 
                 <div class="disclaimer">
@@ -980,27 +965,20 @@
                 <div class="section-number">Begin Your Journey</div>
                 <h2 class="heading-display heading-display-sm">Start Building Your Financial Capability.</h2>
                 <p class="text-body">
-                    Join The Iron and access the full Money development path, resources and community.
+                    Join The Iron Open and access the Money development path, resources and community.
                 </p>
                 <div class="cta-actions">
-                    <a href="../membership.html" class="btn-primary btn-arrow"><span>Join The Iron →</span></a>
+                    <a href="../community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                     <a href="../framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
                 </div>
             </div>
 
-            <!-- IMAGE PLACEHOLDER 3 -->
+            <!-- Image placeholder 3 -->
             <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
                 <div class="content">
-                    <span class="label">Start Your Journey</span>
+                    <span class="label">Begin the Work</span>
                     <span class="sub-label">assets/images/pillars/money-cta.jpg</span>
                 </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "But remember the Lord your God,<br />
-                for it is he who gives you the ability to produce wealth."
-                <span class="ref">— Deuteronomy 8:18</span>
             </div>
         </div>
     </section>
@@ -1011,9 +989,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1046,7 +1024,6 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
