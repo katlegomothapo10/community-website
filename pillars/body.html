@@ -514,7 +514,7 @@
 
         /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -555,6 +555,45 @@
         }
 
         .pillar-intro .text-body { font-size: clamp(15px, 1.2vw, 20px); }
+
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
 
         /* FOCUS GRID */
         .focus-grid {
@@ -611,7 +650,7 @@
             .focus-grid { grid-template-columns: 1fr; }
         }
 
-        /* FRAMEWORK SECTION (DARK) */
+        /* FRAMEWORK SECTION */
         .framework-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
@@ -695,9 +734,9 @@
         .framework-equation .equation {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(24px, 3vw, 40px);
+            font-size: clamp(20px, 3vw, 40px);
             color: var(--iron-white, #f7f7f4);
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         .framework-equation .equation .highlight { color: var(--iron-red, #a32621); }
@@ -705,14 +744,14 @@
 
         @media (max-width: 768px) {
             .framework-steps { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm, 16px); }
-            .framework-equation .equation { font-size: clamp(20px, 3vw, 32px); }
+            .framework-equation .equation { font-size: clamp(18px, 3vw, 28px); }
         }
 
         @media (max-width: 500px) {
             .framework-steps { grid-template-columns: 1fr 1fr; }
         }
 
-        /* CTA PILLAR */
+        /* CTA */
         .cta-pillar {
             background: var(--iron-white, #f7f7f4);
             text-align: center;
@@ -745,45 +784,6 @@
                 width: 100%;
                 max-width: 280px;
             }
-        }
-
-        /* IMAGE PLACEHOLDER */
-        .img-placeholder {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 200px;
-            width: 100%;
-            color: var(--iron-grey, #6b6b6b);
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .img-placeholder .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs, 8px);
-        }
-
-        .img-placeholder .content .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .img-placeholder .content .sub-label {
-            font-size: clamp(9px, 0.6vw, 12px);
-            opacity: 0.4;
-        }
-
-        @media (max-width: 768px) {
-            .img-placeholder { min-height: 140px; }
         }
     </style>
 </head>
@@ -839,14 +839,7 @@
                     Build strength, health, physical discipline and habits that increase your capacity.
                 </p>
 
-                <!-- BIBLE VERSE -->
-                <div class="bible-verse" style="margin-top: var(--space-xl);">
-                    "Do you not know that your bodies are temples of the Holy Spirit,<br />
-                    who is in you, whom you have received from God?"
-                    <span class="ref">— 1 Corinthians 6:19</span>
-                </div>
-
-                <!-- IMAGE PLACEHOLDER 1 -->
+                <!-- Image placeholder 1 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl);">
                     <div class="content">
                         <span class="label">Body Pillar Image</span>
@@ -900,13 +893,6 @@
                     <p>Understand that growth happens during rest, not during the work.</p>
                 </div>
             </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "For physical training is of some value,<br />
-                but godliness has value for all things."
-                <span class="ref">— 1 Timothy 4:8</span>
-            </div>
         </div>
     </section>
 
@@ -955,7 +941,7 @@
                     </div>
                 </div>
 
-                <!-- IMAGE PLACEHOLDER 2 -->
+                <!-- Image placeholder 2 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
                     <div class="content">
                         <span class="label">Body Framework</span>
@@ -963,12 +949,11 @@
                     </div>
                 </div>
 
-                <!-- BIBLE VERSE (DARK) -->
+                <!-- Bible verse — strategic break -->
                 <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                    "I have the right to do anything," you say—<br />
-                    but not everything is beneficial. "I have the right to do anything"—<br />
-                    but <strong>I will not be mastered by anything.</strong>
-                    <span class="ref">— 1 Corinthians 6:12</span>
+                    "Do you not know that your bodies are temples of the Holy Spirit,<br />
+                    who is in you, whom you have received from God?"
+                    <span class="ref">— 1 Corinthians 6:19</span>
                 </div>
             </div>
         </div>
@@ -981,28 +966,20 @@
                 <div class="section-number">Begin Your Journey</div>
                 <h2 class="heading-display heading-display-sm">Start Building Your Body.</h2>
                 <p class="text-body">
-                    Join The Iron and access the full Body development path, resources and community.
+                    Join The Iron Open and access the Body development path, resources and community.
                 </p>
                 <div class="cta-actions">
-                    <a href="../membership.html" class="btn-primary btn-arrow"><span>Join The Iron →</span></a>
+                    <a href="../community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                     <a href="../framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
                 </div>
             </div>
 
-            <!-- IMAGE PLACEHOLDER 3 -->
+            <!-- Image placeholder 3 -->
             <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
                 <div class="content">
-                    <span class="label">Start Your Journey</span>
+                    <span class="label">Begin the Work</span>
                     <span class="sub-label">assets/images/pillars/body-cta.jpg</span>
                 </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Therefore I do not run like someone running aimlessly;<br />
-                I do not fight like a boxer beating the air.<br />
-                No, I strike a blow to my body and make it my slave."
-                <span class="ref">— 1 Corinthians 9:26-27</span>
             </div>
         </div>
     </section>
@@ -1013,9 +990,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1048,7 +1025,6 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
