@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>THE IRON — Build a Life You Respect</title>
-    <meta name="description" content="A private community and development system for men building greater capability—in mind, character, body, relationships, money and purpose." />
+    <title>THE IRON — Become a Man You Respect</title>
+    <meta name="description" content="A structured personal-development community for men who are serious about building themselves and their lives. Iron sharpens iron." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           THE IRON — Global Styles
-           ============================================================ */
-
-        /* ============================================================
-           1. DESIGN TOKENS
-           ============================================================ */
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -39,9 +32,6 @@
             --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================================
-           2. RESET & BASE
-           ============================================================ */
         *,
         *::before,
         *::after {
@@ -64,25 +54,14 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
 
         ::selection {
             background: var(--iron-red, #a32621);
             color: var(--iron-white, #f7f7f4);
         }
 
-        /* ============================================================
-           3. CONTAINER — FULLY RESPONSIVE
-           ============================================================ */
         .container {
             width: var(--container-width, min(1200px, calc(100% - 80px)));
             margin: 0 auto;
@@ -90,50 +69,26 @@
         }
 
         @media (max-width: 1024px) {
-            :root {
-                --container-width: min(100% - 60px, 1200px);
-            }
+            :root { --container-width: min(100% - 60px, 1200px); }
         }
-
         @media (max-width: 768px) {
-            :root {
-                --container-width: min(100% - 40px, 1200px);
-            }
-            .container {
-                padding: 0 16px;
-            }
+            :root { --container-width: min(100% - 40px, 1200px); }
         }
-
         @media (max-width: 500px) {
-            .container {
-                padding: 0 12px;
-            }
-            :root {
-                --container-width: min(100% - 24px, 1200px);
-            }
+            .container { padding: 0 16px; }
+            :root { --container-width: min(100% - 32px, 1200px); }
         }
 
-        /* ============================================================
-           4. TYPOGRAPHY
-           ============================================================ */
+        /* TYPOGRAPHY */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
-        .heading-display-lg {
-            font-size: clamp(32px, 8vw, 80px);
-        }
-
-        .heading-display-md {
-            font-size: clamp(28px, 6vw, 64px);
-        }
-
-        .heading-display-sm {
-            font-size: clamp(22px, 4vw, 40px);
-        }
+        .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
+        .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
+        .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -141,20 +96,6 @@
             font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
-        }
-
-        .text-body-sm {
-            font-size: clamp(12px, 0.9vw, 15px);
-            line-height: 1.6;
-        }
-
-        .text-meta {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(9px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
         }
 
         .section-number {
@@ -165,34 +106,6 @@
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
             margin-bottom: var(--space-xs, 8px);
-        }
-
-        .verse {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(16px, 1.2vw, 20px);
-            color: var(--iron-grey, #6b6b6b);
-            line-height: 1.6;
-            max-width: 600px;
-            margin: var(--space-md, 32px) auto;
-            padding-left: var(--space-md, 32px);
-            border-left: 2px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .verse strong {
-            color: var(--iron-black, #111111);
-            font-weight: 600;
-        }
-
-        .verse-reference {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 14px);
-            font-style: normal;
-            font-weight: 400;
-            color: var(--iron-grey, #6b6b6b);
-            display: block;
-            margin-top: var(--space-xs, 8px);
         }
 
         .bible-verse {
@@ -210,10 +123,7 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bible-verse strong {
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-        }
+        .bible-verse strong { color: var(--iron-red, #a32621); font-weight: 600; }
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -240,10 +150,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .bible-verse-dark strong {
-            color: var(--iron-white, #f7f7f4);
-            font-weight: 600;
-        }
+        .bible-verse-dark strong { color: var(--iron-white, #f7f7f4); font-weight: 600; }
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -256,21 +163,10 @@
         }
 
         @media (max-width: 500px) {
-            .verse {
-                padding-left: var(--space-sm, 16px);
-                font-size: 15px;
-                margin: var(--space-sm, 16px) auto;
-            }
-            .bible-verse,
-            .bible-verse-dark {
-                font-size: 15px;
-                padding: var(--space-sm, 16px);
-            }
+            .bible-verse, .bible-verse-dark { font-size: 15px; padding: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           5. BUTTONS
-           ============================================================ */
+        /* BUTTONS */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -289,7 +185,6 @@
             overflow: hidden;
             text-align: center;
             min-width: 120px;
-            width: auto;
         }
 
         .btn-primary::before {
@@ -304,18 +199,9 @@
             z-index: 0;
         }
 
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary:hover {
-            border-color: var(--iron-red, #a32621);
-        }
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
             display: inline-flex;
@@ -334,7 +220,6 @@
             cursor: pointer;
             text-align: center;
             min-width: 120px;
-            width: auto;
         }
 
         .btn-secondary:hover {
@@ -348,13 +233,10 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .btn-arrow:hover::after {
-            transform: translateX(6px);
-        }
+        .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
-            .btn-primary,
-            .btn-secondary {
+            .btn-primary, .btn-secondary {
                 min-width: 100px;
                 padding: 10px 14px;
                 font-size: 12px;
@@ -363,9 +245,7 @@
             }
         }
 
-        /* ============================================================
-           6. HEADER / NAVIGATION
-           ============================================================ */
+        /* HEADER */
         .site-header {
             position: fixed;
             top: 0;
@@ -401,13 +281,8 @@
             flex-shrink: 0;
         }
 
-        .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .site-logo:hover {
-            opacity: 0.7;
-        }
+        .site-logo span { color: var(--iron-red, #a32621); }
+        .site-logo:hover { opacity: 0.7; }
 
         .nav-desktop {
             display: flex;
@@ -439,21 +314,10 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-desktop a:hover {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-
-        .nav-desktop a.active {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a.active::after {
-            width: 100%;
-        }
+        .nav-desktop a:hover { color: var(--iron-black, #111111); }
+        .nav-desktop a:hover::after { width: 100%; }
+        .nav-desktop a.active { color: var(--iron-black, #111111); }
+        .nav-desktop a.active::after { width: 100%; }
 
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
@@ -464,9 +328,7 @@
             font-size: clamp(8px, 0.7vw, 13px);
         }
 
-        .nav-desktop .nav-cta::after {
-            display: none;
-        }
+        .nav-desktop .nav-cta::after { display: none; }
 
         .nav-desktop .nav-cta:hover {
             background: var(--iron-black, #111111);
@@ -491,17 +353,9 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         @media (max-width: 900px) {
             .nav-desktop {
@@ -525,14 +379,8 @@
             }
 
             @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
 
             .nav-desktop a {
@@ -544,9 +392,7 @@
                 text-align: center;
             }
 
-            .nav-desktop a:last-child {
-                border-bottom: none;
-            }
+            .nav-desktop a:last-child { border-bottom: none; }
 
             .nav-desktop .nav-cta {
                 border: none;
@@ -560,14 +406,10 @@
                 color: var(--iron-red, #a32621);
             }
 
-            .nav-toggle {
-                display: flex;
-            }
+            .nav-toggle { display: flex; }
         }
 
-        /* ============================================================
-           7. SECTIONS
-           ============================================================ */
+        /* SECTIONS */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
         }
@@ -582,17 +424,6 @@
             margin: 0 auto;
         }
 
-        .section-header.text-left {
-            text-align: left;
-        }
-
-        .section-header.text-left p {
-            margin: 0;
-        }
-
-        /* ============================================================
-           8. REVEAL ANIMATION
-           ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -604,9 +435,7 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-           9. FOOTER
-           ============================================================ */
+        /* FOOTER */
         .site-footer {
             background: var(--iron-black, #111111);
             color: var(--iron-grey, #6b6b6b);
@@ -625,14 +454,8 @@
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .footer-brand .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .footer-brand p {
-            font-size: clamp(11px, 0.7vw, 14px);
-            max-width: 300px;
-        }
+        .footer-brand .site-logo span { color: var(--iron-red, #a32621); }
+        .footer-brand p { font-size: clamp(11px, 0.7vw, 14px); max-width: 300px; }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
@@ -659,9 +482,7 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .footer-col a:hover {
-            color: var(--iron-white, #f7f7f4);
-        }
+        .footer-col a:hover { color: var(--iron-white, #f7f7f4); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -679,11 +500,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md, 32px);
             }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-
+            .footer-brand { grid-column: 1 / -1; }
             .footer-bottom {
                 flex-direction: column;
                 gap: var(--space-xs, 8px);
@@ -692,105 +509,51 @@
         }
 
         @media (max-width: 500px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
-        /* ============================================================
-           10. PAGE HEADER
-           ============================================================ */
-        .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
-            padding-bottom: var(--space-lg, 64px);
-            background: var(--iron-white, #f7f7f4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            text-align: center;
-        }
-
-        .page-header .heading-display-lg {
-            margin-bottom: var(--space-xs, 8px);
-        }
-
-        .page-header p {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ============================================================
-           11. DATA STRIP
-           ============================================================ */
-        .data-strip {
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            padding: var(--space-md, 32px) 0;
-            background: var(--iron-white, #f7f7f4);
-        }
-
-        .data-strip-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-md, 32px);
-            text-align: center;
-        }
-
-        .data-strip-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .data-strip-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .data-strip-item .numeral {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(24px, 4vw, 52px);
-            line-height: 1;
-            color: var(--iron-black, #111111);
-            display: block;
-        }
-
-        .data-strip-item .numeral .counter {
-            display: inline-block;
-        }
-
-        .data-strip-item .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(9px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
             color: var(--iron-grey, #6b6b6b);
-            margin-top: 4px;
-            display: block;
+            text-align: center;
+            padding: var(--space-md, 32px);
         }
 
-        @media (max-width: 600px) {
-            .data-strip-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-md, 32px);
-            }
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
         }
 
-        @media (max-width: 400px) {
-            .data-strip-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
-            .data-strip-item .numeral {
-                font-size: 28px;
-            }
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
         }
 
-        /* ============================================================
-           12. HERO
-           ============================================================ */
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
+
+        /* HERO */
         .hero {
-            padding-top: clamp(70px, 10vh, 100px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-xl, 96px);
             background: var(--iron-white, #f7f7f4);
             position: relative;
@@ -822,50 +585,30 @@
             color: var(--iron-ink, #1c1c1c);
         }
 
+        .hero-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: var(--space-md, 32px);
+            max-width: 500px;
+        }
+
+        .hero-areas span {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--iron-grey, #6b6b6b);
+            padding: 2px 10px;
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            border-radius: 2px;
+        }
+
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
             gap: var(--space-sm, 16px);
             align-items: center;
-        }
-
-        .hero-image {
-            min-height: 280px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-        }
-
-        .hero-image .placeholder-text {
-            text-align: center;
-            padding: var(--space-md, 32px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .hero-image .placeholder-text .icon {
-            font-size: 48px;
-            display: block;
-            margin-bottom: var(--space-sm, 16px);
-            opacity: 0.5;
-        }
-
-        .hero-image .placeholder-text .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .hero-image .placeholder-text .sub-label {
-            font-size: clamp(10px, 0.6vw, 12px);
-            opacity: 0.5;
-            margin-top: var(--space-xs, 8px);
         }
 
         .hero-verse {
@@ -876,9 +619,7 @@
             color: var(--iron-grey, #6b6b6b);
         }
 
-        .hero-verse strong {
-            color: var(--iron-black, #111111);
-        }
+        .hero-verse strong { color: var(--iron-black, #111111); }
 
         @media (max-width: 900px) {
             .hero-grid {
@@ -895,24 +636,18 @@
                 margin-right: auto;
             }
 
+            .hero-areas {
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             .hero-actions {
                 justify-content: center;
-            }
-
-            .hero-image {
-                min-height: 200px;
-                order: -1;
-            }
-
-            .hero-image .placeholder-text .icon {
-                font-size: 36px;
             }
         }
 
         @media (max-width: 500px) {
-            .hero-image {
-                min-height: 160px;
-            }
             .hero-actions {
                 flex-direction: column;
                 width: 100%;
@@ -924,220 +659,19 @@
                 max-width: 280px;
                 justify-content: center;
             }
-            .hero-content .heading-display-lg {
-                font-size: clamp(28px, 8vw, 40px);
-            }
         }
 
-        /* ============================================================
-           13. GAP SECTION
-           ============================================================ */
-        .gap-section {
-            background: var(--iron-white, #f7f7f4);
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .gap-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(var(--space-md, 32px), 5vw, var(--space-xl, 96px));
-            align-items: center;
-        }
-
-        .gap-content {
-            text-align: left;
-        }
-
-        .gap-content .heading-display-md {
-            margin-bottom: var(--space-sm, 16px);
-        }
-
-        .gap-content p {
-            margin-bottom: var(--space-md, 32px);
-            color: var(--iron-ink, #1c1c1c);
-        }
-
-        .gap-statement {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(20px, 2.5vw, 36px);
-            line-height: 1.2;
-            color: var(--iron-black, #111111);
-            border-top: 2px solid var(--iron-red, #a32621);
-            padding-top: var(--space-md, 32px);
-        }
-
-        .gap-image {
-            min-height: 220px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            color: var(--iron-grey, #6b6b6b);
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.9vw, 16px);
-        }
-
-        .gap-image .placeholder-text {
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .gap-image .placeholder-text .icon {
-            font-size: 36px;
-            display: block;
-            margin-bottom: var(--space-sm, 16px);
-            opacity: 0.5;
-        }
-
-        .gap-image .placeholder-text .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 13px);
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .gap-image .placeholder-text .sub-label {
-            font-size: clamp(9px, 0.5vw, 11px);
-            opacity: 0.5;
-            margin-top: var(--space-xs, 8px);
-        }
-
-        @media (max-width: 768px) {
-            .gap-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
-
-            .gap-content {
-                text-align: center;
-            }
-
-            .gap-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .gap-image {
-                min-height: 160px;
-                order: -1;
-            }
-
-            .gap-image .placeholder-text .icon {
-                font-size: 28px;
-            }
-        }
-
-        /* ============================================================
-           14. FRAMEWORK PREVIEW
-           ============================================================ */
-        .framework-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md, 32px);
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .framework-preview-card {
-            padding: var(--space-md, 32px);
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            background: var(--iron-white, #f7f7f4);
-            cursor: default;
-            text-align: center;
-        }
-
-        .framework-preview-card:hover {
-            border-color: var(--iron-black, #111111);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .framework-preview-card .number {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(22px, 2.2vw, 36px);
-            color: var(--iron-rule, #d9d9d4);
-            line-height: 1;
-            margin-bottom: var(--space-xs, 8px);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-preview-card:hover .number {
-            color: var(--iron-red, #a32621);
-        }
-
-        .framework-preview-card h3 {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(18px, 1.6vw, 26px);
-            margin-bottom: var(--space-xs, 8px);
-        }
-
-        .framework-preview-card p {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .framework-preview-card .card-link {
-            display: inline-block;
-            margin-top: var(--space-sm, 16px);
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(11px, 0.7vw, 14px);
-            color: var(--iron-black, #111111);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-preview-card .card-link:hover {
-            color: var(--iron-red, #a32621);
-        }
-
-        .framework-preview-card .card-link::after {
-            content: ' →';
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-preview-card .card-link:hover::after {
-            transform: translateX(4px);
-        }
-
-        @media (max-width: 768px) {
-            .framework-preview-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
-            .framework-preview-card {
-                padding: var(--space-sm, 16px);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .framework-preview-grid {
-                grid-template-columns: 1fr;
-                max-width: 320px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
-        /* ============================================================
-           15. METHOD SECTION
-           ============================================================ */
-        .method-section {
+        /* ENEMY SECTION */
+        .enemy-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
             padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .method-section::before {
+        .enemy-section::before {
             content: '';
             position: absolute;
             top: -30%;
@@ -1148,469 +682,180 @@
             pointer-events: none;
         }
 
-        .method-section .section-number {
-            color: var(--iron-red, #a32621);
-        }
+        .enemy-section .section-number { color: var(--iron-red, #a32621); }
 
-        .method-section .section-header p {
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .method-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md, 32px);
-            margin-top: var(--space-lg, 64px);
-            position: relative;
-            z-index: 1;
-        }
-
-        .method-step {
-            padding: var(--space-md, 32px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            cursor: default;
-            text-align: center;
-        }
-
-        .method-step:hover {
-            border-color: var(--iron-red, #a32621);
-            transform: translateY(-4px);
-        }
-
-        .method-step .step-number {
+        .enemy-section .enemy-word {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(24px, 2.5vw, 40px);
-            color: var(--iron-red, #a32621);
+            font-size: clamp(48px, 12vw, 140px);
             line-height: 1;
-            margin-bottom: var(--space-xs, 8px);
+            letter-spacing: -0.03em;
+            color: var(--iron-white, #f7f7f4);
+            margin-bottom: var(--space-md, 32px);
         }
 
-        .method-step h4 {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(16px, 1.4vw, 24px);
-            margin-bottom: var(--space-xs, 8px);
+        .enemy-section .enemy-word span {
+            color: var(--iron-red, #a32621);
         }
 
-        .method-step p {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 15px);
+        .enemy-section p {
             color: var(--iron-grey, #6b6b6b);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: clamp(14px, 1.1vw, 18px);
+            line-height: 1.7;
         }
 
-        .method-statement {
+        .enemy-section .enemy-philosophy {
             margin-top: var(--space-xl, 96px);
             padding-top: var(--space-lg, 64px);
             border-top: 1px solid rgba(255, 255, 255, 0.06);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .method-statement blockquote {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(17px, 2.2vw, 28px);
-            color: var(--iron-grey, #6b6b6b);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .method-statement blockquote strong {
+            font-size: clamp(24px, 3.5vw, 48px);
+            font-weight: 600;
             color: var(--iron-white, #f7f7f4);
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .method-steps {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
-            .method-step {
-                padding: var(--space-sm, 16px);
-            }
-            .method-statement blockquote {
-                font-size: 17px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .method-steps {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ============================================================
-           16. STANDARD SECTION
-           ============================================================ */
-        .standard-section {
-            background: var(--iron-white, #f7f7f4);
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .standard-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(var(--space-sm, 16px), 2vw, var(--space-md, 32px));
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .standard-item {
-            padding: var(--space-sm, 16px) 0;
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            cursor: default;
-            text-align: center;
-        }
-
-        .standard-item:hover {
-            border-bottom-color: var(--iron-red, #a32621);
-        }
-
-        .standard-item:last-child {
-            border-bottom: none;
-        }
-
-        .standard-item .principle {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(17px, 1.6vw, 28px);
             line-height: 1.2;
         }
 
-        .standard-item .description {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-            margin-top: 2px;
-        }
-
-        .standard-quote {
-            margin-top: var(--space-xl, 96px);
-            padding-top: var(--space-lg, 64px);
-            border-top: 2px solid var(--iron-black, #111111);
-            text-align: center;
-        }
-
-        .standard-quote blockquote {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(22px, 3.5vw, 48px);
-            line-height: 1.1;
-            color: var(--iron-black, #111111);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .standard-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ============================================================
-           17. COMMUNITY PREVIEW
-           ============================================================ */
-        .community-preview-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(var(--space-md, 32px), 5vw, var(--space-xl, 96px));
-            align-items: center;
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .community-preview-image {
-            min-height: 220px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            color: var(--iron-grey, #6b6b6b);
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.9vw, 16px);
-        }
-
-        .community-preview-image .placeholder-text {
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .community-preview-image .placeholder-text .icon {
-            font-size: 48px;
-            display: block;
-            margin-bottom: var(--space-sm, 16px);
-            opacity: 0.5;
-        }
-
-        .community-preview-image .placeholder-text .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 13px);
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .community-preview-image .placeholder-text .sub-label {
-            font-size: clamp(9px, 0.5vw, 11px);
-            opacity: 0.5;
-            margin-top: var(--space-xs, 8px);
-        }
-
-        .community-preview-content {
-            text-align: left;
-        }
-
-        .community-preview-content .heading-display-sm {
-            margin-bottom: var(--space-sm, 16px);
-        }
-
-        .community-preview-content p {
-            color: var(--iron-ink, #1c1c1c);
-            margin-bottom: var(--space-md, 32px);
-        }
-
-        .community-flow {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-sm, 16px);
-            margin-top: var(--space-md, 32px);
-        }
-
-        .community-flow .step {
-            text-align: center;
-            padding: var(--space-sm, 16px);
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            background: var(--iron-white, #f7f7f4);
-        }
-
-        .community-flow .step:hover {
-            border-color: var(--iron-black, #111111);
-            transform: translateY(-4px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        }
-
-        .community-flow .step .num {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(15px, 1.3vw, 22px);
+        .enemy-section .enemy-philosophy span {
             color: var(--iron-red, #a32621);
         }
 
-        .community-flow .step .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(9px, 0.7vw, 13px);
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .community-preview-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
-
-            .community-preview-content {
-                text-align: center;
-            }
-
-            .community-preview-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .community-preview-image {
-                min-height: 160px;
-                order: -1;
-            }
-
-            .community-flow {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .community-flow {
-                grid-template-columns: 1fr 1fr;
-            }
-            .community-preview-image .placeholder-text .icon {
-                font-size: 32px;
-            }
-        }
-
-        /* ============================================================
-           18. MEMBERSHIP
-           ============================================================ */
-        .membership-section {
+        /* AREAS SECTION */
+        .areas-section {
             background: var(--iron-white, #f7f7f4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .membership-grid {
+        .areas-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--space-md, 32px);
             margin-top: var(--space-lg, 64px);
         }
 
-        .membership-tier {
-            padding: clamp(var(--space-md, 32px), 2.5vw, var(--space-lg, 64px));
+        .area-card {
+            padding: var(--space-md, 32px);
             border: 1px solid var(--iron-rule, #d9d9d4);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             background: var(--iron-white, #f7f7f4);
-            position: relative;
             text-align: center;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
-        .membership-tier:hover {
+        .area-card:hover {
             border-color: var(--iron-black, #111111);
-            transform: translateY(-6px);
-            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
         }
 
-        .membership-tier.featured {
-            border-color: var(--iron-black, #111111);
-            background: var(--iron-white, #f7f7f4);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-            transform: scale(1.02);
-        }
-
-        .membership-tier.featured:hover {
-            transform: scale(1.02) translateY(-6px);
-        }
-
-        .membership-tier .badge {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(8px, 0.6vw, 11px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-red, #a32621);
-            border: 1px solid var(--iron-red, #a32621);
-            padding: 2px clamp(8px, 0.8vw, 14px);
-            display: inline-block;
-            margin-bottom: var(--space-xs, 8px);
-            align-self: center;
-        }
-
-        .membership-tier .tier-name {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(20px, 1.8vw, 28px);
-        }
-
-        .membership-tier .tier-price {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(22px, 2.2vw, 32px);
-            margin: var(--space-xs, 8px) 0;
-        }
-
-        .membership-tier .tier-price span {
-            font-size: clamp(12px, 0.9vw, 16px);
-            font-weight: 400;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .membership-tier .tier-desc {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-            margin-bottom: var(--space-md, 32px);
-        }
-
-        .membership-tier ul {
-            list-style: none;
-            margin-bottom: var(--space-md, 32px);
-            text-align: left;
-            max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
-            flex-grow: 1;
-        }
-
-        .membership-tier ul li {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 14px);
-            padding: 5px 0;
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            color: var(--iron-ink, #1c1c1c);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        .area-card .icon-svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: var(--space-sm, 16px);
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .membership-tier ul li::before {
-            content: '✓';
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .membership-tier ul li:last-child {
-            border-bottom: none;
-        }
-
-        .membership-tier:hover ul li {
-            border-bottom-color: var(--iron-black, #111111);
-        }
-
-        .membership-tier .btn-primary,
-        .membership-tier .btn-secondary {
-            width: 100%;
             justify-content: center;
         }
 
-        .membership-tier .cancel-note {
+        .area-card .icon-svg svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--iron-black, #111111);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .area-card .icon-svg svg .accent {
+            stroke: var(--iron-red, #a32621);
+        }
+
+        .area-card h4 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(17px, 1.4vw, 22px);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .area-card p {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(9px, 0.6vw, 12px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
-            margin-top: var(--space-xs, 8px);
+        }
+
+        @media (max-width: 900px) {
+            .areas-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm, 16px); }
+        }
+
+        @media (max-width: 500px) {
+            .areas-grid { grid-template-columns: 1fr; }
+        }
+
+        /* IRON PATH PREVIEW */
+        .path-section {
+            background: var(--iron-white, #f7f7f4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--space-sm, 16px);
+            margin-top: var(--space-lg, 64px);
+            position: relative;
+        }
+
+        .path-step {
+            padding: var(--space-md, 32px) var(--space-sm, 16px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+            position: relative;
+        }
+
+        .path-step:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+        }
+
+        .path-step .step-num {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 1.8vw, 28px);
+            color: var(--iron-rule, #d9d9d4);
             display: block;
+            line-height: 1;
+            margin-bottom: var(--space-xs, 8px);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        @media (max-width: 1024px) {
-            .membership-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-md, 32px);
-            }
-            .membership-tier.featured {
-                transform: scale(1);
-            }
-            .membership-tier.featured:hover {
-                transform: translateY(-6px);
-            }
+        .path-step:hover .step-num { color: var(--iron-red, #a32621); }
+
+        .path-step .step-label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
-        @media (max-width: 768px) {
-            .membership-grid {
-                grid-template-columns: 1fr;
-                max-width: 420px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .membership-tier.featured {
-                transform: scale(1);
-                order: -1;
-            }
-            .membership-tier.featured:hover {
-                transform: translateY(-6px);
-            }
-            .membership-tier {
-                padding: var(--space-md, 32px);
-            }
+        @media (max-width: 900px) {
+            .path-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           19. CTA FINAL
-           ============================================================ */
-        .cta-final {
+        @media (max-width: 500px) {
+            .path-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* OPEN PREVIEW */
+        .open-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
             padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
@@ -1619,23 +864,74 @@
             overflow: hidden;
         }
 
-        .cta-final::before {
+        .open-section::before {
             content: '';
             position: absolute;
-            bottom: -20%;
-            left: -10%;
-            width: 50%;
+            top: -30%;
+            right: -10%;
+            width: 40%;
             height: 80%;
             background: radial-gradient(ellipse at center, rgba(163, 38, 33, 0.04) 0%, transparent 70%);
             pointer-events: none;
         }
 
-        .cta-final .section-number {
-            color: var(--iron-red, #a32621);
-            margin-bottom: var(--space-sm, 16px);
+        .open-section .section-number { color: var(--iron-red, #a32621); }
+        .open-section .heading-display-md { color: var(--iron-white, #f7f7f4); }
+
+        .open-section p {
+            color: var(--iron-grey, #6b6b6b);
+            max-width: 600px;
+            margin: 0 auto var(--space-md, 32px);
         }
 
-        .cta-final .heading-display-lg {
+        .open-badge {
+            display: inline-block;
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(10px, 0.7vw, 12px);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--iron-red, #a32621);
+            border: 1px solid var(--iron-red, #a32621);
+            padding: 4px 16px;
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .open-section .btn-primary {
+            background: var(--iron-white, #f7f7f4);
+            color: var(--iron-black, #111111);
+            border-color: var(--iron-white, #f7f7f4);
+        }
+
+        .open-section .btn-primary:hover {
+            background: var(--iron-red, #a32621);
+            border-color: var(--iron-red, #a32621);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        /* IMAGE SECTIONS */
+        .image-section {
+            padding: 0;
+            background: var(--iron-white, #f7f7f4);
+        }
+
+        .image-section .img-placeholder {
+            border-radius: 0;
+            min-height: 320px;
+        }
+
+        @media (max-width: 768px) {
+            .image-section .img-placeholder { min-height: 200px; }
+        }
+
+        /* CTA FINAL */
+        .cta-final {
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .cta-final .heading-display-md {
             margin-bottom: var(--space-md, 32px);
         }
 
@@ -1645,42 +941,11 @@
             color: var(--iron-grey, #6b6b6b);
         }
 
-        .cta-final .btn-primary {
-            background: var(--iron-white, #f7f7f4);
-            color: var(--iron-black, #111111);
-            border-color: var(--iron-white, #f7f7f4);
-        }
-
-        .cta-final .btn-primary:hover {
-            background: var(--iron-red, #a32621);
-            border-color: var(--iron-red, #a32621);
-            color: var(--iron-white, #f7f7f4);
-        }
-
         .cta-final .cta-actions {
             display: flex;
             flex-wrap: wrap;
             gap: var(--space-sm, 16px);
             justify-content: center;
-        }
-
-        .cta-final .cta-actions .btn-secondary {
-            color: var(--iron-white, #f7f7f4);
-            border-bottom-color: var(--iron-grey, #6b6b6b);
-        }
-
-        .cta-final .cta-actions .btn-secondary:hover {
-            border-bottom-color: var(--iron-white, #f7f7f4);
-            color: var(--iron-white, #f7f7f4);
-        }
-
-        .cta-final .tagline {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-size: clamp(16px, 1.3vw, 20px);
-            color: var(--iron-grey, #6b6b6b);
-            margin-top: var(--space-lg, 64px);
-            font-style: italic;
         }
 
         @media (max-width: 500px) {
@@ -1693,177 +958,12 @@
                 width: 100%;
                 max-width: 280px;
             }
-            .cta-final .heading-display-lg {
-                font-size: clamp(28px, 8vw, 40px);
-            }
-        }
-
-        /* ============================================================
-           20. UTILITY
-           ============================================================ */
-        .text-center {
-            text-align: center;
-        }
-
-        .text-left {
-            text-align: left;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .mt-sm {
-            margin-top: var(--space-sm, 16px);
-        }
-
-        .mt-md {
-            margin-top: var(--space-md, 32px);
-        }
-
-        .mt-lg {
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .border-top {
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .border-bottom {
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .bg-white {
-            background: var(--iron-white, #f7f7f4);
-        }
-
-        /* ============================================================
-           21. IMAGE PLACEHOLDER UTILITIES
-           ============================================================ */
-        .img-placeholder {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 200px;
-            width: 100%;
-            color: var(--iron-grey, #6b6b6b);
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .img-placeholder .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs, 8px);
-        }
-
-        .img-placeholder .content .icon {
-            font-size: 42px;
-            opacity: 0.4;
-        }
-
-        .img-placeholder .content .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .img-placeholder .content .sub-label {
-            font-size: clamp(9px, 0.6vw, 12px);
-            opacity: 0.4;
-        }
-
-        .img-placeholder-sm {
-            min-height: 140px;
-        }
-
-        .img-placeholder-sm .content .icon {
-            font-size: 28px;
-        }
-
-        @media (max-width: 768px) {
-            .img-placeholder {
-                min-height: 140px;
-            }
-            .img-placeholder .content .icon {
-                font-size: 28px;
-            }
-            .img-placeholder-sm {
-                min-height: 100px;
-            }
-            .img-placeholder-sm .content .icon {
-                font-size: 20px;
-            }
-        }
-
-        /* ============================================================
-           22. DARK PANEL — STACKED LAYOUT
-           ============================================================ */
-        .dark-panel {
-            background: var(--iron-ink, #1c1c1c);
-            padding: clamp(var(--space-md), 4vw, var(--space-lg));
-            border-radius: 4px;
-            color: var(--iron-white, #f7f7f4);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 280px;
-            height: 100%;
-            width: 100%;
-        }
-
-        .dark-panel .line {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-size: clamp(16px, 1.6vw, 24px);
-            line-height: 1.5;
-            margin-bottom: var(--space-sm, 16px);
-        }
-
-        .dark-panel .line:last-of-type {
-            margin-bottom: var(--space-md, 32px);
-        }
-
-        .dark-panel .sub-text {
-            color: var(--iron-grey, #6b6b6b);
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.9vw, 16px);
-            margin-bottom: var(--space-sm, 16px);
-        }
-
-        .dark-panel .italic-text {
-            color: var(--iron-white, #f7f7f4);
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-size: clamp(17px, 1.3vw, 22px);
-            font-style: italic;
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        @media (max-width: 500px) {
-            .dark-panel {
-                min-height: 200px;
-                padding: var(--space-md, 32px);
-            }
-            .dark-panel .line {
-                font-size: 16px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
             <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
@@ -1881,555 +981,295 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    HERO
-    ============================================================ -->
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="section-number">THE IRON / A DEVELOPMENT COMMUNITY FOR MEN</div>
-                    <h1 class="heading-display heading-display-lg">Build a Life<br />You Respect.</h1>
+                    <h1 class="heading-display heading-display-lg">Become a Man<br />You Respect.</h1>
                     <p class="text-body">
-                        The Iron is a private community and structured development system for men who want to become more capable—mentally, physically, financially, emotionally and personally.
+                        A structured personal-development community for men who are serious about building themselves and their lives.
                     </p>
-                    <p class="text-body" style="font-style: italic; color: var(--iron-grey);">
-                        Not through performance.<br />
-                        Not through empty motivation.<br />
-                        Through standards, structure, action and accountability.
-                    </p>
+                    <div class="hero-areas">
+                        <span>Mind</span>
+                        <span>Character</span>
+                        <span>Body</span>
+                        <span>Money</span>
+                        <span>Career</span>
+                        <span>Relationships</span>
+                        <span>Purpose</span>
+                    </div>
                     <div class="hero-actions">
-                        <a href="membership.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                        <a href="community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                         <a href="framework.html" class="btn-secondary btn-arrow">Explore The Framework →</a>
                     </div>
                     <div class="hero-verse">
                         <strong>"Iron sharpens iron."</strong> — Proverbs 27:17
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="placeholder-text">
-                        <span class="icon">🏙️</span>
+                <div class="img-placeholder">
+                    <div class="content">
                         <span class="label">Hero Image</span>
                         <span class="sub-label">assets/images/hero/iron-hero.jpg</span>
-                        <span class="sub-label" style="margin-top:4px;">A man walking through Johannesburg early morning</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    DATA STRIP
-    ============================================================ -->
-    <div class="data-strip">
+    <!-- ENEMY SECTION — DRIFTING -->
+    <section class="enemy-section">
         <div class="container">
-            <div class="data-strip-grid">
-                <div class="data-strip-item" data-delay="0">
-                    <span class="numeral"><span class="counter" data-target="6">0</span></span>
-                    <span class="label">Plans of Development</span>
-                </div>
-                <div class="data-strip-item" data-delay="200">
-                    <span class="numeral"><span class="counter" data-target="12">0</span><span style="font-size:0.6em;">+</span></span>
-                    <span class="label">Masterclasses</span>
-                </div>
-                <div class="data-strip-item" data-delay="400">
-                    <span class="numeral"><span class="counter" data-target="1">0</span></span>
-                    <span class="label">Framework</span>
-                </div>
-                <div class="data-strip-item" data-delay="600">
-                    <span class="numeral">∞</span>
-                    <span class="label">Commitment</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-    THE GAP
-    ============================================================ -->
-    <section class="gap-section">
-        <div class="container">
-            <div class="gap-grid">
-                <div class="gap-image">
-                    <div class="placeholder-text">
-                        <span class="icon">📝</span>
-                        <span class="label">Editorial Image</span>
-                        <span class="sub-label">assets/images/editorial/the-gap.jpg</span>
-                        <span class="sub-label" style="margin-top:4px;">Man at desk, early morning light</span>
-                    </div>
-                </div>
-                <div class="gap-content">
-                    <div class="section-number">01 / THE GAP</div>
-                    <h2 class="heading-display heading-display-md">You Know There's More in You.</h2>
-                    <p class="text-body">
-                        You don't need another person shouting at you to work harder.
-                    </p>
-                    <p class="text-body">
-                        You don't need another motivational video telling you to wake up at 5AM.
-                    </p>
-                    <p class="text-body">
-                        And you don't need to pretend you've already figured everything out.
-                    </p>
-                    <p class="text-body" style="font-weight: 500;">
-                        Most men don't have a lack of information. They have a lack of structure.
-                    </p>
-                    <div class="gap-statement">
-                        The question isn't whether you can become more.<br />
-                        It's whether you're willing to build.
-                    </div>
-                    <div class="bible-verse" style="margin-top: var(--space-lg);">
-                        "For the Lord gives wisdom;<br />
-                        from his mouth come knowledge and understanding."
-                        <span class="ref">— Proverbs 2:6</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    WHAT IS THE IRON — IMAGE REMOVED, FULL WIDTH DARK PANEL
-    ============================================================ -->
-    <section>
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">02 / THE INSTITUTION</div>
-                <h2 class="heading-display heading-display-md">A Place to Build Deliberately.</h2>
-                <p class="text-body">
-                    The Iron is a private community for men who want to build themselves deliberately.<br />
-                    A place to learn, reflect, implement and improve alongside other men doing the same.
-                </p>
-            </div>
             <div class="reveal">
-                <!-- DARK PANEL — FULL WIDTH, NO IMAGE -->
-                <div class="dark-panel full-width">
-                    <p class="line">Your mind affects your decisions.</p>
-                    <p class="line">Your character affects your relationships.</p>
-                    <p class="line">Your body affects your capacity.</p>
-                    <p class="line">Your finances affect your freedom.</p>
-                    <p class="line">Your purpose affects your direction.</p>
-                    <p class="sub-text">The work is connected.</p>
-                    <p class="italic-text">The Iron exists to help you build all of it.</p>
+                <div class="section-number">The Enemy</div>
+                <div class="enemy-word">Drift<span>ing.</span></div>
+                <p>
+                    Consuming without acting. Knowing without doing. Talking without building. Having potential without direction. Living reactively.
+                </p>
+                <p style="margin-top: var(--space-md);">
+                    That is what The Iron is fighting.
+                </p>
+
+                <div class="enemy-philosophy">
+                    Stop drifting.<br />
+                    <span>Start building.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FRAMEWORK PREVIEW
-    ============================================================ -->
-    <section style="background: var(--iron-white); border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
+    <!-- THE SIX AREAS -->
+    <section class="areas-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-number">03 / THE FRAMEWORK</div>
-                <h2 class="heading-display heading-display-md">Six Areas. One Life.</h2>
+                <div class="section-number">The Work</div>
+                <h2 class="heading-display heading-display-md">Seven Areas. One Life.</h2>
                 <p class="text-body">
                     You don't need to master everything at once.<br />
                     But you should understand the areas that shape the life you're building.
                 </p>
             </div>
 
-            <div class="framework-preview-grid">
-                <div class="framework-preview-card reveal">
-                    <div class="number">01</div>
-                    <h3>Mind</h3>
-                    <p>Master yourself.</p>
-                    <a href="pillars/mind.html" class="card-link">Explore Mind</a>
+            <div class="areas-grid">
+                <!-- MIND -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="14" />
+                            <circle cx="24" cy="24" r="6" class="accent" />
+                            <line x1="24" y1="4" x2="24" y2="10" />
+                            <line x1="24" y1="38" x2="24" y2="44" />
+                            <line x1="4" y1="24" x2="10" y2="24" />
+                            <line x1="38" y1="24" x2="44" y2="24" />
+                        </svg>
+                    </div>
+                    <h4>Mind</h4>
+                    <p>Think clearly. Manage your emotions. Stay grounded.</p>
                 </div>
-                <div class="framework-preview-card reveal">
-                    <div class="number">02</div>
-                    <h3>Character</h3>
-                    <p>Become someone you respect.</p>
-                    <a href="pillars/character.html" class="card-link">Explore Character</a>
+
+                <!-- CHARACTER -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 6 L38 12 V24 C38 34 24 42 24 42 C24 42 10 34 10 24 V12 Z" />
+                            <line x1="24" y1="18" x2="24" y2="30" class="accent" />
+                            <line x1="18" y1="24" x2="30" y2="24" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>Character</h4>
+                    <p>Become someone worth becoming.</p>
                 </div>
-                <div class="framework-preview-card reveal">
-                    <div class="number">03</div>
-                    <h3>Body</h3>
-                    <p>Take care of what carries you.</p>
-                    <a href="pillars/body.html" class="card-link">Explore Body</a>
+
+                <!-- BODY -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <line x1="24" y1="6" x2="24" y2="14" />
+                            <line x1="24" y1="34" x2="24" y2="42" />
+                            <line x1="6" y1="24" x2="14" y2="24" />
+                            <line x1="34" y1="24" x2="42" y2="24" />
+                            <circle cx="24" cy="24" r="8" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>Body</h4>
+                    <p>Build physical discipline. Take care of your health.</p>
                 </div>
-                <div class="framework-preview-card reveal">
-                    <div class="number">04</div>
-                    <h3>Relationships</h3>
-                    <p>Build connections that matter.</p>
-                    <a href="pillars/relationships.html" class="card-link">Explore Relationships</a>
+
+                <!-- MONEY -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <polyline points="8,36 18,26 26,32 40,12" />
+                            <polyline points="32,12 40,12 40,20" class="accent" />
+                            <line x1="8" y1="42" x2="40" y2="42" />
+                        </svg>
+                    </div>
+                    <h4>Money</h4>
+                    <p>Become financially responsible. Learn to build wealth.</p>
                 </div>
-                <div class="framework-preview-card reveal">
-                    <div class="number">05</div>
-                    <h3>Money</h3>
-                    <p>Become financially capable.</p>
-                    <a href="pillars/money.html" class="card-link">Explore Money</a>
+
+                <!-- CAREER -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="8" y="16" width="32" height="24" rx="2" />
+                            <path d="M16 16V12C16 10 18 8 20 8H28C30 8 32 10 32 12V16" class="accent" />
+                            <line x1="16" y1="26" x2="32" y2="26" />
+                            <line x1="24" y1="22" x2="24" y2="30" />
+                        </svg>
+                    </div>
+                    <h4>Career</h4>
+                    <p>Become valuable. Develop skills. Increase earning capacity.</p>
                 </div>
-                <div class="framework-preview-card reveal">
-                    <div class="number">06</div>
-                    <h3>Purpose</h3>
-                    <p>Find something worth building.</p>
-                    <a href="pillars/purpose.html" class="card-link">Explore Purpose</a>
+
+                <!-- RELATIONSHIPS -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 40 C24 40 8 30 8 20 C8 14 12 10 18 10 C22 10 24 14 24 14 C24 14 26 10 30 10 C36 10 40 14 40 20 C40 30 24 40 24 40 Z" />
+                            <line x1="24" y1="20" x2="24" y2="30" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>Relationships</h4>
+                    <p>Build healthy relationships. Communicate properly.</p>
+                </div>
+
+                <!-- PURPOSE -->
+                <div class="area-card reveal">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="16" />
+                            <polygon points="24,14 30,30 24,26 18,30" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>Purpose</h4>
+                    <p>Know what you're building. Live intentionally.</p>
+                </div>
+
+                <!-- CHARACTER NOTE -->
+                <div class="area-card reveal" style="border-style: dashed; border-color: var(--iron-red);">
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <line x1="24" y1="10" x2="24" y2="38" />
+                            <line x1="10" y1="24" x2="38" y2="24" class="accent" />
+                        </svg>
+                    </div>
+                    <h4>All Six</h4>
+                    <p>Underneath every area — Character.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE SECTION -->
+    <section class="image-section">
+        <div class="img-placeholder reveal">
+            <div class="content">
+                <span class="label">The Iron — Editorial</span>
+                <span class="sub-label">assets/images/editorial/the-iron-editorial.jpg</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE IRON PATH PREVIEW -->
+    <section class="path-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">The Iron Path</div>
+                <h2 class="heading-display heading-display-md">A Progression, Not a Course.</h2>
+                <p class="text-body">
+                    The Iron Path is the framework that guides your development.<br />
+                    Six stages. Each stage builds on the last.
+                </p>
+            </div>
+
+            <div class="path-grid">
+                <div class="path-step reveal">
+                    <span class="step-num">01</span>
+                    <span class="step-label">Foundation</span>
+                </div>
+                <div class="path-step reveal">
+                    <span class="step-num">02</span>
+                    <span class="step-label">Direction</span>
+                </div>
+                <div class="path-step reveal">
+                    <span class="step-num">03</span>
+                    <span class="step-label">Capability</span>
+                </div>
+                <div class="path-step reveal">
+                    <span class="step-num">04</span>
+                    <span class="step-label">Relationships</span>
+                </div>
+                <div class="path-step reveal">
+                    <span class="step-num">05</span>
+                    <span class="step-label">Leadership</span>
+                </div>
+                <div class="path-step reveal">
+                    <span class="step-num">06</span>
+                    <span class="step-label">Legacy</span>
                 </div>
             </div>
 
             <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
-                <a href="framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
-            </div>
-
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Do not conform to the pattern of this world,<br />
-                but be transformed by the renewing of your mind."
-                <span class="ref">— Romans 12:2</span>
+                <a href="framework.html" class="btn-secondary btn-arrow">Explore The Iron Path →</a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    THE IRON METHOD
-    ============================================================ -->
-    <section class="method-section">
+    <!-- THE IRON OPEN -->
+    <section class="open-section">
         <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">04 / THE METHOD</div>
-                <h2 class="heading-display heading-display-md">Know. Apply. Reflect. Build.</h2>
-                <p class="text-body">
-                    The Iron isn't designed to become another content warehouse.<br />
-                    You shouldn't join a community, consume 200 videos and still have no idea what to do next.
+            <div class="reveal">
+                <span class="open-badge">Free</span>
+                <div class="section-number" style="color: var(--iron-red);">The Iron Open</div>
+                <h2 class="heading-display heading-display-md">The Front Door.</h2>
+                <p>
+                    A free community for men who want to become better, more disciplined and more capable.<br /><br />
+                    This is where the environment lives. Where the conversations happen. Where the standard begins.
                 </p>
-            </div>
 
-            <div class="method-steps">
-                <div class="method-step reveal">
-                    <div class="step-number">01</div>
-                    <h4>Learn</h4>
-                    <p>Understand the idea.</p>
-                </div>
-                <div class="method-step reveal">
-                    <div class="step-number">02</div>
-                    <h4>Implement</h4>
-                    <p>Put it into practice.</p>
-                </div>
-                <div class="method-step reveal">
-                    <div class="step-number">03</div>
-                    <h4>Reflect</h4>
-                    <p>Examine what happened.</p>
-                </div>
-                <div class="method-step reveal">
-                    <div class="step-number">04</div>
-                    <h4>Adjust</h4>
-                    <p>Change what isn't working.</p>
-                </div>
-                <div class="method-step reveal">
-                    <div class="step-number">05</div>
-                    <h4>Repeat</h4>
-                    <p>Turn the behaviour into capability.</p>
-                </div>
-                <div class="method-step reveal">
-                    <div class="step-number">06</div>
-                    <h4>Build</h4>
-                    <p>Use that capability to create a better life.</p>
+                <div style="margin-top: var(--space-md);">
+                    <a href="community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                 </div>
             </div>
 
-            <div class="method-statement reveal">
-                <blockquote>
-                    Information is the input.<br />
-                    <strong>Capability is the output.</strong>
-                </blockquote>
-            </div>
-
-            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                "Do not merely listen to the word, and so deceive yourselves.<br />
-                <strong>Do what it says.</strong>"
-                <span class="ref">— James 1:22</span>
+            <!-- Bible verse — one of the 5-6 strategic moments -->
+            <div class="bible-verse-dark" style="margin-top: var(--space-xl);">
+                "As iron sharpens iron,<br />
+                so one person sharpens another."
+                <span class="ref">— Proverbs 27:17</span>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    THE STANDARD
-    ============================================================ -->
-    <section class="standard-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">05 / THE STANDARD</div>
-                <h2 class="heading-display heading-display-md">The Iron Is Not About Perfection.</h2>
-                <p class="text-body">
-                    It is about standards.<br /><br />
-                    The standard you set for yourself.<br />
-                    The standard you bring into your relationships.<br />
-                    The standard you hold your work to.<br />
-                    The standard you maintain when nobody is watching.
-                </p>
-            </div>
-
-            <div class="standard-grid">
-                <div class="standard-item reveal">
-                    <div class="principle">Take Responsibility.</div>
-                    <div class="description">Own your decisions.</div>
-                </div>
-                <div class="standard-item reveal">
-                    <div class="principle">Keep Your Word.</div>
-                    <div class="description">Especially the promises you make to yourself.</div>
-                </div>
-                <div class="standard-item reveal">
-                    <div class="principle">Respect People.</div>
-                    <div class="description">Strength does not require disrespect.</div>
-                </div>
-                <div class="standard-item reveal">
-                    <div class="principle">Stay Curious.</div>
-                    <div class="description">Don't pretend to know what you don't know.</div>
-                </div>
-                <div class="standard-item reveal">
-                    <div class="principle">Do The Work.</div>
-                    <div class="description">Knowledge without action changes very little.</div>
-                </div>
-                <div class="standard-item reveal">
-                    <div class="principle">Build Quietly.</div>
-                    <div class="description">Your development doesn't need to become a performance.</div>
-                </div>
-                <div class="standard-item reveal">
-                    <div class="principle">Leave People Better.</div>
-                    <div class="description">The standard applies to how you treat others too.</div>
-                </div>
-            </div>
-
-            <div class="standard-quote reveal">
-                <blockquote>
-                    Raise the standard.<br />
-                    Do the work.<br />
-                    Build accordingly.
-                </blockquote>
-            </div>
-
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Whatever you do, work at it with all your heart,<br />
-                as working for the Lord, not for human masters."
-                <span class="ref">— Colossians 3:23</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    COMMUNITY PREVIEW
-    ============================================================ -->
-    <section>
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">06 / THE COMMUNITY</div>
-                <h2 class="heading-display heading-display-md">The Build Happens Together.</h2>
-                <p class="text-body">
-                    Personal development is personal.<br />
-                    But it doesn't have to be solitary.
-                </p>
-            </div>
-
-            <div class="community-preview-grid">
-                <div class="community-preview-content reveal">
-                    <p class="text-body">
-                        The Iron brings together men who are at different stages of the same pursuit: becoming more capable and building lives they respect.
-                    </p>
-                    <p class="text-body" style="margin-bottom: var(--space-sm);">
-                        You will find conversations, challenges, education, accountability, live sessions and people willing to share what they're learning.
-                    </p>
-                    <p class="text-body" style="font-style: italic; color: var(--iron-grey);">
-                        Not everyone will be at your level.<br />
-                        That's the point.
-                    </p>
-                    <div style="margin-top: var(--space-md);">
-                        <div class="hero-verse" style="font-size: clamp(18px, 1.8vw, 28px);">
-                            <strong>"Iron sharpens iron."</strong> — Proverbs 27:17
-                        </div>
-                    </div>
-                    <div style="margin-top: var(--space-md);">
-                        <a href="community.html" class="btn-secondary btn-arrow">Explore The Community →</a>
-                    </div>
-                </div>
-                <div class="community-preview-image">
-                    <div class="placeholder-text">
-                        <span class="icon">💬</span>
-                        <span class="label">Community Dashboard</span>
-                        <span class="sub-label">assets/images/community/community-dashboard.jpg</span>
-                        <span class="sub-label" style="margin-top:4px;">Discord community mockup</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="community-flow" style="margin-top: var(--space-lg);">
-                <div class="step reveal">
-                    <div class="num">01</div>
-                    <div class="label">Learn</div>
-                </div>
-                <div class="step reveal">
-                    <div class="num">02</div>
-                    <div class="label">Discuss</div>
-                </div>
-                <div class="step reveal">
-                    <div class="num">03</div>
-                    <div class="label">Apply</div>
-                </div>
-                <div class="step reveal">
-                    <div class="num">04</div>
-                    <div class="label">Share</div>
-                </div>
-                <div class="step reveal">
-                    <div class="num">05</div>
-                    <div class="label">Reflect</div>
-                </div>
-                <div class="step reveal">
-                    <div class="num">06</div>
-                    <div class="label">Sharpen</div>
-                </div>
-            </div>
-
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Therefore encourage one another and build each other up,<br />
-                just as in fact you are doing."
-                <span class="ref">— 1 Thessalonians 5:11</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    MEMBERSHIP
-    ============================================================ -->
-    <section class="membership-section" id="membership">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">07 / MEMBERSHIP</div>
-                <h2 class="heading-display heading-display-md">Three Ways to Build.</h2>
-                <p class="text-body">
-                    Start where you are.<br />
-                    Go deeper when you're ready.<br />
-                    The Iron has been designed as a progression—not a hierarchy of worth.
-                </p>
-            </div>
-
-            <div class="membership-grid">
-                <div class="membership-tier reveal">
-                    <span class="badge">Free</span>
-                    <div class="tier-name">Foundation</div>
-                    <div class="tier-price">R0 <span>/ month</span></div>
-                    <p class="tier-desc">A starting point for men who want to understand the philosophy, meet the community and begin building.</p>
-                    <ul>
-                        <li>Community access</li>
-                        <li>Introductions and discussions</li>
-                        <li>Selected educational content</li>
-                        <li>Community challenges</li>
-                        <li>Wins and accountability</li>
-                        <li>Selected live events</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Join Free →</a>
-                </div>
-
-                <div class="membership-tier featured reveal">
-                    <span class="badge">Most Popular</span>
-                    <div class="tier-name">The Iron</div>
-                    <div class="tier-price">R149 <span>/ month</span></div>
-                    <p class="tier-desc">For men who want greater structure, education and accountability.</p>
-                    <ul>
-                        <li>Everything in Foundation</li>
-                        <li>Full education library</li>
-                        <li>Complete development paths</li>
-                        <li>Advanced resources</li>
-                        <li>Masterclass recordings</li>
-                        <li>Member-only sessions</li>
-                        <li>Structured accountability</li>
-                        <li>Advanced challenges</li>
-                        <li>Practical frameworks and exercises</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Join The Iron →</a>
-                    <span class="cancel-note">Cancel anytime.</span>
-                </div>
-
-                <div class="membership-tier reveal">
-                    <span class="badge">Limited</span>
-                    <div class="tier-name">Inner Circle</div>
-                    <div class="tier-price">Coming Soon</div>
-                    <p class="tier-desc">A smaller environment for men who want greater accountability, deeper feedback and closer interaction.</p>
-                    <ul>
-                        <li>Everything in The Iron</li>
-                        <li>Private Inner Circle community</li>
-                        <li>Small-group sessions</li>
-                        <li>Scheduled founder sessions</li>
-                        <li>Hot seats</li>
-                        <li>90-day development planning</li>
-                        <li>Deeper feedback</li>
-                        <li>Limited membership</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Join Waitlist →</a>
-                </div>
-            </div>
-
-            <div class="reveal" style="margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--iron-rule);">
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); max-width: 800px; margin: 0 auto;">
-                    <div style="text-align: center;">
-                        <div style="font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); color: var(--iron-rule);">01</div>
-                        <div style="font-weight: 600; font-size: clamp(14px, 1.2vw, 20px);">Discover</div>
-                        <div style="font-size: clamp(12px, 0.8vw, 15px); color: var(--iron-grey);">Foundation</div>
-                    </div>
-                    <div style="text-align: center; position: relative;">
-                        <div style="font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); color: var(--iron-red);">02</div>
-                        <div style="font-weight: 600; font-size: clamp(14px, 1.2vw, 20px);">Build</div>
-                        <div style="font-size: clamp(12px, 0.8vw, 15px); color: var(--iron-grey);">The Iron</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); color: var(--iron-rule);">03</div>
-                        <div style="font-weight: 600; font-size: clamp(14px, 1.2vw, 20px);">Deepen</div>
-                        <div style="font-size: clamp(12px, 0.8vw, 15px); color: var(--iron-grey);">Inner Circle</div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: var(--space-md);">
-                    <p class="text-body" style="font-family: var(--font-display); font-size: clamp(16px, 1.4vw, 24px); font-weight: 600;">
-                        Your starting point doesn't determine your destination.<br />
-                        What you do next does.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "The one who is faithful in a very little thing<br />
-                is also faithful in much."
-                <span class="ref">— Luke 16:10</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    FINAL CTA
-    ============================================================ -->
+    <!-- CTA FINAL -->
     <section class="cta-final">
         <div class="container">
-            <div class="section-number">THE IRON / BEGIN</div>
-            <h2 class="heading-display heading-display-lg">Build a Life<br />You Respect.</h2>
-            <p class="text-body">
-                You don't need to change everything tomorrow.<br />
-                You need to decide what needs to change.<br />
-                Then start.
-            </p>
-            <div class="cta-actions">
-                <a href="membership.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
-                <a href="membership.html" class="btn-secondary btn-arrow">Explore Membership →</a>
-            </div>
-            <div class="tagline">
-                <strong>"Iron sharpens iron."</strong> — Proverbs 27:17
-            </div>
-
-            <div class="bible-verse-dark" style="margin-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: var(--space-md);">
-                "For God gave us a spirit not of fear<br />
-                but of <strong>power and love and self-control.</strong>"
-                <span class="ref">— 2 Timothy 1:7</span>
+            <div class="reveal">
+                <div class="section-number">Begin</div>
+                <h2 class="heading-display heading-display-md">Become a Man You Respect.</h2>
+                <p class="text-body">
+                    You don't need to have your life figured out.<br />
+                    You need to be willing to work on yourself.
+                </p>
+                <div class="cta-actions">
+                    <a href="community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                    <a href="membership.html" class="btn-secondary btn-arrow">Explore Membership →</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -2462,14 +1302,10 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // MOBILE NAVIGATION
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -2513,7 +1349,6 @@
                 });
             }
 
-            // HEADER SCROLL EFFECT
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -2525,7 +1360,6 @@
                 }, { passive: true });
             }
 
-            // REVEAL ANIMATIONS
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
@@ -2540,63 +1374,6 @@
                     revealObserver.observe(el);
                 });
             }
-
-            // DATA STRIP COUNTER
-            var dataItems = document.querySelectorAll('.data-strip-item');
-            if (dataItems.length) {
-                var counterObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            var counter = entry.target.querySelector('.counter');
-                            if (counter && !counter.dataset.animated) {
-                                counter.dataset.animated = 'true';
-                                var target = parseInt(counter.dataset.target, 10);
-
-                                if (!isNaN(target) && target > 0) {
-                                    var current = 0;
-                                    var increment = target / 50;
-                                    var interval = 30;
-
-                                    var timer = setInterval(function() {
-                                        current += increment;
-                                        if (current >= target) {
-                                            current = target;
-                                            clearInterval(timer);
-                                        }
-                                        counter.textContent = Math.floor(current);
-                                    }, interval);
-                                }
-                            }
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                dataItems.forEach(function(item) {
-                    counterObserver.observe(item);
-                });
-            }
-
-            // SMOOTH SCROLL FOR ANCHOR LINKS
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    var targetId = this.getAttribute('href');
-                    if (targetId && targetId.length > 1) {
-                        var targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            e.preventDefault();
-                            var headerOffset = 80;
-                            var elementPosition = targetElement.getBoundingClientRect().top;
-                            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
 
             console.log('THE IRON — Homepage initialized successfully.');
         })();
