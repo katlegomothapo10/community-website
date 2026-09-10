@@ -4,20 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — FAQ</title>
-    <meta name="description" content="Frequently asked questions about The Iron community, membership, and development system." />
+    <meta name="description" content="Frequently asked questions about The Iron, The Iron Open, membership and the development framework." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           THE IRON — Global Styles
-           ============================================================ */
-
-        /* ============================================================
-           1. DESIGN TOKENS
-           ============================================================ */
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -39,9 +32,6 @@
             --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================================
-           2. RESET & BASE
-           ============================================================ */
         *,
         *::before,
         *::after {
@@ -64,25 +54,14 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
 
         ::selection {
             background: var(--iron-red, #a32621);
             color: var(--iron-white, #f7f7f4);
         }
 
-        /* ============================================================
-           3. CONTAINER
-           ============================================================ */
         .container {
             width: var(--container-width, min(1200px, calc(100% - 80px)));
             margin: 0 auto;
@@ -90,113 +69,50 @@
         }
 
         @media (max-width: 1024px) {
-            :root {
-                --container-width: min(100% - 60px, 1200px);
-            }
+            :root { --container-width: min(100% - 60px, 1200px); }
         }
-
         @media (max-width: 768px) {
-            :root {
-                --container-width: min(100% - 40px, 1200px);
-            }
+            :root { --container-width: min(100% - 40px, 1200px); }
         }
-
         @media (max-width: 500px) {
-            .container {
-                padding: 0 16px;
-            }
-            :root {
-                --container-width: min(100% - 32px, 1200px);
-            }
+            .container { padding: 0 16px; }
+            :root { --container-width: min(100% - 32px, 1200px); }
         }
 
-        /* ============================================================
-           4. TYPOGRAPHY
-           ============================================================ */
+        /* TYPOGRAPHY */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
-        .heading-display-lg {
-            font-size: clamp(36px, 8vw, 80px);
-        }
-
-        .heading-display-md {
-            font-size: clamp(30px, 6vw, 64px);
-        }
-
-        .heading-display-sm {
-            font-size: clamp(24px, 4vw, 40px);
-        }
+        .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
+        .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
+        .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 400;
-            font-size: clamp(15px, 1.1vw, 18px);
+            font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
-        }
-
-        .text-body-sm {
-            font-size: clamp(13px, 0.9vw, 15px);
-            line-height: 1.6;
-        }
-
-        .text-meta {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
         }
 
         .section-number {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .verse {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(17px, 1.2vw, 20px);
-            color: var(--iron-grey, #6b6b6b);
-            line-height: 1.6;
-            max-width: 600px;
-            margin: var(--space-md, 32px) auto;
-            padding-left: var(--space-md, 32px);
-            border-left: 2px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .verse strong {
-            color: var(--iron-black, #111111);
-            font-weight: 600;
-        }
-
-        .verse-reference {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 14px);
-            font-style: normal;
-            font-weight: 400;
-            color: var(--iron-grey, #6b6b6b);
-            display: block;
-            margin-top: var(--space-xs, 8px);
-        }
-
         .bible-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-ink, #1c1c1c);
             line-height: 1.6;
             max-width: 650px;
@@ -207,14 +123,38 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bible-verse strong {
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-        }
+        .bible-verse strong { color: var(--iron-red, #a32621); font-weight: 600; }
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-style: normal;
+            font-weight: 400;
+            color: var(--iron-grey, #6b6b6b);
+            display: block;
+            margin-top: var(--space-xs, 8px);
+        }
+
+        .bible-verse-dark {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(17px, 1.4vw, 24px);
+            color: var(--iron-grey, #6b6b6b);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: var(--space-md, 32px) auto;
+            text-align: center;
+            padding: var(--space-md, 32px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .bible-verse-dark strong { color: var(--iron-white, #f7f7f4); font-weight: 600; }
+
+        .bible-verse-dark .ref {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -223,20 +163,10 @@
         }
 
         @media (max-width: 500px) {
-            .verse {
-                padding-left: var(--space-sm, 16px);
-                font-size: 16px;
-                margin: var(--space-sm, 16px) auto;
-            }
-            .bible-verse {
-                font-size: 16px;
-                padding: var(--space-sm, 16px);
-            }
+            .bible-verse, .bible-verse-dark { font-size: 15px; padding: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           5. BUTTONS
-           ============================================================ */
+        /* BUTTONS */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -244,17 +174,17 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             position: relative;
             overflow: hidden;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .btn-primary::before {
@@ -269,18 +199,9 @@
             z-index: 0;
         }
 
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary:hover {
-            border-color: var(--iron-red, #a32621);
-        }
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
             display: inline-flex;
@@ -289,16 +210,16 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: transparent;
             color: var(--iron-black, #111111);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: none;
             border-bottom: 2px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .btn-secondary:hover {
@@ -312,22 +233,19 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .btn-arrow:hover::after {
-            transform: translateX(6px);
-        }
+        .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
-            .btn-primary,
-            .btn-secondary {
-                min-width: 120px;
-                padding: 12px 16px;
-                font-size: 13px;
+            .btn-primary, .btn-secondary {
+                min-width: 100px;
+                padding: 10px 14px;
+                font-size: 12px;
+                width: 100%;
+                max-width: 280px;
             }
         }
 
-        /* ============================================================
-           6. HEADER / NAVIGATION
-           ============================================================ */
+        /* HEADER */
         .site-header {
             position: fixed;
             top: 0;
@@ -338,12 +256,12 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            padding: 14px 0;
+            padding: 12px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
         .site-header.scrolled {
-            padding: 8px 0;
+            padding: 6px 0;
             background: rgba(247, 247, 244, 0.98);
         }
 
@@ -357,31 +275,26 @@
         .site-logo {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(16px, 1.4vw, 22px);
             letter-spacing: 0.04em;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             flex-shrink: 0;
         }
 
-        .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .site-logo:hover {
-            opacity: 0.7;
-        }
+        .site-logo span { color: var(--iron-red, #a32621); }
+        .site-logo:hover { opacity: 0.7; }
 
         .nav-desktop {
             display: flex;
             align-items: center;
-            gap: clamp(12px, 2vw, 32px);
+            gap: clamp(8px, 2vw, 32px);
             flex-wrap: nowrap;
         }
 
         .nav-desktop a {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(11px, 0.8vw, 14px);
+            font-size: clamp(9px, 0.8vw, 14px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-grey, #6b6b6b);
@@ -401,33 +314,21 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-desktop a:hover {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-
-        .nav-desktop a.active {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a.active::after {
-            width: 100%;
-        }
+        .nav-desktop a:hover { color: var(--iron-black, #111111); }
+        .nav-desktop a:hover::after { width: 100%; }
+        .nav-desktop a.active { color: var(--iron-black, #111111); }
+        .nav-desktop a.active::after { width: 100%; }
 
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 4px 10px;
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            font-size: clamp(8px, 0.7vw, 13px);
         }
 
-        .nav-desktop .nav-cta::after {
-            display: none;
-        }
+        .nav-desktop .nav-cta::after { display: none; }
 
         .nav-desktop .nav-cta:hover {
             background: var(--iron-black, #111111);
@@ -437,7 +338,7 @@
         .nav-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
             background: none;
             border: none;
@@ -446,23 +347,15 @@
 
         .nav-toggle span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         @media (max-width: 900px) {
             .nav-desktop {
@@ -474,7 +367,7 @@
                 flex-direction: column;
                 gap: 0;
                 background: var(--iron-white, #ffffff);
-                padding: 20px 0;
+                padding: 16px 0;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
                 width: 100%;
@@ -486,33 +379,26 @@
             }
 
             @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
 
             .nav-desktop a {
-                padding: 12px 24px;
+                padding: 10px 20px;
                 width: 100%;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-                font-size: 14px;
+                font-size: 13px;
                 white-space: normal;
                 text-align: center;
             }
 
-            .nav-desktop a:last-child {
-                border-bottom: none;
-            }
+            .nav-desktop a:last-child { border-bottom: none; }
 
             .nav-desktop .nav-cta {
                 border: none;
-                padding: 12px 24px;
+                padding: 10px 20px;
                 text-align: center;
+                font-size: 13px;
             }
 
             .nav-desktop .nav-cta:hover {
@@ -520,14 +406,10 @@
                 color: var(--iron-red, #a32621);
             }
 
-            .nav-toggle {
-                display: flex;
-            }
+            .nav-toggle { display: flex; }
         }
 
-        /* ============================================================
-           7. SECTIONS
-           ============================================================ */
+        /* SECTIONS */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
         }
@@ -542,9 +424,6 @@
             margin: 0 auto;
         }
 
-        /* ============================================================
-           8. REVEAL ANIMATION
-           ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -556,9 +435,7 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-           9. FOOTER
-           ============================================================ */
+        /* FOOTER */
         .site-footer {
             background: var(--iron-black, #111111);
             color: var(--iron-grey, #6b6b6b);
@@ -577,19 +454,13 @@
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .footer-brand .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .footer-brand p {
-            font-size: clamp(12px, 0.7vw, 14px);
-            max-width: 300px;
-        }
+        .footer-brand .site-logo span { color: var(--iron-red, #a32621); }
+        .footer-brand p { font-size: clamp(11px, 0.7vw, 14px); max-width: 300px; }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-style: italic;
-            font-size: clamp(13px, 0.8vw, 16px);
+            font-size: clamp(12px, 0.8vw, 16px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-sm, 16px);
         }
@@ -597,7 +468,7 @@
         .footer-col h4 {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 600;
-            font-size: clamp(11px, 0.7vw, 13px);
+            font-size: clamp(10px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-white, #f7f7f4);
@@ -606,14 +477,12 @@
 
         .footer-col a {
             display: block;
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             padding: 4px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .footer-col a:hover {
-            color: var(--iron-white, #f7f7f4);
-        }
+        .footer-col a:hover { color: var(--iron-white, #f7f7f4); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -621,7 +490,7 @@
             padding-top: var(--space-md, 32px);
             display: flex;
             justify-content: space-between;
-            font-size: clamp(11px, 0.6vw, 13px);
+            font-size: clamp(10px, 0.6vw, 13px);
             flex-wrap: wrap;
             gap: var(--space-sm, 16px);
         }
@@ -631,11 +500,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md, 32px);
             }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-
+            .footer-brand { grid-column: 1 / -1; }
             .footer-bottom {
                 flex-direction: column;
                 gap: var(--space-xs, 8px);
@@ -644,15 +509,10 @@
         }
 
         @media (max-width: 500px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
-        /* ============================================================
-           10. PAGE HEADER
-           ============================================================ */
+        /* PAGE HEADER */
         .page-header {
             padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
@@ -661,22 +521,52 @@
             text-align: center;
         }
 
-        .page-header .heading-display-lg {
-            margin-bottom: var(--space-xs, 8px);
+        .page-header .heading-display-lg { margin-bottom: var(--space-xs, 8px); }
+        .page-header p { max-width: 600px; margin: 0 auto; }
+
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
         }
 
-        .page-header p {
-            max-width: 600px;
-            margin: 0 auto;
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
         }
 
-        /* ============================================================
-           11. FAQ ACCORDION
-           ============================================================ */
-        .faq-list {
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
+
+        /* FAQ */
+        .faq-container {
             max-width: 800px;
             margin: 0 auto;
-            margin-top: var(--space-lg, 64px);
         }
 
         .faq-item {
@@ -696,7 +586,7 @@
             cursor: pointer;
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 500;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(17px, 1.4vw, 22px);
             background: none;
             border: none;
             width: 100%;
@@ -711,17 +601,37 @@
         }
 
         .faq-question .toggle {
-            font-size: clamp(20px, 1.6vw, 24px);
-            color: var(--iron-grey, #6b6b6b);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            font-family: var(--font-body, 'Inter', sans-serif);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
             margin-left: var(--space-sm, 16px);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .faq-question .toggle svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--iron-grey, #6b6b6b);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .faq-question:hover .toggle svg {
+            stroke: var(--iron-red, #a32621);
         }
 
         .faq-item.open .faq-question .toggle {
             transform: rotate(45deg);
-            color: var(--iron-red, #a32621);
+        }
+
+        .faq-item.open .faq-question .toggle svg {
+            stroke: var(--iron-red, #a32621);
         }
 
         .faq-answer {
@@ -729,19 +639,18 @@
             overflow: hidden;
             transition: max-height 500ms ease, padding 500ms ease;
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(15px, 0.9vw, 17px);
+            font-size: clamp(14px, 0.9vw, 17px);
             color: var(--iron-grey, #6b6b6b);
             padding: 0;
+            line-height: 1.7;
         }
 
         .faq-item.open .faq-answer {
-            max-height: 400px;
+            max-height: 600px;
             padding-top: var(--space-sm, 16px);
         }
 
-        /* ============================================================
-           12. CTA SECTION
-           ============================================================ */
+        /* CTA */
         .cta-faq {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
@@ -770,49 +679,11 @@
             border-color: var(--iron-red, #a32621);
             color: var(--iron-white, #f7f7f4);
         }
-
-        /* ============================================================
-           13. UTILITY
-           ============================================================ */
-        .text-center {
-            text-align: center;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .mt-sm {
-            margin-top: var(--space-sm, 16px);
-        }
-
-        .mt-md {
-            margin-top: var(--space-md, 32px);
-        }
-
-        .mt-lg {
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .border-top {
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .border-bottom {
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .bg-white {
-            background: var(--iron-white, #f7f7f4);
-        }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
             <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
@@ -830,9 +701,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    PAGE HEADER
-    ============================================================ -->
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">Questions</div>
@@ -843,93 +712,109 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    FAQ LIST
-    ============================================================ -->
+    <!-- FAQ -->
     <section>
         <div class="container">
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal">
-                "If any of you lacks wisdom, you should ask God,<br />
-                who gives generously to all without finding fault, and it will be given to you."
-                <span class="ref">— James 1:5</span>
-            </div>
-
-            <div class="faq-list">
+            <div class="faq-container">
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What is The Iron?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is The Iron?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        The Iron is a private development community for men built around six areas: Mind, Character, Body, Relationships, Money and Purpose. It provides structure, education, accountability and community for men who want to become more capable.
+                        The Iron is a private development community for men built around seven areas: Mind, Character, Body, Money, Career, Relationships and Purpose. It combines structure, education, accountability and community to help men become more capable and build lives they respect.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Who is it for?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Who is The Iron for?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        Men who want to become more capable and are willing to take responsibility for their development. Whether you're just starting out or already on your journey, The Iron is designed to meet you where you are.
+                        Men who want to become more capable and are willing to take responsibility for their development. Whether you're just starting out or already on your journey, The Iron is designed to meet you where you are. You don't need to have your life figured out — you just need to be serious about becoming better.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Do I need to have my life figured out?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is The Iron Open?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        No. The Iron is designed for men at different stages of development. You simply need to be willing to build. The framework is designed to help you figure things out as you go.
+                        The Iron Open is the free community — and the front door to The Iron. It's a place for men to experience the culture, do real work, and see whether The Iron is right for them. It includes community access, the weekly standard, the weekly question, weekly wins and accountability, selected educational content, and access to the Iron 7 challenge. It's free forever.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What do I get for free?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What does the R149 membership include?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        The free Foundation tier gives you community access, introductions and discussions, selected educational content, community challenges, wins and accountability, and selected live events. It's a starting point to understand the philosophy and meet the community.
+                        The Iron Membership includes everything in Iron Open plus: full Iron Library access, the complete Iron Path framework, Iron 30 & Iron 90 challenges, masterclass recordings, member-only sessions, structured accountability, and advanced frameworks and exercises. It's the complete system.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What does the R149 membership include?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is The Iron Path?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        The Iron membership includes everything in Foundation plus: full education library, complete development paths, advanced resources, masterclass recordings, member-only sessions, structured accountability, advanced challenges, and practical frameworks and exercises.
+                        The Iron Path is the framework that guides your development. Six stages — Foundation, Direction, Capability, Relationships, Leadership, Legacy — each building on the last. It's not a course. It's a progression.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What is the Inner Circle?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is the Inner Circle?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        The Inner Circle is a smaller environment designed for deeper accountability, feedback and interaction. It includes everything in The Iron plus a private community, small-group sessions, scheduled founder sessions, hot seats, 90-day development planning, deeper feedback and limited membership. It launches separately.
+                        The Inner Circle is a smaller environment designed for deeper accountability, feedback and interaction. It includes everything in The Iron Membership plus a private community, small-group sessions, scheduled founder sessions, hot seats, 90-day development planning, deeper feedback and limited membership. It launches separately.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Is The Iron financial advice?
-                        <span class="toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        No. Educational material relating to money and investing is provided for educational purposes and does not constitute personalised financial advice. Always consult a qualified professional for your specific situation.
-                    </div>
-                </div>
-
-                <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Is this a religious community?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is this a religious community?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
                         The Iron is not a religious organisation. The phrase "Iron sharpens iron" is part of the philosophy and reflects the idea that people improve through meaningful relationships, challenge and community. The community welcomes men from all backgrounds.
@@ -937,69 +822,117 @@
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        Can I cancel?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is The Iron financial advice?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        Yes. Membership terms and cancellation information are provided when you join. You can cancel at any time.
+                        No. Educational material relating to money and investing is provided for educational purposes and does not constitute personalised financial advice. Always consult a qualified professional for your specific situation.
                     </div>
                 </div>
 
                 <div class="faq-item reveal">
-                    <button class="faq-question">
-                        What happens after I join?
-                        <span class="toggle">+</span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I cancel?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
                     </button>
                     <div class="faq-answer">
-                        You'll be guided through your first steps: entering the community, assessing where you are, choosing an initial development area and beginning the work. The Iron is designed to make it easy to get started.
+                        Yes. The Iron Open is free forever — no cancellation needed. For The Iron Membership, you can cancel anytime. Membership terms and cancellation information are provided when you join.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What happens after I join?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        You'll be guided through your first steps: entering the community, introducing yourself, assessing where you are, choosing an initial area of development, and beginning the work. The Iron is designed to make it easy to start.
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do I need to already be successful?</span>
+                        <span class="toggle">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        No. The Iron isn't reserved for men who already have money, status, discipline or a perfect physique. You don't need to have your life figured out. You need to be willing to build.
                     </div>
                 </div>
             </div>
 
-            <!-- BIBLE VERSE -->
+            <!-- Image placeholder 1 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
+                <div class="content">
+                    <span class="label">Questions</span>
+                    <span class="sub-label">assets/images/faq/questions.jpg</span>
+                </div>
+            </div>
+
+            <!-- Bible verse — strategic break -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "The heart of the discerning acquires knowledge,<br />
-                for the ears of the wise seek it out."
-                <span class="ref">— Proverbs 18:15</span>
+                "If any of you lacks wisdom, you should ask God,<br />
+                who gives generously to all without finding fault,<br />
+                and it will be given to you."
+                <span class="ref">— James 1:5</span>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    CTA — JOIN THE IRON
-    ============================================================ -->
+    <!-- CTA -->
     <section class="cta-faq">
         <div class="container">
             <div class="reveal">
                 <div class="section-number" style="color: var(--iron-red);">Ready to Build?</div>
                 <h2 class="heading-display heading-display-md">Your Questions Answered.</h2>
                 <p class="text-body">
-                    Still have questions? Reach out to us. Or take the first step and join the community.
+                    Still have questions? Reach out. Or take the first step and enter the community.
                 </p>
-                <a href="membership.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center;">
+                    <a href="community.html" class="btn-primary btn-arrow"><span>Enter The Iron Open →</span></a>
+                </div>
             </div>
 
-            <!-- BIBLE VERSE (DARK) -->
-            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                "For God gave us a spirit not of fear<br />
-                but of <strong>power and love and self-control.</strong>"
-                <span class="ref">— 2 Timothy 1:7</span>
+            <!-- Image placeholder 2 -->
+            <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
+                <div class="content">
+                    <span class="label">Begin</span>
+                    <span class="sub-label">assets/images/faq/begin.jpg</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
-                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                    <p>Become a man you respect.</p>
+                    <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1032,16 +965,10 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. MOBILE NAVIGATION
-            // ============================================================
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -1085,9 +1012,6 @@
                 });
             }
 
-            // ============================================================
-            // 2. HEADER SCROLL EFFECT
-            // ============================================================
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -1099,9 +1023,6 @@
                 }, { passive: true });
             }
 
-            // ============================================================
-            // 3. REVEAL ANIMATIONS
-            // ============================================================
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
@@ -1117,19 +1038,15 @@
                 });
             }
 
-            // ============================================================
-            // 4. FAQ ACCORDION
-            // ============================================================
+            // FAQ ACCORDION
             var faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(function(item) {
                 var question = item.querySelector('.faq-question');
                 question.addEventListener('click', function() {
                     var isOpen = item.classList.contains('open');
-                    // Close all
                     faqItems.forEach(function(i) {
                         i.classList.remove('open');
                     });
-                    // Toggle this one
                     if (!isOpen) {
                         item.classList.add('open');
                     }
