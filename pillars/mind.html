@@ -15,9 +15,6 @@
            THE IRON — Global Styles
            ============================================================ */
 
-        /* ============================================================
-           1. DESIGN TOKENS
-           ============================================================ */
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -39,9 +36,6 @@
             --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================================
-           2. RESET & BASE
-           ============================================================ */
         *,
         *::before,
         *::after {
@@ -80,9 +74,6 @@
             color: var(--iron-white, #f7f7f4);
         }
 
-        /* ============================================================
-           3. CONTAINER
-           ============================================================ */
         .container {
             width: var(--container-width, min(1200px, calc(100% - 80px)));
             margin: 0 auto;
@@ -90,28 +81,20 @@
         }
 
         @media (max-width: 1024px) {
-            :root {
-                --container-width: min(100% - 60px, 1200px);
-            }
+            :root { --container-width: min(100% - 60px, 1200px); }
         }
 
         @media (max-width: 768px) {
-            :root {
-                --container-width: min(100% - 40px, 1200px);
-            }
+            :root { --container-width: min(100% - 40px, 1200px); }
         }
 
         @media (max-width: 500px) {
-            .container {
-                padding: 0 16px;
-            }
-            :root {
-                --container-width: min(100% - 32px, 1200px);
-            }
+            .container { padding: 0 16px; }
+            :root { --container-width: min(100% - 32px, 1200px); }
         }
 
         /* ============================================================
-           4. TYPOGRAPHY
+           TYPOGRAPHY
            ============================================================ */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
@@ -120,83 +103,38 @@
             letter-spacing: -0.02em;
         }
 
-        .heading-display-lg {
-            font-size: clamp(36px, 8vw, 80px);
-        }
-
-        .heading-display-md {
-            font-size: clamp(30px, 6vw, 64px);
-        }
-
-        .heading-display-sm {
-            font-size: clamp(24px, 4vw, 40px);
-        }
+        .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
+        .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
+        .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 400;
-            font-size: clamp(15px, 1.1vw, 18px);
+            font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
         }
 
         .text-body-sm {
-            font-size: clamp(13px, 0.9vw, 15px);
+            font-size: clamp(12px, 0.9vw, 15px);
             line-height: 1.6;
-        }
-
-        .text-meta {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
         }
 
         .section-number {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .verse {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(17px, 1.2vw, 20px);
-            color: var(--iron-grey, #6b6b6b);
-            line-height: 1.6;
-            max-width: 600px;
-            margin: var(--space-md, 32px) auto;
-            padding-left: var(--space-md, 32px);
-            border-left: 2px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .verse strong {
-            color: var(--iron-black, #111111);
-            font-weight: 600;
-        }
-
-        .verse-reference {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 14px);
-            font-style: normal;
-            font-weight: 400;
-            color: var(--iron-grey, #6b6b6b);
-            display: block;
-            margin-top: var(--space-xs, 8px);
-        }
-
         .bible-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-ink, #1c1c1c);
             line-height: 1.6;
             max-width: 650px;
@@ -214,7 +152,7 @@
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -226,7 +164,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-grey, #6b6b6b);
             line-height: 1.6;
             max-width: 650px;
@@ -244,7 +182,7 @@
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -253,20 +191,15 @@
         }
 
         @media (max-width: 500px) {
-            .verse {
-                padding-left: var(--space-sm, 16px);
-                font-size: 16px;
-                margin: var(--space-sm, 16px) auto;
-            }
             .bible-verse,
             .bible-verse-dark {
-                font-size: 16px;
+                font-size: 15px;
                 padding: var(--space-sm, 16px);
             }
         }
 
         /* ============================================================
-           5. BUTTONS
+           BUTTONS
            ============================================================ */
         .btn-primary {
             display: inline-flex;
@@ -275,17 +208,17 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             position: relative;
             overflow: hidden;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .btn-primary::before {
@@ -300,18 +233,14 @@
             z-index: 0;
         }
 
-        .btn-primary:hover::before {
-            left: 0;
-        }
+        .btn-primary:hover::before { left: 0; }
 
         .btn-primary span {
             position: relative;
             z-index: 1;
         }
 
-        .btn-primary:hover {
-            border-color: var(--iron-red, #a32621);
-        }
+        .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
             display: inline-flex;
@@ -320,16 +249,16 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: transparent;
             color: var(--iron-black, #111111);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: none;
             border-bottom: 2px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .btn-secondary:hover {
@@ -343,21 +272,21 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .btn-arrow:hover::after {
-            transform: translateX(6px);
-        }
+        .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
             .btn-primary,
             .btn-secondary {
-                min-width: 120px;
-                padding: 12px 16px;
-                font-size: 13px;
+                min-width: 100px;
+                padding: 10px 14px;
+                font-size: 12px;
+                width: 100%;
+                max-width: 280px;
             }
         }
 
         /* ============================================================
-           6. HEADER / NAVIGATION
+           HEADER
            ============================================================ */
         .site-header {
             position: fixed;
@@ -369,12 +298,12 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            padding: 14px 0;
+            padding: 12px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
         .site-header.scrolled {
-            padding: 8px 0;
+            padding: 6px 0;
             background: rgba(247, 247, 244, 0.98);
         }
 
@@ -388,31 +317,26 @@
         .site-logo {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(16px, 1.4vw, 22px);
             letter-spacing: 0.04em;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             flex-shrink: 0;
         }
 
-        .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .site-logo:hover {
-            opacity: 0.7;
-        }
+        .site-logo span { color: var(--iron-red, #a32621); }
+        .site-logo:hover { opacity: 0.7; }
 
         .nav-desktop {
             display: flex;
             align-items: center;
-            gap: clamp(12px, 2vw, 32px);
+            gap: clamp(8px, 2vw, 32px);
             flex-wrap: nowrap;
         }
 
         .nav-desktop a {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(11px, 0.8vw, 14px);
+            font-size: clamp(9px, 0.8vw, 14px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-grey, #6b6b6b);
@@ -432,33 +356,21 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-desktop a:hover {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-
-        .nav-desktop a.active {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a.active::after {
-            width: 100%;
-        }
+        .nav-desktop a:hover { color: var(--iron-black, #111111); }
+        .nav-desktop a:hover::after { width: 100%; }
+        .nav-desktop a.active { color: var(--iron-black, #111111); }
+        .nav-desktop a.active::after { width: 100%; }
 
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 4px 10px;
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            font-size: clamp(8px, 0.7vw, 13px);
         }
 
-        .nav-desktop .nav-cta::after {
-            display: none;
-        }
+        .nav-desktop .nav-cta::after { display: none; }
 
         .nav-desktop .nav-cta:hover {
             background: var(--iron-black, #111111);
@@ -468,7 +380,7 @@
         .nav-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
             background: none;
             border: none;
@@ -477,23 +389,15 @@
 
         .nav-toggle span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         @media (max-width: 900px) {
             .nav-desktop {
@@ -505,7 +409,7 @@
                 flex-direction: column;
                 gap: 0;
                 background: var(--iron-white, #ffffff);
-                padding: 20px 0;
+                padding: 16px 0;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
                 width: 100%;
@@ -517,33 +421,26 @@
             }
 
             @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
 
             .nav-desktop a {
-                padding: 12px 24px;
+                padding: 10px 20px;
                 width: 100%;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-                font-size: 14px;
+                font-size: 13px;
                 white-space: normal;
                 text-align: center;
             }
 
-            .nav-desktop a:last-child {
-                border-bottom: none;
-            }
+            .nav-desktop a:last-child { border-bottom: none; }
 
             .nav-desktop .nav-cta {
                 border: none;
-                padding: 12px 24px;
+                padding: 10px 20px;
                 text-align: center;
+                font-size: 13px;
             }
 
             .nav-desktop .nav-cta:hover {
@@ -551,13 +448,11 @@
                 color: var(--iron-red, #a32621);
             }
 
-            .nav-toggle {
-                display: flex;
-            }
+            .nav-toggle { display: flex; }
         }
 
         /* ============================================================
-           7. SECTIONS
+           SECTIONS
            ============================================================ */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
@@ -573,16 +468,8 @@
             margin: 0 auto;
         }
 
-        .section-header.text-left {
-            text-align: left;
-        }
-
-        .section-header.text-left p {
-            margin: 0;
-        }
-
         /* ============================================================
-           8. REVEAL ANIMATION
+           REVEAL
            ============================================================ */
         .reveal {
             opacity: 0;
@@ -596,7 +483,7 @@
         }
 
         /* ============================================================
-           9. FOOTER
+           FOOTER
            ============================================================ */
         .site-footer {
             background: var(--iron-black, #111111);
@@ -616,19 +503,13 @@
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .footer-brand .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .footer-brand p {
-            font-size: clamp(12px, 0.7vw, 14px);
-            max-width: 300px;
-        }
+        .footer-brand .site-logo span { color: var(--iron-red, #a32621); }
+        .footer-brand p { font-size: clamp(11px, 0.7vw, 14px); max-width: 300px; }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-style: italic;
-            font-size: clamp(13px, 0.8vw, 16px);
+            font-size: clamp(12px, 0.8vw, 16px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-sm, 16px);
         }
@@ -636,7 +517,7 @@
         .footer-col h4 {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 600;
-            font-size: clamp(11px, 0.7vw, 13px);
+            font-size: clamp(10px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-white, #f7f7f4);
@@ -645,14 +526,12 @@
 
         .footer-col a {
             display: block;
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             padding: 4px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .footer-col a:hover {
-            color: var(--iron-white, #f7f7f4);
-        }
+        .footer-col a:hover { color: var(--iron-white, #f7f7f4); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -660,7 +539,7 @@
             padding-top: var(--space-md, 32px);
             display: flex;
             justify-content: space-between;
-            font-size: clamp(11px, 0.6vw, 13px);
+            font-size: clamp(10px, 0.6vw, 13px);
             flex-wrap: wrap;
             gap: var(--space-sm, 16px);
         }
@@ -670,11 +549,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md, 32px);
             }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-
+            .footer-brand { grid-column: 1 / -1; }
             .footer-bottom {
                 flex-direction: column;
                 gap: var(--space-xs, 8px);
@@ -683,39 +558,33 @@
         }
 
         @media (max-width: 500px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
         /* ============================================================
-           10. PAGE HEADER
+           PAGE HEADER
            ============================================================ */
         .page-header {
-            padding-top: clamp(90px, 12vh, 140px);
+            padding-top: clamp(80px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
             text-align: center;
         }
 
-        .page-header .heading-display-lg {
-            margin-bottom: var(--space-xs, 8px);
-        }
-
-        .page-header p {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .page-header .heading-display-lg { margin-bottom: var(--space-xs, 8px); }
+        .page-header p { max-width: 600px; margin: 0 auto; }
 
         /* ============================================================
-           11. PILLAR CONTENT
+           PILLAR ICON HEADER
            ============================================================ */
         .pillar-icon {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             margin: 0 auto var(--space-md, 32px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .pillar-icon svg {
@@ -726,12 +595,16 @@
             stroke-width: 1.5;
             stroke-linecap: round;
             stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
         }
 
         .pillar-icon svg .accent {
             stroke: var(--iron-red, #a32621);
         }
 
+        /* ============================================================
+           PILLAR INTRO
+           ============================================================ */
         .pillar-intro {
             max-width: 700px;
             margin: 0 auto;
@@ -739,11 +612,11 @@
         }
 
         .pillar-intro .text-body {
-            font-size: clamp(17px, 1.2vw, 20px);
+            font-size: clamp(15px, 1.2vw, 20px);
         }
 
         /* ============================================================
-           12. FOCUS AREAS
+           FOCUS GRID
            ============================================================ */
         .focus-grid {
             display: grid;
@@ -783,31 +656,26 @@
         .focus-item h4 {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(17px, 1.4vw, 22px);
             margin-bottom: var(--space-xs, 8px);
         }
 
         .focus-item p {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
         }
 
         @media (max-width: 768px) {
-            .focus-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
+            .focus-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm, 16px); }
         }
 
         @media (max-width: 500px) {
-            .focus-grid {
-                grid-template-columns: 1fr;
-            }
+            .focus-grid { grid-template-columns: 1fr; }
         }
 
         /* ============================================================
-           13. PILLAR FRAMEWORK
+           FRAMEWORK SECTION (DARK)
            ============================================================ */
         .framework-section {
             background: var(--iron-black, #111111);
@@ -829,13 +697,8 @@
             pointer-events: none;
         }
 
-        .framework-section .section-number {
-            color: var(--iron-red, #a32621);
-        }
-
-        .framework-section .heading-display-md {
-            color: var(--iron-white, #f7f7f4);
-        }
+        .framework-section .section-number { color: var(--iron-red, #a32621); }
+        .framework-section .heading-display-md { color: var(--iron-white, #f7f7f4); }
 
         .framework-section p {
             color: var(--iron-grey, #6b6b6b);
@@ -847,7 +710,7 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: var(--space-sm, 16px);
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -873,7 +736,7 @@
 
         .framework-step .step-label {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             color: var(--iron-grey, #6b6b6b);
             display: block;
             margin-top: var(--space-xs, 8px);
@@ -887,20 +750,15 @@
         }
 
         @media (max-width: 768px) {
-            .framework-steps {
-                grid-template-columns: repeat(3, 1fr);
-                gap: var(--space-sm, 16px);
-            }
+            .framework-steps { grid-template-columns: repeat(3, 1fr); gap: var(--space-sm, 16px); }
         }
 
         @media (max-width: 500px) {
-            .framework-steps {
-                grid-template-columns: 1fr 1fr;
-            }
+            .framework-steps { grid-template-columns: 1fr 1fr; }
         }
 
         /* ============================================================
-           14. CTA SECTION
+           CTA PILLAR
            ============================================================ */
         .cta-pillar {
             background: var(--iron-white, #f7f7f4);
@@ -926,52 +784,63 @@
             justify-content: center;
         }
 
+        @media (max-width: 500px) {
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
         /* ============================================================
-           15. UTILITY
+           IMAGE PLACEHOLDER
            ============================================================ */
-        .text-center {
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
             text-align: center;
+            padding: var(--space-md, 32px);
         }
 
-        .text-left {
-            text-align: left;
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
         }
 
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
         }
 
-        .mt-sm {
-            margin-top: var(--space-sm, 16px);
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
         }
 
-        .mt-md {
-            margin-top: var(--space-md, 32px);
-        }
-
-        .mt-lg {
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .border-top {
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .border-bottom {
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .bg-white {
-            background: var(--iron-white, #f7f7f4);
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
             <a href="../index.html" class="site-logo">THE IRON<span>.</span></a>
@@ -989,24 +858,18 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    PAGE HEADER
-    ============================================================ -->
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">01 / Mind</div>
             <div class="pillar-icon">
-                <svg viewBox="0 0 80 80">
-                    <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                    <path d="M40 20v10" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M40 50v10" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M20 40h10" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M50 40h10" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M27.5 27.5l7.5 7.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M45 45l7.5 7.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M27.5 52.5l7.5-7.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M45 35l7.5-7.5" stroke="currentColor" stroke-width="1.5"/>
-                    <circle cx="40" cy="40" r="5" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="14" />
+                    <circle cx="24" cy="24" r="6" class="accent" />
+                    <line x1="24" y1="4" x2="24" y2="10" />
+                    <line x1="24" y1="38" x2="24" y2="44" />
+                    <line x1="4" y1="24" x2="10" y2="24" />
+                    <line x1="38" y1="24" x2="44" y2="24" />
                 </svg>
             </div>
             <h1 class="heading-display heading-display-lg">Master Yourself.</h1>
@@ -1016,9 +879,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    INTRODUCTION
-    ============================================================ -->
+    <!-- INTRODUCTION -->
     <section>
         <div class="container">
             <div class="pillar-intro reveal">
@@ -1036,20 +897,26 @@
                     but be transformed by the renewing of your mind."
                     <span class="ref">— Romans 12:2</span>
                 </div>
+
+                <!-- IMAGE PLACEHOLDER 1 -->
+                <div class="img-placeholder" style="margin-top: var(--space-xl);">
+                    <div class="content">
+                        <span class="label">Mind Pillar Image</span>
+                        <span class="sub-label">assets/images/pillars/mind.jpg</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOCUS AREAS
-    ============================================================ -->
+    <!-- FOCUS AREAS -->
     <section style="border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
         <div class="container">
             <div class="section-header reveal">
                 <div class="section-number">The Work</div>
                 <h2 class="heading-display heading-display-md">What You'll Build.</h2>
                 <p class="text-body">
-                    The Mind pillar focuses on five core areas of development.
+                    The Mind pillar focuses on six core areas of development.
                 </p>
             </div>
 
@@ -1095,14 +962,12 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    FRAMEWORK
-    ============================================================ -->
+    <!-- FRAMEWORK -->
     <section class="framework-section">
         <div class="container">
             <div class="reveal">
                 <div class="section-number" style="color: var(--iron-red);">The Framework</div>
-                <h2 class="heading-display heading-display-md">Awareness → Interpretation → Decision → Action → Reflection.</h2>
+                <h2 class="heading-display heading-display-md">Awareness. Interpretation. Decision. Action. Reflection.</h2>
                 <p style="max-width: 600px; margin: 0 auto;">
                     The Mind pillar follows a practical framework for developing mental capability.
                 </p>
@@ -1135,6 +1000,14 @@
                     </div>
                 </div>
 
+                <!-- IMAGE PLACEHOLDER 2 -->
+                <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
+                    <div class="content">
+                        <span class="label">Mind Framework</span>
+                        <span class="sub-label">assets/images/pillars/mind-framework.jpg</span>
+                    </div>
+                </div>
+
                 <!-- BIBLE VERSE (DARK) -->
                 <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
                     "Trust in the Lord with all your heart<br />
@@ -1145,9 +1018,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    CTA
-    ============================================================ -->
+    <!-- CTA -->
     <section class="cta-pillar">
         <div class="container">
             <div class="reveal">
@@ -1162,6 +1033,14 @@
                 </div>
             </div>
 
+            <!-- IMAGE PLACEHOLDER 3 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
+                <div class="content">
+                    <span class="label">Start Your Journey</span>
+                    <span class="sub-label">assets/images/pillars/mind-cta.jpg</span>
+                </div>
+            </div>
+
             <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
                 "The mind governed by the flesh is death,<br />
@@ -1171,16 +1050,14 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
                     <p>Build a life you respect.</p>
-                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                    <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
                         Mind. Character. Body. Relationships. Money. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
@@ -1214,16 +1091,11 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
+    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. MOBILE NAVIGATION
-            // ============================================================
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -1267,9 +1139,6 @@
                 });
             }
 
-            // ============================================================
-            // 2. HEADER SCROLL EFFECT
-            // ============================================================
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -1281,9 +1150,6 @@
                 }, { passive: true });
             }
 
-            // ============================================================
-            // 3. REVEAL ANIMATIONS
-            // ============================================================
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
