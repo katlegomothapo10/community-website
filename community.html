@@ -121,34 +121,34 @@
         }
 
         .heading-display-lg {
-            font-size: clamp(36px, 8vw, 80px);
+            font-size: clamp(32px, 8vw, 80px);
         }
 
         .heading-display-md {
-            font-size: clamp(30px, 6vw, 64px);
+            font-size: clamp(28px, 6vw, 64px);
         }
 
         .heading-display-sm {
-            font-size: clamp(24px, 4vw, 40px);
+            font-size: clamp(22px, 4vw, 40px);
         }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 400;
-            font-size: clamp(15px, 1.1vw, 18px);
+            font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
         }
 
         .text-body-sm {
-            font-size: clamp(13px, 0.9vw, 15px);
+            font-size: clamp(12px, 0.9vw, 15px);
             line-height: 1.6;
         }
 
         .text-meta {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--iron-grey, #6b6b6b);
@@ -157,7 +157,7 @@
         .section-number {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(10px, 0.7vw, 13px);
+            font-size: clamp(9px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
@@ -168,7 +168,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(17px, 1.2vw, 20px);
+            font-size: clamp(16px, 1.2vw, 20px);
             color: var(--iron-grey, #6b6b6b);
             line-height: 1.6;
             max-width: 600px;
@@ -184,7 +184,7 @@
 
         .verse-reference {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.7vw, 14px);
+            font-size: clamp(10px, 0.7vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -196,7 +196,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-ink, #1c1c1c);
             line-height: 1.6;
             max-width: 650px;
@@ -214,7 +214,7 @@
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -226,7 +226,7 @@
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 400;
             font-style: italic;
-            font-size: clamp(18px, 1.4vw, 24px);
+            font-size: clamp(17px, 1.4vw, 24px);
             color: var(--iron-grey, #6b6b6b);
             line-height: 1.6;
             max-width: 650px;
@@ -244,7 +244,7 @@
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-style: normal;
             font-weight: 400;
             color: var(--iron-grey, #6b6b6b);
@@ -255,12 +255,12 @@
         @media (max-width: 500px) {
             .verse {
                 padding-left: var(--space-sm, 16px);
-                font-size: 16px;
+                font-size: 15px;
                 margin: var(--space-sm, 16px) auto;
             }
             .bible-verse,
             .bible-verse-dark {
-                font-size: 16px;
+                font-size: 15px;
                 padding: var(--space-sm, 16px);
             }
         }
@@ -275,17 +275,18 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             position: relative;
             overflow: hidden;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
+            width: auto;
         }
 
         .btn-primary::before {
@@ -320,16 +321,17 @@
             gap: 8px;
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             background: transparent;
             color: var(--iron-black, #111111);
-            padding: clamp(12px, 1vw, 16px) clamp(18px, 1.8vw, 28px);
+            padding: clamp(10px, 1vw, 16px) clamp(16px, 1.8vw, 28px);
             border: none;
             border-bottom: 2px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             cursor: pointer;
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
+            width: auto;
         }
 
         .btn-secondary:hover {
@@ -350,9 +352,11 @@
         @media (max-width: 500px) {
             .btn-primary,
             .btn-secondary {
-                min-width: 120px;
-                padding: 12px 16px;
-                font-size: 13px;
+                min-width: 100px;
+                padding: 10px 14px;
+                font-size: 12px;
+                width: 100%;
+                max-width: 280px;
             }
         }
 
@@ -369,12 +373,12 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            padding: 14px 0;
+            padding: 12px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
         .site-header.scrolled {
-            padding: 8px 0;
+            padding: 6px 0;
             background: rgba(247, 247, 244, 0.98);
         }
 
@@ -388,7 +392,7 @@
         .site-logo {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(16px, 1.4vw, 22px);
             letter-spacing: 0.04em;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             flex-shrink: 0;
@@ -405,14 +409,14 @@
         .nav-desktop {
             display: flex;
             align-items: center;
-            gap: clamp(12px, 2vw, 32px);
+            gap: clamp(8px, 2vw, 32px);
             flex-wrap: nowrap;
         }
 
         .nav-desktop a {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 500;
-            font-size: clamp(11px, 0.8vw, 14px);
+            font-size: clamp(9px, 0.8vw, 14px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-grey, #6b6b6b);
@@ -451,9 +455,10 @@
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 4px 10px;
             border: 1px solid var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            font-size: clamp(8px, 0.7vw, 13px);
         }
 
         .nav-desktop .nav-cta::after {
@@ -468,7 +473,7 @@
         .nav-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
             background: none;
             border: none;
@@ -477,7 +482,7 @@
 
         .nav-toggle span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--iron-black, #111111);
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
@@ -505,7 +510,7 @@
                 flex-direction: column;
                 gap: 0;
                 background: var(--iron-white, #ffffff);
-                padding: 20px 0;
+                padding: 16px 0;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
                 width: 100%;
@@ -528,10 +533,10 @@
             }
 
             .nav-desktop a {
-                padding: 12px 24px;
+                padding: 10px 20px;
                 width: 100%;
                 border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-                font-size: 14px;
+                font-size: 13px;
                 white-space: normal;
                 text-align: center;
             }
@@ -542,8 +547,9 @@
 
             .nav-desktop .nav-cta {
                 border: none;
-                padding: 12px 24px;
+                padding: 10px 20px;
                 text-align: center;
+                font-size: 13px;
             }
 
             .nav-desktop .nav-cta:hover {
@@ -621,14 +627,14 @@
         }
 
         .footer-brand p {
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             max-width: 300px;
         }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-style: italic;
-            font-size: clamp(13px, 0.8vw, 16px);
+            font-size: clamp(12px, 0.8vw, 16px);
             color: var(--iron-grey, #6b6b6b);
             margin-top: var(--space-sm, 16px);
         }
@@ -636,7 +642,7 @@
         .footer-col h4 {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-weight: 600;
-            font-size: clamp(11px, 0.7vw, 13px);
+            font-size: clamp(10px, 0.7vw, 13px);
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--iron-white, #f7f7f4);
@@ -645,7 +651,7 @@
 
         .footer-col a {
             display: block;
-            font-size: clamp(12px, 0.7vw, 14px);
+            font-size: clamp(11px, 0.7vw, 14px);
             padding: 4px 0;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
@@ -660,7 +666,7 @@
             padding-top: var(--space-md, 32px);
             display: flex;
             justify-content: space-between;
-            font-size: clamp(11px, 0.6vw, 13px);
+            font-size: clamp(10px, 0.6vw, 13px);
             flex-wrap: wrap;
             gap: var(--space-sm, 16px);
         }
@@ -693,7 +699,7 @@
            10. PAGE HEADER
            ============================================================ */
         .page-header {
-            padding-top: clamp(90px, 12vh, 140px);
+            padding-top: clamp(80px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -732,7 +738,7 @@
         .community-content .community-statement {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(24px, 3vw, 36px);
+            font-size: clamp(22px, 3vw, 36px);
             line-height: 1.2;
             color: var(--iron-black, #111111);
             border-top: 2px solid var(--iron-red, #a32621);
@@ -741,19 +747,63 @@
         }
 
         .community-image {
-            background: var(--iron-ink, #1c1c1c);
-            min-height: 300px;
+            min-height: 220px;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
             color: var(--iron-grey, #6b6b6b);
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.9vw, 16px);
+            font-size: clamp(12px, 0.9vw, 16px);
+        }
+
+        .community-image .placeholder-text {
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .community-image .placeholder-text .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.7vw, 13px);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .community-image .placeholder-text .sub-label {
+            font-size: clamp(9px, 0.5vw, 11px);
+            opacity: 0.5;
+            margin-top: var(--space-xs, 8px);
         }
 
         /* ============================================================
-           12. COMMUNITY FLOW
+           12. SVG ICON STYLES
+           ============================================================ */
+        .icon-svg {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-sm, 16px);
+            flex-shrink: 0;
+        }
+
+        .icon-svg svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--iron-black, #111111);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .icon-svg svg .accent {
+            stroke: var(--iron-red, #a32621);
+        }
+
+        /* ============================================================
+           13. COMMUNITY FLOW
            ============================================================ */
         .community-flow-grid {
             display: grid;
@@ -779,14 +829,14 @@
         .community-flow-step .num {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(20px, 1.8vw, 28px);
+            font-size: clamp(18px, 1.8vw, 28px);
             color: var(--iron-red, #a32621);
             display: block;
         }
 
         .community-flow-step .label {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.8vw, 14px);
+            font-size: clamp(11px, 0.8vw, 14px);
             font-weight: 500;
             display: block;
             margin-top: var(--space-xs, 8px);
@@ -815,7 +865,7 @@
             }
 
             .community-image {
-                min-height: 200px;
+                min-height: 160px;
                 order: -1;
             }
 
@@ -829,10 +879,13 @@
             .community-flow-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .community-flow-step {
+                padding: var(--space-sm, 16px);
+            }
         }
 
         /* ============================================================
-           13. COMMUNITY FEATURES
+           14. COMMUNITY FEATURES
            ============================================================ */
         .features-grid {
             display: grid;
@@ -855,22 +908,16 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
         }
 
-        .feature-item .icon {
-            font-size: clamp(32px, 3vw, 48px);
-            display: block;
-            margin-bottom: var(--space-sm, 16px);
-        }
-
         .feature-item h4 {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
-            font-size: clamp(18px, 1.4vw, 22px);
+            font-size: clamp(17px, 1.4vw, 22px);
             margin-bottom: var(--space-xs, 8px);
         }
 
         .feature-item p {
             font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.8vw, 15px);
+            font-size: clamp(12px, 0.8vw, 15px);
             color: var(--iron-grey, #6b6b6b);
         }
 
@@ -888,59 +935,50 @@
         }
 
         /* ============================================================
-           14. TESTIMONIALS / COMMUNITY VOICES
+           15. IMAGE PLACEHOLDER UTILITIES
            ============================================================ */
-        .voices-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md, 32px);
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .voice-item {
-            padding: var(--space-md, 32px);
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            background: var(--iron-white, #f7f7f4);
-            text-align: center;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .voice-item:hover {
-            border-color: var(--iron-black, #111111);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .voice-item .quote {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-style: italic;
-            font-size: clamp(17px, 1.2vw, 20px);
-            color: var(--iron-ink, #1c1c1c);
-            line-height: 1.5;
-        }
-
-        .voice-item .attribution {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(12px, 0.7vw, 14px);
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
             color: var(--iron-grey, #6b6b6b);
-            margin-top: var(--space-sm, 16px);
+            text-align: center;
+            padding: var(--space-md, 32px);
+        }
+
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
         }
 
         @media (max-width: 768px) {
-            .voices-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .voices-grid {
-                grid-template-columns: 1fr;
+            .img-placeholder {
+                min-height: 140px;
             }
         }
 
         /* ============================================================
-           15. CTA SECTION
+           16. CTA SECTION
            ============================================================ */
         .cta-community {
             background: var(--iron-black, #111111);
@@ -972,7 +1010,7 @@
         }
 
         /* ============================================================
-           16. UTILITY
+           17. UTILITY
            ============================================================ */
         .text-center {
             text-align: center;
@@ -1073,11 +1111,11 @@
                         <a href="#features" class="btn-secondary btn-arrow">Explore The Community →</a>
                     </div>
                 </div>
+                <!-- IMAGE PLACEHOLDER 1 -->
                 <div class="community-image reveal">
-                    <div style="text-align:center; padding: var(--space-md);">
-                        <span style="font-size: 64px; display: block; margin-bottom: var(--space-sm);">👥</span>
-                        <p style="font-size: 14px;">Community Image</p>
-                        <p style="font-size: 12px; opacity: 0.6;">Men gathering together</p>
+                    <div class="placeholder-text">
+                        <span class="label">Community Image</span>
+                        <span class="sub-label">assets/images/community/men-gathering.jpg</span>
                     </div>
                 </div>
             </div>
@@ -1137,6 +1175,14 @@
                 </div>
             </div>
 
+            <!-- IMAGE PLACEHOLDER 2 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
+                <div class="content">
+                    <span class="label">Community Flow</span>
+                    <span class="sub-label">assets/images/community/community-flow.jpg</span>
+                </div>
+            </div>
+
             <!-- BIBLE VERSE -->
             <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
                 "Therefore encourage one another and build each other up,<br />
@@ -1147,7 +1193,7 @@
     </section>
 
     <!-- ============================================================
-    COMMUNITY FEATURES
+    COMMUNITY FEATURES — WITH SVG ICONS
     ============================================================ -->
     <section id="features">
         <div class="container">
@@ -1160,73 +1206,110 @@
             </div>
 
             <div class="features-grid">
+                <!-- Conversations -->
                 <div class="feature-item reveal">
-                    <span class="icon">💬</span>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M8 16C8 12.686 10.686 10 14 10H34C37.314 10 40 12.686 40 16V28C40 31.314 37.314 34 34 34H28L20 42V34H14C10.686 34 8 31.314 8 28V16Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="20" cy="22" r="2" fill="var(--iron-red)" stroke="none"/>
+                            <circle cx="28" cy="22" r="2" fill="var(--iron-red)" stroke="none"/>
+                            <circle cx="36" cy="22" r="2" fill="var(--iron-red)" stroke="none"/>
+                        </svg>
+                    </div>
                     <h4>Conversations</h4>
                     <p>Real discussions about the things that actually matter in men's lives.</p>
                 </div>
+
+                <!-- Challenges -->
                 <div class="feature-item reveal">
-                    <span class="icon">⚡</span>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 8L28 16L37 12L33 21L42 25L33 29L37 38L28 34L24 42L20 34L11 38L15 29L6 25L15 21L11 12L20 16L24 8Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="24" cy="25" r="3" fill="var(--iron-red)" stroke="none"/>
+                        </svg>
+                    </div>
                     <h4>Challenges</h4>
                     <p>Structured challenges designed to build capability through action.</p>
                 </div>
+
+                <!-- Education -->
                 <div class="feature-item reveal">
-                    <span class="icon">📚</span>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M4 12L24 6L44 12L24 18L4 12Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M4 12V32L24 38L44 32V12" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M24 18V38" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M12 22L16 24" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M32 22L36 24" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="24" cy="28" r="2" fill="var(--iron-red)" stroke="none"/>
+                        </svg>
+                    </div>
                     <h4>Education</h4>
                     <p>Practical education built around the six areas of development.</p>
                 </div>
+
+                <!-- Accountability -->
                 <div class="feature-item reveal">
-                    <span class="icon">🎯</span>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 6L24 14" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M24 34L24 42" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M6 24L14 24" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M34 24L42 24" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 12L16.5 16.5" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M31.5 31.5L36 36" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 36L16.5 31.5" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M31.5 16.5L36 12" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="24" cy="24" r="8" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
+                            <path d="M24 20V24L27 27" stroke="var(--iron-red)" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                     <h4>Accountability</h4>
                     <p>Men who will hold you to the standards you set for yourself.</p>
                 </div>
+
+                <!-- Live Sessions -->
                 <div class="feature-item reveal">
-                    <span class="icon">🎤</span>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="6" y="14" width="36" height="20" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M20 34V40" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M28 34V40" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M14 40H34" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="18" cy="24" r="2" fill="var(--iron-red)" stroke="none"/>
+                            <circle cx="24" cy="24" r="2" fill="var(--iron-red)" stroke="none"/>
+                            <circle cx="30" cy="24" r="2" fill="var(--iron-red)" stroke="none"/>
+                            <path d="M18 24L18 28" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M24 24L24 28" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M30 24L30 28" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                     <h4>Live Sessions</h4>
                     <p>Regular live calls, discussions and Q&A sessions with the community.</p>
                 </div>
+
+                <!-- Connection -->
                 <div class="feature-item reveal">
-                    <span class="icon">🤝</span>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M16 12C18 10 20 10 22 12L24 14L26 12C28 10 30 10 32 12C34 14 34 18 32 20L24 28L16 20C14 18 14 14 16 12Z" stroke="var(--iron-red)" stroke-width="1.5" fill="none"/>
+                            <path d="M32 20L38 26" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M38 20L32 26" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 28L16 34" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M16 28L10 34" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                     <h4>Connection</h4>
                     <p>Build relationships with men who are on the same path of development.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ============================================================
-    COMMUNITY VOICES (TESTIMONIALS)
-    ============================================================ -->
-    <section style="background: var(--iron-white); border-top: 1px solid var(--iron-rule); border-bottom: 1px solid var(--iron-rule);">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">Community Voices</div>
-                <h2 class="heading-display heading-display-md">What Men Are Saying.</h2>
-                <p class="text-body">
-                    The Iron is built by men, for men. Here's what the community has to say.
-                </p>
-            </div>
-
-            <div class="voices-grid">
-                <div class="voice-item reveal">
-                    <p class="quote">"I came for the structure. I stayed for the men. The conversations here are unlike anything I've found elsewhere."</p>
-                    <p class="attribution">— Member, Johannesburg</p>
+            <!-- IMAGE PLACEHOLDER 3 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
+                <div class="content">
+                    <span class="label">Community Space</span>
+                    <span class="sub-label">assets/images/community/community-space.jpg</span>
                 </div>
-                <div class="voice-item reveal">
-                    <p class="quote">"The Iron gave me permission to be honest about where I am. And the accountability to do something about it."</p>
-                    <p class="attribution">— Member, Cape Town</p>
-                </div>
-                <div class="voice-item reveal">
-                    <p class="quote">"I've read a hundred books. The Iron is the first community that actually helped me apply what I was learning."</p>
-                    <p class="attribution">— Member, Pretoria</p>
-                </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "Two are better than one,<br />
-                because they have a good return for their labor."
-                <span class="ref">— Ecclesiastes 4:9</span>
             </div>
         </div>
     </section>
@@ -1243,6 +1326,14 @@
                     You don't have to do this alone. Join a community of men who are building lives they respect.
                 </p>
                 <a href="membership.html" class="btn-primary btn-arrow"><span>Join The Community →</span></a>
+            </div>
+
+            <!-- IMAGE PLACEHOLDER 4 -->
+            <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
+                <div class="content">
+                    <span class="label">Join Us</span>
+                    <span class="sub-label">assets/images/community/join-community.jpg</span>
+                </div>
             </div>
 
             <!-- BIBLE VERSE (DARK) -->
@@ -1263,7 +1354,7 @@
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
                     <p>Build a life you respect.</p>
-                    <p style="font-size: clamp(11px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
+                    <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
                         Mind. Character. Body. Relationships. Money. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
@@ -1304,9 +1395,7 @@
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. MOBILE NAVIGATION
-            // ============================================================
+            // MOBILE NAVIGATION
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -1350,9 +1439,7 @@
                 });
             }
 
-            // ============================================================
-            // 2. HEADER SCROLL EFFECT
-            // ============================================================
+            // HEADER SCROLL EFFECT
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -1364,9 +1451,7 @@
                 }, { passive: true });
             }
 
-            // ============================================================
-            // 3. REVEAL ANIMATIONS
-            // ============================================================
+            // REVEAL ANIMATIONS
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
