@@ -11,10 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           THE IRON — Global Styles
-           ============================================================ */
-
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -58,16 +54,8 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
 
         ::selection {
             background: var(--iron-red, #a32621);
@@ -83,26 +71,21 @@
         @media (max-width: 1024px) {
             :root { --container-width: min(100% - 60px, 1200px); }
         }
-
         @media (max-width: 768px) {
             :root { --container-width: min(100% - 40px, 1200px); }
         }
-
         @media (max-width: 500px) {
             .container { padding: 0 16px; }
             :root { --container-width: min(100% - 32px, 1200px); }
         }
 
-        /* ============================================================
-           TYPOGRAPHY
-           ============================================================ */
+        /* TYPOGRAPHY */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
         .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
         .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
         .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
@@ -113,11 +96,6 @@
             font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
-        }
-
-        .text-body-sm {
-            font-size: clamp(12px, 0.9vw, 15px);
-            line-height: 1.6;
         }
 
         .section-number {
@@ -145,10 +123,7 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bible-verse strong {
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-        }
+        .bible-verse strong { color: var(--iron-red, #a32621); font-weight: 600; }
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -175,10 +150,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .bible-verse-dark strong {
-            color: var(--iron-white, #f7f7f4);
-            font-weight: 600;
-        }
+        .bible-verse-dark strong { color: var(--iron-white, #f7f7f4); font-weight: 600; }
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -191,16 +163,10 @@
         }
 
         @media (max-width: 500px) {
-            .bible-verse,
-            .bible-verse-dark {
-                font-size: 15px;
-                padding: var(--space-sm, 16px);
-            }
+            .bible-verse, .bible-verse-dark { font-size: 15px; padding: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           BUTTONS
-           ============================================================ */
+        /* BUTTONS */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -234,12 +200,7 @@
         }
 
         .btn-primary:hover::before { left: 0; }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
+        .btn-primary span { position: relative; z-index: 1; }
         .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
@@ -275,8 +236,7 @@
         .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
-            .btn-primary,
-            .btn-secondary {
+            .btn-primary, .btn-secondary {
                 min-width: 100px;
                 padding: 10px 14px;
                 font-size: 12px;
@@ -285,9 +245,7 @@
             }
         }
 
-        /* ============================================================
-           HEADER
-           ============================================================ */
+        /* HEADER */
         .site-header {
             position: fixed;
             top: 0;
@@ -451,9 +409,7 @@
             .nav-toggle { display: flex; }
         }
 
-        /* ============================================================
-           SECTIONS
-           ============================================================ */
+        /* SECTIONS */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
         }
@@ -468,9 +424,6 @@
             margin: 0 auto;
         }
 
-        /* ============================================================
-           REVEAL
-           ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -482,9 +435,7 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-           FOOTER
-           ============================================================ */
+        /* FOOTER */
         .site-footer {
             background: var(--iron-black, #111111);
             color: var(--iron-grey, #6b6b6b);
@@ -561,11 +512,9 @@
             .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
-        /* ============================================================
-           PAGE HEADER
-           ============================================================ */
+        /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
@@ -575,9 +524,7 @@
         .page-header .heading-display-lg { margin-bottom: var(--space-xs, 8px); }
         .page-header p { max-width: 600px; margin: 0 auto; }
 
-        /* ============================================================
-           PILLAR ICON HEADER
-           ============================================================ */
+        /* PILLAR ICON HEADER */
         .pillar-icon {
             width: 72px;
             height: 72px;
@@ -598,26 +545,57 @@
             vector-effect: non-scaling-stroke;
         }
 
-        .pillar-icon svg .accent {
-            stroke: var(--iron-red, #a32621);
-        }
+        .pillar-icon svg .accent { stroke: var(--iron-red, #a32621); }
 
-        /* ============================================================
-           PILLAR INTRO
-           ============================================================ */
+        /* PILLAR INTRO */
         .pillar-intro {
             max-width: 700px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .pillar-intro .text-body {
-            font-size: clamp(15px, 1.2vw, 20px);
+        .pillar-intro .text-body { font-size: clamp(15px, 1.2vw, 20px); }
+
+        /* IMAGE PLACEHOLDER */
+        .img-placeholder {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            width: 100%;
+            color: var(--iron-grey, #6b6b6b);
+            text-align: center;
+            padding: var(--space-md, 32px);
         }
 
-        /* ============================================================
-           FOCUS GRID
-           ============================================================ */
+        .img-placeholder .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xs, 8px);
+        }
+
+        .img-placeholder .content .label {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(11px, 0.8vw, 14px);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .img-placeholder .content .sub-label {
+            font-size: clamp(9px, 0.6vw, 12px);
+            opacity: 0.4;
+        }
+
+        @media (max-width: 768px) {
+            .img-placeholder { min-height: 140px; }
+        }
+
+        /* FOCUS GRID */
         .focus-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -649,9 +627,7 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .focus-item:hover .number {
-            color: var(--iron-red, #a32621);
-        }
+        .focus-item:hover .number { color: var(--iron-red, #a32621); }
 
         .focus-item h4 {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
@@ -674,9 +650,7 @@
             .focus-grid { grid-template-columns: 1fr; }
         }
 
-        /* ============================================================
-           FRAMEWORK SECTION (DARK)
-           ============================================================ */
+        /* FRAMEWORK SECTION */
         .framework-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
@@ -757,9 +731,7 @@
             .framework-steps { grid-template-columns: 1fr 1fr; }
         }
 
-        /* ============================================================
-           CTA PILLAR
-           ============================================================ */
+        /* CTA */
         .cta-pillar {
             background: var(--iron-white, #f7f7f4);
             text-align: center;
@@ -767,9 +739,7 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .cta-pillar .heading-display-sm {
-            margin-bottom: var(--space-md, 32px);
-        }
+        .cta-pillar .heading-display-sm { margin-bottom: var(--space-md, 32px); }
 
         .cta-pillar p {
             max-width: 500px;
@@ -794,47 +764,6 @@
                 width: 100%;
                 max-width: 280px;
             }
-        }
-
-        /* ============================================================
-           IMAGE PLACEHOLDER
-           ============================================================ */
-        .img-placeholder {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 200px;
-            width: 100%;
-            color: var(--iron-grey, #6b6b6b);
-            text-align: center;
-            padding: var(--space-md, 32px);
-        }
-
-        .img-placeholder .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs, 8px);
-        }
-
-        .img-placeholder .content .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(11px, 0.8vw, 14px);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .img-placeholder .content .sub-label {
-            font-size: clamp(9px, 0.6vw, 12px);
-            opacity: 0.4;
-        }
-
-        @media (max-width: 768px) {
-            .img-placeholder { min-height: 140px; }
         }
     </style>
 </head>
@@ -891,14 +820,7 @@
                     Develop the ability to think clearly, regulate your emotions, stay disciplined and remain resilient when circumstances become difficult.
                 </p>
 
-                <!-- BIBLE VERSE -->
-                <div class="bible-verse" style="margin-top: var(--space-xl);">
-                    "Do not conform to the pattern of this world,<br />
-                    but be transformed by the renewing of your mind."
-                    <span class="ref">— Romans 12:2</span>
-                </div>
-
-                <!-- IMAGE PLACEHOLDER 1 -->
+                <!-- Image placeholder 1 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl);">
                     <div class="content">
                         <span class="label">Mind Pillar Image</span>
@@ -952,13 +874,6 @@
                     <p>Understand your patterns, triggers and areas for growth.</p>
                 </div>
             </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "For God gave us a spirit not of fear<br />
-                but of <strong>power and love and self-control.</strong>"
-                <span class="ref">— 2 Timothy 1:7</span>
-            </div>
         </div>
     </section>
 
@@ -1000,7 +915,7 @@
                     </div>
                 </div>
 
-                <!-- IMAGE PLACEHOLDER 2 -->
+                <!-- Image placeholder 2 -->
                 <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
                     <div class="content">
                         <span class="label">Mind Framework</span>
@@ -1008,11 +923,11 @@
                     </div>
                 </div>
 
-                <!-- BIBLE VERSE (DARK) -->
+                <!-- Bible verse — strategic break -->
                 <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                    "Trust in the Lord with all your heart<br />
-                    and lean not on your own understanding."
-                    <span class="ref">— Proverbs 3:5</span>
+                    "Do not conform to the pattern of this world,<br />
+                    but be transformed by the renewing of your mind."
+                    <span class="ref">— Romans 12:2</span>
                 </div>
             </div>
         </div>
@@ -1025,27 +940,20 @@
                 <div class="section-number">Begin Your Journey</div>
                 <h2 class="heading-display heading-display-sm">Start Building Your Mind.</h2>
                 <p class="text-body">
-                    Join The Iron and access the full Mind development path, resources and community.
+                    Join The Iron Open and access the Mind development path, resources and community.
                 </p>
                 <div class="cta-actions">
-                    <a href="../membership.html" class="btn-primary btn-arrow"><span>Join The Iron →</span></a>
+                    <a href="../community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
                     <a href="../framework.html" class="btn-secondary btn-arrow">View Full Framework →</a>
                 </div>
             </div>
 
-            <!-- IMAGE PLACEHOLDER 3 -->
+            <!-- Image placeholder 3 -->
             <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
                 <div class="content">
-                    <span class="label">Start Your Journey</span>
+                    <span class="label">Begin the Work</span>
                     <span class="sub-label">assets/images/pillars/mind-cta.jpg</span>
                 </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "The mind governed by the flesh is death,<br />
-                but the mind governed by the Spirit is life and peace."
-                <span class="ref">— Romans 8:6</span>
             </div>
         </div>
     </section>
@@ -1056,9 +964,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1091,7 +999,6 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
         (function() {
             'use strict';
