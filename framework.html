@@ -4,20 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE IRON — Framework</title>
-    <meta name="description" content="The Iron Framework: Six Plans of Development for men building greater capability in mind, character, body, relationships, money and purpose." />
+    <meta name="description" content="The Iron Framework: The Iron Path (six stages of development) and the Seven Areas of life you build within each stage." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
-        /* ============================================================
-           THE IRON — Global Styles
-           ============================================================ */
-
-        /* ============================================================
-           1. DESIGN TOKENS
-           ============================================================ */
         :root {
             --iron-black: #111111;
             --iron-ink: #1c1c1c;
@@ -39,9 +32,6 @@
             --transition: 600ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================================
-           2. RESET & BASE
-           ============================================================ */
         *,
         *::before,
         *::after {
@@ -64,25 +54,14 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
 
         ::selection {
             background: var(--iron-red, #a32621);
             color: var(--iron-white, #f7f7f4);
         }
 
-        /* ============================================================
-           3. CONTAINER
-           ============================================================ */
         .container {
             width: var(--container-width, min(1200px, calc(100% - 80px)));
             margin: 0 auto;
@@ -90,47 +69,26 @@
         }
 
         @media (max-width: 1024px) {
-            :root {
-                --container-width: min(100% - 60px, 1200px);
-            }
+            :root { --container-width: min(100% - 60px, 1200px); }
         }
-
         @media (max-width: 768px) {
-            :root {
-                --container-width: min(100% - 40px, 1200px);
-            }
+            :root { --container-width: min(100% - 40px, 1200px); }
         }
-
         @media (max-width: 500px) {
-            .container {
-                padding: 0 16px;
-            }
-            :root {
-                --container-width: min(100% - 32px, 1200px);
-            }
+            .container { padding: 0 16px; }
+            :root { --container-width: min(100% - 32px, 1200px); }
         }
 
-        /* ============================================================
-           4. TYPOGRAPHY
-           ============================================================ */
+        /* TYPOGRAPHY */
         .heading-display {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
             font-weight: 600;
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
-
-        .heading-display-lg {
-            font-size: clamp(32px, 8vw, 80px);
-        }
-
-        .heading-display-md {
-            font-size: clamp(28px, 6vw, 64px);
-        }
-
-        .heading-display-sm {
-            font-size: clamp(22px, 4vw, 40px);
-        }
+        .heading-display-lg { font-size: clamp(32px, 8vw, 80px); }
+        .heading-display-md { font-size: clamp(28px, 6vw, 64px); }
+        .heading-display-sm { font-size: clamp(22px, 4vw, 40px); }
 
         .text-body {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -138,20 +96,6 @@
             font-size: clamp(14px, 1.1vw, 18px);
             line-height: 1.7;
             color: var(--iron-ink, #1c1c1c);
-        }
-
-        .text-body-sm {
-            font-size: clamp(12px, 0.9vw, 15px);
-            line-height: 1.6;
-        }
-
-        .text-meta {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(9px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
         }
 
         .section-number {
@@ -162,34 +106,6 @@
             letter-spacing: 0.12em;
             color: var(--iron-red, #a32621);
             margin-bottom: var(--space-xs, 8px);
-        }
-
-        .verse {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(16px, 1.2vw, 20px);
-            color: var(--iron-grey, #6b6b6b);
-            line-height: 1.6;
-            max-width: 600px;
-            margin: var(--space-md, 32px) auto;
-            padding-left: var(--space-md, 32px);
-            border-left: 2px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .verse strong {
-            color: var(--iron-black, #111111);
-            font-weight: 600;
-        }
-
-        .verse-reference {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(10px, 0.7vw, 14px);
-            font-style: normal;
-            font-weight: 400;
-            color: var(--iron-grey, #6b6b6b);
-            display: block;
-            margin-top: var(--space-xs, 8px);
         }
 
         .bible-verse {
@@ -207,10 +123,7 @@
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bible-verse strong {
-            color: var(--iron-red, #a32621);
-            font-weight: 600;
-        }
+        .bible-verse strong { color: var(--iron-red, #a32621); font-weight: 600; }
 
         .bible-verse .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -237,10 +150,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .bible-verse-dark strong {
-            color: var(--iron-white, #f7f7f4);
-            font-weight: 600;
-        }
+        .bible-verse-dark strong { color: var(--iron-white, #f7f7f4); font-weight: 600; }
 
         .bible-verse-dark .ref {
             font-family: var(--font-body, 'Inter', sans-serif);
@@ -253,21 +163,10 @@
         }
 
         @media (max-width: 500px) {
-            .verse {
-                padding-left: var(--space-sm, 16px);
-                font-size: 15px;
-                margin: var(--space-sm, 16px) auto;
-            }
-            .bible-verse,
-            .bible-verse-dark {
-                font-size: 15px;
-                padding: var(--space-sm, 16px);
-            }
+            .bible-verse, .bible-verse-dark { font-size: 15px; padding: var(--space-sm, 16px); }
         }
 
-        /* ============================================================
-           5. BUTTONS
-           ============================================================ */
+        /* BUTTONS */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -286,7 +185,6 @@
             overflow: hidden;
             text-align: center;
             min-width: 120px;
-            width: auto;
         }
 
         .btn-primary::before {
@@ -301,18 +199,9 @@
             z-index: 0;
         }
 
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary:hover {
-            border-color: var(--iron-red, #a32621);
-        }
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary:hover { border-color: var(--iron-red, #a32621); }
 
         .btn-secondary {
             display: inline-flex;
@@ -331,7 +220,6 @@
             cursor: pointer;
             text-align: center;
             min-width: 120px;
-            width: auto;
         }
 
         .btn-secondary:hover {
@@ -345,13 +233,10 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .btn-arrow:hover::after {
-            transform: translateX(6px);
-        }
+        .btn-arrow:hover::after { transform: translateX(6px); }
 
         @media (max-width: 500px) {
-            .btn-primary,
-            .btn-secondary {
+            .btn-primary, .btn-secondary {
                 min-width: 100px;
                 padding: 10px 14px;
                 font-size: 12px;
@@ -360,9 +245,7 @@
             }
         }
 
-        /* ============================================================
-           6. HEADER / NAVIGATION
-           ============================================================ */
+        /* HEADER */
         .site-header {
             position: fixed;
             top: 0;
@@ -398,13 +281,8 @@
             flex-shrink: 0;
         }
 
-        .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .site-logo:hover {
-            opacity: 0.7;
-        }
+        .site-logo span { color: var(--iron-red, #a32621); }
+        .site-logo:hover { opacity: 0.7; }
 
         .nav-desktop {
             display: flex;
@@ -436,21 +314,10 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-desktop a:hover {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-
-        .nav-desktop a.active {
-            color: var(--iron-black, #111111);
-        }
-
-        .nav-desktop a.active::after {
-            width: 100%;
-        }
+        .nav-desktop a:hover { color: var(--iron-black, #111111); }
+        .nav-desktop a:hover::after { width: 100%; }
+        .nav-desktop a.active { color: var(--iron-black, #111111); }
+        .nav-desktop a.active::after { width: 100%; }
 
         .nav-desktop .nav-cta {
             color: var(--iron-black, #111111);
@@ -461,9 +328,7 @@
             font-size: clamp(8px, 0.7vw, 13px);
         }
 
-        .nav-desktop .nav-cta::after {
-            display: none;
-        }
+        .nav-desktop .nav-cta::after { display: none; }
 
         .nav-desktop .nav-cta:hover {
             background: var(--iron-black, #111111);
@@ -488,17 +353,9 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         @media (max-width: 900px) {
             .nav-desktop {
@@ -522,14 +379,8 @@
             }
 
             @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
 
             .nav-desktop a {
@@ -541,9 +392,7 @@
                 text-align: center;
             }
 
-            .nav-desktop a:last-child {
-                border-bottom: none;
-            }
+            .nav-desktop a:last-child { border-bottom: none; }
 
             .nav-desktop .nav-cta {
                 border: none;
@@ -557,14 +406,10 @@
                 color: var(--iron-red, #a32621);
             }
 
-            .nav-toggle {
-                display: flex;
-            }
+            .nav-toggle { display: flex; }
         }
 
-        /* ============================================================
-           7. SECTIONS
-           ============================================================ */
+        /* SECTIONS */
         section {
             padding: clamp(var(--space-lg, 64px), 6vw, var(--space-xl, 96px)) 0;
         }
@@ -579,17 +424,6 @@
             margin: 0 auto;
         }
 
-        .section-header.text-left {
-            text-align: left;
-        }
-
-        .section-header.text-left p {
-            margin: 0;
-        }
-
-        /* ============================================================
-           8. REVEAL ANIMATION
-           ============================================================ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -601,9 +435,7 @@
             transform: translateY(0);
         }
 
-        /* ============================================================
-           9. FOOTER
-           ============================================================ */
+        /* FOOTER */
         .site-footer {
             background: var(--iron-black, #111111);
             color: var(--iron-grey, #6b6b6b);
@@ -622,14 +454,8 @@
             margin-bottom: var(--space-xs, 8px);
         }
 
-        .footer-brand .site-logo span {
-            color: var(--iron-red, #a32621);
-        }
-
-        .footer-brand p {
-            font-size: clamp(11px, 0.7vw, 14px);
-            max-width: 300px;
-        }
+        .footer-brand .site-logo span { color: var(--iron-red, #a32621); }
+        .footer-brand p { font-size: clamp(11px, 0.7vw, 14px); max-width: 300px; }
 
         .footer-brand .footer-verse {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
@@ -656,9 +482,7 @@
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .footer-col a:hover {
-            color: var(--iron-white, #f7f7f4);
-        }
+        .footer-col a:hover { color: var(--iron-white, #f7f7f4); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -676,11 +500,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: var(--space-md, 32px);
             }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-
+            .footer-brand { grid-column: 1 / -1; }
             .footer-bottom {
                 flex-direction: column;
                 gap: var(--space-xs, 8px);
@@ -689,258 +509,22 @@
         }
 
         @media (max-width: 500px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-md, 32px);
-            }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--space-md, 32px); }
         }
 
-        /* ============================================================
-           10. PAGE HEADER
-           ============================================================ */
+        /* PAGE HEADER */
         .page-header {
-            padding-top: clamp(80px, 12vh, 140px);
+            padding-top: clamp(90px, 12vh, 140px);
             padding-bottom: var(--space-lg, 64px);
             background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
             text-align: center;
         }
 
-        .page-header .heading-display-lg {
-            margin-bottom: var(--space-xs, 8px);
-        }
+        .page-header .heading-display-lg { margin-bottom: var(--space-xs, 8px); }
+        .page-header p { max-width: 600px; margin: 0 auto; }
 
-        .page-header p {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ============================================================
-           11. DATA STRIP
-           ============================================================ */
-        .data-strip {
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            padding: var(--space-md, 32px) 0;
-            background: var(--iron-white, #f7f7f4);
-        }
-
-        .data-strip-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-md, 32px);
-            text-align: center;
-        }
-
-        .data-strip-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .data-strip-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .data-strip-item .numeral {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(24px, 4vw, 52px);
-            line-height: 1;
-            color: var(--iron-black, #111111);
-            display: block;
-        }
-
-        .data-strip-item .numeral .counter {
-            display: inline-block;
-        }
-
-        .data-strip-item .label {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(9px, 0.7vw, 13px);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--iron-grey, #6b6b6b);
-            margin-top: 4px;
-            display: block;
-        }
-
-        @media (max-width: 600px) {
-            .data-strip-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-md, 32px);
-            }
-        }
-
-        @media (max-width: 400px) {
-            .data-strip-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: var(--space-sm, 16px);
-            }
-            .data-strip-item .numeral {
-                font-size: 28px;
-            }
-        }
-
-        /* ============================================================
-           12. FRAMEWORK LIST
-           ============================================================ */
-        .framework-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .framework-item {
-            display: grid;
-            grid-template-columns: clamp(50px, 6vw, 80px) 1fr clamp(80px, 8vw, 120px);
-            gap: clamp(var(--space-sm, 16px), 2vw, var(--space-md, 32px));
-            padding: clamp(var(--space-md, 32px), 4vw, var(--space-lg, 64px)) 0;
-            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
-            align-items: center;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            cursor: default;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .framework-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--iron-red, #a32621);
-            opacity: 0;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-item:hover::before {
-            opacity: 1;
-        }
-
-        .framework-item:hover {
-            padding-left: var(--space-sm, 16px);
-        }
-
-        .framework-item:last-child {
-            border-bottom: none;
-        }
-
-        .framework-item .number {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(22px, 2.5vw, 36px);
-            color: var(--iron-rule, #d9d9d4);
-            line-height: 1;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-item:hover .number {
-            color: var(--iron-red, #a32621);
-        }
-
-        .framework-item .content h3 {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-weight: 600;
-            font-size: clamp(20px, 2.2vw, 32px);
-            line-height: 1.1;
-        }
-
-        .framework-item .content .subtitle {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 400;
-            font-size: clamp(14px, 1.1vw, 18px);
-            color: var(--iron-grey, #6b6b6b);
-            margin-top: 2px;
-        }
-
-        .framework-item .content .description {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(13px, 0.9vw, 16px);
-            color: var(--iron-grey, #6b6b6b);
-            margin-top: var(--space-xs, 8px);
-            max-width: 500px;
-        }
-
-        .framework-item .content .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: var(--space-xs, 8px);
-        }
-
-        .framework-item .content .tags span {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-size: clamp(9px, 0.7vw, 13px);
-            color: var(--iron-grey, #6b6b6b);
-            background: var(--iron-rule, #d9d9d4);
-            padding: 2px clamp(8px, 0.8vw, 14px);
-            border-radius: 20px;
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-item:hover .content .tags span {
-            background: var(--iron-black, #111111);
-            color: var(--iron-white, #f7f7f4);
-        }
-
-        .framework-item .action {
-            text-align: right;
-        }
-
-        .framework-item .action a {
-            font-family: var(--font-body, 'Inter', sans-serif);
-            font-weight: 500;
-            font-size: clamp(12px, 0.8vw, 14px);
-            color: var(--iron-grey, #6b6b6b);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            display: inline-block;
-            padding: 6px 14px;
-            border: 1px solid var(--iron-rule, #d9d9d4);
-            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-        }
-
-        .framework-item .action a:hover {
-            border-color: var(--iron-black, #111111);
-            background: var(--iron-black, #111111);
-            color: var(--iron-white, #f7f7f4);
-        }
-
-        .framework-item:hover .action a {
-            color: var(--iron-black, #111111);
-        }
-
-        @media (max-width: 768px) {
-            .framework-item {
-                grid-template-columns: 1fr;
-                gap: var(--space-xs, 8px);
-                padding: var(--space-md, 32px) 0;
-            }
-
-            .framework-item .number {
-                font-size: 24px;
-            }
-
-            .framework-item .content h3 {
-                font-size: 24px;
-            }
-
-            .framework-item .action {
-                text-align: left;
-            }
-
-            .framework-item .action a {
-                display: inline-block;
-            }
-        }
-
-        /* ============================================================
-           13. IMAGE PLACEHOLDER UTILITIES
-           ============================================================ */
+        /* IMAGE PLACEHOLDER */
         .img-placeholder {
             background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
             border-radius: 4px;
@@ -961,11 +545,6 @@
             gap: var(--space-xs, 8px);
         }
 
-        .img-placeholder .content .icon {
-            font-size: 42px;
-            opacity: 0.4;
-        }
-
         .img-placeholder .content .label {
             font-family: var(--font-body, 'Inter', sans-serif);
             font-size: clamp(11px, 0.8vw, 14px);
@@ -981,27 +560,80 @@
         }
 
         @media (max-width: 768px) {
-            .img-placeholder {
-                min-height: 140px;
-            }
-            .img-placeholder .content .icon {
-                font-size: 28px;
-            }
+            .img-placeholder { min-height: 140px; }
         }
 
-        /* ============================================================
-           14. PROGRESSION SECTION
-           ============================================================ */
-        .progression-section {
+        /* INTRO */
+        .framework-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .framework-intro p {
+            font-size: clamp(15px, 1.2vw, 20px);
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        /* TWO PART SYSTEM */
+        .two-part {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md, 32px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .part-card {
+            padding: var(--space-lg, 64px) var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+        }
+
+        .part-card:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .part-card .part-number {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(10px, 0.7vw, 13px);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--iron-red, #a32621);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .part-card h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(24px, 2.5vw, 36px);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .part-card p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.9vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        @media (max-width: 768px) {
+            .two-part { grid-template-columns: 1fr; }
+        }
+
+        /* IRON PATH SECTION */
+        .path-section {
             background: var(--iron-black, #111111);
             color: var(--iron-white, #f7f7f4);
             padding: clamp(var(--space-xl, 96px), 8vw, var(--space-xxl, 160px)) 0;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .progression-section::before {
+        .path-section::before {
             content: '';
             position: absolute;
             top: -30%;
@@ -1012,126 +644,303 @@
             pointer-events: none;
         }
 
-        .progression-section .section-number {
-            color: var(--iron-red, #a32621);
-        }
+        .path-section .section-number { color: var(--iron-red, #a32621); }
+        .path-section .heading-display-md { color: var(--iron-white, #f7f7f4); }
 
-        .progression-section .heading-display-md {
-            color: var(--iron-white, #f7f7f4);
-        }
-
-        .progression-section p {
+        .path-section p {
             color: var(--iron-grey, #6b6b6b);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .progression-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md, 32px);
+        .path-list {
             max-width: 900px;
-            margin: 0 auto;
+            margin: var(--space-xl, 96px) auto 0;
             position: relative;
             z-index: 1;
         }
 
-        .progression-step {
-            padding: var(--space-md, 32px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+        .path-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: var(--space-md, 32px);
+            padding: var(--space-lg, 64px) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            align-items: start;
             transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
-            text-align: center;
         }
 
-        .progression-step:hover {
-            border-color: var(--iron-red, #a32621);
+        .path-item:first-child {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .progression-step .number {
+        .path-item .path-num {
             font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-size: clamp(24px, 2.5vw, 36px);
-            color: var(--iron-rule, #d9d9d4);
+            font-weight: 600;
+            font-size: clamp(36px, 4vw, 56px);
+            color: rgba(255, 255, 255, 0.15);
+            line-height: 1;
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
         }
 
-        .progression-step .step-name {
-            font-family: var(--font-display, 'Cormorant Garamond', serif);
-            font-size: clamp(20px, 1.8vw, 28px);
-            color: var(--iron-white, #f7f7f4);
-        }
-
-        .progression-step .step-label {
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-        }
-
-        .progression-step .step-desc {
-            font-size: clamp(12px, 0.8vw, 15px);
-            color: var(--iron-grey, #6b6b6b);
-            margin-top: var(--space-sm, 16px);
-        }
-
-        .progression-step.featured-step {
-            border-color: var(--iron-red, #a32621);
-        }
-
-        .progression-step.featured-step .number {
+        .path-item:hover .path-num {
             color: var(--iron-red, #a32621);
         }
 
+        .path-item .path-content h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(22px, 2.2vw, 32px);
+            margin-bottom: var(--space-xs, 8px);
+            color: var(--iron-white, #f7f7f4);
+        }
+
+        .path-item .path-content .path-subtitle {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 400;
+            font-size: clamp(14px, 1.1vw, 18px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-bottom: var(--space-sm, 16px);
+            font-style: italic;
+        }
+
+        .path-item .path-content p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(13px, 0.9vw, 16px);
+            color: var(--iron-grey, #6b6b6b);
+            max-width: 100%;
+            margin: 0;
+            line-height: 1.7;
+        }
+
         @media (max-width: 768px) {
-            .progression-grid {
+            .path-item {
                 grid-template-columns: 1fr;
-                max-width: 400px;
-                gap: var(--space-sm, 16px);
+                gap: var(--space-xs, 8px);
+                padding: var(--space-md, 32px) 0;
+            }
+
+            .path-item .path-num {
+                font-size: 32px;
             }
         }
 
-        /* ============================================================
-           15. UTILITY
-           ============================================================ */
-        .text-center {
-            text-align: center;
-        }
-
-        .text-left {
-            text-align: left;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .mt-sm {
-            margin-top: var(--space-sm, 16px);
-        }
-
-        .mt-md {
-            margin-top: var(--space-md, 32px);
-        }
-
-        .mt-lg {
-            margin-top: var(--space-lg, 64px);
-        }
-
-        .border-top {
-            border-top: 1px solid var(--iron-rule, #d9d9d4);
-        }
-
-        .border-bottom {
+        /* SEVEN AREAS SECTION */
+        .areas-section {
+            background: var(--iron-white, #f7f7f4);
             border-bottom: 1px solid var(--iron-rule, #d9d9d4);
         }
 
-        .bg-white {
+        .areas-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: var(--space-lg, 64px);
+        }
+
+        .areas-intro p {
+            font-size: clamp(15px, 1.2vw, 20px);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md, 32px);
+        }
+
+        .area-card {
+            padding: var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
             background: var(--iron-white, #f7f7f4);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .area-card:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .area-card .area-num {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(9px, 0.7vw, 12px);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--iron-red, #a32621);
+            margin-bottom: var(--space-sm, 16px);
+        }
+
+        .area-card .icon-svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: var(--space-sm, 16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .area-card .icon-svg svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: var(--iron-black, #111111);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
+        }
+
+        .area-card .icon-svg svg .accent {
+            stroke: var(--iron-red, #a32621);
+        }
+
+        .area-card h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(20px, 1.8vw, 28px);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .area-card p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
+            margin-bottom: var(--space-sm, 16px);
+            flex-grow: 1;
+        }
+
+        .area-card .area-link {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-weight: 500;
+            font-size: clamp(11px, 0.7vw, 14px);
+            color: var(--iron-black, #111111);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            margin-top: auto;
+        }
+
+        .area-card .area-link:hover { color: var(--iron-red, #a32621); }
+
+        .area-card .area-link::after {
+            content: ' →';
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .area-card .area-link:hover::after { transform: translateX(4px); }
+
+        .area-card.character-card {
+            grid-column: 1 / -1;
+            border-color: var(--iron-red, #a32621);
+            border-style: dashed;
+        }
+
+        .area-card.character-card .area-num { color: var(--iron-red, #a32621); }
+
+        @media (max-width: 900px) {
+            .areas-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm, 16px); }
+        }
+
+        @media (max-width: 500px) {
+            .areas-grid { grid-template-columns: 1fr; }
+            .area-card.character-card { grid-column: 1; }
+        }
+
+        /* HOW IT WORKS */
+        .how-section {
+            background: var(--iron-white, #f7f7f4);
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md, 32px);
+            margin-top: var(--space-lg, 64px);
+        }
+
+        .how-item {
+            padding: var(--space-md, 32px);
+            border: 1px solid var(--iron-rule, #d9d9d4);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+            background: var(--iron-white, #f7f7f4);
+        }
+
+        .how-item:hover {
+            border-color: var(--iron-black, #111111);
+            transform: translateY(-4px);
+        }
+
+        .how-item .how-num {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(28px, 3vw, 40px);
+            color: var(--iron-rule, #d9d9d4);
+            line-height: 1;
+            margin-bottom: var(--space-xs, 8px);
+            transition: var(--transition, 600ms cubic-bezier(0.16, 1, 0.3, 1));
+        }
+
+        .how-item:hover .how-num { color: var(--iron-red, #a32621); }
+
+        .how-item h3 {
+            font-family: var(--font-display, 'Cormorant Garamond', serif);
+            font-weight: 600;
+            font-size: clamp(18px, 1.6vw, 24px);
+            margin-bottom: var(--space-xs, 8px);
+        }
+
+        .how-item p {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: clamp(12px, 0.8vw, 15px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        @media (max-width: 768px) {
+            .how-grid { grid-template-columns: 1fr; gap: var(--space-sm, 16px); }
+        }
+
+        /* CTA */
+        .cta-framework {
+            background: var(--iron-white, #f7f7f4);
+            text-align: center;
+            border-top: 1px solid var(--iron-rule, #d9d9d4);
+            border-bottom: 1px solid var(--iron-rule, #d9d9d4);
+        }
+
+        .cta-framework .heading-display-sm {
+            margin-bottom: var(--space-md, 32px);
+        }
+
+        .cta-framework p {
+            max-width: 500px;
+            margin: 0 auto var(--space-md, 32px);
+            color: var(--iron-grey, #6b6b6b);
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm, 16px);
+            justify-content: center;
+        }
+
+        @media (max-width: 500px) {
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header class="site-header" id="siteHeader" role="banner">
         <div class="container">
             <a href="index.html" class="site-logo">THE IRON<span>.</span></a>
@@ -1149,321 +958,359 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    PAGE HEADER
-    ============================================================ -->
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <div class="section-number">The Framework</div>
-            <h1 class="heading-display heading-display-lg">The Six Plans</h1>
-            <p class="text-body">A complete system for becoming more capable in every area of life.</p>
+            <h1 class="heading-display heading-display-lg">The Iron Path.</h1>
+            <p class="text-body">
+                Two parts. One system.<br />
+                A path that shows you where you're going. Seven areas that show you what you're building.
+            </p>
         </div>
     </section>
 
-    <!-- ============================================================
-    DATA STRIP
-    ============================================================ -->
-    <div class="data-strip">
-        <div class="container">
-            <div class="data-strip-grid">
-                <div class="data-strip-item" data-delay="0">
-                    <span class="numeral"><span class="counter" data-target="6">0</span></span>
-                    <span class="label">Plans of Development</span>
-                </div>
-                <div class="data-strip-item" data-delay="200">
-                    <span class="numeral"><span class="counter" data-target="12">0</span><span style="font-size:0.6em;">+</span></span>
-                    <span class="label">Masterclasses</span>
-                </div>
-                <div class="data-strip-item" data-delay="400">
-                    <span class="numeral"><span class="counter" data-target="1">0</span></span>
-                    <span class="label">Framework</span>
-                </div>
-                <div class="data-strip-item" data-delay="600">
-                    <span class="numeral">∞</span>
-                    <span class="label">Commitment</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-    FRAMEWORK INTRODUCTION
-    ============================================================ -->
+    <!-- INTRO / TWO PART SYSTEM -->
     <section>
         <div class="container">
-            <div class="section-header reveal">
-                <div class="section-number">The Iron Framework</div>
-                <h2 class="heading-display heading-display-md">Six Plans of Development</h2>
+            <div class="framework-intro reveal">
+                <div class="section-number">How It Works</div>
+                <h2 class="heading-display heading-display-md">The Iron Framework.</h2>
                 <p class="text-body">
-                    Each plan is a chapter in your development. Start anywhere.<br />
-                    Build in any order. The framework is designed to be flexible.
+                    The Iron is built on two connected pieces:<br /><br />
+                    <strong>The Iron Path</strong> — six stages that describe where you are in your development.<br /><br />
+                    <strong>The Seven Areas</strong> — what you work on inside each stage.
                 </p>
             </div>
 
-            <!-- IMAGE PLACEHOLDER 1 -->
-            <div class="img-placeholder reveal">
-                <div class="content">
-                    <span class="icon">📋</span>
-                    <span class="label">Framework Overview</span>
-                    <span class="sub-label">assets/images/pillars/framework-overview.jpg</span>
+            <div class="two-part">
+                <div class="part-card reveal">
+                    <div class="part-number">Part One</div>
+                    <h3>The Iron Path</h3>
+                    <p>Your journey through six stages of development — from getting your life under control to building something that matters.</p>
+                </div>
+
+                <div class="part-card reveal">
+                    <div class="part-number">Part Two</div>
+                    <h3>The Seven Areas</h3>
+                    <p>The areas of your life you work on at every stage — Mind, Character, Body, Money, Career, Relationships, Purpose.</p>
                 </div>
             </div>
 
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal">
-                "Do not conform to the pattern of this world,<br />
-                but be transformed by the renewing of your mind."
-                <span class="ref">— Romans 12:2</span>
-            </div>
-
-            <div class="framework-list">
-                <!-- 01 — MIND -->
-                <div class="framework-item reveal">
-                    <div class="number">01</div>
-                    <div class="content">
-                        <h3>Mind</h3>
-                        <div class="subtitle">Master yourself.</div>
-                        <p class="description">
-                            Mental strength. Emotional regulation. Discipline. Confidence. Resilience.
-                            Develop the ability to think clearly, regulate your emotions, stay disciplined and remain resilient when circumstances become difficult.
-                        </p>
-                        <div class="tags">
-                            <span>Mental strength</span>
-                            <span>Emotional regulation</span>
-                            <span>Discipline</span>
-                            <span>Confidence</span>
-                            <span>Resilience</span>
-                            <span>Self-awareness</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <a href="pillars/mind.html">Explore →</a>
-                    </div>
-                </div>
-
-                <!-- 02 — CHARACTER -->
-                <div class="framework-item reveal">
-                    <div class="number">02</div>
-                    <div class="content">
-                        <h3>Character</h3>
-                        <div class="subtitle">Become someone you respect.</div>
-                        <p class="description">
-                            Integrity. Responsibility. Courage. Leadership. Standards.
-                            Character is what remains when nobody is watching. Build integrity, responsibility, courage, confidence and the ability to keep your word.
-                        </p>
-                        <div class="tags">
-                            <span>Integrity</span>
-                            <span>Responsibility</span>
-                            <span>Courage</span>
-                            <span>Leadership</span>
-                            <span>Standards</span>
-                            <span>Self-respect</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <a href="pillars/character.html">Explore →</a>
-                    </div>
-                </div>
-
-                <!-- 03 — BODY -->
-                <div class="framework-item reveal">
-                    <div class="number">03</div>
-                    <div class="content">
-                        <h3>Body</h3>
-                        <div class="subtitle">Take care of what carries you.</div>
-                        <p class="description">
-                            Strength. Nutrition. Recovery. Health.
-                            Your body is not the whole of your life. But it carries you through all of it. Build strength, health, physical discipline and habits that increase your capacity.
-                        </p>
-                        <div class="tags">
-                            <span>Strength</span>
-                            <span>Training</span>
-                            <span>Nutrition</span>
-                            <span>Sleep</span>
-                            <span>Health</span>
-                            <span>Recovery</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <a href="pillars/body.html">Explore →</a>
-                    </div>
-                </div>
-
-                <!-- 04 — RELATIONSHIPS -->
-                <div class="framework-item reveal">
-                    <div class="number">04</div>
-                    <div class="content">
-                        <h3>Relationships</h3>
-                        <div class="subtitle">Build connections that matter.</div>
-                        <p class="description">
-                            Communication. Boundaries. Trust. Connection.
-                            The quality of your relationships shapes the quality of your life. Develop communication, emotional maturity, boundaries, trust and the ability to build relationships without losing yourself.
-                        </p>
-                        <div class="tags">
-                            <span>Communication</span>
-                            <span>Boundaries</span>
-                            <span>Emotional maturity</span>
-                            <span>Connection</span>
-                            <span>Respect</span>
-                            <span>Trust</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <a href="pillars/relationships.html">Explore →</a>
-                    </div>
-                </div>
-
-                <!-- 05 — MONEY -->
-                <div class="framework-item reveal">
-                    <div class="number">05</div>
-                    <div class="content">
-                        <h3>Money</h3>
-                        <div class="subtitle">Become financially capable.</div>
-                        <p class="description">
-                            Income. Saving. Investing. Ownership.
-                            Money is not the purpose of life. But financial capability gives you options, responsibility and greater control over the direction of your life. Learn to earn, manage, save and invest with discipline.
-                        </p>
-                        <div class="tags">
-                            <span>Financial literacy</span>
-                            <span>Income</span>
-                            <span>Saving</span>
-                            <span>Investing</span>
-                            <span>Career</span>
-                            <span>Ownership</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <a href="pillars/money.html">Explore →</a>
-                    </div>
-                </div>
-
-                <!-- 06 — PURPOSE -->
-                <div class="framework-item reveal">
-                    <div class="number">06</div>
-                    <div class="content">
-                        <h3>Purpose</h3>
-                        <div class="subtitle">Find something worth building.</div>
-                        <p class="description">
-                            Direction. Skill. Work. Contribution.
-                            A life without direction eventually becomes a life dictated by circumstance. Develop useful skills, meaningful work and a reason to keep moving forward.
-                        </p>
-                        <div class="tags">
-                            <span>Direction</span>
-                            <span>Skills</span>
-                            <span>Work</span>
-                            <span>Meaning</span>
-                            <span>Contribution</span>
-                            <span>Purpose</span>
-                        </div>
-                    </div>
-                    <div class="action">
-                        <a href="pillars/purpose.html">Explore →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IMAGE PLACEHOLDER 2 -->
+            <!-- Image placeholder 1 -->
             <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
                 <div class="content">
-                    <span class="icon">🔗</span>
-                    <span class="label">Framework Connection</span>
-                    <span class="sub-label">assets/images/pillars/framework-connection.jpg</span>
+                    <span class="label">Framework Overview</span>
+                    <span class="sub-label">assets/images/framework/framework-overview.jpg</span>
                 </div>
-            </div>
-
-            <!-- BIBLE VERSE -->
-            <div class="bible-verse reveal" style="margin-top: var(--space-xl);">
-                "For God gave us a spirit not of fear<br />
-                but of <strong>power and love and self-control.</strong>"
-                <span class="ref">— 2 Timothy 1:7</span>
-            </div>
-
-            <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
-                <a href="membership.html" class="btn-primary btn-arrow"><span>Start building →</span></a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    THE PROGRESSION
-    ============================================================ -->
-    <section class="progression-section">
+    <!-- PART ONE — THE IRON PATH -->
+    <section class="path-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number" style="color: var(--iron-red);">Part One</div>
+                <h2 class="heading-display heading-display-md">The Iron Path.</h2>
+                <p style="max-width: 600px; margin: 0 auto;">
+                    Six stages. Not a course. A progression.<br />
+                    You move forward. You build on what came before.
+                </p>
+            </div>
+
+            <div class="path-list">
+                <!-- FOUNDATION -->
+                <div class="path-item reveal">
+                    <div class="path-num">01</div>
+                    <div class="path-content">
+                        <h3>Foundation</h3>
+                        <div class="path-subtitle">Get your life under control.</div>
+                        <p>
+                            Before you can build anything meaningful, you need order. Foundation is about establishing basic discipline, cleaning up what's been neglected, and creating an environment where growth is possible.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DIRECTION -->
+                <div class="path-item reveal">
+                    <div class="path-num">02</div>
+                    <div class="path-content">
+                        <h3>Direction</h3>
+                        <div class="path-subtitle">Know what you're building.</div>
+                        <p>
+                            Once you have stability, you need clarity. Direction is about defining what you're working toward — not a perfect plan, but a real one. What matters to you. What you're willing to pursue for years.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CAPABILITY -->
+                <div class="path-item reveal">
+                    <div class="path-num">03</div>
+                    <div class="path-content">
+                        <h3>Capability</h3>
+                        <div class="path-subtitle">Become valuable.</div>
+                        <p>
+                            Direction means nothing without capability. This stage is about developing real skills, increasing your earning capacity, and becoming someone who can actually deliver on what they've committed to.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RELATIONSHIPS -->
+                <div class="path-item reveal">
+                    <div class="path-num">04</div>
+                    <div class="path-content">
+                        <h3>Relationships</h3>
+                        <div class="path-subtitle">Build healthy relationships.</div>
+                        <p>
+                            Capability without connection becomes empty. This stage is about learning to relate well — communicate properly, set healthy boundaries, choose your people well, and build relationships that add depth rather than drain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LEADERSHIP -->
+                <div class="path-item reveal">
+                    <div class="path-num">05</div>
+                    <div class="path-content">
+                        <h3>Leadership</h3>
+                        <div class="path-subtitle">Become someone others can rely on.</div>
+                        <p>
+                            Once you've built capability and relationships, you're in a position to lead — not from a title, but from character. This stage is about becoming reliable, taking responsibility for more than yourself, and setting the standard.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LEGACY -->
+                <div class="path-item reveal">
+                    <div class="path-num">06</div>
+                    <div class="path-content">
+                        <h3>Legacy</h3>
+                        <div class="path-subtitle">Build something that matters.</div>
+                        <p>
+                            The final stage is not about you. It's about what you build that outlasts you — whether that's a family, a business, a body of work, or a generation of men you've helped raise. Legacy is the point.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bible verse — strategic break -->
+            <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
+                "Commit to the Lord whatever you do,<br />
+                and he will establish your plans."
+                <span class="ref">— Proverbs 16:3</span>
+            </div>
+
+            <!-- Image placeholder 2 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
+                <div class="content">
+                    <span class="label">The Iron Path</span>
+                    <span class="sub-label">assets/images/framework/iron-path.jpg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PART TWO — THE SEVEN AREAS -->
+    <section class="areas-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">Part Two</div>
+                <h2 class="heading-display heading-display-md">The Seven Areas.</h2>
+                <p class="text-body">
+                    At every stage of The Iron Path, you're working on the same seven areas.<br />
+                    The balance changes. The areas don't.
+                </p>
+            </div>
+
+            <div class="areas-intro reveal">
+                <p class="text-body" style="font-style: italic; color: var(--iron-grey);">
+                    Character sits underneath all seven. The point isn't just to become successful.<br />
+                    It's to become someone worth becoming.
+                </p>
+            </div>
+
+            <div class="areas-grid">
+                <!-- MIND -->
+                <div class="area-card reveal">
+                    <div class="area-num">01</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="14" />
+                            <circle cx="24" cy="24" r="6" class="accent" />
+                            <line x1="24" y1="4" x2="24" y2="10" />
+                            <line x1="24" y1="38" x2="24" y2="44" />
+                            <line x1="4" y1="24" x2="10" y2="24" />
+                            <line x1="38" y1="24" x2="44" y2="24" />
+                        </svg>
+                    </div>
+                    <h3>Mind</h3>
+                    <p>Think clearly. Manage your emotions. Stay grounded.</p>
+                    <a href="pillars/mind.html" class="area-link">Explore Mind</a>
+                </div>
+
+                <!-- BODY -->
+                <div class="area-card reveal">
+                    <div class="area-num">02</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <line x1="24" y1="6" x2="24" y2="14" />
+                            <line x1="24" y1="34" x2="24" y2="42" />
+                            <line x1="6" y1="24" x2="14" y2="24" />
+                            <line x1="34" y1="24" x2="42" y2="24" />
+                            <circle cx="24" cy="24" r="8" class="accent" />
+                        </svg>
+                    </div>
+                    <h3>Body</h3>
+                    <p>Build physical discipline. Take care of your health.</p>
+                    <a href="pillars/body.html" class="area-link">Explore Body</a>
+                </div>
+
+                <!-- MONEY -->
+                <div class="area-card reveal">
+                    <div class="area-num">03</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <polyline points="8,36 18,26 26,32 40,12" />
+                            <polyline points="32,12 40,12 40,20" class="accent" />
+                            <line x1="8" y1="42" x2="40" y2="42" />
+                        </svg>
+                    </div>
+                    <h3>Money</h3>
+                    <p>Become financially responsible. Learn to build wealth.</p>
+                    <a href="pillars/money.html" class="area-link">Explore Money</a>
+                </div>
+
+                <!-- CAREER -->
+                <div class="area-card reveal">
+                    <div class="area-num">04</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="8" y="16" width="32" height="24" rx="2" />
+                            <path d="M16 16V12C16 10 18 8 20 8H28C30 8 32 10 32 12V16" class="accent" />
+                            <line x1="16" y1="26" x2="32" y2="26" />
+                            <line x1="24" y1="22" x2="24" y2="30" />
+                        </svg>
+                    </div>
+                    <h3>Career</h3>
+                    <p>Become valuable. Develop skills. Increase earning capacity.</p>
+                    <a href="pillars/career.html" class="area-link">Explore Career</a>
+                </div>
+
+                <!-- RELATIONSHIPS -->
+                <div class="area-card reveal">
+                    <div class="area-num">05</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 40 C24 40 8 30 8 20 C8 14 12 10 18 10 C22 10 24 14 24 14 C24 14 26 10 30 10 C36 10 40 14 40 20 C40 30 24 40 24 40 Z" />
+                            <line x1="24" y1="20" x2="24" y2="30" class="accent" />
+                        </svg>
+                    </div>
+                    <h3>Relationships</h3>
+                    <p>Build healthy relationships. Communicate properly.</p>
+                    <a href="pillars/relationships.html" class="area-link">Explore Relationships</a>
+                </div>
+
+                <!-- PURPOSE -->
+                <div class="area-card reveal">
+                    <div class="area-num">06</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="16" />
+                            <polygon points="24,14 30,30 24,26 18,30" class="accent" />
+                        </svg>
+                    </div>
+                    <h3>Purpose</h3>
+                    <p>Know what you're building. Live intentionally.</p>
+                    <a href="pillars/purpose.html" class="area-link">Explore Purpose</a>
+                </div>
+
+                <!-- CHARACTER (foundation) -->
+                <div class="area-card character-card reveal">
+                    <div class="area-num">Foundation</div>
+                    <div class="icon-svg">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 6 L38 12 V24 C38 34 24 42 24 42 C24 42 10 34 10 24 V12 Z" />
+                            <line x1="24" y1="18" x2="24" y2="30" class="accent" />
+                            <line x1="18" y1="24" x2="30" y2="24" class="accent" />
+                        </svg>
+                    </div>
+                    <h3>Character</h3>
+                    <p>Underneath every area. Become someone worth becoming.</p>
+                    <a href="pillars/character.html" class="area-link">Explore Character</a>
+                </div>
+            </div>
+
+            <!-- Image placeholder 3 -->
+            <div class="img-placeholder reveal" style="margin-top: var(--space-xl);">
+                <div class="content">
+                    <span class="label">Seven Areas</span>
+                    <span class="sub-label">assets/images/framework/seven-areas.jpg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS TOGETHER -->
+    <section class="how-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-number">How It Works Together</div>
+                <h2 class="heading-display heading-display-md">Path and Areas, Working Together.</h2>
+                <p class="text-body">
+                    The Path tells you where you are.<br />
+                    The Areas tell you what you're working on.
+                </p>
+            </div>
+
+            <div class="how-grid">
+                <div class="how-item reveal">
+                    <div class="how-num">01</div>
+                    <h3>Identify Your Stage</h3>
+                    <p>Use The Iron Path to understand where you are right now — honestly. Most men overestimate where they are.</p>
+                </div>
+
+                <div class="how-item reveal">
+                    <div class="how-num">02</div>
+                    <h3>Choose Your Areas</h3>
+                    <p>You can't work on all seven at once. Choose one or two areas that need the most attention at your current stage.</p>
+                </div>
+
+                <div class="how-item reveal">
+                    <div class="how-num">03</div>
+                    <h3>Build With The Iron</h3>
+                    <p>Use the community, resources and accountability to actually make progress. Then move forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-framework">
         <div class="container">
             <div class="reveal">
-                <div class="section-number" style="color: var(--iron-red);">The Path</div>
-                <h2 class="heading-display heading-display-md">Discover. Build. Deepen.</h2>
-                <p style="max-width: 600px; margin: 0 auto;">
-                    Your starting point doesn't determine your destination.<br />
-                    What you do next does.
+                <div class="section-number">Begin Your Journey</div>
+                <h2 class="heading-display heading-display-sm">The Framework Is Clear.</h2>
+                <p class="text-body">
+                    You know where you're going. You know what you're building.<br />
+                    The only question is whether you're willing to start.
                 </p>
-
-                <div class="progression-grid" style="margin-top: var(--space-xl);">
-                    <div class="progression-step reveal">
-                        <div class="number">01</div>
-                        <div class="step-name">Discover</div>
-                        <div class="step-label">Foundation</div>
-                        <div class="step-desc">
-                            Understand the philosophy.<br />
-                            Meet the community.<br />
-                            Start building.
-                        </div>
-                    </div>
-                    <div class="progression-step featured-step reveal">
-                        <div class="number">02</div>
-                        <div class="step-name">Build</div>
-                        <div class="step-label">The Iron</div>
-                        <div class="step-desc">
-                            Follow structured paths.<br />
-                            Learn. Implement.<br />
-                            Track your progress.
-                        </div>
-                    </div>
-                    <div class="progression-step reveal">
-                        <div class="number">03</div>
-                        <div class="step-name">Deepen</div>
-                        <div class="step-label">Inner Circle</div>
-                        <div class="step-desc">
-                            Work in a smaller environment.<br />
-                            Receive deeper feedback.<br />
-                            Build alongside committed men.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- IMAGE PLACEHOLDER 3 -->
-                <div class="img-placeholder" style="margin-top: var(--space-xl); background: linear-gradient(145deg, #2a2a2a, #111111);">
-                    <div class="content">
-                        <span class="icon">🔄</span>
-                        <span class="label">Progression Path</span>
-                        <span class="sub-label">assets/images/pillars/progression-path.jpg</span>
-                    </div>
-                </div>
-
-                <!-- BIBLE VERSE (DARK) -->
-                <div class="bible-verse-dark reveal" style="margin-top: var(--space-xl);">
-                    "The one who is faithful in a very little thing<br />
-                    is also faithful in much."
-                    <span class="ref">— Luke 16:10</span>
-                </div>
-
-                <div class="reveal" style="text-align: center; margin-top: var(--space-lg);">
-                    <a href="membership.html" class="btn-primary btn-arrow"><span>Start Your Path →</span></a>
+                <div class="cta-actions">
+                    <a href="community.html" class="btn-primary btn-arrow"><span>Enter The Iron →</span></a>
+                    <a href="membership.html" class="btn-secondary btn-arrow">Explore Membership →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="site-logo">THE IRON<span>.</span></div>
-                    <p>Build a life you respect.</p>
+                    <p>Become a man you respect.</p>
                     <p style="font-size: clamp(10px, 0.6vw, 13px); color: var(--iron-grey); margin-top: var(--space-xs);">
-                        Mind. Character. Body. Relationships. Money. Purpose.
+                        Mind. Character. Body. Money. Career. Relationships. Purpose.
                     </p>
                     <div class="footer-verse">"Iron sharpens iron." — Proverbs 27:17</div>
                 </div>
@@ -1496,16 +1343,10 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // ============================================================
-            // 1. MOBILE NAVIGATION
-            // ============================================================
             var navToggle = document.getElementById('navToggle');
             var mainNav = document.getElementById('mainNav');
 
@@ -1549,9 +1390,6 @@
                 });
             }
 
-            // ============================================================
-            // 2. HEADER SCROLL EFFECT
-            // ============================================================
             var header = document.getElementById('siteHeader');
             if (header) {
                 window.addEventListener('scroll', function() {
@@ -1563,9 +1401,6 @@
                 }, { passive: true });
             }
 
-            // ============================================================
-            // 3. REVEAL ANIMATIONS
-            // ============================================================
             var revealElements = document.querySelectorAll('.reveal');
             if (revealElements.length) {
                 var revealObserver = new IntersectionObserver(function(entries) {
@@ -1578,44 +1413,6 @@
 
                 revealElements.forEach(function(el) {
                     revealObserver.observe(el);
-                });
-            }
-
-            // ============================================================
-            // 4. DATA STRIP COUNTER
-            // ============================================================
-            var dataItems = document.querySelectorAll('.data-strip-item');
-            if (dataItems.length) {
-                var counterObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            var counter = entry.target.querySelector('.counter');
-                            if (counter && !counter.dataset.animated) {
-                                counter.dataset.animated = 'true';
-                                var target = parseInt(counter.dataset.target, 10);
-
-                                if (!isNaN(target) && target > 0) {
-                                    var current = 0;
-                                    var increment = target / 50;
-                                    var interval = 30;
-
-                                    var timer = setInterval(function() {
-                                        current += increment;
-                                        if (current >= target) {
-                                            current = target;
-                                            clearInterval(timer);
-                                        }
-                                        counter.textContent = Math.floor(current);
-                                    }, interval);
-                                }
-                            }
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                dataItems.forEach(function(item) {
-                    counterObserver.observe(item);
                 });
             }
 
